@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Locaai - O Seu Site de Eventos</title>
+    <link rel="stylesheet" type="text/css" href="css/topBarStyle.css">
+    <link rel="icon" type="icon/png" href="img/icon.png">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="js/topBarFunctions.js" defer></script>
+</head>
+
+<body>
+    <div class="searchBar">
+        <img class="logoTop" src="./img/logoLado.png">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
+        </div>
+        <div class="picAndLabels">
+            <div class="textLocatorInfo">
+                <label class="textName">Eduardo França</label>
+                <label class="locatorLevel">Locador Ouro</label>
+            </div>
+            <img class="profilePicLogo" src="./img/profilePicTest.png">
+        </div>
+    </div>
+    <div id="filtersBar" class="filtersBar"></div>
+</body>
+
+</html>
