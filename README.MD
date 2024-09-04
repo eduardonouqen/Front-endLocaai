@@ -5,5 +5,7 @@ Atualização 1.0:
 - Atualizações em breve.
 
 Escola de T.I. UniCesumar - 2024
+
 EQUIPE: Locaai Eventos
+
 Eduardo de França Gonzalez
