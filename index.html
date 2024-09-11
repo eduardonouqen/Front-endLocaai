@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locaai - O Seu Site de Eventos</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" type="icon/png" href="img/icon.png">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Search Bar Section -->
+    <div class="searchBar">
+        <img class="logoTop" src="./img/logoLado.png" alt="Logo">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
+        </div>
+        <div class="picAndLabels">
+            <div class="textLocatorInfo">
+                <label class="textName">Eduardo França</label>
+                <label class="locatorLevel">Locador Ouro</label>
+            </div>
+            <img class="profilePicLogo" src="./img/profilePicTest.png" alt="Profile Pic">
+        </div>
+    </div>
+
+
+    <div id="filtersBar" class="filtersBar"></div>
+
+    <div class="container">
+        <h1>Histórico de compras de Eduardo França</h1>
+        <p class="support-text">Problema com alguma transação? Entre em contato com o suporte!</p>
+        <table class="purchase-history">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Locação</th>
+                    <th>Duração</th>
+                    <th>Pagamento</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>30/08/2024</td>
+                    <td><strong>Ilha tropical</strong> - Por: Turismo Tropical S.A</td>
+                    <td>3 dias</td>
+                    <td>Compra MasterCard **55</td>
+                    <td>R$ 7.500,00</td>
+                </tr>
+                <tr>
+                    <td>02/03/2019</td>
+                    <td><strong>Um dia em Summoner's Rift</strong> - Por: Rita Gomes.</td>
+                    <td>24 dias</td>
+                    <td>Compra Pix</td>
+                    <td>R$ 252.000,00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

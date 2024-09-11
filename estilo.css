@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    font-family: 'Inter';
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.searchBar {
+    background-color: #44116f;
+    color: #0000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.searchBar2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding-left: 20px;
+}
+
+.logoTop {
+    width: 8%;
+    margin-left: 5px;
+}
+
+.searchInput {
+    height: 35px;
+    padding: 5px;
+    text-indent: 20px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.searchInput:first-of-type {
+    border-radius: 25px 0px 0px 25px;
+}
+
+.searchInput:hover {
+    background-color: #f1f1f1;
+}
+
+.searchInputWrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+.searchInputWithButton {
+    height: 35px;
+    padding: 5px;
+    text-indent: 20px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    border-radius: 0px 25px 25px 0px;
+}
+
+.searchInputWithButton:hover {
+    background-color: #f1f1f1;
+}
+
+.buttonSearch {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #A142D4;
+    background-image: url('../img/lupa.png');
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+}
+
+.buttonSearch:hover {
+    background-color: #8830b8;
+}
+
+.buttonFilters {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translate(135%, -50%);
+    background-color: #A142D4;
+    background-image: url('../img/starFilters.png');
+    background-size: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+}
+
+.buttonFilters:hover {
+    background-color: #8830b8;
+}
+
+.buttonFilters.active {
+    background-color: white;
+    background-image: url('../img/starFiltersPurple.png');
+}
+
+.picAndLabels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilePicLogo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.textLocatorInfo {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 10px;
+}
+
+.textName {
+    color: white;
+    font-weight: 600;
+}
+
+.locatorLevel {
+    font-size: 11px;
+}
+
+.filtersBar {
+    display: none;
+    background-color: #e5e5e5;
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    z-index: 0;
+}
+
+.filtersBar.show {
+    display: block;
+    max-height: 80px;
+}
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.support-text {
+    color: #9a9a9a;
+    margin-bottom: 20px;
+}
+
+.purchase-history {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.purchase-history thead th {
+    background-color: #dcc5e5;
+    color: #333;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.purchase-history tbody td {
+    background-color: #f2e8f7;
+    color: #333;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.purchase-history tbody tr {
+    border-bottom: 1px solid #e1d7e9;
+}
+
+.purchase-history tbody tr:last-child {
+    border-bottom: none;
+}
+
+.purchase-history tbody td strong {
+    color: #333;
+}
+
