@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+</head>
+<body>
+    <div class="inicioRoxo">
+        <img src="img/Logo Locaai2 1.png"  class="logoLocaai">
+    </div>
+
+    <form id="formCadastro" action="/cadastro" method="POST" onsubmit="return validarBackEnd();">
+    <div class="box">
+        <p class="aventura">Hora de entrar na aventura!</p>
+        <div class="alinhar">
+            <p class="email">Para começar, digite seu email:</p>
+            <input type="text" id="email" class="caixa">
+        </div>
+
+        <div class="alinhar2">
+            <p class="senha">Aqui, digite sua senha:</p>
+            <input type="password" id="senha" class="caixa">
+        </div>
+
+        <div class="alinhar">
+            <p class="senha2">Digite a senha novamente:</p>
+            <input type="password" id="confirmarSenha" class="caixa">
+        </div>
+
+        <button class="botao" onclick="if (validar()) { window.location.href = '../tela de codigo/index.html'; }">CADASTRAR</button>
+        
+        <div class="alinharBonecos">
+            <img src="img/img 1.png"  class="festa">
+            <img src="img/img 2.png"  class="festa">
+            <img src="img/img 3.png"  class="festa">
+        </div>
+    </div>
+    <script src="js/javascript.js"></script>
+    </form>
+</body>
+</html>
