@@ -1,0 +1,99 @@
+body {
+    font-family: 'Inter';
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.inicioRoxo {
+    width: 100%;
+    height: 60px;
+    background-color: #4D0872;
+}
+
+.logoLocaai {
+    margin-left: 1%;
+    height: 50px;
+    margin-top: 5px;
+}
+
+.box {
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+    background-color: #EEECEC;
+    margin: 7% auto;
+    border-radius: 45px;
+    padding: 20px;
+}
+
+.sideToSide{
+    display: flex;
+    gap: 2%;
+}
+
+.estrela{
+    height: 50px;
+}
+
+h1{
+    font-size: 35px;
+    margin-top: 10px;
+}
+
+.box2{
+    background-color: white;
+    margin: 7% auto;
+    border-radius: 30px;
+    padding: 20px;
+    width: 90%;
+    max-width: 700px;
+}
+
+.sideToSide2{
+    display: flex;
+}
+
+.nota{
+    margin-left: 15%;
+}
+
+.titulo{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.user{
+    height: 80px;
+}
+
+.texto{
+    text-align: justify;
+}
+
+.valor{
+    display: flex;
+}
+
+
+.sideToSide p {
+    margin: 0;
+    margin-top: 4%;
+}
+
+.preco {
+    margin-top: 5px; /* Ajuste o valor conforme necessário */
+}
+
+.caixa {
+    display: inline-block;
+    width: 90%;
+    padding: 20px; 
+    border: 1px solid #D9D9D9; 
+    background-color: #D9D9D9;
+    border-radius: 20px; 
+    
+}
+
