@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promover Anúncio | Locaai - O Seu Site de Eventos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/topBarStyle.css">
+    <link rel="icon" type="icon/png" href="img/icon.png">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="js/topBarFunctions.js" defer></script>
+</head>
+<body>
+
+
+    <div class="searchBar">
+        <img class="logoTop" src="./img/logoLado.png">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
+        </div>
+        <div class="picAndLabels">
+            <div class="textLocatorInfo">
+                <label class="textName">Eduardo França</label>
+                <label class="locatorLevel">Locador Ouro</label>
+            </div>
+            <img class="profilePicLogo" src="./img/profilePicTest.png">
+        </div>
+    </div>
+
+ 
+    <div id="filtersBar" class="filtersBar"></div>
+
+    <div class="container">
+
+        <main class="main-content">
+            <h1>Promover anúncio</h1>
+            <p class="description">
+                Promover seu anúncio em nosso site de aluguéis de imóveis e salões para festas e eventos pode trazer grandes vantagens para você. Ao destacar seu espaço, ele se torna mais visível e atrativo para potenciais clientes, aumentando significativamente as chances de ser alugado com mais frequência. Isso não só eleva a ocupação, mas também pode gerar mais receita para você. Além disso, com a promoção, seu anúncio alcança as pessoas certas, aquelas que realmente estão buscando um lugar como o seu, garantindo um retorno mais rápido e eficaz.
+            </p>
+
+            <div class="ad-image">
+                <p><input type="file" id="image-upload" accept="image/*"></p>
+                <img id="preview-image" src="" alt="Pré-visualização da Imagem" style="display: none; width: 100%; max-height: 200px; object-fit: cover;">
+            </div>
+            
+                <div class="ad-details">
+                    <h2>Salão no Campo</h2>
+                    <p>Tava pensando na descrição do salão</p>
+                    <div class="dates">
+                        <p>Data Início: <input type="date" id="data-inicio"></p>
+                        <p>Data Final: <input type="date" id="data-final"></p>
+                    </div>
+                    <p>Valor: R$ 1.000,00</p>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="cancelButton" class="cancel-btn">Cancelar</button>
+                <button id="confirmButton" class="confirm-btn">Confirmar</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
