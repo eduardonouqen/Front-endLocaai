@@ -1,4 +1,5 @@
 **Front-end da plataforma Locaai Eventos**
+
 Por enquanto as telas estão separadas e ainda não linkadas, todas serão conectadas durante o desenvolvimento.
 
 Alunos:
