@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuário e Locações</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="css/topBarStyle.css">
+    <link rel="icon" type="icon/png" href="img/icon.png">
+    <script src="js/topBarFunctions.js" defer></script>
+</head>
+
+<body>
+    <div class="searchBar">
+        <img class="logoTop" src="./img/logoLado.png">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
+        </div>
+        <div class="picAndLabels">
+            <div class="textLocatorInfo">
+                <label class="textName">Eduardo França</label>
+                <label class="locatorLevel">Locador Ouro</label>
+            </div>
+            <img class="profilePicLogo" src="./img/profilePicTest.png">
+        </div>
+    </div>
+    <div id="filtersBar" class="filtersBar"></div>
+
+        <div class="profile-section">
+            <div class="user-details">
+                <div class="user-photo">
+                    <div class="photo-placeholder">
+                        <img id="profile-photo" src="default-photo.png" alt="">
+                        <div class="file-input-wrapper">
+                            <label for="file-upload" class="icon">➕</label>
+                            <input id="file-upload" type="file" class="file-input" accept="image/*">  
+                        </div>
+                    </div>                    
+                </div>
+
+                <div class="user-info">
+                    <div class="info-item">
+                        <label for="email"><i class="icon-email"></i> Email</label>
+                        <input type="email" id="email" value="">
+                    </div>
+                    <div class="info-item">
+                        <label for="phone"><i class="icon-phone"></i> Celular</label>
+                        <input type="text" id="phone" value="">
+                    </div>
+                    <div class="info-item">
+                        <label for="identity"><i class="icon-identity"></i> Identidade</label>
+                        <input type="text" id="identity" value="Enviado e verificado" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-about-actions">
+                <div class="user-about">
+                    <h3>Sobre EDUARDO</h3>
+                    <textarea id="user-about-text" maxlength="350"></textarea>
+                    <div id="char-count">
+                        <span id="char-used">0</span> / <span id="char-max">350</span>
+                    </div>
+                    <button id="save-about-button">Salvar Alterações</button>
+                </div>
+                <div class="actions">
+                    <button>Contatar Suporte</button>
+                    <button>Acessar Favoritos</button>
+                    <button>Histórico de Compras</button>
+                    <button>Gerenciar Propriedades</button>
+                    <button class="delete-account">Apagar Conta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
