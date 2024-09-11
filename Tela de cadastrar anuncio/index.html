@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+</head>
+<body>
+    <div class="inicioRoxo">
+        <img src="img/Logo Locaai2 1.png"  class="logoLocaai">
+    </div>
+
+    <form id="formCadastroAnuncio" action="/cadastroAnuncio" method="POST">
+    <div class="box">
+        <p class="name">Titulo</p>
+        <input type="text" id="email" class="caixa">
+        <div class="dropdown">
+            <p class="name">Categoria</p>
+            <div class="dropdown-container">
+                <div class="selected-option"></div>
+                <div class="dropdown-content">
+                    <div class="option">Castelo <img src="img/torre.png"></div>
+                    <div class="option">Barracão <img src="img/barracao.png"></div>
+                    <div class="option">Teatro <img src="img/teatro.png"></div>
+                    <div class="option">Mansão <img src="img/mansao.png"></div>
+                    <div class="option">Praia <img src="img/praia.png"></div>
+                    <div class="option">Chacarás <img src="img/chacaras.png"></div>
+                    <div class="option">Ilha <img src="img/ilha.png"></div>
+                    <div class="option">Hotel <img src="img/hotel.png"></div>
+                    <div class="option">Resort <img src="img/resort.png"></div>
+                    <div class="option">Salao <img src="img/salao.png"></div>
+                    <div class="option">Clube <img src="img/clube.png"></div>
+                    <div class="option">Embarcação <img src="img/embarcacao.png"></div>
+                    <div class="option">Estadio <img src="img/estadio.png"></div>
+                    <div class="option">Co-working <img src="img/coworking.png"></div>
+                    <div class="option">Bistrô <img src="img/bistro.png"></div>
+                    <div class="option">Capela <img src="img/capela.png"></div>
+                    <div class="option">Cobertura <img src="img/Cobertura.png"></div>
+                    <div class="option">Centro de convenção <img src="img/centro.png"></div>
+                    <div class="option">Parque temático<img src="img/parque.png"></div>
+                    <div class="option">Parque aquático <img src="img/parqueaquatico.png"></div>
+                    <div class="option">Lago <img src="img/lago.png"></div>
+                    <div class="option">Fazenda <img src="img/fazenda.png"></div>
+                </div>
+            </div>
+        </div>
+        <p class="name">Endereço</p>
+        <input type="text" id="email" class="caixa">
+        <div class="sideToSide">
+        <p class="name2">Cidade</p>
+        <p class="name2">Estado</p>
+        </div>
+        <div class="sideToSide2">
+            <input type="text" id="email" class="caixa">
+            <input type="text" id="email" class="caixa">
+        </div>
+        <p class="name">Fotos</p>
+        <div class="caixa">
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            <label for="fileInput" class="image-placeholder">
+                <img id="previewImage" src="img/mais.png" class="mais">
+            </label>
+        </div>
+        <p class="name">Numero de quartos</p>
+        <input type="number" id="quarto" class="caixa2">
+        <p class="name">Numero de banheiros</p>
+        <input type="number" id="banheiro" class="caixa2">
+        <p class="name">Vagas na garagem</p>
+        <input type="number" id="garagem" class="caixa2">
+        <p class="name">Area(m²)</p>
+        <input type="number" id="area" class="caixa2">
+        <p class="name">Descrição</p>
+        <textarea id="descricao" class="caixa3"></textarea>
+
+        <div class="aoAnunciar">
+            <p>Ao anunciar, você estara concordando com nossos <a href="../Termos de Uso/index.html">termos de uso</a></p>
+            <button class="botao">Proximo</button>
+        </div>
+    </div>
+</form>
+    
+
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
