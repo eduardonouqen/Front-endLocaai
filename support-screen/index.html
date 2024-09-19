@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <title>Contatar Suporte</title>
+    <script src="../top-bar/topBarFunctions.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
+    <link rel="icon" type="icon/png" href="../top-bar/img/icon.png">
+</head>
+
+<body>
+    <div class="searchBar">
+        <img class="logoTop" src="../top-bar/img/logoLado.png">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
+        </div>
+        <a href="../profile-screen/index.html">
+            <div class="picAndLabels">
+                <div class="textLocatorInfo">
+                    <label class="textName">Eduardo França</label>
+                    <label class="locatorLevel">Locador Ouro</label>
+                </div>
+                <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
+            </div>
+        </a>
+    </div>
+
+    <div id="filtersBar" class="filtersBar"></div>
+    <div class="infos-container">
+        <h1 class="h1">Olá, em que podemos lhe ajudar?</h1>
+        <div class="inputsearch-container">
+            <input class="inputsearch" type="text" name="" id="search" placeholder="Digite sua dúvida">
+            <button class="search-button">
+                <img src="img/search.png" alt="butao">
+            </button>
+        </div>
+        <h2 class="h2">Dúvidas Frequentes</h2>
+        <div class="container">
+            <p data-content="cancelReservation.html">Quero cancelar minha reserva</p>
+            <p data-content="fakeAd.html">Quero denunciar anúncios falsos</p>
+            <p data-content="payInstallments.html">Quero pagar parcelado</p>
+            <p data-content="postProperty.html">Quero anunciar meu imóvel</p>
+            <p data-content="deletedAd.html">Meu anuncio foi excluído</p>
+            <p data-content="other.html">Não encontrei meu problema aqui</p>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,316 @@
+body {
+    margin: 0;
+    font-family: 'Inter';
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.searchBar {
+    background-color: #44116f;
+    color: #0000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.searchBar2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding-left: 20px;
+}
+
+.logoTop {
+    width: 8%;
+    margin-left: 5px;
+}
+
+.searchInput {
+    height: 35px;
+    padding: 5px;
+    text-indent: 20px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.searchInput:first-of-type {
+    border-radius: 25px 0px 0px 25px;
+}
+
+.searchInput:hover {
+    background-color: #f1f1f1;
+}
+
+.searchInputWrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+.searchInputWithButton {
+    height: 35px;
+    padding: 5px;
+    text-indent: 20px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    border-radius: 0px 25px 25px 0px;
+}
+
+.searchInputWithButton:hover {
+    background-color: #f1f1f1;
+}
+
+.buttonSearch {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #A142D4;
+    background-image: url('../img/lupa.png');
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+}
+
+.buttonSearch:hover {
+    background-color: #8830b8;
+}
+
+.buttonFilters {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translate(135%, -50%);
+    background-color: #A142D4;
+    background-image: url('../img/starFilters.png');
+    background-size: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+}
+
+.buttonFilters:hover {
+    background-color: #8830b8;
+}
+
+.buttonFilters.active {
+    background-color: white;
+    background-image: url('../img/starFiltersPurple.png');
+}
+
+.picAndLabels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilePicLogo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.textLocatorInfo {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 10px;
+}
+
+.textName {
+    color: white;
+    font-weight: 600;
+}
+
+.locatorLevel {
+    font-size: 11px;
+}
+
+.filtersBar {
+    display: none;
+    background-color: #e5e5e5;
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    z-index: 0;
+}
+
+.filtersBar.show {
+    display: block;
+    max-height: 80px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.price-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.price-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.price-display #price {
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#edit-price {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#service-fee-toggle {
+    background-color: #6200EE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#fee-info {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+#confirm-btn {
+    background-color: #6200EE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.price-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.price-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.price-display #price {
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#edit-price {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#service-fee-toggle {
+    background-color: #6200EE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#fee-info {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+#price[contenteditable="true"]:focus {
+    border: 1px solid #007bff;
+    background-color: #f0f8ff;
+}
+
+.hidden {
+    display: none;
+}
+
+
+#confirm-btn {
+    background-color: #6200EE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}

@@ -1,0 +1,40 @@
+body {
+    font-family: 'Inter';
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.inicioRoxo {
+    width: 100%;
+    height: 60px;
+    background-color: #4D0872;
+}
+
+.logoLocaai {
+    margin-left: 1%;
+    height: 50px;
+    margin-top: 5px;
+}
+
+.box {
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+    background-color: #EEECEC;
+    margin: 7% auto;
+    border-radius: 45px;
+    padding: 20px;
+}
+
+.ajustar{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.justificar{
+    text-align: center;
+}

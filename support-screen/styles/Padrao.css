@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #F3F3F3;
+}
+
+
+.logo-container {
+    width: 100%;
+    height: 60px;
+    background-color: #4D0872;
+}
+
+
+.logo {
+    margin-left: 1%;
+    height: 50px;
+    margin-top: 5px;
+}
+
+.form-container {
+    background-color: #F5F5F5;
+    width: 60%;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.infos-container {
+    border-radius: 3%;
+    /* Ajuste proporcional ao tamanho do contêiner */
+    background-color: #ffffff;
+    position: absolute;
+    width: 62%;
+    max-width: 100%;
+    /* Mantém um limite máximo, mas responsivo */
+    height: 70vh;
+    /* Ajusta a altura de acordo com a altura da viewport */
+    left: 20%;
+    /* Centraliza horizontalmente com base na largura da tela */
+    top: 15%;
+    /* Ajusta a posição superior com base na altura da tela */
+}
+
+.h1 {
+    text-align: center;
+    position: absolute;
+    left: 25%;
+    /* Ajuste relativo à largura da tela */
+    top: 5vh;
+    /* Ajuste relativo à altura da viewport */
+    margin: 0 0 2vh;
+    /* Margem inferior responsiva */
+}
+
+.h2 {
+    font-weight: normal;
+    position: absolute;
+    left: 10%;
+    /* Ajuste relativo à largura da tela */
+    top: 15vh;
+    /* Ajuste relativo à altura da viewport */
+    margin: 0 0 2vh;
+}
+
+.h3 {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.textarea {
+    width: 80%;
+    height: 150px;
+    border-radius: 8px;
+    border: 1px solid #CCC;
+    padding: 10px;
+    font-size: 16px;
+    color: #AAA;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.p {
+    z-index: 10;
+    position: absolute;
+    font-size: 2.0vw;
+    /* Tamanho de fonte responsivo à largura da tela */
+    font-weight: bolder;
+    left: 45%;
+    /* Centraliza aproximadamente */
+    top: 65%;
+    bottom: 40%;
+    /* Ajuste relativo à altura da tela */
+}
+
+.char-counter {
+    font-size: 14px;
+    color: #888;
+    text-align: right;
+    width: 80%;
+    margin: 0 auto 20px;
+}
+
+.submit-button {
+    background-color: #EEECEC;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #D1D1D1;
+}
+
+.like-button img,
+.dislike-button img {
+    background-color: #fffcfc;
+    z-index: 5;
+    position: absolute;
+    top: 69px;
+    width: 40px;
+    /* Faz a imagem ocupar toda a largura do botão */
+    height: 40px;
+    /* Mantém a proporção da imagem */
+    transition: transform 0.3s ease;
+    /* Suaviza a transformação */
+
+
+}
+
+.like-button:hover img {
+    transform: translateY(-10px);
+}
+
+.dislike-button:hover img {
+    transform: translateY(10px);
+    /* Move o botão para baixo */
+}
+
+.like-button {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    width: 8vw;
+    /* Ajuste responsivo à largura da tela */
+    top: 67vh;
+    /* Ajuste relativo à altura da tela */
+    left: 45%;
+    /* Ajuste relativo à largura da tela */
+}
+
+.dislike-button {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    width: 8vw;
+    /* Ajuste responsivo à largura da tela */
+    top: 67vh;
+    /* Ajuste relativo à altura da tela */
+    left: 50%;
+    /* Ajuste relativo à largura da tela */
+}
