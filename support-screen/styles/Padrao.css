@@ -2,15 +2,16 @@ body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background-color: #F3F3F3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 
 .logo-container {
     width: 100%;
     height: 60px;
     background-color: #4D0872;
 }
-
 
 .logo {
     margin-left: 1%;
@@ -20,7 +21,8 @@ body {
 
 .form-container {
     background-color: #F5F5F5;
-    width: 60%;
+    width: 90%;
+    max-width: 800px;
     margin: 5% auto;
     padding: 20px;
     border-radius: 15px;
@@ -29,46 +31,26 @@ body {
 }
 
 .infos-container {
-    border-radius: 3%;
-    /* Ajuste proporcional ao tamanho do contêiner */
+    border-radius: 15px;
     background-color: #ffffff;
-    position: absolute;
-    width: 62%;
-    max-width: 100%;
-    /* Mantém um limite máximo, mas responsivo */
-    height: 70vh;
-    /* Ajusta a altura de acordo com a altura da viewport */
-    left: 20%;
-    /* Centraliza horizontalmente com base na largura da tela */
-    top: 15%;
-    /* Ajusta a posição superior com base na altura da tela */
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    padding: 20px;
+    margin: 5% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .h1 {
     text-align: center;
-    position: absolute;
-    left: 25%;
-    /* Ajuste relativo à largura da tela */
-    top: 5vh;
-    /* Ajuste relativo à altura da viewport */
-    margin: 0 0 2vh;
-    /* Margem inferior responsiva */
-}
-
-.h2 {
-    font-weight: normal;
-    position: absolute;
-    left: 10%;
-    /* Ajuste relativo à largura da tela */
-    top: 15vh;
-    /* Ajuste relativo à altura da viewport */
-    margin: 0 0 2vh;
-}
-
-.h3 {
-    font-size: 24px;
-    color: #000;
     margin-bottom: 20px;
+}
+
+.h2, .h3{
+    text-align: justify;
+    font-weight: normal;
 }
 
 .textarea {
@@ -84,16 +66,10 @@ body {
 }
 
 .p {
-    z-index: 10;
-    position: absolute;
-    font-size: 2.0vw;
-    /* Tamanho de fonte responsivo à largura da tela */
-    font-weight: bolder;
-    left: 45%;
-    /* Centraliza aproximadamente */
-    top: 65%;
-    bottom: 40%;
-    /* Ajuste relativo à altura da tela */
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center;
 }
 
 .char-counter {
@@ -118,20 +94,37 @@ body {
     background-color: #D1D1D1;
 }
 
-.like-button img,
-.dislike-button img {
-    background-color: #fffcfc;
-    z-index: 5;
-    position: absolute;
-    top: 69px;
-    width: 40px;
-    /* Faz a imagem ocupar toda a largura do botão */
-    height: 40px;
-    /* Mantém a proporção da imagem */
+/* Botões like e dislike centralizados */
+.guide-feedback {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.guide-feedback p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.like-button, .dislike-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
     transition: transform 0.3s ease;
-    /* Suaviza a transformação */
+}
 
-
+.like-button img, .dislike-button img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
 }
 
 .like-button:hover img {
@@ -140,31 +133,30 @@ body {
 
 .dislike-button:hover img {
     transform: translateY(10px);
-    /* Move o botão para baixo */
 }
 
-.like-button {
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    position: absolute;
-    width: 8vw;
-    /* Ajuste responsivo à largura da tela */
-    top: 67vh;
-    /* Ajuste relativo à altura da tela */
-    left: 45%;
-    /* Ajuste relativo à largura da tela */
-}
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .form-container {
+        width: 95%;
+        padding: 15px;
+    }
 
-.dislike-button {
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    position: absolute;
-    width: 8vw;
-    /* Ajuste responsivo à largura da tela */
-    top: 67vh;
-    /* Ajuste relativo à altura da tela */
-    left: 50%;
-    /* Ajuste relativo à largura da tela */
+    .infos-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .p {
+        font-size: 1.2rem;
+    }
+
+    .textarea {
+        width: 90%;
+    }
+
+    .button-container {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
