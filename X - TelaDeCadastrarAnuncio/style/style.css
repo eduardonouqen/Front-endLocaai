@@ -130,7 +130,7 @@ body {
 }
 
 .mais{
-    margin-left: 10%;
+    margin-left: 0%;
 }
 
 .image-placeholder {
@@ -205,5 +205,9 @@ body {
 
 .botao:hover {
     background-color: purple;
+}
+
+h1{
+    margin-left: 100%;
 }
 

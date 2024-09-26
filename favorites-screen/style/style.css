@@ -84,7 +84,7 @@ h1{
 }
 
 .preco {
-    margin-top: 5px; /* Ajuste o valor conforme necessário */
+    margin-top: 5px;
 }
 
 .caixa {
@@ -95,5 +95,9 @@ h1{
     background-color: #D9D9D9;
     border-radius: 20px; 
     
+}
+
+h1{
+    margin-left: 5%;
 }
 
