@@ -266,27 +266,76 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-.ad-image img {
-    width: 150px; 
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-}
 .ad-image {
     position: relative;
+    width: 100%;
+    height: 400px;
     border: 1px solid #ddd;
-    padding: 10px;
     border-radius: 5px;
     overflow: hidden;
 }
-
 .ad-image img {
     max-width: 100%;
-    max-height: 200px;
-    object-fit: cover;
+    max-height: 100%;
+    object-fit: contain; 
 }
 
-.ad-image input[type="file"] {
-    display: block;
-    margin: 10px 0;
+#prevImage, #nextImage {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
 }
+
+#prevImage {
+    left: 10px;
+}
+
+#nextImage {
+    right: 10px;
+}
+
+#prevImage:hover, #nextImage:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.image-preview-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;  
+    max-height: 300px; 
+    overflow: hidden;
+    position: relative;
+}
+
+.image-preview-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+
+}
+
+button {
+    background-color: #4B006D;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8830b8;
+}
+
+button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+

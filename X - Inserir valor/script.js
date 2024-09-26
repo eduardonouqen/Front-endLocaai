@@ -1,157 +1,85 @@
-document.getElementById('justNumberInput').addEventListener('input', function (e) {
-    this.value = this.value.replace(/[^0-9.]/g, '');
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const button = document.querySelector('.buttonFilters');
-
-    button.addEventListener('click', function () {
-        button.classList.toggle('active');
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const buttonFilters = document.getElementById('toggleButton');
-    const filtersBar = document.getElementById('filtersBar');
-    let isFiltersBarVisible = false;
-
-    buttonFilters.addEventListener('click', () => {
-        isFiltersBarVisible = !isFiltersBarVisible;
-        filtersBar.classList.toggle('show', isFiltersBarVisible);
-        buttonFilters.classList.toggle('active', isFiltersBarVisible);
-    });
-});
 document.addEventListener("DOMContentLoaded", () => {
     const priceDisplay = document.getElementById('price');
-    const priceInput = document.getElementById('price-input');
-    const editPriceBtn = document.getElementById('edit-price');
-    const serviceFeeToggle = document.getElementById('service-fee-toggle');
-    const feeInfo = document.getElementById('fee-info');
-    const basePriceSpan = document.getElementById('base-price');
-    const serviceFeeSpan = document.getElementById('service-fee');
-    const totalPriceSpan = document.getElementById('total-price');
-    
-    let basePrice = 128;
-    let serviceFee = 50;
-    let totalPrice = basePrice + serviceFee;
-
-    editPriceBtn.addEventListener('click', () => {
-        priceDisplay.style.display = 'none';
-        priceInput.style.display = 'block';
-    });
-
-  
-    priceInput.addEventListener('input', (e) => {
-        basePrice = parseFloat(e.target.value) || 0;
-        totalPrice = basePrice + serviceFee;
-        priceDisplay.textContent = `R$${basePrice}`;
-        serviceFeeToggle.textContent = `Preço sem taxa R$${totalPrice}`;
-        basePriceSpan.textContent = `R$${basePrice}`;
-        totalPriceSpan.textContent = `R$${totalPrice}`;
-    });
-
- 
-    serviceFeeToggle.addEventListener('click', () => {
-        feeInfo.classList.toggle('hidden');
-    });
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const priceDisplay = document.getElementById('price');
-    const priceInput = document.getElementById('price-input');
     const serviceFeeToggle = document.getElementById('service-fee-toggle');
     const feeInfo = document.getElementById('fee-info');
     const basePriceSpan = document.getElementById('base-price');
     const serviceFeeSpan = document.getElementById('service-fee');
     const additionalValueSpan = document.getElementById('additional-value');
     const totalPriceSpan = document.getElementById('total-price');
+    const totalNoFeeSpan = document.getElementById('total-no-fee');
     const confirmBtn = document.getElementById('confirm-btn');
 
     let basePrice = 0;
     let serviceFee = 0;
     let additionalValue = 0;
     let totalPrice = 0;
-
+    let totalNoFee = 0;
 
     function updatePrices() {
-        serviceFee = basePrice * 0.10;
-        additionalValue = basePrice * 0.05;
-        totalPrice = basePrice + serviceFee + additionalValue;
+        serviceFee = (basePrice * 0.10).toFixed(2);  
+        additionalValue = (basePrice * 0.05).toFixed(2); 
+        totalPrice = (parseFloat(basePrice) + parseFloat(serviceFee) + parseFloat(additionalValue)).toFixed(2);
+        totalNoFee = basePrice.toFixed(2);
 
-        basePriceSpan.textContent = `R$${basePrice.toFixed(2)}`;
-        serviceFeeSpan.textContent = `R$${serviceFee.toFixed(2)}`;
-        additionalValueSpan.textContent = `R$${additionalValue.toFixed(2)}`;
-        totalPriceSpan.textContent = `R$${totalPrice.toFixed(2)}`;
-        serviceFeeToggle.textContent = `Preço sem taxa R$${totalPrice.toFixed(2)}`;
+        basePriceSpan.textContent = `R$${parseFloat(basePrice).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+        serviceFeeSpan.textContent = `R$${parseFloat(serviceFee).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+        additionalValueSpan.textContent = `R$${parseFloat(additionalValue).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+        totalPriceSpan.textContent = `R$${parseFloat(totalPrice).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+        totalNoFeeSpan.textContent = `R$${parseFloat(totalNoFee).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+        serviceFeeToggle.textContent = `Preço sem taxa R$${parseFloat(totalNoFee).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
     }
 
+    function formatPriceInput(value) {
+        const cleanValue = value.replace(/\D/g, '');
 
-    priceInput.addEventListener('input', (e) => {
-        basePrice = parseFloat(e.target.value) || 0;
+        if (cleanValue.length > 10) {
+            return cleanValue.slice(0, 10);
+        }
 
-   
+        const numericValue = parseFloat(cleanValue) / 100;
+        return numericValue.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    priceDisplay.addEventListener('input', (e) => {
+        let formattedPrice = formatPriceInput(e.target.textContent);
+        priceDisplay.textContent = formattedPrice;
+
+        basePrice = parseFloat(formattedPrice.replace('R$', '').replace(/\./g, '').replace(',', '.')) || 0;
+
+        updatePrices();
+
         if (basePrice > 0) {
-            updatePrices();
             serviceFeeToggle.disabled = false;
             confirmBtn.disabled = false;
-            priceDisplay.textContent = `R$${basePrice.toFixed(2)}`;
         } else {
-            priceDisplay.textContent = "R$0";
             serviceFeeToggle.disabled = true;
             confirmBtn.disabled = true;
+        }
+
+        const range = document.createRange();
+        const sel = window.getSelection();
+        range.setStart(priceDisplay.childNodes[0], priceDisplay.textContent.length);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+    });
+
+    priceDisplay.addEventListener('keypress', (e) => {
+        if (!/[0-9]/.test(e.key)) {
+            e.preventDefault();
+        }
+
+        if (priceDisplay.textContent.replace(/\D/g, '').length >= 10) {
+            e.preventDefault();
         }
     });
 
     serviceFeeToggle.addEventListener('click', () => {
         feeInfo.classList.toggle('hidden');
-    });
-});
-document.addEventListener('DOMContentLoaded', (event) => {
-    const priceSpan = document.getElementById('price');
-
-    
-    priceSpan.addEventListener('blur', () => {
-        const newValue = priceSpan.textContent.trim();
-        if (isNaN(parseFloat(newValue.replace('R$', '').replace(',', '.')))) {
-        
-            priceSpan.textContent = 'R$0';
+        if (!feeInfo.classList.contains('hidden')) {
+            serviceFeeToggle.textContent = 'Preço com taxa';
+        } else {
+            serviceFeeToggle.textContent = 'Preço sem taxa';
         }
     });
-
-    priceSpan.addEventListener('click', () => {
-        priceSpan.focus();
-    });
-});
-document.addEventListener('DOMContentLoaded', () => {
-    const serviceFeeToggle = document.getElementById('service-fee-toggle');
-    const feeInfo = document.getElementById('fee-info');
-
-    // Verifica se os elementos existem
-    if (serviceFeeToggle && feeInfo) {
-        serviceFeeToggle.addEventListener('click', () => {
-            if (feeInfo.classList.contains('hidden')) {
-                feeInfo.classList.remove('hidden');
-                serviceFeeToggle.textContent = 'Preço com taxa'; // Altera o texto do botão
-            } else {
-                feeInfo.classList.add('hidden');
-                serviceFeeToggle.textContent = 'Preço sem taxa'; // Altera o texto do botão
-            }
-        });
-    }
-});
-document.addEventListener('DOMContentLoaded', () => {
-    const serviceFeeToggle = document.getElementById('service-fee-toggle');
-    const feeInfo = document.getElementById('fee-info');
-
-    // Verifica se os elementos existem
-    if (serviceFeeToggle && feeInfo) {
-        serviceFeeToggle.addEventListener('click', () => {
-            if (feeInfo.classList.contains('hidden')) {
-                feeInfo.classList.remove('hidden');
-                serviceFeeToggle.textContent = 'Preço com taxa'; // Altera o texto do botão
-            } else {
-                feeInfo.classList.add('hidden');
-                serviceFeeToggle.textContent = 'Preço sem taxa'; // Altera o texto do botão
-            }
-        });
-    }
 });
