@@ -13,7 +13,7 @@
 </head>
 
 <body>
- <div class="searchBar">
+    <div class="searchBar">
         <img class="logoTop" src="./img/logoLado.png">
         <div class="searchBar2">
             <input type="text" placeholder="Vai pra onde?" class="searchInput">
@@ -34,25 +34,25 @@
     </div>
 
     <div id="filtersBar" class="filtersBar"></div>
-    
 
     <div class="container">
         <div class="price-box">
             <h2>Determine seu preço</h2>
             <p>Você pode alterá-lo quando quiser.</p>
             <div class="price-display">
-                <span id="price" contenteditable="true"R$>R$0</span>
+                <span id="price" contenteditable="true">R$0,00</span>
             </div>
             
             <button id="service-fee-toggle" disabled>Preço sem taxa</button>
             <div id="fee-info" class="hidden">
-                <p>Preço: <span id="base-price">R$0,00</span></p>
-                <p>Taxa de Serviço : <span id="service-fee">R$0,00</span></p>
-                <p>Valor Adicional : <span id="additional-value">R$0,00</span></p>
-                <p>Total: <span id="total-price">R$0,00</span></p>
+                <p>Preço Base: <span id="base-price">R$0,00</span></p>
+                <p>Taxa de Serviço: <span id="service-fee">R$0,00</span></p>
+                <p>Serviços Adicionais: <span id="additional-value">R$0,00</span></p>
+                <p>Total com Taxa: <span id="total-price">R$0,00</span></p>
+                <p>Total sem Taxa: <span id="total-no-fee">R$0,00</span></p>
             </div>
             <button id="confirm-btn" disabled>Confirmar</button>
-        </div>
+        </div>        
     </div>
 
     <script src="script.js"></script>
