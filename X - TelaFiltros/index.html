@@ -18,51 +18,50 @@
 
     <div class="infos-container">
         <h1>O que tem no seu local?</h1>
-        <h2 class="h2">Selecione ou digite:</h2>
-        <select class= "select" name="opcoes" id="cbFiltros">
-        <option value="Acessibilidade">Acessibilidade</option>
-        <option value="Aquecedor">Aquecedor</option>
-        <option value="Animatrônicos">Animatrônicos</option>
-        <option value="Ar Condicionado">Ar Condicionado</option>
-        <option value="Aparelho de Som">Aparelho de Som</option>
-        <option value="Banheiro">Banheiro</option>
-        <option value="Buffet">Buffet</option>
-        <option value="Campo de Futebol">Campo de Futebol</option>
-        <option value="Campo de Golfe">Campo de Golfe</option>
-        <option value="Cama">Cama</option>
-        <option value="Câmera de Segurança">Câmera de Segurança</option>
-        <option value="Churrasqueira">Churrasqueira</option>
-        <option value="Casa na Árvore">Casa na Árvore</option>
-        <option value="Cozinha">Itens de Cozinha</option>
-        <option value="Elevador">Elevador</option>
-        <option value="Espaço Infantil">Espaço Infantil</option>
-        <option value="Espaço para Acampar">Espaço para Acampar</option>
-        <option value="Estacionamento">Estacionamento</option>
-        <option value="Freezer">Freezer</option>
-        <option value="Fliperama">Fliperama</option>
-        <option value="Heliporto">Heliporto</option>
-        <option value="Karaokê">Karaokê</option>
-        <option value="Microfones">Microfones</option>
-        <option value="Mesa de Sinuca">Mesa de Sinuca</option>
-        <option value="Piscina">Piscina</option>
-        <option value="Pista de Ski">Pista de Ski</option>
-        <option value="Playground">Playground</option>
-        <option value="Quadra de Basquete">Quadra de Basquete</option>
-        <option value="Quadra de Tênis">Quadra de Tênis</option>
-        <option value="Sauna">Sauna</option>
-        <option value="Segurança">Segurança</option>
-        <option value="Tênis de Mesa">Tênis de Mesa</option>
-        <option value="Wi-fi">Wi-fi</option>
-        </select>
+        <h2 class="h2">Clique nas opções:</h2>
+        
+        <!-- Agora, as opções estão distribuídas dentro do container -->
+        <div class="opcoes-container">
+            <div class="opcao" data-value="Acessibilidade">Acessibilidade</div>
+            <div class="opcao" data-value="Aquecedor">Aquecedor</div>
+            <div class="opcao" data-value="Animatrônicos">Animatrônicos</div>
+            <div class="opcao" data-value="Ar Condicionado">Ar Condicionado</div>
+            <div class="opcao" data-value="Aparelho de Som">Aparelho de Som</div>
+            <div class="opcao" data-value="Banheiro">Banheiro</div>
+            <div class="opcao" data-value="Buffet">Buffet</div>
+            <div class="opcao" data-value="Campo de Futebol">Campo de Futebol</div>
+            <div class="opcao" data-value="Campo de Golfe">Campo de Golfe</div>
+            <div class="opcao" data-value="Cama">Cama</div>
+            <div class="opcao" data-value="Câmera de Segurança">Câmera de Segurança</div>
+            <div class="opcao" data-value="Churrasqueira">Churrasqueira</div>
+            <div class="opcao" data-value="Casa na Árvore">Casa na Árvore</div>
+            <div class="opcao" data-value="Cozinha">Itens de Cozinha</div>
+            <div class="opcao" data-value="Elevador">Elevador</div>
+            <div class="opcao" data-value="Espaço Infantil">Espaço Infantil</div>
+            <div class="opcao" data-value="Espaço para Acampar">Espaço para Acampar</div>
+            <div class="opcao" data-value="Estacionamento">Estacionamento</div>
+            <div class="opcao" data-value="Freezer">Freezer</div>
+            <div class="opcao" data-value="Fliperama">Fliperama</div>
+            <div class="opcao" data-value="Heliporto">Heliporto</div>
+            <div class="opcao" data-value="Karaokê">Karaokê</div>
+            <div class="opcao" data-value="Microfones">Microfones</div>
+            <div class="opcao" data-value="Mesa de Sinuca">Mesa de Sinuca</div>
+            <div class="opcao" data-value="Piscina">Piscina</div>
+            <div class="opcao" data-value="Pista de Ski">Pista de Ski</div>
+            <div class="opcao" data-value="Playground">Playground</div>
+            <div class="opcao" data-value="Quadra de Basquete">Quadra de Basquete</div>
+            <div class="opcao" data-value="Quadra de Tênis">Quadra de Tênis</div>
+            <div class="opcao" data-value="Sauna">Sauna</div>
+            <div class="opcao" data-value="Segurança">Segurança</div>
+            <div class="opcao" data-value="Tênis de Mesa">Tênis de Mesa</div>
+            <div class="opcao" data-value="Wi-fi">Wi-fi</div>
+        </div>
 
         <h2 class="h22">Seu lugar tem:</h2>
         <div class="filtro-container">
-            
             <div id="selectedItems"></div>
         </div>
-</div>
-
-
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -73,9 +72,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 
 </html>
