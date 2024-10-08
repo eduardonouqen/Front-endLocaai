@@ -17,6 +17,7 @@ input[type="number"]::-webkit-outer-spin-button {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+
 }
 
 .searchBar2 {
@@ -25,6 +26,7 @@ input[type="number"]::-webkit-outer-spin-button {
     justify-content: center;
     margin: auto;
     padding-left: 20px;
+    margin-right: 100px;
 }
 
 .logoTop {
@@ -156,4 +158,19 @@ input[type="number"]::-webkit-outer-spin-button {
 .filtersBar.show {
     display: block;
     max-height: 80px;
+}
+
+.announcementButton {
+    border: none;
+    background-color: #c9780d;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-right: 60px;
+    height: 35px;
+}
+
+.announcementButton:hover {
+    background-color: #b06d15;
 }

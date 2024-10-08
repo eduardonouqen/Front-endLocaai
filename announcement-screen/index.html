@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Locaai - O Seu Site de Eventos</title>
+    <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" type="icon/png" href="img/icon.png">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="../top-bar/topBarFunctions.js" defer></script>
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <div class="searchBar">
+        <img class="logoTop" src="../top-bar/img/logoLado.png">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
+        </div>
+        <div>
+            <button class="announcementButton">ANUNCIE!</button>
+        </div>
+        <a href="../profile-screen/index.html">
+            <div class="picAndLabels">
+                <div class="textLocatorInfo">
+                    <label class="textName">Eduardo França</label>
+                    <label class="locatorLevel">Locador Ouro</label>
+                </div>
+                <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
+            </div>
+        </a>
+    </div>
+    <div id="filtersBar" class="filtersBar"></div>
+
+    <div class="bigContainer">
+        <div class="textsDiv">
+            <label class="placeName">Castelo de Eichenwalde</label>
+            <div class="profilePicAndName">
+                <label class="locatorName">Por: Eduardo França</label>
+                <img class="locatorProfilePicture" src="img/profilePicAd.png">
+            </div>
+            <label class="placeAdressText">Eichenwalde, Bayern, Germany</label>
+        </div>
+        <div class="iconsAlign">
+            <img class="shareIcon" src="img/share.png">
+            <a class="switchBanner">
+                <img class="bannerIcon" id="bannerIcon" src="img/bannerOff.png">
+            </a>
+        </div>
+        <div class="imageContainer">
+            <img class="placeImage" src="img/placeImageTest.jpeg">
+        </div>
+    </div>
+
+</body>
