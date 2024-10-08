@@ -53,23 +53,28 @@
 }
 
 .shareIcon {
-    width: 2%;
+    width: 20px;
+    margin-left: 10%;
 }
 
 .iconsAlign {
     position: absolute;
     top: 0;
-    margin-left: 80%;
+    margin-left: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: 10px;
 }
 
+.switchBanner{
+    display: inline-block;
+}
 
 .bannerIcon {
-    width: 2%;
-    margin-left: 15px;
+    width: 20px;
+    height: 20px;
+    margin-left: 100%;
 }
 
 .switchBanner.active {
