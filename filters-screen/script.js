@@ -8,13 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
         itemDiv.setAttribute('data-value', value);
         itemDiv.innerHTML = `${text} <button class="remove-button">X</button>`;
         
-        // Adiciona funcionalidade para remover item e reativar a opção
         itemDiv.querySelector('.remove-button').addEventListener('click', () => {
             itemDiv.remove();
             const opcao = document.querySelector(`.opcao[data-value="${value}"]`);
             opcao.classList.remove('disabled');
             opcao.style.cursor = 'pointer';
         });
+
+        
 
         filtroContainer.appendChild(itemDiv);
     }
@@ -26,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 const text = opcao.innerText;
                 createItem(value, text);
 
-                // Desativa a opção para evitar seleção duplicada
                 opcao.classList.add('disabled');
                 opcao.style.cursor = 'not-allowed';
             }

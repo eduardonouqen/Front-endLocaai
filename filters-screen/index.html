@@ -8,19 +8,39 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/filtro.css">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <title>Filtros</title>
+    <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
+    <script src="../top-bar/topBarFunctions.js" defer></script>
+    <title>Aplicar Filtros</title>
 </head>
 
 <body>
-    <div class="logo-container">
-        <img class="logo" src="img/logo.png" alt="Logo">
+    <div class="searchBar">
+        <img class="logoTop" src="../top-bar/img/logoLado.png">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
+        </div>
+        <a href="../profile-screen/index.html">
+            <div class="picAndLabels">
+                <div class="textLocatorInfo">
+                    <label class="textName">Eduardo França</label>
+                    <label class="locatorLevel">Locador Ouro</label>
+                </div>
+                <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
+            </div>
+        </a>
     </div>
+    <div id="filtersBar" class="filtersBar"></div>
 
     <div class="infos-container">
         <h1>O que tem no seu local?</h1>
         <h2 class="h2">Clique nas opções:</h2>
         
-        <!-- Agora, as opções estão distribuídas dentro do container -->
         <div class="opcoes-container">
             <div class="opcao" data-value="Acessibilidade">Acessibilidade</div>
             <div class="opcao" data-value="Aquecedor">Aquecedor</div>
@@ -61,6 +81,9 @@
         <div class="filtro-container">
             <div id="selectedItems"></div>
         </div>
+         
+        <button class="button-next" onclick="location.href='../X - Inserir valor/index.html'">PRÓXIMO</button>
+        
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

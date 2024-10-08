@@ -7,26 +7,16 @@ body {
     display: block;
 }
 
-.logo-container {
-    width: 100%;
-    height: 50px;
-    background-color: #4D0872;
-}
-
-.logo {
-    margin-left: 2%;
-    height: 40px;
-    margin-top: 5px;
-}
-
 .infos-container {
     border-radius: 30px;
+    z-index: 1;
     background-color: #EEECEC;
-    margin: 0 auto;
+    margin-left: 5%;
+    margin: 1% auto;
     width: 90%;
     max-width: 1190px;
     height: 100vh;
-    padding: 20px;
+    padding: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,6 +35,29 @@ body {
     background-color: #f4f4f4;
     border-radius: 10px;
     width: 80%;
+}
+
+.logo-container {
+    width: 100%;
+    height: 50px;
+    background-color: #4D0872;
+}
+
+.logo {
+    margin-left: 2%;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.button-next{
+    border-radius: 29px;
+    width: 30%;
+    border-color: #4D0872;
+    cursor: pointer;
+    background-color: #4D0872;
+    color: white;
+    height: 20%;
+    margin: 1% auto;
 }
 
 .opcao {
@@ -131,3 +144,88 @@ body {
         width: 100%; /* Filtro ocupa 100% em telas pequenas */
     }
 }
+
+.placeTop {
+    display: flex;
+    flex-direction: column;
+}
+
+#placeFont {
+    font-size: 14px;
+}
+
+.placeImage {
+    border-radius: 20px;
+    width: 230px;
+    height: auto;
+}
+
+.placeContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.placeName {
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.placeOwner {
+    margin-top: 5px;
+}
+
+.placePriceDiv {
+    margin-top: 5px;
+}
+
+.profilePicAd {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.alignRating {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.alignRating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+.ratingSection {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.placePrice {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.ratingStar {
+    width: 15px;
+    height: 15px;
+}
+
+.otherAlign {
+    display: flex;
+    align-items: center;
+}
+
+.placesLine {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
