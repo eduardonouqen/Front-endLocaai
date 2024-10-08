@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/filtro.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
+    <script src="../top-bar/topBarFunctions.js" defer></script>
+    <title>Aplicar Filtros</title>
+</head>
+
+<body>
+    <div class="searchBar">
+        <img class="logoTop" src="../top-bar/img/logoLado.png">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
+        </div>
+        <a href="../profile-screen/index.html">
+            <div class="picAndLabels">
+                <div class="textLocatorInfo">
+                    <label class="textName">Eduardo França</label>
+                    <label class="locatorLevel">Locador Ouro</label>
+                </div>
+                <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
+            </div>
+        </a>
+    </div>
+    <div id="filtersBar" class="filtersBar"></div>
+
+    <div class="infos-container">
+        <h1>O que tem no seu local?</h1>
+        <h2 class="h2">Clique nas opções:</h2>
+        
+        <div class="opcoes-container">
+            <div class="opcao" data-value="Acessibilidade">Acessibilidade</div>
+            <div class="opcao" data-value="Aquecedor">Aquecedor</div>
+            <div class="opcao" data-value="Animatrônicos">Animatrônicos</div>
+            <div class="opcao" data-value="Ar Condicionado">Ar Condicionado</div>
+            <div class="opcao" data-value="Aparelho de Som">Aparelho de Som</div>
+            <div class="opcao" data-value="Banheiro">Banheiro</div>
+            <div class="opcao" data-value="Buffet">Buffet</div>
+            <div class="opcao" data-value="Campo de Futebol">Campo de Futebol</div>
+            <div class="opcao" data-value="Campo de Golfe">Campo de Golfe</div>
+            <div class="opcao" data-value="Cama">Cama</div>
+            <div class="opcao" data-value="Câmera de Segurança">Câmera de Segurança</div>
+            <div class="opcao" data-value="Churrasqueira">Churrasqueira</div>
+            <div class="opcao" data-value="Casa na Árvore">Casa na Árvore</div>
+            <div class="opcao" data-value="Cozinha">Itens de Cozinha</div>
+            <div class="opcao" data-value="Elevador">Elevador</div>
+            <div class="opcao" data-value="Espaço Infantil">Espaço Infantil</div>
+            <div class="opcao" data-value="Espaço para Acampar">Espaço para Acampar</div>
+            <div class="opcao" data-value="Estacionamento">Estacionamento</div>
+            <div class="opcao" data-value="Freezer">Freezer</div>
+            <div class="opcao" data-value="Fliperama">Fliperama</div>
+            <div class="opcao" data-value="Heliporto">Heliporto</div>
+            <div class="opcao" data-value="Karaokê">Karaokê</div>
+            <div class="opcao" data-value="Microfones">Microfones</div>
+            <div class="opcao" data-value="Mesa de Sinuca">Mesa de Sinuca</div>
+            <div class="opcao" data-value="Piscina">Piscina</div>
+            <div class="opcao" data-value="Pista de Ski">Pista de Ski</div>
+            <div class="opcao" data-value="Playground">Playground</div>
+            <div class="opcao" data-value="Quadra de Basquete">Quadra de Basquete</div>
+            <div class="opcao" data-value="Quadra de Tênis">Quadra de Tênis</div>
+            <div class="opcao" data-value="Sauna">Sauna</div>
+            <div class="opcao" data-value="Segurança">Segurança</div>
+            <div class="opcao" data-value="Tênis de Mesa">Tênis de Mesa</div>
+            <div class="opcao" data-value="Wi-fi">Wi-fi</div>
+        </div>
+
+        <h2 class="h22">Seu lugar tem:</h2>
+        <div class="filtro-container">
+            <div id="selectedItems"></div>
+        </div>
+         
+        <button class="button-next" onclick="location.href='../X - Inserir valor/index.html'">PRÓXIMO</button>
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
