@@ -111,13 +111,13 @@ body {
 }
 
 .name2{
-    margin-left: 10%;
+    margin-left: 12%;
     margin-bottom: 0%;
 }
 
 .sideToSide{
     display: flex;
-    gap: 33%;
+    gap: 30%;
     margin-right: 5%;
     margin-left: 1%;
 }
