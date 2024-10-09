@@ -80,3 +80,74 @@
 .switchBanner.active {
     background-image: url('../img/bannerOn.png');
 }
+
+.purpleContainer {
+    background-color: #A141D4;
+    width: 25%;
+    height: 30rem;
+    border-radius: 2rem;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alignContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainAnnouncement {
+    background-image: url(../img/placeImageTest.jpeg);
+    height: 30rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2rem;
+}
+
+.mainPrice {
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+.daily {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.darkPurpleContainer {
+    background-color: #4D0872;
+    margin-top: 1rem;
+    width: 100%;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    display: flex;
+    justify-content: center;
+}
+
+.locatorLabel {
+    color: white;
+    margin-right: 9px;
+    font-size: 1.5rem;
+}
+
+.locatorRanking {
+    color: #FFBF1C;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.sinceLabel {
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.functionalButtons {
+    background-color: #4D0872;
+    width: 85%;
+    height: 12%;
+    margin-bottom: 1rem;
+}
