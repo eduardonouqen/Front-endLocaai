@@ -23,7 +23,7 @@ input[type="number"]::-webkit-outer-spin-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
+    margin-left: 6rem;
 }
 
 .logoTop {
@@ -164,7 +164,8 @@ input[type="number"]::-webkit-outer-spin-button {
     font-weight: 600;
     padding: 10px 20px;
     border-radius: 25px;
-    margin-right: 8rem;
+    margin-right: 3rem;
+    margin-left: 3rem;
     height: 35px;
 }
 

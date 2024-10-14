@@ -240,3 +240,65 @@
     font-weight: 600;
     font-size: 2rem;
 }
+
+.silverDivision {
+    background-color: #f7f7f7;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-left: 10%;
+    padding-right: 10%;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.purpleLocatorBox {
+    background-color: #A141D4;
+    border-radius: 2rem;
+    width: 45rem;
+    height: 9rem;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+
+.purpleLocatorBoxImage {
+    width: 8rem;
+    height: auto;
+    border-radius: 1.6rem;
+    margin-left: 0.6rem;
+}
+
+.purpleLocatorBoxName {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.purpleLocatorBoxTimeLabel {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.purpleLocatorBoxTextAlign {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 0.8rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    height: 100%;
+}
+
+.purpleLocatorBoxRanking {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.purpleLocatorBoxTextAlign2 {
+    display: flex;
+    flex-direction: column;
+}
