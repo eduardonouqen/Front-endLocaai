@@ -164,11 +164,14 @@ input[type="number"]::-webkit-outer-spin-button {
     font-weight: 600;
     padding: 10px 20px;
     border-radius: 25px;
-    margin-right: 3rem;
-    margin-left: 3rem;
     height: 35px;
 }
 
 .announcementButton:hover {
     background-color: #b06d15;
+}
+
+.announcementButtonAlign {
+    margin-left: 2.7rem;
+    margin-right: 3rem;
 }
