@@ -65,3 +65,36 @@ function validarEmail(email) {
     var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
+
+
+
+
+document.getElementById('formCreateAccount').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const dados = {
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+    };
+
+    fetch('http://localhost:3000/createAccount', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dados)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro na requisição: ' + response.status);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Sucesso:', data);
+        window.location.href = '../email-code-screen/index.html';
+    })
+    .catch((error) => {
+        console.error('Erro:', error);
+        alert('Houve um problema ao enviar os dados.');
+    })});

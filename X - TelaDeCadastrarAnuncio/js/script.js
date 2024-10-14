@@ -76,10 +76,9 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
     })
     .then(data => {
         console.log('Sucesso:', data);
-        // Redireciona para a próxima página após o envio bem-sucedido
         window.location.href = '../X - TelaFiltros/index.html';
     })
     .catch((error) => {
         console.error('Erro:', error);
-        alert('Houve um problema ao enviar os dados.'); // Alerta para o usuário
+        alert('Houve um problema ao enviar os dados.');
     })});

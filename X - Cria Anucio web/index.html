@@ -4,35 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promover Anúncio | Locaai - O Seu Site de Eventos</title>
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="stylesheet" type="text/css" href="css/topBarStyle.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
     <link rel="icon" type="icon/png" href="img/icon.png">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <script src="js/topBarFunctions.js" defer></script>
+    <script src="../top-bar/topBarFunctions.js" defer></script>
 </head>
 <body>
 
-<div class="searchBar">
-    <img class="logoTop" src="./img/logoLado.png">
-    <div class="searchBar2">
-        <input type="text" placeholder="Vai pra onde?" class="searchInput">
-        <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
-        <div class="searchInputWrapper">
-            <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
-            <button type='submit' class="buttonSearch"></button>
-            <button type='submit' class="buttonFilters" id="toggleButton"></button>
+    <div class="searchBar">
+        <img class="logoTop" src="../top-bar/img/logoLado.png">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
         </div>
-    </div>
-    <div class="picAndLabels">
-        <div class="textLocatorInfo">
-            <label class="textName">Eduardo França</label>
-            <label class="locatorLevel">Locador Ouro</label>
+        <div>
+            <button class="announcementButton">ANUNCIE!</button>
         </div>
-        <img class="profilePicLogo" src="./img/profilePicTest.png">
+        <a href="../profile-screen/index.html">
+            <div class="picAndLabels">
+                <div class="textLocatorInfo">
+                    <label class="textName">Eduardo França</label>
+                    <label class="locatorLevel">Locador Ouro</label>
+                </div>
+                <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
+            </div>
+        </a>
     </div>
-</div>
-
-<div id="filtersBar" class="filtersBar"></div>
+    <div id="filtersBar" class="filtersBar"></div>
+   
 
 <div class="container">
     <main class="main-content">
@@ -40,21 +45,21 @@
         <p class="description">
             Promover seu anúncio em nosso site de aluguéis de imóveis e salões para festas e eventos pode trazer grandes vantagens para você. Ao destacar seu espaço, ele se torna mais visível e atrativo para potenciais clientes, aumentando significativamente as chances de ser alugado com mais frequência. Isso não só eleva a ocupação, mas também pode gerar mais receita para você. Além disso, com a promoção, seu anúncio alcança as pessoas certas, aquelas que realmente estão buscando um lugar como o seu, garantindo um retorno mais rápido e eficaz.
         </p>
-
+        
         <div class="ad-image">
-            <input type="file" id="image-upload" accept="image/*" multiple>
+           
             <div class="image-preview-container">
             </div>
-            <button id="prevImage" style="display: none;">← Anterior</button>
-            <button id="nextImage" style="display: none;">Próxima →</button>
+            <button id="prevImage" style="display: none;">←</button>
+            <button id="nextImage" style="display: none;">→</button>
         </div>
+        <input type="file" id="image-upload" accept="image/*" multiple>
         <div class="dates">
             <p>Data Início: <input type="date" id="data-inicio"></p>
             <p>Data Final: <input type="date" id="data-final"></p>
         </div>
         <p>Valor: R$ <span id="valor-total">0,00</span></p>
-    </main>
-
+    </main>  
     <div class="buttons">
         <button id="cancelButton" class="cancel-btn">Cancelar</button>
         <button id="confirmButton" class="confirm-btn">Confirmar</button>
