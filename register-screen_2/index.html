@@ -44,33 +44,38 @@
 
 
 
-    <form id="formCreateAccount">
-        <div class="box">
-            <p class="aventura">Hora de entrar na aventura!</p>
-            <div class="alinhar">
-                <p class="email">Para começar, digite seu email:</p>
-                <input type="text" id="email" class="caixa">
-            </div>
-    
-            <div class="alinhar2">
-                <p class="senha">Aqui, digite sua senha:</p>
-                <input type="password" id="password" class="caixa">
-            </div>
-    
-            <div class="alinhar">
-                <p class="senha2">Digite a senha novamente:</p>
-                <input type="password" id="confirmarSenha" class="caixa">
-            </div>
-    
-            <button type="submit" class="botao">CADASTRAR</button>
-    
-            <div class="alinharBonecos">
-                <img src="img/img 1.png" class="festa">
-                <img src="img/img 2.png" class="festa">
-                <img src="img/img 3.png" class="festa">
-            </div>
+    <form id="formCreateAccount" action="/users" method="POST">
+    <div class="box">
+        <p class="aventura">Só mais algumas informações!</p>
+        <div class="alinhar">
+            <p class="email">Aqui, digite o seu nome:</p>
+            <input type="text" id="name" name="name" class="caixa">
         </div>
-        <script src="js/javascript.js"></script>
+
+        <div class="alinhar2">
+            <p class="senha">Agora, digite o seu CPF:</p>
+            <input type="number" id="cpf" name="cpf" class="caixa">
+        </div>
+
+        <div class="alinhar">
+            <p class="senha2">Insira seu telefone:</p>
+            <input type="number" id="phone" name="phone" class="caixa">
+        </div>
+
+        <div class="alinhar">
+            <p class="senha2">Diga-nos sua cidade:</p>
+            <input type="text" id="city" name="city" class="caixa">
+        </div>
+
+        <button class="botao">CADASTRAR</button>
+
+        <div class="alinharBonecos">
+            <img src="img/img 1.png" class="festa">
+            <img src="img/img 2.png" class="festa">
+            <img src="img/img 3.png" class="festa">
+        </div>
+    </div>
+    <script src="js/script.js"></script>
     </form>
 </body>
 
