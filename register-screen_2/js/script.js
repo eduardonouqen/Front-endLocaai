@@ -1,16 +1,16 @@
 document.getElementById('formCreateAccount').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Obtendo os valores dos campos
+    
     const name = document.getElementById('name').value;
     const cpf = document.getElementById('cpf').value;
     const phone = document.getElementById('phone').value;
     const city = document.getElementById('city').value;
 
-    // Verificando se todos os campos foram preenchidos
+    
     if (!name || !cpf || !phone || !city) {
         alert('Todos os campos são obrigatórios.');
-        return;  // Saia da função se algum campo estiver vazio
+        return; 
     }
 
     const email = localStorage.getItem('email');
@@ -25,7 +25,7 @@ document.getElementById('formCreateAccount').addEventListener('submit', function
         password: senha 
     };
 
-    // Envio dos dados ao servidor
+    
     fetch('http://localhost:3000/users', {
         method: 'POST',
         headers: {
