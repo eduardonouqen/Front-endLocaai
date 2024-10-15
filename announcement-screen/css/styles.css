@@ -249,7 +249,6 @@
     padding-right: 10%;
     position: relative;
     box-sizing: border-box;
-    display: flex;
 }
 
 .purpleLocatorBox {
@@ -301,4 +300,47 @@
 .purpleLocatorBoxTextAlign2 {
     display: flex;
     flex-direction: column;
+}
+
+.ratingPurpleBoxImg {
+    width: 2rem;
+}
+
+.alignRatingPurpleBoxImg1 {
+    display: flex;
+    align-items: center;
+}
+
+.alignRatingPurpleBoxImg2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ratingPurpleBoxBigText {
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-right: 0.3rem;
+}
+
+.ratingPurpleBoxSmallText {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.generalAlignRatingPurpleBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    margin-right: 1.5rem;
+    height: 100%;
+}
+
+.generalBoxAlign {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
