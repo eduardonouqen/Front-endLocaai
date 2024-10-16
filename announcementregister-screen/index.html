@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
     <script src="../top-bar/topBarFunctions.js" defer></script>
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="js/script.js"></script>
 </head>
 <body>
     <div class="searchBar">
@@ -37,18 +38,13 @@
     <div id="filtersBar" class="filtersBar"></div>
    
 
-
-
-
-
-    <form id="formCadastroAnuncio" action="/cadastroAnuncio" method="POST">
+    <!-- <form id="formCadastroAnuncio" action="/cadastroAnuncio" method="POST"> -->
+    <h2>Preencha as informações sobre seu local!</h2>
     <div class="box">
-        <p class="name">Titulo</p>
-        <input type="text" id="titulo" class="caixa">
-        <div class="dropdown">
-            <p class="name">Categoria</p>
+        <input type="text" id="titulo" placeholder="Titulo" class="titulo">
+        <div class="categoriacontainer">
             <div class="dropdown-container">
-                <div class="selected-option" id="categoriaSelecionada"></div>
+                <div class="selected-option" id="categoriaSelecionada">Selecione uma categoria</div>
                 <div class="dropdown-content">
                     <div class="option" onclick="selecionarCategoria('Castelo')">Castelo <img src="img/torre.png"></div>
                     <div class="option" onclick="selecionarCategoria('Barracao')">Barracão <img src="img/barracao.png"></div>
@@ -75,43 +71,74 @@
                 </div>
             </div>
         </div>
-        <p class="name">Endereço</p>
-        <input type="text" id="endereco" class="caixa">
-        <div class="sideToSide">
-        <p class="name2">Cidade</p>
-        <p class="name2">Estado</p>
-        </div>
+        
         <div class="sideToSide2">
-            <input type="text" id="cidade" class="caixa">
-            <input type="text" id="estado" class="caixa">
+        <input type="text" id="adress" placeholder="Endereço" class="endereco">
+        <input type="text" id="number" placeholder="Nº" class="number">
+    </div>
+
+        <div class="sideToSide2">
+            <input type="text" id="city" placeholder="Cidade" class="city">
+            <select class="state" id="state">
+                <option value="" disabled selected>Estado</option>
+                <option value="AC">Acre (AC)</option>
+                <option value="AL">Alagoas (AL)</option>
+                <option value="AP">Amapá (AP)</option>
+                <option value="AM">Amazonas (AM)</option>
+                <option value="BA">Bahia (BA)</option>
+                <option value="CE">Ceará (CE)</option>
+                <option value="DF">Distrito Federal (DF)</option>
+                <option value="ES">Espírito Santo (ES)</option>
+                <option value="GO">Goiás (GO)</option>
+                <option value="MA">Maranhão (MA)</option>
+                <option value="MT">Mato Grosso (MT)</option>
+                <option value="MS">Mato Grosso do Sul (MS)</option>
+                <option value="MG">Minas Gerais (MG)</option>
+                <option value="PA">Pará (PA)</option>
+                <option value="PB">Paraíba (PB)</option>
+                <option value="PR">Paraná (PR)</option>
+                <option value="PE">Pernambuco (PE)</option>
+                <option value="PI">Piauí (PI)</option>
+                <option value="RJ">Rio de Janeiro (RJ)</option>
+                <option value="RN">Rio Grande do Norte (RN)</option>
+                <option value="RS">Rio Grande do Sul (RS)</option>
+                <option value="RO">Rondônia (RO)</option>
+                <option value="RR">Roraima (RR)</option>
+                <option value="SC">Santa Catarina (SC)</option>
+                <option value="SP">São Paulo (SP)</option>
+                <option value="SE">Sergipe (SE)</option>
+                <option value="TO">Tocantins (TO)</option>
+              </select>
+              <input type="text" id="cep" placeholder="CEP" class="cep" maxlength="9">
+              <button type="button" class="cepbotao" onclick="buscarEndereco()">!</button>
         </div>
-        <p class="name">Fotos</p>
-        <div class="caixa">
-            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+
+        <p class="fotostext">Fotos</p>
+        <div>
+            <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
             <label for="fileInput" class="image-placeholder">
                 <img id="previewImage" src="img/mais.png" class="mais">
             </label>
+            <button id="prev-btn" class="btnBefore" style="display: none;">←</button>
+            <button id="next-btn" class="btnNext" style="display: none;">→</button>    
         </div>
-        <p class="name">Numero de quartos</p>
-        <input type="number" id="quarto" class="caixa2">
-        <p class="name">Numero de banheiros</p>
-        <input type="number" id="banheiro" class="caixa2">
-        <p class="name">Vagas na garagem</p>
-        <input type="number" id="garagem" class="caixa2">
-        <p class="name">Area(m²)</p>
-        <input type="number" id="area" class="caixa2">
-        <p class="name">Descrição</p>
-        <textarea id="descricao" class="caixa3"></textarea>
+    
+        <input type="number" id="quarto" placeholder="Nº Quartos" class="infotecnica">
+        <input type="number" id="banheiro" placeholder="Nº Banheiros" class="infotecnica">
+        <input type="number" id="garagem" placeholder="Vagas Garagem" class="infotecnica">
+        <input type="number" id="area" placeholder="Area(m²)" class="infotecnica">
+        
+        <textarea id="descricao" placeholder="Descrição" class="caixa3"></textarea>
 
         <div class="aoAnunciar">
-            <p>Ao anunciar, você estara concordando com nossos <a href="../X - TermosDeUso/index.html">termos de uso</a></p>
-            <button type="submit" class="botao" id="botaoProximo">Proximo</button>
+            <p>Ao anunciar, você estara concordando com nossos <a href="../terms-of-use/index.html">termos de uso</a></p>
+            
         </div>
+        <button type="submit" class="botao" id="botaoProximo" onclick="location.href='../filters-screen/index.html'">Proximo</button>
     </div>
+    
 </form>
     
-
     
-    <script src="js/script.js"></script>
 </body>
 </html>
