@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
     <script src="../top-bar/topBarFunctions.js" defer></script>
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <script src="js/script.js"></script>
+    
 </head>
 <body>
     <div class="searchBar">
@@ -110,7 +110,7 @@
                 <option value="TO">Tocantins (TO)</option>
               </select>
               <input type="text" id="cep" placeholder="CEP" class="cep" maxlength="9">
-              <button type="button" class="cepbotao" onclick="buscarEndereco()">!</button>
+              <!-- <button type="button" class="cepbotao" onclick="buscarEndereco()">!</button> -->
         </div>
 
         <p class="fotostext">Fotos</p>
@@ -123,10 +123,10 @@
             <button id="next-btn" class="btnNext" style="display: none;">→</button>    
         </div>
     
-        <input type="number" id="quarto" placeholder="Nº Quartos" class="infotecnica">
-        <input type="number" id="banheiro" placeholder="Nº Banheiros" class="infotecnica">
-        <input type="number" id="garagem" placeholder="Vagas Garagem" class="infotecnica">
-        <input type="number" id="area" placeholder="Area(m²)" class="infotecnica">
+        <input type="number" id="quarto" placeholder="Nº Quartos" class="infotecnica" min="1" max="2" oninput="this.value = Math.max(2, Math.min(0, this.value))">
+        <input type="number" id="banheiro" placeholder="Nº Banheiros" class="infotecnica" min="1" max="2" oninput="this.value = Math.max(0, Math.min(99, this.value))">
+        <input type="number" id="garagem" placeholder="Vagas Garagem" class="infotecnica" min="1" max="2" oninput="this.value = Math.max(0, Math.min(99, this.value))">
+        <input type="number" id="area" placeholder="Area(m²)" class="infotecnica" min="1" max="5" oninput="this.value = Math.max(0, Math.min)">
         
         <textarea id="descricao" placeholder="Descrição" class="caixa3"></textarea>
 
@@ -139,6 +139,6 @@
     
 </form>
     
-    
+<script src="js/script.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     const dropdownContainer = document.querySelector('.dropdown-container');
 
     if (dropdownContainer) {
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    
+
     document.querySelectorAll('.option').forEach(function (option) {
         option.addEventListener('click', function () {
             document.querySelector('.selected-option').textContent = this.textContent;
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    
+
     function toggleDropdown() {
         const dropdownContent = document.querySelector('.dropdown-content');
         if (dropdownContent) {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    
+
 });
 
 let categoria = '';
@@ -81,58 +81,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const imgElement = document.getElementById('previewImage');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
-  
+
     let images = [];
     let currentIndex = 0;
-  
-    input.addEventListener('change', function(event) {
-      const files = event.target.files;
-      images = Array.from(files).map(file => URL.createObjectURL(file)); 
-  
-      if (images.length > 0) {
-        currentIndex = 0;
-        imgElement.src = images[currentIndex]; 
-  
-        // Tornar os botões visíveis quando uma imagem for adicionada
-        prevBtn.style.display = 'inline-block';
-        nextBtn.style.display = 'inline-block';
-      }
-    });
-  
-    prevBtn.addEventListener('click', () => {
-      if (images.length > 0) {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-        imgElement.src = images[currentIndex]; 
-      }
-    });
-  
-    nextBtn.addEventListener('click', () => {
-      if (images.length > 0) {
-        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-        imgElement.src = images[currentIndex]; 
-      }
-    });
-  });
-  
-  
-  
 
-  
-  
-  
+    input.addEventListener('change', function (event) {
+        const files = event.target.files;
+        images = Array.from(files).map(file => URL.createObjectURL(file));
+
+        if (images.length > 0) {
+            currentIndex = 0;
+            imgElement.src = images[currentIndex];
+
+            // Tornar os botões visíveis quando uma imagem for adicionada
+            prevBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (images.length > 0) {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            imgElement.src = images[currentIndex];
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (images.length > 0) {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            imgElement.src = images[currentIndex];
+        }
+    });
+});
+
+
+
+
+
+
+
 
 // Função para buscar endereço pelo CEP
-function buscarEndereco() {
-    const cep = document.getElementById('cep').value.replace(/\D/g, '');
-    console.log(cep);
+document.getElementById('cep').addEventListener('blur', function () {
+    let cep = this.value.replace(/\D/g, ''); // Remove caracteres não numéricos
 
-    if (cep.length === 8) {
-        const url = `https://viacep.com.br/ws/${cep}/json/`;
+    if (cep.length === 8) { // Verifica se o CEP tem 8 dígitos
+        let url = `https://viacep.com.br/ws/${cep}/json/`; // Monta a URL corretamente
 
         fetch(url)
             .then(response => response.json())
             .then(data => {
                 if (!data.erro) {
+                    // Preenche os campos com as informações recebidas da API
                     let enderecoCompleto = `${data.logradouro}, ${data.bairro}`;
                     if (data.complemento) {
                         enderecoCompleto += `, ${data.complemento}`;
@@ -151,4 +151,14 @@ function buscarEndereco() {
     } else {
         alert("Por favor, insira um CEP válido.");
     }
-}
+});
+
+
+document.getElementById('infotecnica').addEventListener('input', function() {
+    let value = this.value;
+    
+    // Limita o valor aos últimos dois dígitos
+    if (value.length > 2) {
+        this.value = value.slice(-2); // Mantém os dois últimos dígitos
+    }
+});
