@@ -8,16 +8,8 @@ body {
     background-color: #f7f7f7;
 }
 
-.logo-container {
-    width: 100%;
-    height: 50px;
-    background-color: #4D0872;
-}
-
-.logo {
-    margin-left: 2%;
-    height: 40px;
-    margin-top: 5px;
+h3{
+    display: inline;
 }
 
 /* Responsividade */
@@ -57,7 +49,20 @@ body {
 }
 
 .propriedade-info {
-    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.propriedade-info strong{
+    font-weight: bold;
+}
+
+.propriedade-info span{
+    display: inline;
+    margin-left: 5px;
 }
 
 .propriedade-info p {
@@ -67,9 +72,38 @@ body {
     align-items: center;
 }
 
-.estrela {
-    color: #f5a623;
-    font-weight: bold;
+
+
+.infosprop{
+    display: block;
+    width: 70%;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    gap: 10px; 
+    width: 30%;
+}
+
+
+.botaopromover,
+.botaoeditar,
+.botaoexcluir {
+    background-color: #4D0872;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.botaopromover:hover,
+.botaoeditar:hover,
+.botaoexcluir:hover {
+    background-color: #3a065a;
 }
 
 .cadastrar-btn {
@@ -77,41 +111,14 @@ body {
     width: 100%;
     font-size: 16px;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 5%;
     border-radius: 8px;
     background-color: #4D0872;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 .cadastrar-btn:hover {
     background-color: #3a065a;
-}
-
-.editar-btn {
-    background-color: transparent;
-    border: none;
-    color: #4D0872;
-    cursor: pointer;
-}
-
-.editar-btn:hover {
-    color: #3a065a;
-}
-
-@media (max-width: 768px) {
-    .propriedade-card {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .propriedade-imagem {
-        margin-bottom: 15px;
-        width: 80%;
-        height: auto;
-    }
-
-    .cadastrar-btn {
-        font-size: 14px;
-    }
 }
