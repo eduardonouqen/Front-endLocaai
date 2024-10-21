@@ -38,7 +38,6 @@ function validar() {
         return false;
     }
 
-    alert("Conta criada com sucesso");
     return true;
 }
 
