@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         removeButton.addEventListener('click', () => {
             itemDiv.remove();
             const option = selectElement.querySelector(`option[value="${value}"]`);
-            option.style.display = 'block'; // Torna a opção disponível novamente
+            option.style.display = 'block';
         });
 
         itemDiv.appendChild(itemText);
@@ -30,17 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const value = selectedOption.value;
         const text = selectedOption.text;
 
-        // Verifica se a opção já está na lista
         if (selectedOption.style.display === 'none') return;
 
-        // Adiciona a opção ao container de itens selecionados
         const newItem = createItem(value, text);
         selectedItemsContainer.appendChild(newItem);
 
-        // Torna a opção selecionada indisponível no select
         selectedOption.style.display = 'none';
 
-        // Limpa a seleção do <select>
         selectElement.selectedIndex = -1;
     });
 });

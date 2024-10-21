@@ -1,43 +1,37 @@
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('login').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const password = document.getElementById('password').value;
 
-function validateLogin(event) {
-    console.log("Função validateLogin chamada");
-    event.preventDefault(); // Evita o envio do formulário
+        
+        const loadingSpinner = document.getElementById('loading');
+        loadingSpinner.style.display = 'block';
 
-    // Defina as credenciais válidas
-    const validEmail = "locaaieventos@gmail.com";
-    const validPassword = "senhalegal";
+        try {
+            const response = await fetch('http://localhost:3000/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, password }),
+            });
 
-    // Capture os valores dos inputs
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const loading = document.getElementById("loading");
-    const feedback = document.getElementById("feedback");
+            loadingSpinner.style.display = 'none'; 
 
-    // Limpa o feedback e os estilos anteriores
-    feedback.textContent = "";
-    emailInput.style.borderColor = "";
-    passwordInput.style.borderColor = "";
+            if (!response.ok) {
+                throw new Error('Login falhou!');
+            }
 
-    // Verifica se o email e senha estão corretos
-    if (emailInput.value === validEmail && passwordInput.value === validPassword) {
-        // Mostra o símbolo de loading
-        loading.style.display = "block";
+            const data = await response.json();
+            localStorage.setItem('token', data.access_token); 
+            document.getElementById('feedback').innerText = 'Login bem-sucedido!';
 
-        // Após 3 segundos, mostra a mensagem de sucesso e recarrega a página
-        setTimeout(() => {
-            loading.style.display = "none";
-            feedback.style.color = "green";
-            feedback.textContent = "Login realizado com sucesso!";
-            setTimeout(() => {
-                window.location = "../initial-screen/index.html"; // Recarrega a página
-            }, 3000); // Recarrega após 3 segundos
-        }, 3000); // Simula o tempo de carregamento
-    } else {
-
-        // Circule os campos de email e senha em vermelho
-        emailInput.style.borderColor = "red";
-        passwordInput.style.borderColor = "red";
-        feedback.style.color = "red";
-        feedback.textContent = "Dados inválidos";
-    }
-}
+           
+            window.location.href = '../initial-screen/index.html'; 
+        } catch (error) {
+            loadingSpinner.style.display = 'none';
+            document.getElementById('feedback').innerText = error.message;
+        }
+    });
+});
