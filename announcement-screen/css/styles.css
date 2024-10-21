@@ -93,7 +93,6 @@
 
 .alignContainer {
     display: flex;
-    justify-content: space-between;
 }
 
 .mainAnnouncement {
@@ -174,10 +173,12 @@
 }
 
 .functionalButtonsLabel {
-    margin-right: 1.8rem;
+    justify-content: center;
+    display: flex;
     color: white;
     font-weight: 600;
     font-size: 1.5rem;
+    width: 100%;
 }
 
 .whiteLine {
@@ -244,11 +245,13 @@
 .silverDivision {
     background-color: #f7f7f7;
     width: 100%;
-    margin-top: 1.5rem;
-    padding-left: 10%;
-    padding-right: 10%;
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
     position: relative;
     box-sizing: border-box;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .purpleLocatorBox {
@@ -256,7 +259,6 @@
     border-radius: 2rem;
     width: 45rem;
     height: 9rem;
-    margin-top: 1.5rem;
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -287,8 +289,6 @@
     flex-direction: column;
     justify-content: space-between;
     margin-left: 0.8rem;
-    margin-top: 0.6rem;
-    margin-bottom: 0.6rem;
     height: 100%;
 }
 
@@ -342,5 +342,32 @@
 .generalBoxAlign {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
+    height: 100%;
+}
+
+.placeInformationText {
+    display: flex;
+    flex-direction: column;
+}
+
+.placeInformationText1 {
+    color: #4D0872;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
+
+.placeInformationText2 {
+    color: #A141D4;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-top: 0.6rem;
+}
+
+.placeInformationText3 {
+    color: #A8A8A8;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
 }
