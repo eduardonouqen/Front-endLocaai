@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let totalNoFee = 0;
 
     function updatePrices() {
-        serviceFee = (basePrice * 0.10).toFixed(2);  
-        additionalValue = (basePrice * 0.05).toFixed(2); 
+        serviceFee = (basePrice * 0.10).toFixed(2);
+        additionalValue = (basePrice * 0.05).toFixed(2);
         totalPrice = (parseFloat(basePrice) + parseFloat(serviceFee) + parseFloat(additionalValue)).toFixed(2);
         totalNoFee = basePrice.toFixed(2);
 
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         additionalValueSpan.textContent = `R$${parseFloat(additionalValue).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
         totalPriceSpan.textContent = `R$${parseFloat(totalPrice).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
         totalNoFeeSpan.textContent = `R$${parseFloat(totalNoFee).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
-        serviceFeeToggle.textContent = `Preço sem taxa R$${parseFloat(totalNoFee).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+        serviceFeeToggle.textContent = `Veja as taxas R$${parseFloat(totalNoFee).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
     }
 
     function formatPriceInput(value) {
@@ -77,9 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
     serviceFeeToggle.addEventListener('click', () => {
         feeInfo.classList.toggle('hidden');
         if (!feeInfo.classList.contains('hidden')) {
-            serviceFeeToggle.textContent = 'Preço com taxa';
+            serviceFeeToggle.textContent = 'Esconda as taxas';
         } else {
-            serviceFeeToggle.textContent = 'Preço sem taxa';
+            serviceFeeToggle.textContent = 'Veja as taxas';
         }
     });
 });

@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    font-family: 'Inter';
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+}
+
+.price-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.price-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.price-display #price {
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#edit-price {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#service-fee-toggle {
+    background-color: #6200EE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#fee-info {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+#confirm-btn {
+    background-color: #6200EE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.price-box {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    box-sizing: border-box;
+}
+
+.price-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.price-display #price {
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#edit-price {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#service-fee-toggle {
+    background-color: #6200EE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#fee-info {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#price[contenteditable="true"]:focus {
+    border: 1px solid #007bff;
+    background-color: #f0f8ff;
+}
+
+.hidden {
+    display: none;
+}
+
+
+#confirm-btn {
+    background-color: #6200EE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}

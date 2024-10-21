@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locaai - O Seu Site de Eventos</title>
-    <link rel="stylesheet" type="text/css" href="css/topBarStyle.css">
+    <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
     <link rel="icon" type="icon/png" href="img/icon.png">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <script src="js/topBarFunctions.js" defer></script>
-    <link rel="stylesheet" href="style.css"> 
+    <script src="../top-bar/topBarFunctions.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="searchBar">
-        <img class="logoTop" src="./img/logoLado.png">
+        <img class="logoTop" src="../top-bar/img/logoLado.png">
         <div class="searchBar2">
             <input type="text" placeholder="Vai pra onde?" class="searchInput">
             <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
@@ -23,16 +23,21 @@
                 <button type='submit' class="buttonSearch"></button>
                 <button type='submit' class="buttonFilters" id="toggleButton"></button>
             </div>
-        </div>
-        <div class="picAndLabels">
-            <div class="textLocatorInfo">
-                <label class="textName">Eduardo França</label>
-                <label class="locatorLevel">Locador Ouro</label>
+            <div class="announcementButtonAlign">
+                <button class="announcementButton">ANUNCIE!</button>
             </div>
-            <img class="profilePicLogo" src="./img/profilePicTest.png">
         </div>
-    </div>
 
+        <a href="../profile-screen/index.html">
+            <div class="picAndLabels">
+                <div class="textLocatorInfo">
+                    <label class="textName">Eduardo França</label>
+                    <label class="locatorLevel">Locador Ouro</label>
+                </div>
+                <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
+            </div>
+        </a>
+    </div>
     <div id="filtersBar" class="filtersBar"></div>
 
     <div class="container">
@@ -42,8 +47,8 @@
             <div class="price-display">
                 <span id="price" contenteditable="true">R$0,00</span>
             </div>
-            
-            <button id="service-fee-toggle" disabled>Preço sem taxa</button>
+
+            <button id="service-fee-toggle" disabled>Veja as taxas</button>
             <div id="fee-info" class="hidden">
                 <p>Preço Base: <span id="base-price">R$0,00</span></p>
                 <p>Taxa de Serviço: <span id="service-fee">R$0,00</span></p>
@@ -52,7 +57,7 @@
                 <p>Total sem Taxa: <span id="total-no-fee">R$0,00</span></p>
             </div>
             <button id="confirm-btn" disabled>Confirmar</button>
-        </div>        
+        </div>
     </div>
 
     <script src="script.js"></script>
