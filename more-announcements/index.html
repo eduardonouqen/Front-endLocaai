@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <title>Minhas Propriedades</title>
+    <title>Mais Anúncios</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="icon" type="icon/png" href="../top-bar/img/icon.png">
     <script src="../top-bar/topBarFunctions.js" defer></script>
@@ -41,29 +41,57 @@
     <div id="filtersBar" class="filtersBar"></div>
 
     <div class="container propriedades-container">
-        <h2 class="titulo">Minhas propriedades</h2>
+        <h2 class="titulo">Propriedades de "usuario"</h2> <!--Essa parte aqui tem que pegar o id e atribuir o nome
+        do usuário para ficar "Propriedades de Fulano"-->
+
+        <a href="../announcement-screen/index.html">
+            <div class="propriedade-card">
+                <img src="../property-management-screen/img/castelo.png" alt="Imagem da propriedade"
+                    class="propriedade-imagem">
+                <div class="propriedade-info">
+                    <div class="infosprop">
+                        <p>Nome da Propriedade: Castelo de Eichenwalde</p>
+                        <p>Endereço: Vila Velha, Alemanha</p>
+                        <p>Valor diária: R$ 3000,00 (taxa inclusa)</p>
+                        <p>Avaliações: 4.8 <img class="estrela" src="../announcement-screen/img/ratingStar.png"
+                                alt="ratingStar"></p>
+                    </div>
+                    <div class="counter">
+                        <p>356 Reservas</p>
+                    </div>
+                </div>
+
+            </div>
+        </a>
 
         <div class="propriedade-card">
-            <img src="img/castelo.png" alt="Imagem da propriedade" class="propriedade-imagem">
+            <img src="../more-announcements/img/vomax.png" alt="Imagem da propriedade" class="propriedade-imagem">
             <div class="propriedade-info">
                 <div class="infosprop">
-                    <p>Nome da Propriedade: Castelo de Eichenwalde</p>
-                    <p>Endereço: Vila Velha, Alemanha</p>
-                    <p>Valor diária: 3000 (taxa inclusa)</p>
+                    <p>Nome da Propriedade: Trailer do Vô Max</p>
+                    <p>Endereço: Washington, DC</p>
+                    <p>Valor diária: R$1350,00 (taxa inclusa)</p>
                     <p>Avaliações: 5.0 <img class="estrela" src="../announcement-screen/img/ratingStar.png"
                             alt="ratingStar"></p>
                 </div>
-                <div class="botoes">
-                    <a href="../X - Cria Anucio web/index.html">
-                        <button class="botaopromover">Promover</button>
-                    </a>
-                    <button class="botaoeditar">Editar</button>
-                    <button class="botaoexcluir">Excluir</button>
-                </div>
             </div>
+
         </div>
 
-        <button class="btn btn-light cadastrar-btn">Possui mais alguma propriedade? Cadastre-a!</button>
+        <div class="propriedade-card">
+            <img src="../more-announcements/img/siricascudo.png" alt="Imagem da propriedade" class="propriedade-imagem">
+            <div class="propriedade-info">
+                <div class="infosprop">
+                    <p>Nome da Propriedade: Siri Cascudo</p>
+                    <p>Endereço: Fenda do Bikini</p>
+                    <p>Valor diária: 99.999,00 (taxa inclusa)</p>
+                    <p>Avaliações: 2.1 <img class="estrela" src="../announcement-screen/img/ratingStar.png"
+                            alt="ratingStar"></p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
 </body>
