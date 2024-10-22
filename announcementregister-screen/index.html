@@ -36,9 +36,15 @@
         </a>
     </div>
     <div id="filtersBar" class="filtersBar"></div>
+
+
+
+
+
+    
    
 
-    <!-- <form id="formCadastroAnuncio" action="/cadastroAnuncio" method="POST"> -->
+    <form id="formCadastroAnuncio" action="/cadastroAnuncio" method="POST">
     <h2>Preencha as informações sobre seu local!</h2>
     <div class="box">
         <input type="text" id="titulo" placeholder="Titulo" class="titulo">
@@ -126,7 +132,7 @@
         <input type="number" id="quarto" placeholder="Nº Quartos" class="infotecnica" min="1" max="2" oninput="this.value = Math.max(2, Math.min(0, this.value))">
         <input type="number" id="banheiro" placeholder="Nº Banheiros" class="infotecnica" min="1" max="2" oninput="this.value = Math.max(0, Math.min(99, this.value))">
         <input type="number" id="garagem" placeholder="Vagas Garagem" class="infotecnica" min="1" max="2" oninput="this.value = Math.max(0, Math.min(99, this.value))">
-        <input type="number" id="area" placeholder="Area(m²)" class="infotecnica" min="1" max="5" oninput="this.value = Math.max(0, Math.min)">
+        <input type="number" id="area" placeholder="Área (m²)" class="infotecnica" min="1" oninput="this.value = Math.max(1, this.value)">
         
         <textarea id="descricao" placeholder="Descrição" class="caixa3"></textarea>
 
@@ -134,7 +140,7 @@
             <p>Ao anunciar, você estara concordando com nossos <a href="../terms-of-use/index.html">termos de uso</a></p>
             
         </div>
-        <button type="submit" class="botao" id="botaoProximo" onclick="location.href='../filters-screen/index.html'">Proximo</button>
+        <button type="submit" class="botao" id="botaoProximo">Proximo</button>
     </div>
     
 </form>

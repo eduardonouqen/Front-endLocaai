@@ -35,24 +35,41 @@ function selecionarCategoria(option) {
 }
 
 // Submissão do formulário
-/*document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
+document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const dados = {
         titulo: document.getElementById('titulo').value,
         categoria: categoria,
-        endereco: document.getElementById('adress').value,
+        address: document.getElementById('adress').value,
         number: document.getElementById('number').value,
-        cidade: document.getElementById('city').value,
-        estado: document.getElementById('state').value,
-        fotos: document.getElementById('fileInput').files[0],
-        quartos: document.getElementById('quarto').value,
-        banheiros: document.getElementById('banheiro').value,
-        garagem: document.getElementById('garagem').value,
+        city: document.getElementById('city').value,
+        state: document.getElementById('state').value,
+        cep: document.getElementById('cep').value,
+        photos: [],
+        rooms: document.getElementById('quarto').value,
+        bathrooms: document.getElementById('banheiro').value,
+        garage: document.getElementById('garagem').value,
         area: document.getElementById('area').value,
-        descricao: document.getElementById('descricao').value
+        description: document.getElementById('descricao').value,
     };
 
+    
+
+    const missingFields = [];
+    for (const key in dados) {
+        if (!dados[key] && key !== 'photos' && key !== 'categoria') { // Verifica se o campo está vazio, exceto 'photos' e 'categoria'
+            missingFields.push(key);
+        }
+    }
+
+    // Se houver campos vazios, alerta e impede o envio
+    if (missingFields.length > 0) {
+        alert('Por favor, preencha todos os campos obrigatórios: ' + missingFields.join(', '));
+        return; // Impede o envio se houver campos obrigatórios não preenchidos
+    }
+
+    // Envio dos dados para o backend
     fetch('http://localhost:3000/cadastroAnuncio', {
         method: 'POST',
         headers: {
@@ -60,21 +77,21 @@ function selecionarCategoria(option) {
         },
         body: JSON.stringify(dados)
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro na requisição: ' + response.status);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Sucesso:', data);
-            window.location.href = '../filter-screen';
-        })
-        .catch((error) => {
-            console.error('Erro:', error);
-            alert('Houve um problema ao enviar os dados.');
-        });
-});*/
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro na requisição: ' + response.status);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Sucesso:', data);
+        window.location.href = '../filters-screen/index.html';
+    })
+    .catch((error) => {
+        console.error('Erro:', error);
+        alert('Houve um problema ao enviar os dados.');
+    });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('fileInput');

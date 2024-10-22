@@ -372,3 +372,26 @@
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
+
+.filtersContainer {
+    margin-top: 0.9rem;
+    display: flex;
+    justify-content: center;
+}
+
+.filtersContainerTopText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filtersContainerLabel1 {
+    color: #4D0872;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.filtersContainerLabel2 {
+    color: #8F8F8F;
+    font-size: 1.6rem;
+}
