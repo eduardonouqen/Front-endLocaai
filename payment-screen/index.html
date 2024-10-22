@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Pagamento</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" type="icon/png" href="../top-bar/img/icon.png">
+    <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="../top-bar/topBarFunctions.js" defer></script>
+</head>
+<body>
+    <div class="searchBar">
+        <img class="logoTop" src="../top-bar/img/logoLado.png">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
+        </div>
+        <div>
+            <button class="announcementButton">ANUNCIE!</button>
+        </div>
+        <a href="../profile-screen/index.html">
+            <div class="picAndLabels">
+                <div class="textLocatorInfo">
+                    <label class="textName">Eduardo França</label>
+                    <label class="locatorLevel">Locador Ouro</label>
+                </div>
+                <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
+            </div>
+        </a>
+    </div>
+    <div id="filtersBar" class="filtersBar"></div>
+
+    <div class="payment-container">
+        <!-- Menu de pagamento à esquerda -->
+        <div class="payment-options">
+            <h2 class="title">Tela de Pagamento</h2>
+            <div class="payment-method">
+                <input type="radio" name="payment" id="credit-card">
+                <label for="credit-card">Cartão de Crédito</label>
+            </div>
+            <div class="payment-method">
+                <input type="radio" name="payment" id="debit-card">
+                <label for="debit-card">Cartão de Débito</label>
+            </div>
+            <div class="payment-method">
+                <input type="radio" name="payment" id="mercado-pago">
+                <label for="mercado-pago">Mercado Pago</label>
+            </div>
+            <div class="payment-method">
+                <input type="radio" name="payment" id="pix">
+                <label for="pix">Pix</label>
+            </div>
+
+            <div class="totals">
+                <p>Subtotal: R$ 3000,00</p>
+                <p>Taxas: R$ --,--</p>
+                <h3>Total: R$ 3000,00</h3>
+            </div>
+        </div>
+
+        <div class="service-summary">
+            <h2>Serviços</h2>
+            <div class="service-item">
+                <p><strong>Destino:</strong> Castelo de Eichenwalde</p>
+                <p><strong>Locador:</strong> Eichenwalde</p>
+                <p><strong>Localização:</strong> Alemanha</p>
+                <p><strong>Locatário:</strong> Eduardo</p>
+                <p><strong>Valor:</strong> R$ 3000,00</p>
+                <button class="remove-service">Excluir</button>
+            </div>
+
+            <div class="discount">
+                <p>Tem um cupom?</p>
+                <input type="text" placeholder="INSIRA O CÓDIGO AQUI!!">
+                <button class="validate-coupon">Validar</button>
+            </div>
+
+            <div class="final-totals">
+                <p>Subtotal: R$ 3000,00</p>
+                <h3>Total: R$ 3000,00</h3>
+                <button class="pay-button">PAGAR</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

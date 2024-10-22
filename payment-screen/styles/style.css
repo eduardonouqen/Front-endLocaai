@@ -1,0 +1,76 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.payment-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.payment-options, .service-summary {
+    width: 45%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.payment-method input[type="radio"] {
+    margin-right: 10px;
+}
+
+.totals, .final-totals {
+    margin-top: 30px;
+}
+
+.totals p, .final-totals p {
+    font-size: 1.2em;
+}
+
+.final-totals h3 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.pay-button, .validate-coupon, .remove-service {
+    background-color: #800080;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pay-button:hover, .validate-coupon:hover, .remove-service:hover {
+    background-color: #5a005a;
+}
+
+.service-item {
+    margin-bottom: 20px;
+}
+
+.discount input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
