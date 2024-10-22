@@ -377,6 +377,10 @@
     margin-top: 0.9rem;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .filtersContainerTopText {
@@ -394,4 +398,41 @@
 .filtersContainerLabel2 {
     color: #8F8F8F;
     font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.filtersImg {
+    width: 5.5vh;
+    margin-right: 1.1rem;
+}
+
+.filtersLabel {
+    display: flex;
+    flex-direction: column;
+}
+
+.filtersAlign {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
+.filtersFirstLabel {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #4D0872;
+}
+
+.filtersSecondLabel {
+    font-size: 1.1rem;
+}
+
+.filtersAlignLine {
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyrightLabel {
+    color: white;
 }
