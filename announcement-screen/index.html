@@ -4,6 +4,7 @@
 <head>
     <title>Locaai - O Seu Site de Eventos</title>
     <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
+    <link rel="stylesheet" type="text/css" href="../bottom-bar/css/bottomBarStyle.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="icon" type="icon/png" href="img/icon.png">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
@@ -13,7 +14,7 @@
 
 <body>
     <div class="searchBar">
-        <img class="logoTop" src="../top-bar/img/logoLado.png">
+        <img id="logo" class="logoTop" src="../top-bar/img/logoLado.png">
         <div class="searchBar2">
             <input type="text" placeholder="Vai pra onde?" class="searchInput">
             <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
@@ -70,7 +71,7 @@
                     <label class="locatorRanking">Ouro</label>
                 </div>
                 <label class="sinceLabel">Desde agosto de 2024</label>
-                <div class="functionalButtons">
+                <div class="functionalButtons" onclick="window.location.href='../more-announcements/index.html'">
                     <img class="functionalButtonsImg" src="img/announcementStack.png">
                     <label class="functionalButtonsLabel">MAIS ANÚNCIOS</label>
                 </div>
@@ -100,35 +101,44 @@
     </div>
 
     <div class="silverDivision">
-        <div class="purpleLocatorBox">
-            <img class="purpleLocatorBoxImage" src="img/profilePicAd.png">
-            <div class="generalBoxAlign">
-                <div class="purpleLocatorBoxTextAlign">
-                    <div class="purpleLocatorBoxTextAlign2">
-                        <label class="purpleLocatorBoxName">Eduardo França</label>
-                        <label class="purpleLocatorBoxTimeLabel">Locando desde 2024</label>
+        <div class="ratingAlign">
+            <div class="purpleLocatorBox">
+                <img class="purpleLocatorBoxImage" src="img/profilePicAd.png">
+                <div class="generalBoxAlign">
+                    <div class="purpleLocatorBoxTextAlign">
+                        <div class="purpleLocatorBoxTextAlign2">
+                            <label class="purpleLocatorBoxName">Eduardo França</label>
+                            <label class="purpleLocatorBoxTimeLabel">Locando desde 2024</label>
+                        </div>
+                        <div class="purpleLocatorBoxLevel">
+                            <label class="purpleLocatorBoxRanking" style="color: white">Locador</label>
+                            <label class="purpleLocatorBoxRanking" style="color: #FFBF1C">Ouro</label>
+                        </div>
                     </div>
-                    <div class="purpleLocatorBoxLevel">
-                        <label class="purpleLocatorBoxRanking" style="color: white">Locador</label>
-                        <label class="purpleLocatorBoxRanking" style="color: #FFBF1C">Ouro</label>
+
+                    <div class="generalAlignRatingPurpleBox">
+                        <div class="alignRatingPurpleBoxImg2">
+                            <div class="alignRatingPurpleBoxImg1">
+                                <label class="ratingPurpleBoxBigText">4.8</label>
+                                <img class="ratingPurpleBoxImg" src="img/ratingStarDarker.png">
+                            </div>
+                            <label class="ratingPurpleBoxSmallText">estrelas</label>
+                        </div>
+                        <div class="alignRatingPurpleBoxImg2">
+                            <div class="alignRatingPurpleBoxImg1">
+                                <label class="ratingPurpleBoxBigText">36</label>
+                                <img class="ratingPurpleBoxImg" src="img/avaliationsIcon.png">
+                            </div>
+                            <label class="ratingPurpleBoxSmallText">avaliações</label>
+                        </div>
                     </div>
                 </div>
-
-                <div class="generalAlignRatingPurpleBox">
-                    <div class="alignRatingPurpleBoxImg2">
-                        <div class="alignRatingPurpleBoxImg1">
-                            <label class="ratingPurpleBoxBigText">4.8</label>
-                            <img class="ratingPurpleBoxImg" src="img/ratingStarDarker.png">
-                        </div>
-                        <label class="ratingPurpleBoxSmallText">estrelas</label>
-                    </div>
-                    <div class="alignRatingPurpleBoxImg2">
-                        <div class="alignRatingPurpleBoxImg1">
-                            <label class="ratingPurpleBoxBigText">36</label>
-                            <img class="ratingPurpleBoxImg" src="img/avaliationsIcon.png">
-                        </div>
-                        <label class="ratingPurpleBoxSmallText">avaliações</label>
-                    </div>
+            </div>
+            <div class="ratingAlign2">
+                <label>Anúncio nível</label>
+                <div class="ratingDiv">
+                    <label class="ratingLabel">4.5</label>
+                    <img class="ratingStar" src="./img/ratingStar.png">
                 </div>
             </div>
         </div>
@@ -149,5 +159,69 @@
             <label class="filtersContainerLabel1">Castelo de Eichenwalde</label>
             <label class="filtersContainerLabel2">tudo o que você precisa saber sobre</label>
         </div>
+        <div class="filtersAlignLine">
+            <div class="filtersAlign">
+                <img class="filtersImg" src="../(IMGs) FILTERS ICONS/open-place.png">
+                <div class="filtersLabel">
+                    <label class="filtersFirstLabel">Local</label>
+                    <label class="filtersSecondLabel">Aberto</label>
+                </div>
+            </div>
+            <div class="filtersAlign">
+                <img class="filtersImg" src="../(IMGs) FILTERS ICONS/swimming-pool.png">
+                <div class="filtersLabel">
+                    <label class="filtersFirstLabel">Possui</label>
+                    <label class="filtersSecondLabel">Piscina</label>
+                </div>
+            </div>
+            <div class="filtersAlign">
+                <img class="filtersImg" src="../(IMGs) FILTERS ICONS/grill.png">
+                <div class="filtersLabel">
+                    <label class="filtersFirstLabel">Possui</label>
+                    <label class="filtersSecondLabel">Churrasqueira</label>
+                </div>
+            </div>
+            <div class="filtersAlign">
+                <img class="filtersImg" src="../(IMGs) FILTERS ICONS/heliport.png">
+                <div class="filtersLabel">
+                    <label class="filtersFirstLabel">Possui</label>
+                    <label class="filtersSecondLabel">Heliporto</label>
+                </div>
+            </div>
+        </div>
+        <div class="filtersAlignLine">
+            <div class="filtersAlign">
+                <img class="filtersImg" src="../(IMGs) FILTERS ICONS/heater.png">
+                <div class="filtersLabel">
+                    <label class="filtersFirstLabel">Possui</label>
+                    <label class="filtersSecondLabel">Aquecedor</label>
+                </div>
+            </div>
+            <div class="filtersAlign">
+                <img class="filtersImg" src="../(IMGs) FILTERS ICONS/freezer.png">
+                <div class="filtersLabel">
+                    <label class="filtersFirstLabel">Possui</label>
+                    <label class="filtersSecondLabel">Freezer</label>
+                </div>
+            </div>
+            <div class="filtersAlign">
+                <img class="filtersImg" src="../(IMGs) FILTERS ICONS/ski-slope.png">
+                <div class="filtersLabel">
+                    <label class="filtersFirstLabel">Possui</label>
+                    <label class="filtersSecondLabel">Pista de Esqui</label>
+                </div>
+            </div>
+            <div class="filtersAlign">
+                <img class="filtersImg" src="../(IMGs) FILTERS ICONS/bed.png">
+                <div class="filtersLabel">
+                    <label class="filtersFirstLabel">Possui</label>
+                    <label class="filtersSecondLabel">Cama</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottomBar">
+        <label class="copyrightLabel">© LOCAAIEVENTOS - Todos os direitos reservados</label>
     </div>
 </body>

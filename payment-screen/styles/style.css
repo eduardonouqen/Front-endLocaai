@@ -1,5 +1,8 @@
 body {
     font-family: 'Inter', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
 .payment-container {
@@ -7,13 +10,16 @@ body {
     justify-content: space-between;
     padding: 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .payment-options, .service-summary {
     width: 45%;
-    background-color: #f9f9f9;
     padding: 20px;
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -26,11 +32,22 @@ body {
 .payment-method {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .payment-method input[type="radio"] {
     margin-right: 10px;
+}
+
+.payment-method label {
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+}
+
+.payment-method .icon {
+    margin-right: 10px;
+    font-size: 1.5em;
 }
 
 .totals, .final-totals {
@@ -68,9 +85,42 @@ body {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 button {
     cursor: pointer;
 }
 
+.discount p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.validate-coupon {
+    width: 100%;
+    background-color: #800080;
+}
+
+.pay-button {
+    width: 100%;
+    font-size: 1.2em;
+    background-color: #800080;
+}
+
+.service-summary {
+    position: relative;
+}
+
+.remove-service {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: #800080;
+    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+}
