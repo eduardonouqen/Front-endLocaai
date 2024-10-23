@@ -38,33 +38,29 @@
     </div>
     <div id="filtersBar" class="filtersBar"></div>
    
-
-<div class="container">
-    <main class="main-content">
-        <h1>Promover anúncio</h1>
-        <p class="description">
-            Promover seu anúncio em nosso site de aluguéis de imóveis e salões para festas e eventos pode trazer grandes vantagens para você. Ao destacar seu espaço, ele se torna mais visível e atrativo para potenciais clientes, aumentando significativamente as chances de ser alugado com mais frequência. Isso não só eleva a ocupação, mas também pode gerar mais receita para você. Além disso, com a promoção, seu anúncio alcança as pessoas certas, aquelas que realmente estão buscando um lugar como o seu, garantindo um retorno mais rápido e eficaz.
-        </p>
-        
-        <div class="ad-image">
-           
-            <div class="image-preview-container">
+    <div class="container">
+        <main class="main-content">
+            <h1>Promover anúncio</h1>
+            <p class="description">
+                Promover seu anúncio em nosso site de aluguéis de imóveis e salões para festas e eventos pode trazer grandes vantagens para você...
+            </p>
+            
+            <div class="ad-image">
+                <div class="image-preview-container"></div>
+                <button id="prevImage" style="display: none;">←</button>
+                <button id="nextImage" style="display: none;">→</button>
             </div>
-            <button id="prevImage" style="display: none;">←</button>
-            <button id="nextImage" style="display: none;">→</button>
+            <div class="dates">
+                <p>Data Início: <input type="date" id="data-inicio"></p>
+                <p>Data Final: <input type="date" id="data-final"></p>
+            </div>
+            <p>Valor: R$ <span id="valor-total">0,00</span></p>
+        </main>  
+        <div class="buttons">
+            <button id="cancelButton" class="cancel-btn">Cancelar</button>
+            <button id="confirmButton" class="confirm-btn">Confirmar</button>
         </div>
-        <input type="file" id="image-upload" accept="image/*" multiple>
-        <div class="dates">
-            <p>Data Início: <input type="date" id="data-inicio"></p>
-            <p>Data Final: <input type="date" id="data-final"></p>
-        </div>
-        <p>Valor: R$ <span id="valor-total">0,00</span></p>
-    </main>  
-    <div class="buttons">
-        <button id="cancelButton" class="cancel-btn">Cancelar</button>
-        <button id="confirmButton" class="confirm-btn">Confirmar</button>
     </div>
-</div>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

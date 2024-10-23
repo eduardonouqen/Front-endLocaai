@@ -82,7 +82,7 @@
 
 .purpleContainer {
     background-color: #A141D4;
-    width: 25rem;
+    width: 32rem;
     height: 40rem;
     border-radius: 0rem 2rem 2rem 0rem;
     margin-top: 10px;
@@ -435,4 +435,31 @@
 
 .copyrightLabel {
     color: white;
+}
+
+.ratingAlign {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ratingStar {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.6rem;
+}
+
+.ratingLabel {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.ratingDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.ratingAlign2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
