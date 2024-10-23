@@ -37,13 +37,6 @@
     </div>
     <div id="filtersBar" class="filtersBar"></div>
 
-
-
-
-
-    
-   
-
     <form id="formCadastroAnuncio" action="/cadastroAnuncio" method="POST">
     <h2>Preencha as informações sobre seu local!</h2>
     <div class="box">
@@ -116,7 +109,7 @@
                 <option value="TO">Tocantins (TO)</option>
               </select>
               <input type="text" id="cep" placeholder="CEP" class="cep" maxlength="9">
-              <!-- <button type="button" class="cepbotao" onclick="buscarEndereco()">!</button> -->
+              <!--<button type="button"class="cepbotao" onclick+"buscarEndereço()">!</button>-->>
         </div>
 
         <p class="fotostext">Fotos</p>
@@ -135,7 +128,15 @@
         <input type="number" id="area" placeholder="Área (m²)" class="infotecnica" min="1" oninput="this.value = Math.max(1, this.value)">
         
         <textarea id="descricao" placeholder="Descrição" class="caixa3"></textarea>
-
+        <form id="formCadastroAnuncio">
+            
+            
+            <div>
+                <input type="checkbox" id="termos" required>
+                <label for="termos">Eu aceito os termos de uso.</label>
+            </div>
+        
+        </form>
         <div class="aoAnunciar">
             <p>Ao anunciar, você estara concordando com nossos <a href="../terms-of-use/index.html">termos de uso</a></p>
             

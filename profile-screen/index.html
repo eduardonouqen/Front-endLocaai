@@ -17,10 +17,10 @@
     <div class="searchBar">
         <img class="logoTop" src="../top-bar/img/logoLado.png" alt="Logo do Topo">
         <div class="searchBar2">
-            <input type="text" placeholder="Vai pra onde?" class="searchInput">
-            <input type="number" id="daysInput" placeholder="Quantos dias?" class="searchInput">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput" aria-label="Destino">
+            <input type="number" id="daysInput" placeholder="Quantos dias?" class="searchInput" aria-label="Número de dias">
             <div class="searchInputWrapper">
-                <input type="number" id="peopleInput" placeholder="Com quem?" class="searchInputWithButton">
+                <input type="number" id="peopleInput" placeholder="Com quem?" class="searchInputWithButton" aria-label="Número de pessoas">
                 <button type="submit" class="buttonSearch" aria-label="Buscar"></button>
                 <button type="submit" class="buttonFilters" id="toggleButton" aria-label="Abrir Filtros"></button>
             </div>
@@ -41,13 +41,13 @@
         <div class="user-details">
             <div class="user-photo">
                 <div class="photo-placeholder">
-                    <img id="profile-photo" src="default-photo.png">
+                    <img id="profile-photo" src="default-photo.png" alt="Foto de perfil do usuário">
                 </div>
             </div>
 
             <div class="documents-section">
                 <input id="file-upload" type="file" class="file-input" accept="image/*" style="display: none;">
-                <button class="Documents-btn" id="documents-button">
+                <button class="Documents-btn" id="documents-button" aria-label="Selecionar imagem">
                     <span class="folderContainer">
                         <svg class="fileBack" width="146" height="113" viewBox="0 0 146 113" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 4C0 1.79086 1.79086 0 4 0H50.3802C51.8285 0 53.2056 0.627965 54.1553 1.72142L64.3303 13.4371C65.2799 14.5306 66.657 15.1585 68.1053 15.1585H141.509C143.718 15.1585 145.509 16.9494 145.509 19.1585V109C145.509 111.209 143.718 113 141.509 113H3.99999C1.79085 113 0 111.209 0 109V4Z" fill="url(#paint0_linear_117_4)"></path>
@@ -84,11 +84,11 @@
             <div class="user-info">
                 <div class="info-item">
                     <label for="email"><i class="icon-email"></i> Email</label>
-                    <input type="email" id="email" value="">
+                    <input type="email" id="email" value="" required aria-required="true">
                 </div>
                 <div class="info-item">
                     <label for="phone"><i class="icon-phone"></i> Celular</label>
-                    <input type="text" id="phone" value="">
+                    <input type="text" id="phone" value="" required aria-required="true">
                 </div>
                 <div class="info-item">
                     <label for="identity"><i class="icon-identity"></i> Identidade</label>
@@ -100,7 +100,7 @@
         <div class="user-about-actions">
             <div class="user-about">
                 <h3>Sobre EDUARDO</h3>
-                <textarea id="user-about-text" maxlength="350"></textarea>
+                <textarea id="user-about-text" maxlength="350" aria-label="Sobre o usuário"></textarea>
                 <div id="char-count">
                     <span id="char-used">0</span> / <span id="char-max">350</span>
                 </div>
@@ -139,6 +139,29 @@
                 };
                 reader.readAsDataURL(file);
             }
+        });
+
+        
+        const userAboutText = document.getElementById('user-about-text');
+        const charUsed = document.getElementById('char-used');
+        const saveButton = document.getElementById('save-about-button');
+
+        userAboutText.addEventListener('input', function() {
+            const textLength = userAboutText.value.length;
+            charUsed.textContent = textLength;
+
+          
+            if (textLength > 0) {
+                saveButton.disabled = false;
+            } else {
+                saveButton.disabled = true;
+            }
+        });
+
+        saveButton.addEventListener('click', function() {
+           
+            alert('Alterações salvas com sucesso!');
+            
         });
     </script>
 </body>
