@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+    
+
     document.querySelectorAll('.option').forEach(function (option) {
         option.addEventListener('click', function () {
             document.querySelector('.selected-option').textContent = this.textContent;
@@ -17,26 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    function toggleDropdown() {
-        const dropdownContent = document.querySelector('.dropdown-content');
-        if (dropdownContent) {
-            dropdownContent.style.display = dropdownContent.style.display === 'grid' ? 'none' : 'grid';
-        }
-    }
-
-
 });
 
 
 
 
 
-let categoria = '';
 
-function selecionarCategoria(option) {
-    categoria = option;
-    document.getElementById('categoriaSelecionada').textContent = option;
-}
 
 document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
     event.preventDefault();
