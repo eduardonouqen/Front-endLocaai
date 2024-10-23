@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+
+
+
+
 let categoria = '';
 
 function selecionarCategoria(option) {
@@ -34,6 +38,53 @@ function selecionarCategoria(option) {
     document.getElementById('categoriaSelecionada').textContent = option;
 }
 
+document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const dados = {
+        titulo: document.getElementById('titulo').value,
+        categoria: categoria,
+        address: document.getElementById('adress').value,
+        number: document.getElementById('number').value,
+        city: document.getElementById('city').value,
+        state: document.getElementById('state').value,
+        cep: document.getElementById('cep').value,
+        photos: [], // A ser implementado caso necessário
+        rooms: document.getElementById('quarto').value,
+        bathrooms: document.getElementById('banheiro').value,
+        garage: document.getElementById('garagem').value,
+        area: document.getElementById('area').value,
+        description: document.getElementById('descricao').value,
+    };
+
+    // Verifica se há campos vazios, exceto 'photos' e 'categoria'
+    const missingFields = [];
+    for (const key in dados) {
+        if (!dados[key] && key !== 'photos' && key !== 'categoria') {
+            missingFields.push(key);
+        }
+    }
+
+    if (missingFields.length > 0) {
+        alert('Por favor, preencha todos os campos obrigatórios: ' + missingFields.join(', '));
+        return; 
+    }
+
+    // Salva os dados no localStorage
+    localStorage.setItem('cadastroAnuncio', JSON.stringify(dados));
+    alert('Dados salvos com sucesso.');
+
+    // Você pode redirecionar ou realizar outra ação após salvar os dados
+    window.location.href = '../filters-screen/index.html';
+});
+
+
+
+
+
+
+//TO ACHANDO QUE ISSO AQUI NÃO VAI SER NECESSARIO NESSA TELA
+/*
 // Submissão do formulário
 document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -91,7 +142,16 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         console.error('Erro:', error);
         alert('Houve um problema ao enviar os dados.');
     });
-});
+});*/
+
+
+
+
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('fileInput');
