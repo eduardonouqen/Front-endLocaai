@@ -84,9 +84,9 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
 
 
 //TO ACHANDO QUE ISSO AQUI NÃO VAI SER NECESSARIO NESSA TELA
-/*
+
 // Submissão do formulário
-document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
+/*document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const dados = {
@@ -121,7 +121,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
     }
 
     // Envio dos dados para o backend
-    fetch('http://localhost:3000/cadastroAnuncio', {
+    fetch('http://localhost:3000/realty', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
