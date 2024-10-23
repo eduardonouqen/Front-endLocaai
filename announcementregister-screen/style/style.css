@@ -179,7 +179,8 @@ cepbotao:hover {
 }
 
 .dropdown-content {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, auto);
     position: absolute;
@@ -190,6 +191,12 @@ cepbotao:hover {
     padding: 10px;
     z-index: 1;
     width: 900px;
+}
+
+.dropdown-container.show .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .fotostext {
@@ -365,6 +372,16 @@ cepbotao:hover {
     font-size: 25px;
 }
 
+.botao:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.botao.disabled {
+    pointer-events: none;  /* Impede que o botão seja clicado */
+}
+
 .botao:hover {
     background-color: purple;
 }
@@ -399,7 +416,10 @@ h2 {
     transition: background-color 0.3s ease; 
 }
 
-
+.checklabel{
+    position: relative;
+    margin-left: 33%;
+}
 .checkbox-container input[type="checkbox"]:checked + .custom-checkbox {
     background-color: #6c63ff;}
 

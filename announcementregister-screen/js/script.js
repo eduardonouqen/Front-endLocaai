@@ -1,27 +1,57 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () { //Aqui só está sendo definidas as variáveis pro controle daquele container
 
     const dropdownContainer = document.querySelector('.dropdown-container');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    const selectedOption = document.querySelector('.selected-option');
+    const options = document.querySelectorAll('.option');
 
+    // Essa função determina que se clicar no container ele abre o content, e se clicar de novo ele fecha tbm
     if (dropdownContainer) {
-        dropdownContainer.addEventListener('click', function () {
-            this.classList.toggle('show');
+        dropdownContainer.addEventListener('click', function (event) {
+            event.stopPropagation();
+            dropdownContainer.classList.toggle('show');
+            dropdownContent.classList.toggle('show');
         });
     }
 
-
-    
-
-    document.querySelectorAll('.option').forEach(function (option) {
-        option.addEventListener('click', function () {
-            document.querySelector('.selected-option').textContent = this.textContent;
+    // Ao selecionar uma opção essa função faz o container se fechar automaticamente
+    options.forEach(function (option) {
+        option.addEventListener('click', function (event) {
+            event.stopPropagation(); 
+            selectedOption.textContent = this.textContent;
             dropdownContainer.classList.remove('show');
+            dropdownContent.classList.remove('show');
         });
     });
 
-
+    // Aqui quando clica em qualquer lugar da tela o container se fecha
+    document.addEventListener('click', function () {
+        dropdownContainer.classList.remove('show')
+        dropdownContent.classList.remove('show');
+    });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const termosCheckbox = document.getElementById('termos');
+    const botaoProximo = document.getElementById('botaoProximo');
 
+    // Função que verifica o estado do checkbox
+    function verificarCheckbox() {
+        if (termosCheckbox.checked) {
+            botaoProximo.disabled = false;  // Habilita o botão se o checkbox estiver marcado
+            botaoProximo.classList.remove('disabled');  // Remove a classe de desabilitado
+        } else {
+            botaoProximo.disabled = true;   // Desabilita o botão se o checkbox estiver desmarcado
+            botaoProximo.classList.add('disabled');  // Adiciona a classe de desabilitado
+        }
+    }
+
+    // Executa a função quando o estado do checkbox mudar
+    termosCheckbox.addEventListener('change', verificarCheckbox);
+
+    // Inicializa o botão como desabilitado ao carregar a página
+    verificarCheckbox();
+});
 
 
 

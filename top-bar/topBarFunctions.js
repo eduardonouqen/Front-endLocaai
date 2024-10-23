@@ -38,3 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.textName').innerText = userName;
     }
 });
+
+document.getElementById('logo').addEventListener('click', function() {
+    window.location.href = '../initial-screen/index.html';
+});
