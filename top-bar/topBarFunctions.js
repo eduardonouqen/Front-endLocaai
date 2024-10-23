@@ -21,3 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         buttonFilters.classList.toggle('active', isFiltersBarVisible);
     });
 });
+
+document.getElementById('logo').addEventListener('click', function() {
+    window.location.href = '../initial-screen/index.html'; // Caminho para o seu outro arquivo HTML
+});
