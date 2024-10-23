@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('token');
 
@@ -38,8 +37,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelector('.textName').innerText = userName;
     }
-=======
-document.getElementById('logo').addEventListener('click', function() {
-    window.location.href = '../initial-screen/index.html'; // Caminho para o seu outro arquivo HTML
->>>>>>> 5fe8ce4e4a10de7f075beadee5e2aa955958b41e
 });
