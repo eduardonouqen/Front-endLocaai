@@ -33,6 +33,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .logoTop {
     width: 8%;
     margin-left: 5px;
+    cursor: pointer;
 }
 
 .searchInput {
