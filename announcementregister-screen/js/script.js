@@ -57,6 +57,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let categoria; 
+
+function selecionarCategoria(opcao) {
+    categoria = opcao; // Armazena a categoria escolhida na variável
+    document.getElementById('categoriaSelecionada').innerText = opcao; // Atualiza a interface
+}
+
 document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -96,6 +120,18 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
     // Você pode redirecionar ou realizar outra ação após salvar os dados
     window.location.href = '../filters-screen/index.html';
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
