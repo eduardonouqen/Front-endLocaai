@@ -74,11 +74,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-let categoria; 
+let categoria;
+let imagensBase64 = []; 
+
+
+function lerImagem(input) {
+    const files = input.files;
+    imagensBase64 = []; 
+
+    Array.from(files).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            imagensBase64.push(e.target.result); 
+        };
+        reader.readAsDataURL(file); 
+    });
+}
+
+
+document.getElementById('fileInput').addEventListener('change', function () {
+    lerImagem(this);
+});
 
 function selecionarCategoria(opcao) {
-    categoria = opcao; // Armazena a categoria escolhida na variável
-    document.getElementById('categoriaSelecionada').innerText = opcao; // Atualiza a interface
+    categoria = opcao; 
+    document.getElementById('categoriaSelecionada').innerText = opcao; 
 }
 
 document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
@@ -92,7 +112,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         city: document.getElementById('city').value,
         state: document.getElementById('state').value,
         cep: document.getElementById('cep').value,
-        photos: [], // A ser implementado caso necessário
+        photos: imagensBase64, 
         rooms: document.getElementById('quarto').value,
         bathrooms: document.getElementById('banheiro').value,
         garage: document.getElementById('garagem').value,
@@ -100,7 +120,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         description: document.getElementById('descricao').value,
     };
 
-    // Verifica se há campos vazios, exceto 'photos' e 'categoria'
+    
     const missingFields = [];
     for (const key in dados) {
         if (!dados[key] && key !== 'photos' && key !== 'categoria') {
@@ -110,14 +130,16 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
 
     if (missingFields.length > 0) {
         alert('Por favor, preencha todos os campos obrigatórios: ' + missingFields.join(', '));
-        return; 
+        return;
     }
 
-    // Salva os dados no localStorage
+    
     localStorage.setItem('cadastroAnuncio', JSON.stringify(dados));
+
+    console.log('Dados armazenados no localStorage:', JSON.parse(localStorage.getItem('cadastroAnuncio')));
     alert('Dados salvos com sucesso.');
 
-    // Você pode redirecionar ou realizar outra ação após salvar os dados
+    
     window.location.href = '../filters-screen/index.html';
 });
 
