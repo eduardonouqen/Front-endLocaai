@@ -295,6 +295,7 @@
 .purpleLocatorBoxRanking {
     font-size: 1.5rem;
     font-weight: 600;
+    margin-right: 7px;
 }
 
 .purpleLocatorBoxTextAlign2 {
@@ -451,15 +452,28 @@
 .ratingLabel {
     font-weight: 600;
     font-size: 2rem;
+    color: white;
+}
+
+.ratingLabel2 {
+    color: white;
+    display: flex;
+    justify-content: center;
 }
 
 .ratingDiv {
     display: flex;
     justify-content: center;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
 }
 
 .ratingAlign2 {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    background-color: #A141D4;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 2rem;
 }
