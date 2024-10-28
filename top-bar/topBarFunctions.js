@@ -22,6 +22,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+
+        const userData = JSON.parse(jsonPayload);
+        const userName = userData.name;
+
+        document.querySelector('.textName').innerText = userName;
+    }
+});
+
 document.getElementById('logo').addEventListener('click', function() {
-    window.location.href = '../initial-screen/index.html'; // Caminho para o seu outro arquivo HTML
+    window.location.href = '../initial-screen/index.html';
+});
+
+
+document.querySelector('.announcementButton').addEventListener('click', function() {
+    const userToken = localStorage.getItem('token'); 
+
+    if (userToken) {
+        
+        window.location.href = "../announcementregister-screen/index.html";
+    } else {
+        
+        window.location.href = "../login-screen/index.html";
+    }
 });

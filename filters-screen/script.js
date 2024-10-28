@@ -33,3 +33,31 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+
+
+
+
+
+
+const selectedItemsContainer = document.getElementById('selectedItems');
+    const nextButton = document.getElementById('nextButton');
+    const selectedOptions = [];
+
+    document.querySelectorAll('.opcao').forEach(opcao => {
+        opcao.addEventListener('click', () => {
+            const value = opcao.dataset.value;
+            if (!selectedOptions.includes(value)) {
+                selectedOptions.push(value);
+                const selectedDiv = document.createElement('div');
+                selectedDiv.textContent = value;
+                selectedItemsContainer.appendChild(selectedDiv);
+            }
+        });
+    });
+
+    nextButton.addEventListener('click', () => {
+        localStorage.setItem('selectedFilters', JSON.stringify(selectedOptions));
+        location.href = '../price-screen/index.html';
+    });

@@ -1,41 +1,104 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () { //Aqui só está sendo definidas as variáveis pro controle daquele container
 
     const dropdownContainer = document.querySelector('.dropdown-container');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    const selectedOption = document.querySelector('.selected-option');
+    const options = document.querySelectorAll('.option');
 
+    // Essa função determina que se clicar no container ele abre o content, e se clicar de novo ele fecha tbm
     if (dropdownContainer) {
-        dropdownContainer.addEventListener('click', function () {
-            this.classList.toggle('show');
+        dropdownContainer.addEventListener('click', function (event) {
+            event.stopPropagation();
+            dropdownContainer.classList.toggle('show');
+            dropdownContent.classList.toggle('show');
         });
     }
 
-
-    document.querySelectorAll('.option').forEach(function (option) {
-        option.addEventListener('click', function () {
-            document.querySelector('.selected-option').textContent = this.textContent;
+    // Ao selecionar uma opção essa função faz o container se fechar automaticamente
+    options.forEach(function (option) {
+        option.addEventListener('click', function (event) {
+            event.stopPropagation(); 
+            selectedOption.textContent = this.textContent;
             dropdownContainer.classList.remove('show');
+            dropdownContent.classList.remove('show');
         });
     });
 
+    // Aqui quando clica em qualquer lugar da tela o container se fecha
+    document.addEventListener('click', function () {
+        dropdownContainer.classList.remove('show')
+        dropdownContent.classList.remove('show');
+    });
+});
 
-    function toggleDropdown() {
-        const dropdownContent = document.querySelector('.dropdown-content');
-        if (dropdownContent) {
-            dropdownContent.style.display = dropdownContent.style.display === 'grid' ? 'none' : 'grid';
+document.addEventListener('DOMContentLoaded', function () {
+    const termosCheckbox = document.getElementById('termos');
+    const botaoProximo = document.getElementById('botaoProximo');
+
+    // Função que verifica o estado do checkbox
+    function verificarCheckbox() {
+        if (termosCheckbox.checked) {
+            botaoProximo.disabled = false;  // Habilita o botão se o checkbox estiver marcado
+            botaoProximo.classList.remove('disabled');  // Remove a classe de desabilitado
+        } else {
+            botaoProximo.disabled = true;   // Desabilita o botão se o checkbox estiver desmarcado
+            botaoProximo.classList.add('disabled');  // Adiciona a classe de desabilitado
         }
     }
 
+    // Executa a função quando o estado do checkbox mudar
+    termosCheckbox.addEventListener('change', verificarCheckbox);
 
+    // Inicializa o botão como desabilitado ao carregar a página
+    verificarCheckbox();
 });
 
 
 
 
 
-let categoria = '';
 
-function selecionarCategoria(option) {
-    categoria = option;
-    document.getElementById('categoriaSelecionada').textContent = option;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let categoria;
+let imagensBase64 = []; 
+
+
+function lerImagem(input) {
+    const files = input.files;
+    imagensBase64 = []; 
+
+    Array.from(files).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            imagensBase64.push(e.target.result); 
+        };
+        reader.readAsDataURL(file); 
+    });
+}
+
+
+document.getElementById('fileInput').addEventListener('change', function () {
+    lerImagem(this);
+});
+
+function selecionarCategoria(opcao) {
+    categoria = opcao; 
+    document.getElementById('categoriaSelecionada').innerText = opcao; 
 }
 
 document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
@@ -49,7 +112,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         city: document.getElementById('city').value,
         state: document.getElementById('state').value,
         cep: document.getElementById('cep').value,
-        photos: [], // A ser implementado caso necessário
+        photos: imagensBase64, 
         rooms: document.getElementById('quarto').value,
         bathrooms: document.getElementById('banheiro').value,
         garage: document.getElementById('garagem').value,
@@ -57,7 +120,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         description: document.getElementById('descricao').value,
     };
 
-    // Verifica se há campos vazios, exceto 'photos' e 'categoria'
+    
     const missingFields = [];
     for (const key in dados) {
         if (!dados[key] && key !== 'photos' && key !== 'categoria') {
@@ -67,14 +130,16 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
 
     if (missingFields.length > 0) {
         alert('Por favor, preencha todos os campos obrigatórios: ' + missingFields.join(', '));
-        return; 
+        return;
     }
 
-    // Salva os dados no localStorage
+    
     localStorage.setItem('cadastroAnuncio', JSON.stringify(dados));
+
+    console.log('Dados armazenados no localStorage:', JSON.parse(localStorage.getItem('cadastroAnuncio')));
     alert('Dados salvos com sucesso.');
 
-    // Você pode redirecionar ou realizar outra ação após salvar os dados
+    
     window.location.href = '../filters-screen/index.html';
 });
 
@@ -83,10 +148,22 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 //TO ACHANDO QUE ISSO AQUI NÃO VAI SER NECESSARIO NESSA TELA
-/*
+
 // Submissão do formulário
-document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
+/*document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const dados = {
@@ -121,7 +198,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
     }
 
     // Envio dos dados para o backend
-    fetch('http://localhost:3000/cadastroAnuncio', {
+    fetch('http://localhost:3000/realty', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -179,7 +179,8 @@ cepbotao:hover {
 }
 
 .dropdown-content {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, auto);
     position: absolute;
@@ -190,6 +191,12 @@ cepbotao:hover {
     padding: 10px;
     z-index: 1;
     width: 900px;
+}
+
+.dropdown-container.show .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .fotostext {
@@ -365,6 +372,16 @@ cepbotao:hover {
     font-size: 25px;
 }
 
+.botao:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.botao.disabled {
+    pointer-events: none;  /* Impede que o botão seja clicado */
+}
+
 .botao:hover {
     background-color: purple;
 }
@@ -377,4 +394,53 @@ h2 {
     margin-left: 33%;
     margin-top: 5%;
     margin-bottom: 1%;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer; 
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none; 
+}
+
+
+.custom-checkbox {
+    width: 20px; 
+    height: 20px; 
+    border: 2px solid #6c63ff; 
+    border-radius: 4px; 
+    position: relative;
+    transition: background-color 0.3s ease; 
+}
+
+.checklabel{
+    position: relative;
+    margin-left: 33%;
+}
+.checkbox-container input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #6c63ff;}
+
+.checkbox-container input[type="checkbox"]:checked + .custom-checkbox::after {
+    content: ''; 
+    position: absolute;
+    top: 2px; 
+    left: 6px; 
+    width: 5px; 
+    height: 10px; 
+    border: solid white;
+    border-width: 0 2px 2px 0; 
+    transform: rotate(45deg); 
+
+
+.checkbox-label {
+    margin-left: 8px; 
+    font-size: 16px; 
+    color: #333; 
+}}
+.checkbox-container input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #6c63ff; 
+    transform: scale(1.1);
 }

@@ -24,8 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const data = await response.json();
-            localStorage.setItem('token', data.access_token); 
+            localStorage.setItem('token', data.token); 
             document.getElementById('feedback').innerText = 'Login bem-sucedido!';
+            console.log('Token gerado:', data.token);
 
            
             window.location.href = '../initial-screen/index.html'; 
