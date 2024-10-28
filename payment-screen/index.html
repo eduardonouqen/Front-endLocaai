@@ -62,6 +62,19 @@
                 <p>Taxas: R$ --,--</p>
                 <h3>Total: R$ 3500,00</h3>
             </div>
+
+            <div id="card-details" class="card-details" style="display: none;">
+                <h3>Insira os dados do cartão</h3>
+                <input type="text" placeholder="Número do cartão" class="card-input">
+                <input type="text" placeholder="Nome do titular do cartão" class="card-input">
+                <input type="text" placeholder="Validade (MM/AA)" class="card-input half-width">
+                <input type="text" placeholder="CVV" class="card-input half-width">
+                <input type="text" placeholder="CPF/CNPJ do titular" class="card-input">
+                <div class="save-card-checkbox">
+                    <input type="checkbox" id="save-card">
+                    <label for="save-card">Salvar cartão para próximas compras</label>
+                </div>
+            </div>
         </div>
 
         <div class="service-summary">
@@ -88,6 +101,20 @@
             </div>
         </div>
     </div>
-</body>
 
+    <script>
+        document.getElementById("credit-card").addEventListener("change", function() {
+            document.getElementById("card-details").style.display = "block";
+        });
+        document.getElementById("debit-card").addEventListener("change", function() {
+            document.getElementById("card-details").style.display = "block";
+        });
+        document.getElementById("mercado-pago").addEventListener("change", function() {
+            document.getElementById("card-details").style.display = "none";
+        });
+        document.getElementById("pix").addEventListener("change", function() {
+            document.getElementById("card-details").style.display = "none";
+        });
+    </script>
+</body>
 </html>

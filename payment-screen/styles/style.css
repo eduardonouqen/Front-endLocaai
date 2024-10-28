@@ -124,3 +124,59 @@ button {
     border: none;
     cursor: pointer;
 }
+
+.card-details {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-details h3 {
+    font-size: 1.3em;
+    color: #800080;
+    margin-bottom: 15px;
+}
+
+.card-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.card-input.half-width {
+    width: 48%;
+    display: inline-block;
+}
+
+.save-card-checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.save-card-checkbox label {
+    margin-left: 8px;
+    font-size: 0.95em;
+    color: #666;
+}
+
+button, .validate-coupon, .remove-service, .pay-button {
+    background-color: #800080;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover, .validate-coupon:hover, .remove-service:hover, .pay-button:hover {
+    background-color: #5a005a;
+}
+
