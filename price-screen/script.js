@@ -83,3 +83,83 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+
+
+
+
+
+
+// Recupera os dados do localStorage
+const dadosAnuncio = JSON.parse(localStorage.getItem('cadastroAnuncio')); // Dados de anúncio (realty)
+const filtrosSelecionados = JSON.parse(localStorage.getItem('selectedFilters')); // Dados de filtros (filters)
+
+// Configura as URLs dos seus endpoints no backend
+const urlRealty = 'http://localhost:3000/realty';
+const urlFilters = 'http://localhost:3000/filters';
+
+// Função para enviar os dados do anúncio (realty)
+function enviarAnuncio() {
+    return fetch(urlRealty, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dadosAnuncio)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Resposta do backend para realty:', data);
+        
+        // Verifica se o ID do anúncio foi retornado
+        if (data.id) {
+            // Armazena o ID do anúncio retornado para a segunda requisição
+            return data.id;
+        } else {
+            throw new Error('Falha ao receber ID do anúncio');
+        }
+    });
+}
+
+// Função para enviar os dados de filtros, relacionando com o ID do anúncio
+function enviarFiltros(idAnuncio) {
+    const dadosFiltros = {
+        realtyId: idAnuncio,     // Associa o ID do anúncio aos filtros
+        filters: filtrosSelecionados // Inclui os filtros selecionados
+    };
+
+    return fetch(urlFilters, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dadosFiltros)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Resposta do backend para filters:', data);
+        alert('Dados enviados com sucesso!');
+    });
+}
+
+// Função principal para enviar as requisições em sequência
+function enviarDados() {
+    enviarAnuncio()
+        .then(idAnuncio => enviarFiltros(idAnuncio)) // Envia filtros com o ID do anúncio
+        .catch(error => {
+            console.error('Erro ao enviar dados:', error);
+            alert('Falha ao enviar dados.');
+        });
+}
+
+// Chama a função enviarDados quando necessário
+enviarDados();
+
+
+
+
+
+
+
+
+

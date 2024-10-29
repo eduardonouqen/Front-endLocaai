@@ -41,23 +41,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+// Seleciona o contêiner onde serão exibidas as opções selecionadas
 const selectedItemsContainer = document.getElementById('selectedItems');
-    const nextButton = document.getElementById('nextButton');
-    const selectedOptions = [];
+// Seleciona o botão "PRÓXIMO"
+const nextButton = document.querySelector('.button-next');
+// Array para armazenar as opções selecionadas
+const selectedOptions = [];
 
-    document.querySelectorAll('.opcao').forEach(opcao => {
-        opcao.addEventListener('click', () => {
-            const value = opcao.dataset.value;
-            if (!selectedOptions.includes(value)) {
-                selectedOptions.push(value);
-                const selectedDiv = document.createElement('div');
-                selectedDiv.textContent = value;
-                selectedItemsContainer.appendChild(selectedDiv);
-            }
-        });
+// Adiciona evento de clique a cada elemento de categoria
+document.querySelectorAll('.opcao').forEach(opcao => {
+    opcao.addEventListener('click', () => {
+        const value = opcao.dataset.value; // Obtém o valor da opção (categoria)
+        
+        // Verifica se a categoria já foi selecionada, para não adicionar duplicados
+        if (!selectedOptions.includes(value)) {
+            selectedOptions.push(value); // Adiciona a categoria ao array
+            
+            // Cria um elemento <div> para exibir a categoria selecionada
+            const selectedDiv = document.createElement('div');
+            selectedDiv.textContent = value;
+            selectedItemsContainer.appendChild(selectedDiv);
+        }
     });
+});
 
-    nextButton.addEventListener('click', () => {
-        localStorage.setItem('selectedFilters', JSON.stringify(selectedOptions));
-        location.href = '../price-screen/index.html';
-    });
+// Evento de clique para o botão "PRÓXIMO"
+nextButton.addEventListener('click', () => {
+    // Armazena as opções selecionadas no localStorage
+    localStorage.setItem('selectedFilters', JSON.stringify(selectedOptions));
+    // Redireciona para a próxima página
+    location.href = '../price-screen/index.html';
+});
