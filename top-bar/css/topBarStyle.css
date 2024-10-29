@@ -159,6 +159,10 @@ input[type="number"]::-webkit-outer-spin-button {
     position: absolute;
     top: 80px;
     z-index: 1;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .categoriesBar.show {
@@ -175,6 +179,10 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .categoriesBar::-webkit-scrollbar {
     display: none;
+}
+
+.categoriesBar:active {
+    cursor: grabbing;
 }
 
 .announcementButton {
