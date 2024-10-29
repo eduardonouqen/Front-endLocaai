@@ -298,14 +298,14 @@ header .user-info-header .badge {
 
 .user-about textarea {
     width: 65%;
-    height: 200px;
+    max-height: 159px;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
     background-color: #f5f5f5;
     font-family: Arial, sans-serif;
     resize: none;
-    outline: none;
+    font-size: 16px;
 }
 
 #save-about-button {
