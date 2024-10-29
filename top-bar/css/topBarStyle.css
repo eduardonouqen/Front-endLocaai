@@ -147,7 +147,7 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 11px;
 }
 
-.filtersBar {
+.categoriesBar {
     display: none;
     background-color: #e5e5e5;
     height: 80px;
@@ -157,12 +157,20 @@ input[type="number"]::-webkit-outer-spin-button {
     z-index: 1;
 }
 
-.filtersBar.show {
-    display: block;
+.categoriesBar.show {
+    display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
+    align-items: center;
     max-height: 80px;
     z-index: 999;
     position: -webkit-sticky;
     position: sticky;
+    scrollbar-width: none;
+}
+
+.categoriesBar::-webkit-scrollbar {
+    display: none;
 }
 
 .announcementButton {
@@ -182,4 +190,23 @@ input[type="number"]::-webkit-outer-spin-button {
 .announcementButtonAlign {
     margin-left: 2.7rem;
     margin-right: 3rem;
+}
+
+.categoriesBarImage {
+    width: 2.5rem;
+    height: auto;
+}
+
+.categoriesAlignTopBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    height: 100%;
+}
+
+.categoriesAlignTopBar2 {
+    display: flex;
+    flex-direction: row;
 }
