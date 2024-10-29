@@ -166,7 +166,6 @@ body {
     padding: 20px;
 }
 
-
 .header {
     background-color: #4B006D;
     padding: 10px;
@@ -195,77 +194,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-.ad-promotion {
-    display: flex;
-    gap: 20px;
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.ad-image img {
-    width: 150px;
-    border-radius: 10px;
-}
-
-.ad-details {
-    flex-grow: 1;
-}
-
-.ad-details h2 {
-    font-size: 20px;
-    color: #333;
-}
-
-.ad-details p {
-    font-size: 16px;
-    color: #666;
-    margin: 10px 0;
-}
-
-.dates input {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-top: 1rem;
-}
-
-.buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-.cancel-btn {
-    background-color: #D3C1C1;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: #333;
-    cursor: pointer;
-}
-
-.confirm-btn {
-    background-color: #4B006D;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    margin-right: 2.5rem;
-}
-
-.cancel-btn:hover, .confirm-btn:hover {
-    opacity: 0.8;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
 .ad-image {
     position: relative;
     width: 100%;
@@ -277,45 +205,9 @@ input[type="number"]::-webkit-outer-spin-button {
     justify-content: center; 
     align-items: center;
 }
-.ad-image img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-}
 
 #ad-image input[type="file"] {
     display: none;
-}
-
-#image-upload {
-    margin-left: 65%; 
-   
-}
-
-#prevImage, #nextImage {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
-    z-index: 1; 
-}
-
-#prevImage {
-    left: 10px;
-}
-
-#nextImage {
-    right: 10px;
-}
-
-#prevImage:hover, #nextImage:hover {
-    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .image-preview-container {
@@ -349,4 +241,31 @@ button:hover {
 button:disabled {
     background-color: grey;
     cursor: not-allowed;
+}
+
+.dates input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.cancel-btn {
+    background-color: #D3C1C1;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.confirm-btn {
+    background-color: #A142D4;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }
