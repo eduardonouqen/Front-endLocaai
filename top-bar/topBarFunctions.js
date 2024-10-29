@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', () => {
     const buttonFilters = document.getElementById('toggleButton');
-    const filtersBar = document.getElementById('filtersBar');
-    let isFiltersBarVisible = false;
+    const categoriesBar = document.getElementById('categoriesBar');
+    let isCategoriesBarVisible = false;
 
     buttonFilters.addEventListener('click', () => {
-        isFiltersBarVisible = !isFiltersBarVisible;
-        filtersBar.classList.toggle('show', isFiltersBarVisible);
-        buttonFilters.classList.toggle('active', isFiltersBarVisible);
+        isCategoriesBarVisible = !isCategoriesBarVisible;
+        categoriesBar.classList.toggle('show', isCategoriesBarVisible);
+        buttonFilters.classList.toggle('active', isCategoriesBarVisible);
     });
 });
 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (token) {
         const base64Url = token.split('.')[1];
         const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
 
@@ -39,19 +39,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.getElementById('logo').addEventListener('click', function() {
+document.getElementById('logo').addEventListener('click', function () {
     window.location.href = '../initial-screen/index.html';
 });
 
 
-document.querySelector('.announcementButton').addEventListener('click', function() {
-    const userToken = localStorage.getItem('token'); 
+document.querySelector('.announcementButton').addEventListener('click', function () {
+    const userToken = localStorage.getItem('token');
 
     if (userToken) {
-        
+
         window.location.href = "../announcementregister-screen/index.html";
     } else {
-        
+
         window.location.href = "../login-screen/index.html";
     }
 });
