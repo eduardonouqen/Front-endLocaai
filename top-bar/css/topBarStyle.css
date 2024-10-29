@@ -90,6 +90,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .buttonSearch:hover {
     background-color: #8830b8;
+    cursor: pointer;
 }
 
 .buttonFilters {
@@ -110,6 +111,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .buttonFilters:hover {
     background-color: #8830b8;
+    cursor: pointer;
 }
 
 .buttonFilters.active {
@@ -141,10 +143,12 @@ input[type="number"]::-webkit-outer-spin-button {
 .textName {
     color: white;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .locatorLevel {
     font-size: 11px;
+    cursor: pointer;
 }
 
 .categoriesBar {
@@ -185,6 +189,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .announcementButton:hover {
     background-color: #b06d15;
+    cursor: pointer;
 }
 
 .announcementButtonAlign {
@@ -215,6 +220,7 @@ input[type="number"]::-webkit-outer-spin-button {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .categoriesAlignTopBar2 {
