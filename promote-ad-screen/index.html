@@ -9,9 +9,17 @@
     <link rel="icon" type="icon/png" href="img/icon.png">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <script src="../top-bar/topBarFunctions.js" defer></script>
+    <script src="./JS/script.js"></script>
+    <style>
+        #valor-total {
+            margin-top: 20px;
+            font-size: 17px;
+            /* font-weight: bold; */
+            color: #000; /* Cor para o texto */
+        }
+    </style>
 </head>
 <body>
-
     <div class="searchBar">
         <img class="logoTop" src="../top-bar/img/logoLado.png">
         <div class="searchBar2">
@@ -61,6 +69,42 @@
             <button id="confirmButton" class="confirm-btn">Confirmar</button>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function calcularDiferencaDias(dataInicio, dataFim) {
+            const umDiaEmMilissegundos = 1000 * 60 * 60 * 24;
+            const diferencaEmMilissegundos = new Date(dataFim) - new Date(dataInicio);
+            return Math.ceil(diferencaEmMilissegundos / umDiaEmMilissegundos); 
+        }
+
+        function calcularValor() {
+            const dataInicio = document.getElementById('data-inicio').value;
+            const dataFim = document.getElementById('data-final').value;
+
+            console.log("Data de Início:", dataInicio);
+            console.log("Data Final:", dataFim);
+
+            if (dataInicio && dataFim) {
+                const diferencaDias = calcularDiferencaDias(dataInicio, dataFim);
+                console.log("Diferença em Dias:", diferencaDias);
+
+                if (diferencaDias >= 0) {
+                    const valorBase = 180;
+                    const valorTotal = Math.ceil(diferencaDias / 3) * valorBase;
+                    console.log("Valor Total:", valorTotal);
+
+                    document.getElementById('valor-total').textContent = valorTotal.toLocaleString('pt-BR', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    });
+                } else {
+                    alert("A data final deve ser posterior à data de início.");
+                }
+            }
+        }
+
+        document.getElementById('data-inicio').addEventListener('change', calcularValor);
+        document.getElementById('data-final').addEventListener('change', calcularValor);
+    </script>
 </body>
 </html>
