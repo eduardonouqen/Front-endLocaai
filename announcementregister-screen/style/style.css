@@ -5,7 +5,9 @@ body {
     font-size: 18px;
     margin-bottom: 10px;
     display: block;
+
 }
+
 
 .inicioRoxo {
     width: 100%;
@@ -38,7 +40,7 @@ body {
 .infotecnica {
     width: 10%;
     height: 30px;
-    margin-left: 10%;
+    margin-left: 11%;
     margin-top: 5%;
     margin-bottom: 4%;
     border-radius: 5px;
@@ -201,7 +203,8 @@ cepbotao:hover {
 
 .fotostext {
     margin-top: 5%;
-    margin-left: 48%;
+    display: flex;
+    justify-content: center;
 }
 
 #image-preview-container {
@@ -242,12 +245,14 @@ cepbotao:hover {
 }
 
 .mais {
-    margin-left: 45%;
     width: 50%;
     height: 30%;
 }
 
-
+.alignMais {
+    display: flex;
+    justify-content: center;
+}
 
 @media (max-width: 768px) {
 
@@ -310,7 +315,6 @@ cepbotao:hover {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    margin-left: 15%;
 }
 
 
@@ -319,7 +323,6 @@ cepbotao:hover {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
-    margin-right: 10%;
 }
 
 
@@ -342,14 +345,16 @@ cepbotao:hover {
     background-color: #D9D9D9;
     border-radius: 20px;
     margin-left: 10%;
+    margin-right: 10%;
     box-sizing: border-box;
     resize: none;
 }
 
 .aoAnunciar {
-    margin-top: 10%;
-    margin-left: 25%;
-    margin-right: 20%;
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .botao {
@@ -391,9 +396,8 @@ h1 {
 }
 
 h2 {
-    margin-left: 33%;
-    margin-top: 5%;
-    margin-bottom: 1%;
+    display: flex;
+    justify-content: center;
 }
 
 .checkbox-container {
@@ -416,10 +420,6 @@ h2 {
     transition: background-color 0.3s ease; 
 }
 
-.checklabel{
-    position: relative;
-    margin-left: 33%;
-}
 .checkbox-container input[type="checkbox"]:checked + .custom-checkbox {
     background-color: #6c63ff;}
 
