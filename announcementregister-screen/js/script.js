@@ -112,7 +112,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         city: document.getElementById('city').value,
         state: document.getElementById('state').value,
         cep: document.getElementById('cep').value,
-        photos: imagensBase64, 
+        //photos: imagensBase64, 
         rooms: document.getElementById('quarto').value,
         bathrooms: document.getElementById('banheiro').value,
         garage: document.getElementById('garagem').value,

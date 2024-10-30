@@ -22,7 +22,6 @@ a{
     color: inherit;
 }
 
-/* Responsividade */
 .propriedades-container {
     margin: 30px auto;
     padding: 2%;
@@ -179,3 +178,19 @@ a{
     background-color: #3a065a;
 }
 
+.chat-button {
+    background-color: #4D0872;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.chat-button:hover {
+    background-color: #3a065a;
+}

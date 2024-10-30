@@ -40,7 +40,7 @@
 
 .imageContainer {
     width: 70%;
-    height: 300px;
+    height: 100%;
     margin-top: 10px;
     position: relative;
 }
@@ -54,6 +54,7 @@
 .shareIcon {
     width: 20px;
     margin-left: 10%;
+    cursor: pointer;
 }
 
 .iconsAlign {
@@ -74,6 +75,7 @@
     width: 20px;
     height: 20px;
     margin-left: 100%;
+    cursor: pointer;
 }
 
 .switchBanner.active {
@@ -163,6 +165,7 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 1.2rem;
+    cursor: pointer;
 }
 
 .functionalButtonsImg {
@@ -179,6 +182,7 @@
     font-weight: 600;
     font-size: 1.5rem;
     width: 100%;
+    cursor: pointer;
 }
 
 .whiteLine {
@@ -234,12 +238,14 @@
     border-radius: 1.2rem;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .bookButtonLabel {
     color: white;
     font-weight: 600;
     font-size: 2rem;
+    cursor: pointer;
 }
 
 .silverDivision {
@@ -476,4 +482,34 @@
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     border-radius: 2rem;
+}
+
+.moreImagesButton {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    border-color: #4D0872;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 2px;
+    cursor: pointer;
+}
+
+.moreImagesButtonLabel {
+    color: #4D0872;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.moreImagesButtonImg {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
 }

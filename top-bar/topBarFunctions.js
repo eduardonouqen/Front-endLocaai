@@ -55,3 +55,34 @@ document.querySelector('.announcementButton').addEventListener('click', function
         window.location.href = "../login-screen/index.html";
     }
 });
+
+const categoriesBar = document.querySelector('.categoriesBar');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+categoriesBar.addEventListener('mousedown', (e) => {
+    isDown = true;
+    categoriesBar.classList.add('active');
+    startX = e.pageX - categoriesBar.offsetLeft;
+    scrollLeft = categoriesBar.scrollLeft;
+});
+
+categoriesBar.addEventListener('mouseleave', () => {
+    isDown = false;
+    categoriesBar.classList.remove('active');
+});
+
+categoriesBar.addEventListener('mouseup', () => {
+    isDown = false;
+    categoriesBar.classList.remove('active');
+});
+
+categoriesBar.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - categoriesBar.offsetLeft;
+    const walk = (x - startX) * 1;
+    categoriesBar.scrollLeft = scrollLeft - walk;
+});

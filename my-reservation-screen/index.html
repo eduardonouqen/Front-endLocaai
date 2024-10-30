@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <title>Minhas Reservas</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="icon/png" href="../top-bar/img/icon.png">
+    <script src="../top-bar/topBarFunctions.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
+    <script>
+        function toggleFavorite(icon) {
+            const bannerOn = "../favorites-screen/img/bannerOn.png";
+            const bannerOff = "../favorites-screen/img/bannerOff.png";
+            if (icon.src.includes("bannerOn.png")) {
+                icon.src = bannerOff;
+            } else {
+                icon.src = bannerOn;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="searchBar">
+        <img id="logo" class="logoTop" src="../top-bar/img/logoLado.png">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
+        </div>
+        <div>
+            <button class="announcementButton">ANUNCIE!</button>
+        </div>
+        <a href="../profile-screen/index.html">
+            <div class="picAndLabels">
+                <div class="textLocatorInfo">
+                    <label class="textName">Eduardo França</label>
+                    <label class="locatorLevel">Locador Ouro</label>
+                </div>
+                <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
+            </div>
+        </a>
+    </div>
+    <div id="filtersBar" class="filtersBar"></div>
+
+    <div class="container propriedades-container">
+        <h2 class="titulo">Minhas Reservas</h2>
+        <div class="propriedade-card">
+            <img class="favoritarIcon" src="../favorites-screen/img/bannerOff.png" alt="Favoritar ícone" onclick="toggleFavorite(this)">
+            <a href="../announcement-screen/index.html">
+                <img src="../property-management-screen/img/castelo.png" alt="Imagem da propriedade" class="propriedade-imagem">
+            </a>
+            <div class="propriedade-info">
+                <div class="infosprop">
+                    <a href="../announcement-screen/index.html">
+                        <p> <strong> Nome da Propriedade: </strong> ‎ Castelo de Eichenwalde</p>
+                    </a>
+                    <p> <strong> Endereço: </strong> ‎ Vila Velha, Alemanha</p>
+                    <p> <strong> De: </strong> ‎ 29/10/2024 ‎ ‎ ‎ <strong> Check-In: ‎ </strong> 13:00</p>
+                    <p> <strong> Até:</strong>‎  30/10/2024 ‎ ‎ <strong> Check-Out: ‎ </strong> 22:00</p>
+                </div>
+                <button class="chat-button">Fale com o locador</button>
+            </div>
+        </div>
+</body>
+
+</html>
