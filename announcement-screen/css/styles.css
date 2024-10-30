@@ -40,7 +40,7 @@
 
 .imageContainer {
     width: 70%;
-    height: 300px;
+    height: 100%;
     margin-top: 10px;
     position: relative;
 }
@@ -482,4 +482,34 @@
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     border-radius: 2rem;
+}
+
+.moreImagesButton {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    border-color: #4D0872;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 2px;
+    cursor: pointer;
+}
+
+.moreImagesButtonLabel {
+    color: #4D0872;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.moreImagesButtonImg {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
 }
