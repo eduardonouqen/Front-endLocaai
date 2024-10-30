@@ -114,7 +114,7 @@
         </div>
 
         <p class="fotostext">Fotos</p>
-        <div>
+        <div class="alignMais">
             <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
             <label for="fileInput" class="image-placeholder">
                 <img id="previewImage" src="img/mais.png" class="mais">
@@ -132,15 +132,12 @@
         <form id="formCadastroAnuncio">
             
             
-            <div class="checklabel">
-                <input type="checkbox" id="termos" required>
-                <label for="termos">Eu aceito os termos de uso.</label>
-            </div>
+            
         
         </form>
         <div class="aoAnunciar">
-            <p>Ao anunciar, você estara concordando com nossos <a href="../terms-of-use/index.html">termos de uso</a></p>
-            
+            <input type="checkbox" id="termos" required>
+            <p style="margin-left: 5px;">Ao marcar, você estara concordando com nossos <a href="../terms-of-use/index.html">termos de uso</a></p>
         </div>
         <button type="submit" class="botao" id="botaoProximo">Proximo</button>
     </div>
