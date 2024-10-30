@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Locaai - O Seu Site de Eventos</title>
+    <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
+    <link rel="stylesheet" type="text/css" href="style/styles.css">
+    <link rel="icon" type="icon/png" href="../initial-screen/img/icon.png">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="../top-bar/topBarFunctions.js" defer></script>
+</head>
+
+<body>
+    <div class="searchBar">
+        <img id="logo" class="logoTop" src="../top-bar/img/logoLado.png">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
+        </div>
+        <div>
+            <button class="announcementButton">ANUNCIE!</button>
+        </div>
+        <a href="../profile-screen/index.html">
+            <div class="picAndLabels">
+                <div class="textLocatorInfo">
+                    <label class="textName">Eduardo França</label>
+                    <label class="locatorLevel">Locador Ouro</label>
+                </div>
+                <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
+            </div>
+        </a>
+    </div>
+    <div id="filtersBar" class="filtersBar"></div>
+    <script src="js/script.js"></script>
+
+    <div class="placesLine">
+        <div class="placeContainer">
+            <img class="placeImage" src="../initial-screen/img/eichenwaldeTest.png">
+            <div class="otherAlign">
+                <div class="placeTop">
+                    <label id="placeFont" class="placeName">Castelo de Eichenwalde</label>
+                    <label id="placeFont" class="placeOwner">Por: Eduardo França</label>
+                    <div class="placePriceDiv">
+                        <label id="placeFont" class="placePrice">R$ 1500</label>
+                        <label id="placeFont">por diária</label>
+                    </div>
+                </div>
+                <div class="alignRating">
+                    <img class="profilePicAd" src="../initial-screen/img/profilePicAd.png">
+                    <div class="ratingSection">
+                        <label class="placePrice">4.5</label>
+                        <img class="ratingStar" src="../initial-screen/img/ratingStar.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="placeContainer">
+            <img class="placeImage" src="../initial-screen/img/eichenwaldeTest.png">
+            <div class="otherAlign">
+                <div class="placeTop">
+                    <label id="placeFont" class="placeName">Castelo de Eichenwalde</label>
+                    <label id="placeFont" class="placeOwner">Por: Eduardo França</label>
+                    <div class="placePriceDiv">
+                        <label id="placeFont" class="placePrice">R$ 1500</label>
+                        <label id="placeFont">por diária</label>
+                    </div>
+                </div>
+                <div class="alignRating">
+                    <img class="profilePicAd" src="../initial-screen/img/profilePicAd.png">
+                    <div class="ratingSection">
+                        <label class="placePrice">4.5</label>
+                        <img class="ratingStar" src="../initial-screen/img/ratingStar.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="placeContainer">
+            <img class="placeImage" src="../initial-screen/img/eichenwaldeTest.png">
+            <div class="otherAlign">
+                <div class="placeTop">
+                    <label id="placeFont" class="placeName">Castelo de Eichenwalde</label>
+                    <label id="placeFont" class="placeOwner">Por: Eduardo França</label>
+                    <div class="placePriceDiv">
+                        <label id="placeFont" class="placePrice">R$ 1500</label>
+                        <label id="placeFont">por diária</label>
+                    </div>
+                </div>
+                <div class="alignRating">
+                    <img class="profilePicAd" src="../initial-screen/img/profilePicAd.png">
+                    <div class="ratingSection">
+                        <label class="placePrice">4.5</label>
+                        <img class="ratingStar" src="../initial-screen/img/ratingStar.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="placeContainer">
+            <img class="placeImage" src="../initial-screen/img/eichenwaldeTest.png">
+            <div class="otherAlign">
+                <div class="placeTop">
+                    <label id="placeFont" class="placeName">Castelo de Eichenwalde</label>
+                    <label id="placeFont" class="placeOwner">Por: Eduardo França</label>
+                    <div class="placePriceDiv">
+                        <label id="placeFont" class="placePrice">R$ 1500</label>
+                        <label id="placeFont">por diária</label>
+                    </div>
+                </div>
+                <div class="alignRating">
+                    <img class="profilePicAd" src="../initial-screen/img/profilePicAd.png">
+                    <div class="ratingSection">
+                        <label class="placePrice">4.5</label>
+                        <img class="ratingStar" src="../initial-screen/img/ratingStar.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="buttonNewFilter" id="newFilterButton">
+            <img src="img/filter.png" alt="Filter">
+        </button>
+    </div>
+    <div id="newFiltersSidebar" class="newFiltersSidebar">
+        <div>
+            <h2>Local:</h2>
+            <div class="fontsize">
+            <input type="checkbox" name="Urbano" id="urban"> Urbano
+            <input type="checkbox" name="Rural" id="rural"> Rural
+            <input type="checkbox" name="Aberto" id="open"> Aberto
+            <input type="checkbox" name="Fechado" id="closed"> Fechado
+        </div>
+        </div>
+        <div>
+            <h2>Permitido:</h2>
+            <div class="fontsize">
+            <input type="checkbox" name="pets" id="pets"> Animais
+            <input type="checkbox" name="sleep" id="sleep"> Dormir no local
+            <input type="checkbox" name="smoke" id="smoke"> Fumar
+            <input type="checkbox" name="kids" id="kids">Crianças
+            </div>
+        </div>
+
+
+    </div>
+    <script src="script/script.js"></script>
+</body>
+
+</html>

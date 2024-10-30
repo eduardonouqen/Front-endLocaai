@@ -1,0 +1,118 @@
+.placeTop {
+    display: flex;
+    flex-direction: column;
+}
+
+#placeFont {
+    font-size: 14px;
+}
+
+.placeImage {
+    border-radius: 20px;
+    width: 230px;
+    height: auto;
+}
+
+.placeContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.placeName {
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.placeOwner {
+    margin-top: 5px;
+}
+
+.placePriceDiv {
+    margin-top: 5px;
+}
+
+.profilePicAd {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.alignRating {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.alignRating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+.ratingSection {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.placePrice {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.ratingStar {
+    width: 15px;
+    height: 15px;
+}
+
+.otherAlign {
+    display: flex;
+    align-items: center;
+}
+
+.placesLine {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttonNewFilter {
+    position: fixed;
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    top: 20%;
+    right: 10px;
+
+}
+
+.buttonNewFilter img {
+    width: 24px;
+    height: 24px;
+}
+
+.newFiltersSidebar {
+    position: fixed;
+    top: 30%;
+    border-radius: 5%;
+    right: -438px; 
+    width: 400px; 
+    height: 60%;
+    background-color: #f8f9fa; 
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: right 0.3s ease; 
+    padding: 10px;
+    z-index: 1000;
+}
+
+.newFiltersSidebar.open {
+    right: 0;
+}
