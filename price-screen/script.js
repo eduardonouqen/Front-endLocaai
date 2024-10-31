@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     confirmBtn.addEventListener("click", () => {
         const dadosAnuncio = JSON.parse(localStorage.getItem('cadastroAnuncio'));
-        const filtrosSelecionados = JSON.parse(localStorage.getItem('selectedFilters'));
+        const filtrosSelecionados = JSON.parse(localStorage.getItem('nameFilter'));
 
         const urlRealty = 'http://localhost:3000/realty';
         const urlFilters = 'http://localhost:3000/filters';
@@ -115,10 +115,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const additionalValueValue = parseFloat(additionalValueSpan.innerText.replace("R$", "").replace(",", "."));
 
         // Soma todos os valores
-        const price = current + basePriceValue + serviceFeeValue + additionalValueValue;
+        const price = current + serviceFeeValue + additionalValueValue;
 
         // Adiciona o valor total de `price` ao `dadosAnuncio`
-        dadosAnuncio.price = price;
+        dadosAnuncio.value = price;
 
         function enviarAnuncio() {
             return fetch(urlRealty, {
@@ -144,9 +144,18 @@ document.addEventListener("DOMContentLoaded", () => {
         function enviarFiltros(idAnuncio) {
             const dadosFiltros = {
                 realtyId: idAnuncio,   
-                filters: filtrosSelecionados 
+                nameFilter: filtrosSelecionados 
             };
-
+        
+            // Validação para garantir que filters é um array de strings
+            if (!Array.isArray(dadosFiltros.nameFilter) || !dadosFiltros.nameFilter.every(filter => typeof filter === 'string')) {
+                console.error('filters deve ser um array de strings.');
+                alert('Erro: Os filtros selecionados são inválidos.');
+                return; // Impede o envio se não for válido
+            }
+        
+            console.log('Dados a serem enviados para filtros:', JSON.stringify(dadosFiltros));
+        
             return fetch(urlFilters, {
                 method: 'POST',
                 headers: {
@@ -155,10 +164,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 body: JSON.stringify(dadosFiltros)
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => {
+                        throw new Error(err.message || 'Erro desconhecido');
+                    });
+                }
+                return response.json();
+            })
             .then(data => {
-                console.log('Resposta do backend para filters:', data);
+                console.log('Resposta do backend para filter:', data);
                 alert('Dados enviados com sucesso!');
+            })
+            .catch(error => {
+                console.error('Erro ao enviar filtros:', error);
+                alert('Falha ao enviar filtros: ' + error.message);
             });
         }
 

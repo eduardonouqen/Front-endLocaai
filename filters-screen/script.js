@@ -68,7 +68,7 @@ document.querySelectorAll('.opcao').forEach(opcao => {
 // Evento de clique para o botão "PRÓXIMO"
 nextButton.addEventListener('click', () => {
     // Armazena as opções selecionadas no localStorage
-    localStorage.setItem('selectedFilters', JSON.stringify(selectedOptions));
+    localStorage.setItem('nameFilter', JSON.stringify(selectedOptions));
     // Redireciona para a próxima página
     location.href = '../price-screen/index.html';
 });
