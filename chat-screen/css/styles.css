@@ -1,0 +1,30 @@
+.chatsAndMessages {
+    display: flex;
+    height: calc(100vh - 160px);
+}
+
+.chatsDiv {
+    width: 25%;
+    background-color: rgb(245, 245, 245);
+}
+
+.messagesDiv {
+    width: 75%;
+    background-color: white;
+}
+
+.chatBoxDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.chatBox {
+    padding-left: 35%;
+    padding-right: 35%;
+    border-radius: 50rem;
+    resize: none;
+    border-style: solid;
+    border-color: #e7e7e7;
+    border-width: 2px;
+    text-align: justify;
+}
