@@ -36,114 +36,79 @@
         </a>
     </div>
     <div id="filtersBar" class="filtersBar"></div>
+    
+
+    <div class="placesLine" id="placesContainer"></div>
+
+<script>
+    async function fetchProperties() {
+    const response = await fetch('http://localhost:3000/realty'); // Verifique se a URL está correta
+    if (!response.ok) {
+        throw new Error('Falha ao buscar propriedades');
+    }
+    const data = await response.json();
+    console.log('Dados das propriedades:', data); // Log da resposta da API
+    return data;
+}
+
+    async function fetchUsers() {
+        const response = await fetch('http://localhost:3000/users'); // Verifique se a URL está correta
+        if (!response.ok) {
+            throw new Error('Falha ao buscar usuários');
+        }
+        return await response.json();
+    }
+
+    async function displayProperties() {
+        try {
+            const properties = await fetchProperties();
+            const users = await fetchUsers();
+            const placesContainer = document.getElementById("placesContainer");
+
+            
+
+            properties.forEach(property => {
+                // Encontre o usuário correspondente usando o ownerId
+                const owner = users.find(user => user.id === String(property.userId)); // Converte user_id para string // Ajuste conforme a estrutura do seu objeto
+
+                console.log('Propriedade:', property);
+                console.log('Dono encontrado:', owner);
+
+                const placeContainer = document.createElement("div");
+                placeContainer.className = "placeContainer";
+
+                placeContainer.innerHTML = `
+                    <img class="placeImage" src="${property.image_url ? property.image_url : './img/eichenwaldeTest.png'}">
+                    <div class="otherAlign">
+                        <div class="placeTop">
+                            <label id="placeFont" class="placeName">${property.title}</label>
+                            <label id="placeFont" class="placeOwner">Por: ${property ? property.userId.name : 'Desconhecido'}</label>
+                            <div class="placePriceDiv">
+                                <label id="placeFont" class="placePrice">R$ ${property.value}</label>
+                                <label id="placeFont">por diária</label>
+                            </div>
+                        </div>
+                        <div class="alignRating">
+                            <img class="profilePicAd" src="${owner ? owner.profile_pic_url : './img/profilePicAd.png'}">
+                            <div class="ratingSection">
+                                <label class="placePrice">${property.rating}</label>
+                                <img class="ratingStar" src="./img/ratingStar.png">
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                placesContainer.appendChild(placeContainer);
+            });
+        } catch (error) {
+            console.error('Erro ao exibir propriedades:', error);
+        }
+    }
+
+    // Call the function to display properties when the page loads
+    window.onload = displayProperties;
+</script>
     <script src="js/script.js"></script>
-
-    <div class="placesLine">
-        <div class="placeContainer">
-            <img class="placeImage" src="./img/eichenwaldeTest.png">
-            <div class="otherAlign">
-                <div class="placeTop">
-                    <label id="placeFont" class="placeName">Castelo de Eichenwalde</label>
-                    <label id="placeFont" class="placeOwner">Por: Eduardo França</label>
-                    <div class="placePriceDiv">
-                        <label id="placeFont" class="placePrice">R$ 1500</label>
-                        <label id="placeFont">por diária</label>
-                    </div>
-                </div>
-                <div class="alignRating">
-                    <img class="profilePicAd" src="./img/profilePicAd.png">
-                    <div class="ratingSection">
-                        <label class="placePrice">4.5</label>
-                        <img class="ratingStar" src="./img/ratingStar.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="placeContainer">
-            <img class="placeImage" src="./img/eichenwaldeTest.png">
-            <div class="otherAlign">
-                <div class="placeTop">
-                    <label id="placeFont" class="placeName">Castelo de Eichenwalde</label>
-                    <label id="placeFont" class="placeOwner">Por: Eduardo França</label>
-                    <div class="placePriceDiv">
-                        <label id="placeFont" class="placePrice">R$ 1500</label>
-                        <label id="placeFont">por diária</label>
-                    </div>
-                </div>
-                <div class="alignRating">
-                    <img class="profilePicAd" src="./img/profilePicAd.png">
-                    <div class="ratingSection">
-                        <label class="placePrice">4.5</label>
-                        <img class="ratingStar" src="./img/ratingStar.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="placeContainer">
-            <img class="placeImage" src="./img/eichenwaldeTest.png">
-            <div class="otherAlign">
-                <div class="placeTop">
-                    <label id="placeFont" class="placeName">Castelo de Eichenwalde</label>
-                    <label id="placeFont" class="placeOwner">Por: Eduardo França</label>
-                    <div class="placePriceDiv">
-                        <label id="placeFont" class="placePrice">R$ 1500</label>
-                        <label id="placeFont">por diária</label>
-                    </div>
-                </div>
-                <div class="alignRating">
-                    <img class="profilePicAd" src="./img/profilePicAd.png">
-                    <div class="ratingSection">
-                        <label class="placePrice">4.5</label>
-                        <img class="ratingStar" src="./img/ratingStar.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="placeContainer">
-            <img class="placeImage" src="./img/eichenwaldeTest.png">
-            <div class="otherAlign">
-                <div class="placeTop">
-                    <label id="placeFont" class="placeName">Castelo de Eichenwalde</label>
-                    <label id="placeFont" class="placeOwner">Por: Eduardo França</label>
-                    <div class="placePriceDiv">
-                        <label id="placeFont" class="placePrice">R$ 1500</label>
-                        <label id="placeFont">por diária</label>
-                    </div>
-                </div>
-                <div class="alignRating">
-                    <img class="profilePicAd" src="./img/profilePicAd.png">
-                    <div class="ratingSection">
-                        <label class="placePrice">4.5</label>
-                        <img class="ratingStar" src="./img/ratingStar.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="placeContainer">
-            <img class="placeImage" src="./img/eichenwaldeTest.png">
-            <div class="otherAlign">
-                <div class="placeTop">
-                    <label id="placeFont" class="placeName">Castelo de Eichenwalde</label>
-                    <label id="placeFont" class="placeOwner">Por: Eduardo França</label>
-                    <div class="placePriceDiv">
-                        <label id="placeFont" class="placePrice">R$ 1500</label>
-                        <label id="placeFont">por diária</label>
-                    </div>
-                </div>
-                <div class="alignRating">
-                    <img class="profilePicAd" src="./img/profilePicAd.png">
-                    <div class="ratingSection">
-                        <label class="placePrice">4.5</label>
-                        <img class="ratingStar" src="./img/ratingStar.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </body>
 

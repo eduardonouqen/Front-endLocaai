@@ -80,3 +80,15 @@
     align-items: center;
     justify-content: space-between;
 }
+
+#placesContainer {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte */
+    justify-content: flex-start; /* Alinha os itens ao início do contêiner */
+}
+
+.placeContainer {
+    width: calc(20% - 10px); /* Ajuste a largura para 20% menos uma margem */
+    margin: 0 5px 20px; /* Margem lateral de 5px e inferior de 20px */
+    box-sizing: border-box; /* Para incluir padding e margin no cálculo da largura */
+}

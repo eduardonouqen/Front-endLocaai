@@ -183,11 +183,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         enviarAnuncio()
-            .then(idAnuncio => enviarFiltros(idAnuncio))
-            .catch(error => {
-                console.error('Erro ao enviar dados:', error);
-                alert('Falha ao enviar dados.');
-            });
+        .then(idAnuncio => {
+            return enviarFiltros(idAnuncio);
+        })
+        .then(() => {
+            // Redireciona para a nova página após o envio bem-sucedido
+            window.location.href = '../initial-screen/index.html'; // Substitua pela URL desejada
+        })
+        .catch(error => {
+            console.error('Erro ao enviar dados:', error);
+            alert('Falha ao enviar dados.');
+        });
     });
 });
 
