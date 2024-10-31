@@ -105,16 +105,16 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
     event.preventDefault();
 
     const dados = {
-        titulo: document.getElementById('titulo').value,
-        categoria: categoria,
-        address: document.getElementById('adress').value,
-        number: document.getElementById('number').value,
+        title: document.getElementById('titulo').value,
+        category: categoria,
+        adress: document.getElementById('adress').value,
+        no: document.getElementById('number').value,
         city: document.getElementById('city').value,
         state: document.getElementById('state').value,
         cep: document.getElementById('cep').value,
-        photos: imagensBase64, 
-        rooms: document.getElementById('quarto').value,
-        bathrooms: document.getElementById('banheiro').value,
+        //photos: imagensBase64, 
+        room: document.getElementById('quarto').value,
+        bathroom: document.getElementById('banheiro').value,
         garage: document.getElementById('garagem').value,
         area: document.getElementById('area').value,
         description: document.getElementById('descricao').value,

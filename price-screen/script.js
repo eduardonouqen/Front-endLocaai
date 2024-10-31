@@ -90,70 +90,107 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Recupera os dados do localStorage
-const dadosAnuncio = JSON.parse(localStorage.getItem('cadastroAnuncio')); // Dados de anúncio (realty)
-const filtrosSelecionados = JSON.parse(localStorage.getItem('selectedFilters')); // Dados de filtros (filters)
+document.addEventListener("DOMContentLoaded", () => {
+    const confirmBtn = document.getElementById("confirmbtn");
+    const priceDisplay = document.getElementById("price");
+    const basePriceSpan = document.getElementById("base-price");
+    const serviceFeeSpan = document.getElementById("service-fee");
+    const additionalValueSpan = document.getElementById("additional-value");
+    const totalPriceSpan = document.getElementById("total-price");
 
-// Configura as URLs dos seus endpoints no backend
-const urlRealty = 'http://localhost:3000/realty';
-const urlFilters = 'http://localhost:3000/filters';
+    confirmBtn.addEventListener("click", () => {
+        const dadosAnuncio = JSON.parse(localStorage.getItem('cadastroAnuncio'));
+        const filtrosSelecionados = JSON.parse(localStorage.getItem('nameFilter'));
 
-// Função para enviar os dados do anúncio (realty)
-function enviarAnuncio() {
-    return fetch(urlRealty, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dadosAnuncio)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Resposta do backend para realty:', data);
-        
-        // Verifica se o ID do anúncio foi retornado
-        if (data.id) {
-            // Armazena o ID do anúncio retornado para a segunda requisição
-            return data.id;
-        } else {
-            throw new Error('Falha ao receber ID do anúncio');
+        const urlRealty = 'http://localhost:3000/realty';
+        const urlFilters = 'http://localhost:3000/filters';
+
+        // Captura o token do localStorage
+        const token = localStorage.getItem('token');
+
+        // Captura e converte os valores de preço para números
+        const current = parseFloat(priceDisplay.innerText.replace("R$", "").replace(",", "."));
+        const basePriceValue = parseFloat(basePriceSpan.innerText.replace("R$", "").replace(",", "."));
+        const serviceFeeValue = parseFloat(serviceFeeSpan.innerText.replace("R$", "").replace(",", "."));
+        const additionalValueValue = parseFloat(additionalValueSpan.innerText.replace("R$", "").replace(",", "."));
+
+        // Soma todos os valores
+        const price = current + serviceFeeValue + additionalValueValue;
+
+        // Adiciona o valor total de `price` ao `dadosAnuncio`
+        dadosAnuncio.value = price;
+
+        function enviarAnuncio() {
+            return fetch(urlRealty, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(dadosAnuncio)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Resposta do backend para realty:', data);
+                
+                if (data.id) {
+                    return data.id;
+                } else {
+                    throw new Error('Falha ao receber ID do anúncio');
+                }
+            });
         }
+
+        function enviarFiltros(idAnuncio) {
+            const dadosFiltros = {
+                realtyId: idAnuncio,   
+                nameFilter: filtrosSelecionados 
+            };
+        
+            // Validação para garantir que filters é um array de strings
+            if (!Array.isArray(dadosFiltros.nameFilter) || !dadosFiltros.nameFilter.every(filter => typeof filter === 'string')) {
+                console.error('filters deve ser um array de strings.');
+                alert('Erro: Os filtros selecionados são inválidos.');
+                return; // Impede o envio se não for válido
+            }
+        
+            console.log('Dados a serem enviados para filtros:', JSON.stringify(dadosFiltros));
+        
+            return fetch(urlFilters, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(dadosFiltros)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => {
+                        throw new Error(err.message || 'Erro desconhecido');
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Resposta do backend para filter:', data);
+                alert('Dados enviados com sucesso!');
+            })
+            .catch(error => {
+                console.error('Erro ao enviar filtros:', error);
+                alert('Falha ao enviar filtros: ' + error.message);
+            });
+        }
+
+        enviarAnuncio()
+            .then(idAnuncio => enviarFiltros(idAnuncio))
+            .catch(error => {
+                console.error('Erro ao enviar dados:', error);
+                alert('Falha ao enviar dados.');
+            });
     });
-}
+});
 
-// Função para enviar os dados de filtros, relacionando com o ID do anúncio
-function enviarFiltros(idAnuncio) {
-    const dadosFiltros = {
-        realtyId: idAnuncio,     // Associa o ID do anúncio aos filtros
-        filters: filtrosSelecionados // Inclui os filtros selecionados
-    };
-
-    return fetch(urlFilters, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dadosFiltros)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Resposta do backend para filters:', data);
-        alert('Dados enviados com sucesso!');
-    });
-}
-
-// Função principal para enviar as requisições em sequência
-function enviarDados() {
-    enviarAnuncio()
-        .then(idAnuncio => enviarFiltros(idAnuncio)) // Envia filtros com o ID do anúncio
-        .catch(error => {
-            console.error('Erro ao enviar dados:', error);
-            alert('Falha ao enviar dados.');
-        });
-}
-
-// Chama a função enviarDados quando necessário
-enviarDados();
 
 
 
