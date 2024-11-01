@@ -23,3 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
         newFiltersSidebar.classList.toggle('open'); // Adiciona ou remove a classe 'open'
     });
 });
+
+function clearSection(sectionName) {
+    const checkboxes = document.querySelectorAll(`input[name="${sectionName}"]`);
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+}

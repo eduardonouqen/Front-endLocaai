@@ -127,26 +127,73 @@
         </button>
     </div>
     <div id="newFiltersSidebar" class="newFiltersSidebar">
-        <div>
+        <div class="filterGroup">
             <h2>Local:</h2>
-            <div class="fontsize">
-            <input type="checkbox" name="Urbano" id="urban"> Urbano
-            <input type="checkbox" name="Rural" id="rural"> Rural
-            <input type="checkbox" name="Aberto" id="open"> Aberto
-            <input type="checkbox" name="Fechado" id="closed"> Fechado
-        </div>
-        </div>
-        <div>
-            <h2>Permitido:</h2>
-            <div class="fontsize">
-            <input type="checkbox" name="pets" id="pets"> Animais
-            <input type="checkbox" name="sleep" id="sleep"> Dormir no local
-            <input type="checkbox" name="smoke" id="smoke"> Fumar
-            <input type="checkbox" name="kids" id="kids">Crianças
+            <div class="filterOptions">
+                <label><input type="checkbox" name="local" id="urbano"> Urbano</label>
+                <label><input type="checkbox" name="local" id="rural"> Rural</label>
+                <label><input type="checkbox" name="local" id="aberto"> Aberto</label>
+                <label><input type="checkbox" name="local" id="fechado"> Fechado</label>
+                <button class="removebutton" onclick="clearSection('local')">Limpar</button>
             </div>
         </div>
+        <div class="filterGroup">
+            <h2>Permitido:</h2>
+            <div class="filterOptions">
+                <label><input type="checkbox" name="permitido" id="animais"> Animais</label>
+                <label><input type="checkbox" name="permitido" id="dormir"> Dormir no local</label>
+                <label><input type="checkbox" name="permitido" id="fumar"> Fumar</label>
+                <label><input type="checkbox" name="permitido" id="crianças"> Crianças</label>
+                <label><input type="checkbox" name="permitido" id="pescar"> Pescar</label>
+                <button class="removebutton" onclick="clearSection('permitido')">Limpar</button>
+            </div>
+        </div>
+        <div class="filterGroup">
+            <h2>Tem:</h2>
+            <div class="filterOptions">
+                <label><input type="checkbox" name="tem" id="acessibilidade"> Acessibilidade</label>
+                <label><input type="checkbox" name="tem" id="animatronicos"> Animatrônicos</label>
+                <label><input type="checkbox" name="tem" id="aparelho-de-som"> Aparelho de som</label>
+                <label><input type="checkbox" name="tem" id="aquecedor"> Aquecedor</label>
+                <label><input type="checkbox" name="tem" id="ar-condicionado"> Ar condicionado</label>
+                <label><input type="checkbox" name="tem" id="banheiro"> Banheiro</label>
+                <label><input type="checkbox" name="tem" id="buffet"> Buffet</label>
+                <label><input type="checkbox" name="tem" id="cama"> Cama</label>
+                <label><input type="checkbox" name="tem" id="campo-de-futebol"> Campo de futebol</label>
+                <label><input type="checkbox" name="tem" id="campo-de-golfe"> Campo de golfe</label>
+                <label><input type="checkbox" name="tem" id="camera-de-seguranca"> Câmera de
+                    segurança</label>
+                <label><input type="checkbox" name="tem" id="casa-na-arvore"> Casa na árvore</label>
+                <label><input type="checkbox" name="tem" id="churrasqueira"> Churrasqueira</label>
+                <label><input type="checkbox" name="tem" id="elevador"> Elevador</label>
+                <label><input type="checkbox" name="tem" id="espaco-infantil"> Espaço infantil</label>
+                <label><input type="checkbox" name="tem" id="espaco-para-acampar"> Espaço para
+                    acampar</label>
+                <label><input type="checkbox" name="tem" id="estacionamento"> Estacionamento</label>
+                <label><input type="checkbox" name="tem" id="fliperama"> Fliperama</label>
+                <label><input type="checkbox" name="tem" id="freezer"> Freezer</label>
+                <label><input type="checkbox" name="tem" id="heliporto"> Heliporto</label>
+                <label><input type="checkbox" name="tem" id="itens-de-cozinha"> Itens de Cozinha</label>
+                <label><input type="checkbox" name="tem" id="karaoke"> Karaokê</label>
+                <label><input type="checkbox" name="tem" id="lago"> Lago</label>
+                <label><input type="checkbox" name="tem" id="mesa-de-sinuca"> Mesa de sinuca</label>
+                <label><input type="checkbox" name="tem" id="microfones"> Microfones</label>
+                <label><input type="checkbox" name="tem" id="pista-de-ski"> Pista de Ski</label>
+                <label><input type="checkbox" name="tem" id="piscina"> Piscina</label>
+                <label><input type="checkbox" name="tem" id="quadra-de-basquete"> Quadra de
+                    basquete</label>
+                <label><input type="checkbox" name="tem" id="quadra-de-tenis"> Quadra de tênis</label>
+                <label><input type="checkbox" name="tem" id="rio"> Rio</label>
+                <label><input type="checkbox" name="tem" id="sauna"> Sauna</label>
+                <label><input type="checkbox" name="tem" id="seguranca"> Segurança</label>
+                <label><input type="checkbox" name="tem" id="tenis-de-mesa"> Tênis de mesa</label>
+                <label><input type="checkbox" name="tem" id="wi-fi"> Wi-fi</label>
+                <button class="removebutton" onclick="clearSection('tem')">Limpar</button>
 
 
+
+            </div>
+        </div>
     </div>
     <script src="script/script.js"></script>
 </body>
