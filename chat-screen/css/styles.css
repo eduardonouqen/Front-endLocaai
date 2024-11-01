@@ -1,3 +1,7 @@
+body {
+    font-family: 'Inter';
+}
+
 .chatsAndMessages {
     display: flex;
     height: calc(100vh - 160px);
@@ -14,17 +18,28 @@
 }
 
 .chatBoxDiv {
+    position: relative;
+    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .chatBox {
-    padding-left: 35%;
-    padding-right: 35%;
+    width: 80%;
     border-radius: 50rem;
     resize: none;
     border-style: solid;
     border-color: #e7e7e7;
     border-width: 2px;
-    text-align: justify;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.chatBox::placeholder {
+    font-size: 1.1rem;
+    padding: 10px 6px;
 }
