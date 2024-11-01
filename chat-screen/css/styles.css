@@ -22,6 +22,7 @@ body {
     height: 100%;
     display: flex;
     justify-content: flex-end;
+    
 }
 
 .chatBox {
@@ -34,12 +35,20 @@ body {
     position: absolute;
     bottom: 0;
     left: 10%;
-    padding: 0.5rem 1rem;
+    padding: 1.0rem 1rem; 
     margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
+    height: 50px; 
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .chatBox::placeholder {
-    font-size: 1.1rem;
-    padding: 10px 6px;
-}
+
+        color: #888; 
+        padding: 0 1rem; 
+        line-height: 1.2; 
+        position: relative; 
+        top: 70%; 
+        transform: translateY(-50%);
+    }
