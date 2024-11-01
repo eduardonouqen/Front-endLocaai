@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
     <link rel="stylesheet" type="text/css" href="../bottom-bar/css/bottomBarStyle.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="icon" type="icon/png" href="img/icon.png">
+    <link rel="icon" type="icon/png" href="../top-bar/img/icon.png">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <script src="../top-bar/topBarFunctions.js" defer></script>
     <script src="./js/script.js"></script>
@@ -148,7 +148,7 @@
         </div>
         <div class="messagesDiv">
             <div class="chatBoxDiv">
-                <textarea class="chatBox" placeholder="Digite uma mensagem"></textarea>
+                <textarea class="chatBox" placeholder="Digite uma mensagem" oninput="autoResize(this)"></textarea>
             </div>
         </div>
     </div>

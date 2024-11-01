@@ -26,7 +26,7 @@ body {
 
 .chatBox {
     width: 80%;
-    border-radius: 50rem;
+    border-radius: 1.5rem;
     resize: none;
     border-style: solid;
     border-color: #e7e7e7;
@@ -34,12 +34,15 @@ body {
     position: absolute;
     bottom: 0;
     left: 10%;
-    padding: 0.5rem 1rem;
+    padding-top: 1.3rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
     margin-bottom: 1rem;
     font-size: 1.1rem;
+    overflow-y: hidden;
+    height: 1.5em;
 }
 
 .chatBox::placeholder {
     font-size: 1.1rem;
-    padding: 10px 6px;
 }
