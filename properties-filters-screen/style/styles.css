@@ -77,21 +77,24 @@
     margin-right: 5%;
     margin-top: 2%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start; /* Mantenha os elementos alinhados ao topo */
+    gap: 100px;
+    position: relative; /* Adiciona um contexto de empilhamento */
+}
+
+.permitido{
+    display: inline-flexbox;
 }
 
 .buttonNewFilter {
-    position: fixed;
     background-color: #6a0dad;
     color: white;
     border: none;
     padding: 8px;
     cursor: pointer;
     border-radius: 4px;
-    top: 20%;
-    right: 10px;
-
+    margin-top: 1%;
+    margin-left: 25%;
 }
 
 .buttonNewFilter img {
@@ -101,18 +104,87 @@
 
 .newFiltersSidebar {
     position: fixed;
-    top: 30%;
-    border-radius: 5%;
+    top: 20%;
     right: -438px; 
     width: 400px; 
-    height: 60%;
+    height: 70%;
     background-color: #f8f9fa; 
     box-shadow: -2px 0 5px rgba(0,0,0,0.5);
     transition: right 0.3s ease; 
-    padding: 10px;
-    z-index: 1000;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-y: auto;
 }
 
 .newFiltersSidebar.open {
     right: 0;
 }
+
+.filterGroup {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+}
+
+.filterGroup h2 {
+    font-size: 18px;
+    color: #6a0dad;
+    margin-bottom: 10px;
+}
+
+.filterOptions label {
+    display: flex;
+    width: 180px;
+    align-items: center;
+    font-size: 14px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.filterOptions input[type="checkbox"] {
+    cursor: pointer;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #6a0dad;
+    border-radius: 4px;
+    margin-right: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.filterOptions input[type="checkbox"]:checked {
+    background-color: #6a0dad;
+    border-color: #6a0dad;
+}
+
+.filterOptions input[type="checkbox"]:hover {
+    border-color: #8a2be2;
+}
+
+button.removebutton {
+    color: white; /* Cor do texto */
+    background: linear-gradient(135deg, #ff4d4d, #ff1a1a); /* Gradiente vermelho */
+    border: none; /* Remove a borda padrão */
+    border-radius: 25px; /* Arredonda os cantos */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    cursor: pointer; /* Muda o cursor para pointer */
+    transition: background 0.3s, transform 0.2s; /* Efeito de transição */
+
+    margin-top: 10px;
+}
+
+/* Efeito hover */
+button.removebutton:hover {
+    background: linear-gradient(135deg, #ff1a1a, #ff4d4d); /* Inverte o gradiente no hover */
+    transform: scale(1.05); /* Aumenta um pouco o botão ao passar o mouse */
+}
+
+/* Efeito active (pressionado) */
+button.removebutton:active {
+    transform: scale(0.95); /* Reduz um pouco o tamanho ao clicar */
+}
+
