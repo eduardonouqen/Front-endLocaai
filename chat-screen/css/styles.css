@@ -46,7 +46,7 @@ body {
 .chatBox::placeholder {
 
         color: #888; 
-        padding: 0 1rem; 
+        padding: 0 1 2rem; 
         line-height: 1.2; 
         position: relative; 
         top: 70%; 
