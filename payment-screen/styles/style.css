@@ -1,10 +1,3 @@
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
-
 .payment-container {
     display: flex;
     justify-content: space-between;
@@ -16,7 +9,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.payment-options, .service-summary {
+.payment-options,
+.service-summary {
     width: 45%;
     padding: 20px;
     background-color: #ffffff;
@@ -50,11 +44,13 @@ body {
     font-size: 1.5em;
 }
 
-.totals, .final-totals {
+.totals,
+.final-totals {
     margin-top: 30px;
 }
 
-.totals p, .final-totals p {
+.totals p,
+.final-totals p {
     font-size: 1.2em;
 }
 
@@ -63,7 +59,9 @@ body {
     margin-top: 10px;
 }
 
-.pay-button, .validate-coupon, .remove-service {
+.pay-button,
+.validate-coupon,
+.remove-service {
     background-color: #800080;
     color: white;
     border: none;
@@ -72,7 +70,9 @@ body {
     cursor: pointer;
 }
 
-.pay-button:hover, .validate-coupon:hover, .remove-service:hover {
+.pay-button:hover,
+.validate-coupon:hover,
+.remove-service:hover {
     background-color: #5a005a;
 }
 
@@ -166,17 +166,3 @@ button {
     font-size: 0.95em;
     color: #666;
 }
-
-button, .validate-coupon, .remove-service, .pay-button {
-    background-color: #800080;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover, .validate-coupon:hover, .remove-service:hover, .pay-button:hover {
-    background-color: #5a005a;
-}
-

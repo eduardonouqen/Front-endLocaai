@@ -82,7 +82,7 @@
     position: relative;
 }
 
-.permitido{
+.permitido {
     display: inline-flexbox;
 }
 
@@ -93,8 +93,11 @@
     padding: 8px;
     cursor: pointer;
     border-radius: 4px;
-    margin-top: 1%;
-    margin-left: 7%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: calc(18vh);
+    margin-right: 2rem;
 }
 
 .buttonNewFilter img {
@@ -102,20 +105,20 @@
     height: 24px;
 }
 
-button.aplicar{
+button.aplicar {
     margin-left: 45%;
-    color: white; 
-    background: linear-gradient(135deg, #6a0dad, #6a0dad); 
-    border: none; 
-    border-radius: 25px; 
-    padding: 10px 20px; 
+    color: white;
+    background: linear-gradient(135deg, #6a0dad, #6a0dad);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
     font-size: 16px;
-    font-weight: bold; 
-    cursor: pointer; 
+    font-weight: bold;
+    cursor: pointer;
     transition: background 0.3s, transform 0.2s;
 }
 
-button.aplicar:hover{
+button.aplicar:hover {
     background: linear-gradient(135deg, #6a0dad, #6a0dad);
     transform: scale(1.05);
 }
@@ -129,12 +132,12 @@ button.aplicar:active {
 .newFiltersSidebar {
     position: fixed;
     top: 20%;
-    right: -438px; 
-    width: 400px; 
+    right: -438px;
+    width: 400px;
     height: 70%;
-    background-color: #f8f9fa; 
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
-    transition: right 0.3s ease; 
+    background-color: #f8f9fa;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
     padding: 15px;
     border-radius: 8px;
     overflow-y: auto;
@@ -188,14 +191,14 @@ button.aplicar:active {
 }
 
 button.removebutton {
-    color: white; 
-    background: linear-gradient(135deg, #ff4d4d, #ff1a1a); 
-    border: none; 
-    border-radius: 25px; 
-    padding: 10px 20px; 
+    color: white;
+    background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
     font-size: 16px;
-    font-weight: bold; 
-    cursor: pointer; 
+    font-weight: bold;
+    cursor: pointer;
     transition: background 0.3s, transform 0.2s;
 
     margin-top: 10px;
@@ -209,4 +212,3 @@ button.removebutton:hover {
 button.removebutton:active {
     transform: scale(0.95);
 }
-
