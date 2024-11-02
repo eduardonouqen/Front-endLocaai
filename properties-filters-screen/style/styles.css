@@ -77,9 +77,9 @@
     margin-right: 5%;
     margin-top: 2%;
     display: flex;
-    align-items: flex-start; /* Mantenha os elementos alinhados ao topo */
+    align-items: flex-start;
     gap: 100px;
-    position: relative; /* Adiciona um contexto de empilhamento */
+    position: relative;
 }
 
 .permitido{
@@ -94,13 +94,37 @@
     cursor: pointer;
     border-radius: 4px;
     margin-top: 1%;
-    margin-left: 25%;
+    margin-left: 7%;
 }
 
 .buttonNewFilter img {
     width: 24px;
     height: 24px;
 }
+
+button.aplicar{
+    margin-left: 45%;
+    color: white; 
+    background: linear-gradient(135deg, #6a0dad, #6a0dad); 
+    border: none; 
+    border-radius: 25px; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background 0.3s, transform 0.2s;
+}
+
+button.aplicar:hover{
+    background: linear-gradient(135deg, #6a0dad, #6a0dad);
+    transform: scale(1.05);
+}
+
+button.aplicar:active {
+    transform: scale(0.95);
+}
+
+
 
 .newFiltersSidebar {
     position: fixed;
@@ -164,27 +188,25 @@
 }
 
 button.removebutton {
-    color: white; /* Cor do texto */
-    background: linear-gradient(135deg, #ff4d4d, #ff1a1a); /* Gradiente vermelho */
-    border: none; /* Remove a borda padrão */
-    border-radius: 25px; /* Arredonda os cantos */
-    padding: 10px 20px; /* Espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: bold; /* Negrito */
-    cursor: pointer; /* Muda o cursor para pointer */
-    transition: background 0.3s, transform 0.2s; /* Efeito de transição */
+    color: white; 
+    background: linear-gradient(135deg, #ff4d4d, #ff1a1a); 
+    border: none; 
+    border-radius: 25px; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background 0.3s, transform 0.2s;
 
     margin-top: 10px;
 }
 
-/* Efeito hover */
 button.removebutton:hover {
-    background: linear-gradient(135deg, #ff1a1a, #ff4d4d); /* Inverte o gradiente no hover */
-    transform: scale(1.05); /* Aumenta um pouco o botão ao passar o mouse */
+    background: linear-gradient(135deg, #ff1a1a, #ff4d4d);
+    transform: scale(1.05);
 }
 
-/* Efeito active (pressionado) */
 button.removebutton:active {
-    transform: scale(0.95); /* Reduz um pouco o tamanho ao clicar */
+    transform: scale(0.95);
 }
 
