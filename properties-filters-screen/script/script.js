@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newFilterButton = document.getElementById('newFilterButton');
 
     newFilterButton.addEventListener('click', () => {
-        newFiltersSidebar.classList.toggle('open'); // Adiciona ou remove a classe 'open'
+        newFiltersSidebar.classList.toggle('open'); 
     });
 });
 
