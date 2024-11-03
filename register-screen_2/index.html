@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- Start of the search bar -->
     <div class="searchBar">
         <img id="logo" class="logoTop" src="../top-bar/img/logoLado.png">
         <div class="searchBar2">
@@ -23,10 +24,11 @@
                 <button type='submit' class="buttonSearch"></button>
                 <button type='submit' class="buttonFilters" id="toggleButton"></button>
             </div>
+            <div class="announcementButtonAlign">
+                <button class="announcementButton">ANUNCIE!</button>
+            </div>
         </div>
-        <div>
-            <button class="announcementButton">ANUNCIE!</button>
-        </div>
+
         <a href="../profile-screen/index.html">
             <div class="picAndLabels">
                 <div class="textLocatorInfo">
@@ -37,7 +39,108 @@
             </div>
         </a>
     </div>
-    <div id="filtersBar" class="filtersBar"></div>
+
+    <div id="categoriesBar" class="categoriesBar">
+        <div class="categoriesAlignTopBar2">
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/auditoriums.png">
+                <label>Auditórios</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/beaches.png">
+                <label>Praias</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/bistros.png">
+                <label>Bistrôs</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/castles-and-palaces.png">
+                <label>Castelos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/chapels.png">
+                <label>Capelas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/clubs-and-associations.png">
+                <label>Clubes</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/co-working.png">
+                <label>Co-working</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/convention-centers.png">
+                <label>Convenções</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/coverages.png">
+                <label>Coberturas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/dams-and-lakes.png">
+                <label>Rios e Lagos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms and-ranches.png">
+                <label>Fazendas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms.png">
+                <label>Chácaras</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/gardens.png">
+                <label>Jardins</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/hotels-and-inns.png">
+                <label>Hotéis</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/islands.png">
+                <label>Ilhas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/lounges.png">
+                <label>Lounges</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/mansions.png">
+                <label>Mansões</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/party-halls.png">
+                <label>Salões de Festa</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/resorts.png">
+                <label>Resorts</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/sheds.png">
+                <label>Barracões</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/stadiums-and-arenas.png">
+                <label>Estádios</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/theme-parks.png">
+                <label>Parques Temáticos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/water-parks.png">
+                <label>Parques Aquáticos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/yachts-and-vessels.png">
+                <label>Embarcações</label>
+            </a>
+        </div>
+    </div>
+    <!-- End of the search bar -->
 
 
 
@@ -45,37 +148,37 @@
 
 
     <form id="formCreateAccount" action="/users" method="POST">
-    <div class="box">
-        <p class="aventura">Só mais algumas informações!</p>
-        <div class="alinhar">
-            <p class="email">Aqui, digite o seu nome:</p>
-            <input type="text" id="name" name="name" class="caixa">
-        </div>
+        <div class="box">
+            <p class="aventura">Só mais algumas informações!</p>
+            <div class="alinhar">
+                <p class="email">Aqui, digite o seu nome:</p>
+                <input type="text" id="name" name="name" class="caixa">
+            </div>
 
-        <div class="alinhar2">
-            <p class="senha">Agora, digite o seu CPF:</p>
-            <input type="number" id="cpf" name="cpf" class="caixa">
-        </div>
+            <div class="alinhar2">
+                <p class="senha">Agora, digite o seu CPF:</p>
+                <input type="number" id="cpf" name="cpf" class="caixa">
+            </div>
 
-        <div class="alinhar">
-            <p class="senha2">Insira seu telefone:</p>
-            <input type="number" id="phone" name="phone" class="caixa">
-        </div>
+            <div class="alinhar">
+                <p class="senha2">Insira seu telefone:</p>
+                <input type="number" id="phone" name="phone" class="caixa">
+            </div>
 
-        <div class="alinhar">
-            <p class="senha2">Diga-nos sua cidade:</p>
-            <input type="text" id="city" name="city" class="caixa">
-        </div>
+            <div class="alinhar">
+                <p class="senha2">Diga-nos sua cidade:</p>
+                <input type="text" id="city" name="city" class="caixa">
+            </div>
 
-        <button class="botao">CADASTRAR</button>
+            <button class="botao">CADASTRAR</button>
 
-        <div class="alinharBonecos">
-            <img src="img/img 1.png" class="festa">
-            <img src="img/img 2.png" class="festa">
-            <img src="img/img 3.png" class="festa">
+            <div class="alinharBonecos">
+                <img src="img/img 1.png" class="festa">
+                <img src="img/img 2.png" class="festa">
+                <img src="img/img 3.png" class="festa">
+            </div>
         </div>
-    </div>
-    <script src="js/script.js"></script>
+        <script src="js/script.js"></script>
     </form>
 </body>
 

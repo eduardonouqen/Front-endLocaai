@@ -13,8 +13,9 @@
 </head>
 
 <body>
+    <!-- Start of the search bar -->
     <div class="searchBar">
-        <img class="logoTop" src="../top-bar/img/logoLado.png">
+        <img id="logo" class="logoTop" src="../top-bar/img/logoLado.png">
         <div class="searchBar2">
             <input type="text" placeholder="Vai pra onde?" class="searchInput">
             <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
@@ -23,7 +24,11 @@
                 <button type='submit' class="buttonSearch"></button>
                 <button type='submit' class="buttonFilters" id="toggleButton"></button>
             </div>
+            <div class="announcementButtonAlign">
+                <button class="announcementButton">ANUNCIE!</button>
+            </div>
         </div>
+
         <a href="../profile-screen/index.html">
             <div class="picAndLabels">
                 <div class="textLocatorInfo">
@@ -34,7 +39,108 @@
             </div>
         </a>
     </div>
-    <div id="filtersBar" class="filtersBar"></div>
+
+    <div id="categoriesBar" class="categoriesBar">
+        <div class="categoriesAlignTopBar2">
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/auditoriums.png">
+                <label>Auditórios</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/beaches.png">
+                <label>Praias</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/bistros.png">
+                <label>Bistrôs</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/castles-and-palaces.png">
+                <label>Castelos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/chapels.png">
+                <label>Capelas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/clubs-and-associations.png">
+                <label>Clubes</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/co-working.png">
+                <label>Co-working</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/convention-centers.png">
+                <label>Convenções</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/coverages.png">
+                <label>Coberturas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/dams-and-lakes.png">
+                <label>Rios e Lagos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms and-ranches.png">
+                <label>Fazendas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms.png">
+                <label>Chácaras</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/gardens.png">
+                <label>Jardins</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/hotels-and-inns.png">
+                <label>Hotéis</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/islands.png">
+                <label>Ilhas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/lounges.png">
+                <label>Lounges</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/mansions.png">
+                <label>Mansões</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/party-halls.png">
+                <label>Salões de Festa</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/resorts.png">
+                <label>Resorts</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/sheds.png">
+                <label>Barracões</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/stadiums-and-arenas.png">
+                <label>Estádios</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/theme-parks.png">
+                <label>Parques Temáticos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/water-parks.png">
+                <label>Parques Aquáticos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/yachts-and-vessels.png">
+                <label>Embarcações</label>
+            </a>
+        </div>
+    </div>
+    <!-- End of the search bar -->
 
     <div class="infos-container">
         <h1 class="h1">Quero anunciar meu imovel!</h1>
@@ -49,13 +155,13 @@
     <div class="guide-feedback">
         <p class="p">Esse guia foi útil?</p>
         <div class="button-container">
-        <button class="like-button">
-            <img src="img/like.png" alt="Like">
-        </button>
-        <button class="dislike-button">
-            <img src="img/dislike.png" alt="Dislike">
-        </button>
-    </div>
+            <button class="like-button">
+                <img src="img/like.png" alt="Like">
+            </button>
+            <button class="dislike-button">
+                <img src="img/dislike.png" alt="Dislike">
+            </button>
+        </div>
     </div>
 
 

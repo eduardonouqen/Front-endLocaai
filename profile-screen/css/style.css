@@ -61,9 +61,8 @@ header .user-info-header .badge {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     background-color: #f5f5f5;
-    flex-direction: column;
+    height: calc(100vh - 80px);
 }
 
 .user-details {
@@ -73,7 +72,7 @@ header .user-info-header .badge {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 170%;
     max-width: 600px;
     margin-bottom: 20px;
@@ -218,7 +217,9 @@ header .user-info-header .badge {
     text-align: right;
 }
 
-.info-item .icon-email, .info-item .icon-phone, .info-item .icon-identity {
+.info-item .icon-email,
+.info-item .icon-phone,
+.info-item .icon-identity {
     margin-right: 10px;
 }
 
@@ -256,16 +257,16 @@ header .user-info-header .badge {
 }
 
 .actions button {
-    width: 100%; 
+    width: 100%;
     padding: 10px;
-    margin: 5px 0; 
-    border: none; 
-    border-radius: 50px; 
-    background-color: #6a0dad; 
+    margin: 5px 0;
+    border: none;
+    border-radius: 50px;
+    background-color: #6a0dad;
     color: white;
-    font-size: 16px; 
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s; 
+    transition: background-color 0.3s;
 }
 
 .actions button:hover {
@@ -273,8 +274,8 @@ header .user-info-header .badge {
 }
 
 .actions a {
-    width: 45%; 
-    display: inline-block; 
+    width: 45%;
+    display: inline-block;
 }
 
 .actions button.delete-account {
@@ -283,17 +284,13 @@ header .user-info-header .badge {
 }
 
 .actions button.delete-account:hover {
-    background-color: #c9302c; 
+    background-color: #c9302c;
 }
 
 .user-about {
     background-color: #f5f5f5;
     padding: 15px;
     border-radius: 10px;
-}
-
-.user-about h3 {
-    margin-top: 0;
 }
 
 .user-about textarea {
@@ -324,7 +321,7 @@ header .user-info-header .badge {
     background-color: #5a009d;
 }
 
-@media (min-width: 37.5em) { 
+@media (min-width: 37.5em) {
     .profile-section {
         flex-wrap: nowrap;
         flex-direction: row;
@@ -337,7 +334,7 @@ header .user-info-header .badge {
     }
 }
 
-@media (min-width: 48em) { 
+@media (min-width: 48em) {
     header {
         flex-wrap: nowrap;
     }
@@ -348,7 +345,7 @@ header .user-info-header .badge {
     }
 }
 
-@media (max-width: 37.5em) { 
+@media (max-width: 37.5em) {
     header nav ul {
         flex-direction: column;
         align-items: flex-start;
@@ -367,42 +364,4 @@ header .user-info-header .badge {
     .user-about-actions {
         width: 100%;
     }
-}
-
-body {
-    margin: 0;
-    font-family: 'Inter';
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-.searchBar {
-    background-color: #44116f;
-    color: #0000;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-}
-
-.searchBar2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    padding-left: 20px;
-}
-
-.logoTop {
-    width: 8%;
-    margin-left: 5px;
-}
-
-.searchInput {
-    height: 35px;
 }

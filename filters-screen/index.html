@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/filtro.css">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
@@ -14,6 +12,7 @@
 </head>
 
 <body>
+    <!-- Start of the search bar -->
     <div class="searchBar">
         <img id="logo" class="logoTop" src="../top-bar/img/logoLado.png">
         <div class="searchBar2">
@@ -24,10 +23,11 @@
                 <button type='submit' class="buttonSearch"></button>
                 <button type='submit' class="buttonFilters" id="toggleButton"></button>
             </div>
+            <div class="announcementButtonAlign">
+                <button class="announcementButton">ANUNCIE!</button>
+            </div>
         </div>
-        <div>
-            <button class="announcementButton">ANUNCIE!</button>
-        </div>
+
         <a href="../profile-screen/index.html">
             <div class="picAndLabels">
                 <div class="textLocatorInfo">
@@ -38,12 +38,113 @@
             </div>
         </a>
     </div>
-    <div id="filtersBar" class="filtersBar"></div>
+
+    <div id="categoriesBar" class="categoriesBar">
+        <div class="categoriesAlignTopBar2">
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/auditoriums.png">
+                <label>Auditórios</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/beaches.png">
+                <label>Praias</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/bistros.png">
+                <label>Bistrôs</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/castles-and-palaces.png">
+                <label>Castelos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/chapels.png">
+                <label>Capelas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/clubs-and-associations.png">
+                <label>Clubes</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/co-working.png">
+                <label>Co-working</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/convention-centers.png">
+                <label>Convenções</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/coverages.png">
+                <label>Coberturas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/dams-and-lakes.png">
+                <label>Rios e Lagos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms and-ranches.png">
+                <label>Fazendas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms.png">
+                <label>Chácaras</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/gardens.png">
+                <label>Jardins</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/hotels-and-inns.png">
+                <label>Hotéis</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/islands.png">
+                <label>Ilhas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/lounges.png">
+                <label>Lounges</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/mansions.png">
+                <label>Mansões</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/party-halls.png">
+                <label>Salões de Festa</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/resorts.png">
+                <label>Resorts</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/sheds.png">
+                <label>Barracões</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/stadiums-and-arenas.png">
+                <label>Estádios</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/theme-parks.png">
+                <label>Parques Temáticos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/water-parks.png">
+                <label>Parques Aquáticos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/yachts-and-vessels.png">
+                <label>Embarcações</label>
+            </a>
+        </div>
+    </div>
+    <!-- End of the search bar -->
 
     <div class="infos-container">
         <h1>O que tem no seu local?</h1>
         <h2 class="h2">Clique nas opções:</h2>
-        
+
         <div class="opcoes-container">
             <div class="opcao" data-value="Acessibilidade">Acessibilidade</div>
             <div class="opcao" data-value="Aquecedor">Aquecedor</div>
@@ -84,9 +185,9 @@
         <div class="filtro-container">
             <div id="selectedItems"></div>
         </div>
-         
-        <button class="button-next">PRÓXIMO</button>
-        
+
+        <button class="button-next" onclick="location.href='../X - Inserir valor/index.html'">PRÓXIMO</button>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
