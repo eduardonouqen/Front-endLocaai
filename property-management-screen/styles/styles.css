@@ -3,20 +3,9 @@ body {
     margin: 0;
     padding: 0;
     font-size: 18px;
-    margin-bottom: 10px;
-    display: block;
     background-color: #f7f7f7;
 }
 
-h3{
-    display: inline;
-}
-
-h2{
-    margin-top: 0;
-}
-
-/* Responsividade */
 .propriedades-container {
     margin: 20px auto;
     padding: 20px;
@@ -30,23 +19,19 @@ h2{
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-    text-align: left;
-}
-
-.estrela{
-    width: 4%;
-    margin-right: 66%;
+    text-align: center;
 }
 
 .propriedade-card {
-    display: inline;
-    align-items: flex-start;
+    display: flex;
+    align-items: center;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 15px;
     background-color: #fff;
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 20px;
 }
 
 .propriedade-imagem {
@@ -54,48 +39,24 @@ h2{
     height: 100px;
     border-radius: 8px;
     object-fit: cover;
-    margin-right: 20px;
 }
 
 .propriedade-info {
-    display: inline;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-
-}
-
-.propriedade-info strong{
-    font-weight: bold;
-}
-
-.propriedade-info span{
-    display: inline;
-    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1;
 }
 
 .propriedade-info p {
-    margin: 5px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-
-.infosprop{
-    display: inline;
-    width: 70%;
+    margin: 0;
 }
 
 .botoes {
     display: flex;
-    flex-direction: column; 
-    justify-content: flex-start; 
-    gap: 10px; 
-    width: 30%;
+    flex-direction: column;
+    gap: 10px;
 }
-
 
 .botaopromover,
 .botaoeditar,
@@ -104,9 +65,9 @@ h2{
     border-radius: 8px;
     color: white;
     border: none;
-    width: 100%;
     padding: 10px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .botaopromover:hover,
@@ -120,14 +81,31 @@ h2{
     width: 100%;
     font-size: 16px;
     padding: 10px;
-    margin-top: 5%;
+    margin-top: 20px;
     border-radius: 8px;
     background-color: #4D0872;
     color: white;
     border: none;
     cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
 }
 
 .cadastrar-btn:hover {
     background-color: #3a065a;
+}
+
+@media (max-width: 600px) {
+    .propriedade-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .botoes {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;
+    }
 }
