@@ -79,8 +79,7 @@ header .user-info-header .badge {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 40%;
     max-width: 40%;
-    height: 55%;
-    max-height: 55%;
+    height: 500px;
     box-sizing: border-box;
 }
 
@@ -254,8 +253,7 @@ header .user-info-header .badge {
     margin-left: 2rem;
     width: 40%;
     max-width: 40%;
-    height: 55%;
-    max-height: 55%;
+    height: 450px;
 }
 
 .actions {
@@ -266,12 +264,19 @@ header .user-info-header .badge {
     width: 100%;
 }
 
+.align-count-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
 .actions button {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
     border: none;
-    border-radius: 50px;
+    border-radius: 25px;
     background-color: #6a0dad;
     color: white;
     font-size: 16px;
@@ -313,6 +318,7 @@ header .user-info-header .badge {
     font-family: Arial, sans-serif;
     resize: none;
     font-size: 16px;
+    margin-bottom: 0.5rem;
 }
 
 .about-label {
@@ -323,8 +329,6 @@ header .user-info-header .badge {
 }
 
 #save-about-button {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
     padding: 10px 20px;
     background-color: #6a0dad;
     color: white;
