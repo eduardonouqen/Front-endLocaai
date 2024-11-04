@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <!-- Start of the search bar -->
+  
     <div class="searchBar">
         <img id="logo" class="logoTop" src="../top-bar/img/logoLado.png">
         <div class="searchBar2">
@@ -141,7 +141,7 @@
             </a>
         </div>
     </div>
-    <!-- End of the search bar -->
+    
 
     <div class="profile-section">
         <div class="user-details">
@@ -237,7 +237,11 @@
                 <a href="../property-management-screen/index.html">
                     <button>Gerenciar Propriedades</button>
                 </a>
-                <button class="delete-account">Apagar Conta</button>
+                <div class="actions">
+                    <button class="delete-account" onclick="confirmDelete()">Apagar Conta</button>
+                </div>
+                
+                
             </div>
         </div>
     </div>
@@ -281,6 +285,16 @@
             alert('Alterações salvas com sucesso!');
 
         });
+
+      
+     
+        function confirmDelete() {
+            if (confirm("Tem certeza de que deseja apagar a conta?")) {
+                 window.location.href = "../initial-screen/index.html";
+            }
+        }
+
+               
     </script>
 </body>
 
