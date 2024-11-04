@@ -154,15 +154,13 @@ input[type="number"]::-webkit-outer-spin-button {
 .categoriesBar {
     display: none;
     background-color: #e5e5e5;
-    height: 80px;
     width: 100%;
     position: absolute;
     top: 80px;
     z-index: 1;
-    cursor: grab;
-    user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
 }
 
 .categoriesBar.show {
@@ -172,9 +170,6 @@ input[type="number"]::-webkit-outer-spin-button {
     align-items: center;
     max-height: 80px;
     z-index: 999;
-    position: -webkit-sticky;
-    position: sticky;
-    scrollbar-width: none;
 }
 
 .categoriesBar::-webkit-scrollbar {
@@ -215,8 +210,7 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 1.5rem;
     box-sizing: border-box;
 }
 
