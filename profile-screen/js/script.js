@@ -67,3 +67,64 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCharCount();
     adjustTextareaHeight();
 });
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        console.error('Token não encontrado.');
+        return;
+    }
+
+    // Tente decodificar o token
+    try {
+        const decodedToken = jwt_decode(token);
+        console.log("Token decodificado:", decodedToken);
+
+        // Acessar o ID do usuário e o nome do token
+        const userId = decodedToken.sub; // User ID
+        const userName = decodedToken.name; // Nome do usuário
+
+        if (!userId || !userName) {
+            console.error('User ID ou User Name não encontrado no token.');
+            return;
+        }
+
+        console.log("User ID:", userId);
+        console.log("User Name:", userName);
+
+        // Defina o URL do endpoint para obter o perfil do usuário
+        const url = `http://localhost:3000/users/${userId}`;
+
+        // Faça a requisição para buscar os dados do usuário
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro na requisição: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.querySelector('.user-info .info-item:nth-child(1) p.fontSizeData').textContent = data.email;
+            document.querySelector('.user-info .info-item:nth-child(2) p.fontSizeData').textContent = data.phone;
+            document.querySelector('.user-info .info-item:nth-child(3) p.fontSizeData').textContent = data.identity;
+
+            // Atualiza o nome no HTML
+            document.getElementById('user-name').textContent = userName; // Atualiza o nome do usuário
+        })
+        .catch(error => console.error('Erro ao buscar os dados do usuário:', error));
+    } catch (error) {
+        console.error('Erro ao decodificar o token:', error);
+    }
+});

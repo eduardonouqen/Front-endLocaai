@@ -79,8 +79,8 @@ header .user-info-header .badge {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 40%;
     max-width: 40%;
-    height: 55%;
-    max-height: 55%;
+    height: 75%;
+    max-height: 75%;
     box-sizing: border-box;
 }
 
@@ -89,6 +89,7 @@ header .user-info-header .badge {
     flex-direction: column;
     align-items: center;
     position: relative;
+    margin-top: 7%;
 }
 
 .photo-placeholder {
@@ -343,3 +344,4 @@ header .user-info-header .badge {
 #save-about-button:hover {
     background-color: #5a009d;
 }
+
