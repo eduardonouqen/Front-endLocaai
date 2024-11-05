@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuário e Locações</title>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
@@ -151,6 +152,11 @@
                 </div>
             </div>
 
+
+
+
+
+            <!-- Button "Selecione a imagem" -->
             <div class="documents-section">
                 <input id="file-upload" type="file" class="file-input" accept="image/*" style="display: none;">
                 <button class="Documents-btn" id="documents-button" aria-label="Selecionar imagem">
@@ -197,31 +203,39 @@
                 </button>
             </div>
 
+
+
+
+
+
+
             <div class="user-info">
                 <div class="info-item">
                     <label for="email"><i class="icon-email"></i> Email</label>
-
+                    <p class="fontSizeData">userEmail</p>
                 </div>
                 <div class="info-item">
                     <label for="phone"><i class="icon-phone"></i> Celular</label>
-
+                    <p class="fontSizeData">userPhone</p>
                 </div>
                 <div class="info-item">
-                    <label for="identity"><i class="icon-identity"></i> Identidade</label>
-
+                    <label for="identity"><i class="icon-identity"></i> Cpf</label>
+                    <p class="fontSizeData">userCpf</p>
                 </div>
             </div>
         </div>
 
         <div class="user-about-actions">
             <div class="user-about">
-                <label class="about-label">Sobre EDUARDO</label>
+                <label class="about-label">Sobre <span id="user-name">Eduardo</span></label>
                 <textarea id="user-about-text" maxlength="350" placeholder="Sobre o usuário"></textarea>
-                <div id="char-count">
-                    <span id="char-used">0</span> / <span id="char-max">350</span>
-                </div>
-                <div class="button-align">
-                    <button id="save-about-button" disabled>Salvar Alterações</button>
+                <div class="align-count-button">
+                    <div id="char-count" style="width: 100%;">
+                        <span id="char-used">0</span> / <span id="char-max">350</span>
+                    </div>
+                    <div class="button-align">
+                        <button id="save-about-button" disabled>Salvar Alterações</button>
+                    </div>
                 </div>
             </div>
             <div class="actions">

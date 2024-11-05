@@ -67,3 +67,60 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCharCount();
     adjustTextareaHeight();
 });
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+        console.error('Token não encontrado.');
+        return;
+    }
+
+    try {
+        const decodedToken = jwt_decode(token);
+        console.log("Token decodificado:", decodedToken);
+
+        const userId = decodedToken.sub; 
+        const userName = decodedToken.name;
+        const userCpf = decodedToken.cpf;
+
+        if (!userId || !userName) {
+            console.error('User ID ou User Name não encontrado no token.');
+            return;
+        }
+
+        console.log("User ID:", userId);
+        console.log("User Name:", userName);
+
+        const url = `http://localhost:3000/users/${userId}`;
+
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro na requisição: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.querySelector('.user-info .info-item:nth-child(1) p.fontSizeData').textContent = data.email;
+            document.querySelector('.user-info .info-item:nth-child(2) p.fontSizeData').textContent = data.phone;
+            document.querySelector('.user-info .info-item:nth-child(3) p.fontSizeData').textContent = data.cpf;
+
+            document.getElementById('user-name').textContent = userName;
+        })
+        .catch(error => console.error('Erro ao buscar os dados do usuário:', error));
+    } catch (error) {
+        console.error('Erro ao decodificar o token:', error);
+    }
+});
