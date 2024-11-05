@@ -1,4 +1,4 @@
-// script.js
+
 document.addEventListener('DOMContentLoaded', () => {
     const selectElement = document.getElementById('cbFiltros');
     const selectedItemsContainer = document.getElementById('selectedItems');
@@ -38,5 +38,31 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedOption.style.display = 'none';
 
         selectElement.selectedIndex = -1;
+    });
+
+   
+    function salvarDadosPropriedade(nome, endereco, valor, avaliacao, imagem) {
+        localStorage.setItem('nomePropriedade', nome);
+        localStorage.setItem('endereco', endereco);
+        localStorage.setItem('valorDiaria', valor);
+        localStorage.setItem('avaliacao', avaliacao);
+        localStorage.setItem('imagemUrl', imagem);
+
+        window.location.href = "../promote-ad-screen/index.html"; 
+    }
+
+ 
+    const promoverButtons = document.querySelectorAll('.botaopromover');
+    promoverButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const card = button.closest('.propriedade-card'); 
+            const nomePropriedade = card.querySelector('.propriedade-info strong').nextSibling.textContent; // Captura o nome
+            const endereco = card.querySelector('.propriedade-info p:nth-child(2)').textContent.split(': ')[1]; // Captura o endereço
+            const valorDiaria = card.querySelector('.propriedade-info p:nth-child(3)').textContent.split(': ')[1]; // Captura o valor
+            const avaliacao = card.querySelector('.propriedade-info p:nth-child(4)').textContent.split(': ')[1]; // Captura a avaliação
+            const imagemUrl = card.querySelector('.propriedade-imagem').src; 
+
+            salvarDadosPropriedade(nomePropriedade, endereco, valorDiaria, avaliacao, imagemUrl);
+        });
     });
 });
