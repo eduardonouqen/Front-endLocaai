@@ -264,7 +264,7 @@
     background-color: #A141D4;
     border-radius: 2rem;
     width: 45rem;
-    height: 9rem;
+    height: 14rem;
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -274,7 +274,7 @@
 
 .purpleLocatorBoxImage {
     width: 8rem;
-    height: auto;
+    height: 13rem;
     border-radius: 1.6rem;
     margin-left: 0.6rem;
 }
@@ -443,6 +443,7 @@
 .ratingAlign {
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
 }
 
 .ratingStar {
@@ -508,4 +509,43 @@
     width: 1.2rem;
     height: 1.2rem;
     cursor: pointer;
+}
+
+.datePickContainer {
+    background-color: #A141D4; /* Cor de fundo roxa para combinar com o tema */
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 25rem; /* Controla o tamanho máximo para manter a responsividade */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.dateLabel {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.dateInput {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #4D0872; /* Cor de borda para combinar com o tema */
+    border-radius: 0.8rem;
+    margin-bottom: 1rem;
+    color: #4D0872;
+    background-color: #f7f7f7;
+    font-size: 1rem;
+}
+
+.dateInput::placeholder {
+    color: #8F8F8F; /* Cor do placeholder */
+}
+
+.dateInput:focus {
+    outline: none;
+    border-color: #390853; /* Cor da borda ao focar no input */
 }
