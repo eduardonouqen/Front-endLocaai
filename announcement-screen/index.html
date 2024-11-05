@@ -9,7 +9,7 @@
     <link rel="icon" type="icon/png" href="img/icon.png">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <script src="../top-bar/topBarFunctions.js" defer></script>
-    <script src="./js/script.js"></script>
+    
 </head>
 
 <body>
@@ -218,8 +218,7 @@
                         </div>
 
                         <div class="purpleLocatorBoxText">
-                            <label class="purpleLocatorBoxTimeLabel">"Sintam o peso do martelo! 🔨"</label>
-
+                            <label class="martelo">"Sintam o peso do martelo! 🔨"</label>
                         </div>
 
                         <div class="purpleLocatorBoxLevel">
@@ -248,10 +247,11 @@
             </div>
 
             <div class="datePickContainer">
-                <label class="dateLabel">Check-in</label>
-                <input type="date" class="dateInput" />
-                <label class="dateLabel">Check-out</label>
-                <input type="date" class="dateInput" />
+                <label class="dateLabel" for="check-in">Check-in</label>
+                <input type="date" id="check-in" class="dateInput" />
+                
+                <label class="dateLabel" for="check-out">Check-out</label>
+                <input type="date" id="check-out" class="dateInput" />
             </div>
 
             <div class="ratingAlign2">
@@ -345,4 +345,5 @@
     <div class="bottomBar">
         <label class="copyrightLabel">© LOCAAIEVENTOS - Todos os direitos reservados</label>
     </div>
+    <script src="./js/script.js"></script>
 </body>
