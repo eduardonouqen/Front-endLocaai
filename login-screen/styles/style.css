@@ -1,15 +1,8 @@
-/* styles.css */
-
 body {
     font-family: 'Inter';
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 
@@ -24,8 +17,11 @@ body {
 
 .logo-header {
     width: 100%;
-    background-color: #4e0070;
-    text-align: center;
+    height: 80px;
+    background-color: #44116f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -33,7 +29,8 @@ body {
 }
 
 .logo-header img {
-    width: 180px;
+    width: 150px;
+    cursor: pointer;
 }
 
 .login-container {
@@ -43,10 +40,7 @@ body {
     overflow: hidden;
     display: flex;
     width: 800px;
-    /* Aumenta a largura do container de login */
     max-width: 90%;
-    margin-top: 20px;
-    /* Adicione uma margem para separar do header */
 }
 
 .login-image-container {
@@ -54,7 +48,7 @@ body {
 }
 
 .login-image {
-    border-radius: 10px 0 0 10px;
+    border-radius: 5px 0px 0px 5px;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -109,7 +103,7 @@ body {
 
 .spinner {
     border: 4px solid rgba(0, 0, 0, 0.1);
-    border-left-color: #4e0070; /* Cor do ícone de carregamento */
+    border-left-color: #4e0070;
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -117,10 +111,20 @@ body {
     margin: 10px 0;
 }
 
+.align-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
