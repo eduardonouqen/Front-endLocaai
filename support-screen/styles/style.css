@@ -21,18 +21,30 @@ body {
 .infos-container {
     border-radius: 30px;
     background-color: #EEECEC;
-    width: 90%; /* Ajusta a largura em porcentagem da viewport */
+    width: 90%;
     max-width: 1200px;
-    height: auto; /* Altura ajusta conforme o conteúdo */
-    padding: 20px; /* Adiciona espaçamento interno */
-    margin: 100px auto; /* Centraliza o container e adiciona espaçamento superior */
+    height: auto;
+    padding: 20px;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centraliza verticalmente */
+    justify-content: center;
+    box-sizing: border-box;
 }
 
-.h1, .h2 {
+.backgroundDiv {
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1,
+.h2 {
     text-align: center;
     margin: 0 0 20px;
 }
@@ -41,33 +53,34 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 800px; /* Limita a largura máxima do contêiner */
+    max-width: 800px;
     margin: 10px auto;
+    margin-bottom: 40px;
 }
 
 .inputsearch {
     background-color: #ffffff;
-    font-size: 1rem; /* Ajusta o tamanho da fonte */
-    border: 1px solid black; /* Adiciona borda ao campo */
+    font-size: 1rem;
+    border: 1px solid black;
     border-radius: 27px;
-    width: 100%; /* Ajusta a largura do campo */
-    height: 50px; /* Ajusta a altura do campo */
+    width: 100%;
+    height: 50px;
     padding-left: 10px;
-    box-sizing: border-box; /* Inclui a borda e o padding no cálculo da largura */
+    box-sizing: border-box;
 }
 
 .search-button {
-    background-color: #ffffff; 
+    background-color: #ffffff;
     border: none;
     padding: 0;
     cursor: pointer;
-    width: 40px; /* Ajusta a largura do botão */
-    height: 30px; /* Ajusta a altura do botão */
+    width: 40px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: -50px; /* Posiciona o botão sobre o campo de texto */
-    transition: all 0.2s ease; /* Transição suave para o efeito */
+    margin-left: -50px;
+    transition: all 0.2s ease;
 }
 
 .search-button img {
@@ -76,30 +89,28 @@ body {
 }
 
 .search-button:active {
-    transform: translateY(4px); /* Move o botão para baixo (efeito de afundar) */
+    transform: translateY(4px);
 }
 
 .container {
     text-align: center;
-    margin: 20px auto; /* Adiciona espaçamento superior e inferior e centraliza */
     padding: 0 10px;
 }
 
 .container p {
     cursor: pointer;
-    margin-bottom: 10px; /* Espaçamento entre os parágrafos */
+    margin-bottom: 10px;
 }
 
 .container p:hover {
     text-decoration: underline;
 }
 
-/* Media Queries para responsividade */
 @media (max-width: 768px) {
     .infos-container {
         width: 95%;
         padding: 15px;
-        margin-top: 50px; /* Adiciona um espaçamento menor em telas pequenas */
+        margin-top: 50px;
     }
 
     .inputsearch-container {

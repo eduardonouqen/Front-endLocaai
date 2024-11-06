@@ -161,6 +161,8 @@ input[type="number"]::-webkit-outer-spin-button {
     max-height: 0;
     transition: max-height 0.3s ease;
     overflow: hidden;
+    position: fixed;
+    top: 80px;
 }
 
 .categoriesBar.show {
