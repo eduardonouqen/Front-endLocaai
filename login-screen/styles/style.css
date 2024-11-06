@@ -3,11 +3,6 @@ body {
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 
@@ -46,8 +41,6 @@ body {
     display: flex;
     width: 800px;
     max-width: 90%;
-    margin-top: 20px;
-
 }
 
 .login-image-container {
@@ -116,6 +109,15 @@ body {
     height: 30px;
     animation: spin 1s linear infinite;
     margin: 10px 0;
+}
+
+.align-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
 }
 
 @keyframes spin {
