@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('imagemUrl', imagem);
 
         window.location.href = "../promote-ad-screen/index.html"; 
+    
     }
 
  
@@ -56,10 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
     promoverButtons.forEach((button) => {
         button.addEventListener('click', () => {
             const card = button.closest('.propriedade-card'); 
-            const nomePropriedade = card.querySelector('.propriedade-info strong').nextSibling.textContent; // Captura o nome
-            const endereco = card.querySelector('.propriedade-info p:nth-child(2)').textContent.split(': ')[1]; // Captura o endereço
-            const valorDiaria = card.querySelector('.propriedade-info p:nth-child(3)').textContent.split(': ')[1]; // Captura o valor
-            const avaliacao = card.querySelector('.propriedade-info p:nth-child(4)').textContent.split(': ')[1]; // Captura a avaliação
+            const nomePropriedade = card.querySelector('.propriedade-info strong').nextSibling.textContent; 
+            const endereco = card.querySelector('.propriedade-info p:nth-child(2)').textContent.split(': ')[1]; 
+            const valorDiaria = card.querySelector('.propriedade-info p:nth-child(3)').textContent.split(': ')[1]; 
+            const avaliacao = card.querySelector('.propriedade-info p:nth-child(4)').textContent.split(': ')[1]; 
             const imagemUrl = card.querySelector('.propriedade-imagem').src; 
 
             salvarDadosPropriedade(nomePropriedade, endereco, valorDiaria, avaliacao, imagemUrl);
