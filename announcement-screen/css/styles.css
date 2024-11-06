@@ -273,7 +273,7 @@
 }
 
 .purpleLocatorBoxImage {
-    width: 8rem;
+    width: 13rem;
     height: 13rem;
     border-radius: 1.6rem;
     margin-left: 0.6rem;
@@ -465,8 +465,7 @@
 
 .ratingLabel2 {
     color: white;
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 .ratingDiv {
