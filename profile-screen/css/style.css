@@ -117,7 +117,6 @@ header .user-info-header .badge {
     margin-top: 10px;
 }
 
-
 .Documents-btn {
     display: flex;
     align-items: center;
@@ -190,8 +189,6 @@ header .user-info-header .badge {
 .Documents-btn:hover .fileFront {
     transform: rotateX(30deg);
 }
-
-
 
 .user-info {
     width: 90%;

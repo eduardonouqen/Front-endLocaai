@@ -1,4 +1,3 @@
-/* styles.css */
 
 body {
     font-family: 'Inter';
@@ -43,10 +42,9 @@ body {
     overflow: hidden;
     display: flex;
     width: 800px;
-    /* Aumenta a largura do container de login */
     max-width: 90%;
     margin-top: 20px;
-    /* Adicione uma margem para separar do header */
+    
 }
 
 .login-image-container {
@@ -109,7 +107,7 @@ body {
 
 .spinner {
     border: 4px solid rgba(0, 0, 0, 0.1);
-    border-left-color: #4e0070; /* Cor do ícone de carregamento */
+    border-left-color: #4e0070; 
     border-radius: 50%;
     width: 30px;
     height: 30px;

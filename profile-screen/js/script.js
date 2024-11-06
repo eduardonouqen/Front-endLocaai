@@ -48,16 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     saveButton.addEventListener('click', saveAboutText);
     fileUpload.addEventListener('change', loadImage);
 
-    if (deleteButton) {
-        deleteButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            const confirmation = confirm("Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.");
-            if (confirmation) {
-                alert("Conta excluída com sucesso!");
-            }
-        });
-    }
-
     filtersButton.addEventListener('click', () => {
         filtersBar.classList.toggle('show');
         filtersButton.classList.toggle('active');
@@ -67,10 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCharCount();
     adjustTextareaHeight();
 });
-
-
-
-
 
 
 document.addEventListener("DOMContentLoaded", function() {
