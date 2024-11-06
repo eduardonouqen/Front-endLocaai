@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
     <link rel="stylesheet" href="styles/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <title>Minhas Propriedades</title>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="icon" type="icon/png" href="../top-bar/img/icon.png">
     <script src="../top-bar/topBarFunctions.js" defer></script>
     <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
@@ -39,10 +39,10 @@
         </a>
     </div>
     <div id="filtersBar" class="filtersBar"></div>
-
+    
     <div class="container propriedades-container">
         <h2 class="titulo">Minhas propriedades</h2>
-
+        
         <div class="propriedade-card">
             <img src="img/castelo.png" alt="Imagem da propriedade" class="propriedade-imagem">
             <div class="propriedade-info">
@@ -59,10 +59,11 @@
                 <button class="botaoexcluir">Excluir</button>
             </div>
         </div>
+        <div id="propriedades-lista"></div>
 
-        <button class="btn btn-light cadastrar-btn">Possui mais alguma propriedade? Cadastre-a!</button>
+        <button class="btn btn-light cadastrar-btn" onclick="window.location.href='../announcementregister-screen/index.html'">Possui mais alguma propriedade? Cadastre-a!</button>
     </div>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

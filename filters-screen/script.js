@@ -58,3 +58,29 @@ document.addEventListener('DOMContentLoaded', function () {
     updateButtonClearState();
 });
 
+
+
+const selectedItemsContainer = document.getElementById('selectedItems');
+
+const nextButton = document.querySelector('.button-next');
+
+const selectedOptions = [];
+
+document.querySelectorAll('.opcao').forEach(opcao => {
+    opcao.addEventListener('click', () => {
+        const value = opcao.dataset.value;
+        
+        if (!selectedOptions.includes(value)) {
+            selectedOptions.push(value);
+            
+            const selectedDiv = document.createElement('div');
+            selectedDiv.textContent = value;
+            selectedItemsContainer.appendChild(selectedDiv);
+        }
+    });
+});
+
+nextButton.addEventListener('click', () => {
+    localStorage.setItem('nameFilter', JSON.stringify(selectedOptions));
+    location.href = '../price-screen/index.html';
+});
