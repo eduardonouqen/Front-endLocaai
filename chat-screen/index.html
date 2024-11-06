@@ -4,7 +4,6 @@
 <head>
     <title>Locaai - O Seu Site de Eventos</title>
     <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
-    <link rel="stylesheet" type="text/css" href="../bottom-bar/css/bottomBarStyle.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="icon" type="icon/png" href="../top-bar/img/icon.png">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
@@ -144,16 +143,21 @@
 
     <div class="chatsAndMessages">
         <div class="chatsDiv">
-
+            <a class="needHelpButton" onclick="window.location.href='../support-screen/index.html'">
+                <label class="needHelpButtonLabel">Preciso de ajuda!</label>
+            </a>
         </div>
         <div class="messagesDiv">
             <div class="chatBoxDiv">
+
+            </div>
+            <div class="bottomUtilitiesDiv">
+
                 <textarea class="chatBox" placeholder="Digite uma mensagem" oninput="autoResize(this)"></textarea>
+                <button class="buttonSendMessage">
+                    <img class="buttonSendMessageImg" src="./img/sendIcon.png">
+                </button>
             </div>
         </div>
-    </div>
-
-    <div class="bottomBar">
-        <label class="copyrightLabel">© LOCAAIEVENTOS - Todos os direitos reservados</label>
     </div>
 </body>

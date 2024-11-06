@@ -4,7 +4,7 @@ body {
 
 .chatsAndMessages {
     display: flex;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 80px);
 }
 
 .chatsDiv {
@@ -14,31 +14,34 @@ body {
 
 .messagesDiv {
     width: 75%;
+    height: 100%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .chatBoxDiv {
-    position: relative;
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    
+    height: calc(100% - 60px);
+    padding: 1rem;
+    overflow-y: auto;
 }
+
+
 
 .chatBox {
     width: 80%;
+    flex: 1;
     border-radius: 1.5rem;
     resize: none;
     border-style: solid;
     border-color: #e7e7e7;
     border-width: 2px;
-    position: absolute;
-    bottom: 0;
-    left: 10%;
     padding-top: 1.3rem;
     padding-bottom: 1rem;
     padding-left: 1rem;
-    margin-bottom: 1rem;
+    padding-right: 1rem;
     font-size: 1.1rem;
     overflow-y: hidden;
     height: 1.5em;
@@ -46,4 +49,67 @@ body {
 
 .chatBox::placeholder {
     font-size: 1.1rem;
+}
+
+.needHelpButton {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(245, 245, 245);
+    transition: padding 0.3s ease, background-color 0.3s ease;
+    color: #44116f;
+}
+
+.needHelpButton:hover {
+    background-color: #44116f;
+    color: white;
+    text-decoration: underline;
+    padding: 10px;
+}
+
+.needHelpButtonLabel {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.buttonSendMessage {
+    background-color: #44116f;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+.buttonSendMessage:hover {
+    background-color: #330c52;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+.buttonSendMessageImg {
+    width: 1.5rem;
+    height: auto;
+}
+
+.bottomUtilitiesDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 1rem 0;
+    box-sizing: border-box;
 }
