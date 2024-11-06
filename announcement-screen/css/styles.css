@@ -304,6 +304,11 @@
     margin-right: 7px;
 }
 
+.martelo{
+    font-size: 1rem;
+    color: white;
+}
+
 .purpleLocatorBoxTextAlign2 {
     display: flex;
     flex-direction: column;
