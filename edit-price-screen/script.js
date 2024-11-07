@@ -102,52 +102,87 @@ document.addEventListener("DOMContentLoaded", () => {
         const dadosAnuncio = JSON.parse(localStorage.getItem('cadastroAnuncio'));
         const filtrosSelecionados = JSON.parse(localStorage.getItem('nameFilter'));
 
-        // Combina os filtros com os dados do anúncio
         dadosAnuncio.nameFilter = filtrosSelecionados;
-
         const urlRealty = 'http://localhost:3000/realty';
-
-        // Captura o token do localStorage
         const token = localStorage.getItem('token');
 
-        // Captura e converte os valores de preço para números
         const current = parseFloat(priceDisplay.innerText.replace("R$", "").replace(",", "."));
         const basePriceValue = parseFloat(basePriceSpan.innerText.replace("R$", "").replace(",", "."));
         const serviceFeeValue = parseFloat(serviceFeeSpan.innerText.replace("R$", "").replace(",", "."));
         const additionalValueValue = parseFloat(additionalValueSpan.innerText.replace("R$", "").replace(",", "."));
-
-        // Soma todos os valores
         const price = current + serviceFeeValue + additionalValueValue;
-
-        // Atualiza o valor total de `price` no `dadosAnuncio`
         dadosAnuncio.value = price;
 
-        // Envia os dados do anúncio para o backend
-        function enviarAnuncio() {
-            return fetch(urlRealty, {
-                method: 'POST',
+        const realtyId = localStorage.getItem('realtyId');
+
+        if (!realtyId) {
+            alert('Erro: ID do imóvel não encontrado');
+            return;
+        }
+
+        function atualizarAnuncio() {
+            console.log('Enviando dados para o backend...');
+            console.log('Dados do anúncio:', dadosAnuncio);
+            console.log('ID do imóvel:', realtyId);
+            console.log('Token de autorização:', token);
+        
+            return fetch(`${urlRealty}/${realtyId}`, {
+                method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify(dadosAnuncio)
             })
-            .then(response => response.json())
+            .then(response => {
+                console.log('Resposta do servidor:', response);
+        
+                if (!response.ok) {
+                    return response.text().then(text => {
+                        throw new Error(`Erro no servidor: ${response.status} - ${text}`);
+                    });
+                }
+        
+                console.log('Resposta recebida com sucesso.');
+        
+                // Verifica se a resposta tem corpo
+                if (response.status === 204) {
+                    console.log('Resposta com código 204 (No Content). Atualização bem-sucedida.');
+                    return { message: 'Anúncio atualizado com sucesso (sem conteúdo retornado)' };
+                }
+        
+                return response.text().then(text => {
+                    console.log('Corpo da resposta (em texto):', text);
+                    // Verifica se a resposta está vazia
+                    if (!text) {
+                        console.log('Resposta vazia. Continuando...');
+                        return { message: 'Anúncio atualizado, sem conteúdo adicional' };
+                    }
+        
+                    try {
+                        return JSON.parse(text);  // Tenta converter a resposta em JSON
+                    } catch (e) {
+                        throw new Error(`Falha ao parsear a resposta JSON: ${e.message}`);
+                    }
+                });
+            })
             .then(data => {
-                console.log('Resposta do backend para realty:', data);
-                
+                console.log('Resposta JSON do backend:', data);
+        
+                // Verifica se o id foi retornado
                 if (data.id) {
                     return data.id;
                 } else {
-                    throw new Error('Falha ao receber ID do anúncio');
+                    console.log('ID não retornado, mas a atualização foi bem-sucedida.');
+                    return; // Retorna sem fazer nada, ou exibe uma mensagem de sucesso
                 }
             });
         }
 
-        enviarAnuncio()
+        atualizarAnuncio()
         .then(() => {
-            // Redireciona para a nova página após o envio bem-sucedido
-            window.location.href = '../initial-screen/index.html'; // Substitua pela URL desejada
+            console.log('Redirecionando para a página inicial...');
+            window.location.href = '../initial-screen/index.html';
         })
         .catch(error => {
             console.error('Erro ao enviar dados:', error);
@@ -155,6 +190,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+
+
 
 
 

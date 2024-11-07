@@ -133,11 +133,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Decodifica o token
     const decodedToken = jwt_decode(token);
-    console.log("Conteúdo do Token:", decodedToken); // Adicionado para verificar o conteúdo
+    console.log("Conteúdo do Token:", decodedToken);
 
-    const userId = decodedToken.userId || decodedToken.id || decodedToken.sub; // Testa várias opções
+    const userId = decodedToken.userId || decodedToken.id || decodedToken.sub;
 
     if (!userId) {
         console.error('User ID não encontrado no token.');
@@ -176,10 +175,22 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="../promote-ad-screen/index.html">
                             <button class="botaopromover">Promover</button>
                         </a>
-                        <button class="botaoeditar">Editar</button>
-                        <button class="botaoexcluir">Excluir</button>
+                        <button class="botaoeditar" data-id="${propriedade.id}">Editar</button>
+                        <button class="botaoexcluir" data-id="${propriedade.id}">Excluir</button>
                     </div>
                 `;
+
+                const botaoEditar = propriedadeCard.querySelector('.botaoeditar');
+                botaoEditar.addEventListener('click', () => {
+                    // Armazena o ID da propriedade no localStorage
+                    localStorage.setItem('realtyId', propriedade.id);
+
+                    // Redireciona para a tela de edição
+                    window.location.href = '../edit-announcementregister-screen/index.html';  // Substitua pelo caminho real da tela de edição
+                });
+
+                const botaoExcluir = propriedadeCard.querySelector('.botaoexcluir');
+                botaoExcluir.addEventListener('click', () => deletePropriedade(propriedade.id, propriedadeCard));
 
                 propriedadesLista.appendChild(propriedadeCard);
             });
@@ -188,6 +199,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Chama a função para buscar as propriedades
+    async function deletePropriedade(propriedadeId, propriedadeCard) {
+        try {
+            const response = await fetch(`http://localhost:3000/realty/${propriedadeId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`Erro ao excluir propriedade: ${response.status}`);
+            }
+
+            propriedadeCard.remove();
+            console.log(`Propriedade com ID ${propriedadeId} foi excluída com sucesso.`);
+        } catch (error) {
+            console.error('Erro ao excluir a propriedade:', error);
+        }
+    }
+
     fetchPropriedades();
 });
+
