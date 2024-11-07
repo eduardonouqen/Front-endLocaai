@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="styles/filtro.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
+    <script src="../top-bar/topBarFunctions.js" defer></script>
+    <title>Aplicar Filtros</title>
+</head>
+
+<body>
+    <!-- Start of the search bar -->
+    <div class="searchBar">
+        <img id="logo" class="logoTop" src="../top-bar/img/logoLado.png">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
+            <div class="announcementButtonAlign">
+                <button class="announcementButton">ANUNCIE!</button>
+            </div>
+        </div>
+
+        <a href="../profile-screen/index.html">
+            <div class="picAndLabels">
+                <div class="textLocatorInfo">
+                    <label class="textName">Eduardo França</label>
+                    <label class="locatorLevel">Locador Ouro</label>
+                </div>
+                <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
+            </div>
+        </a>
+    </div>
+
+    <div id="categoriesBar" class="categoriesBar">
+        <div class="categoriesAlignTopBar2">
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/auditoriums.png">
+                <label>Auditórios</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/beaches.png">
+                <label>Praias</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/bistros.png">
+                <label>Bistrôs</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/castles-and-palaces.png">
+                <label>Castelos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/chapels.png">
+                <label>Capelas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/clubs-and-associations.png">
+                <label>Clubes</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/co-working.png">
+                <label>Co-working</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/convention-centers.png">
+                <label>Convenções</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/coverages.png">
+                <label>Coberturas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/dams-and-lakes.png">
+                <label>Rios e Lagos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms and-ranches.png">
+                <label>Fazendas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms.png">
+                <label>Chácaras</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/gardens.png">
+                <label>Jardins</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/hotels-and-inns.png">
+                <label>Hotéis</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/islands.png">
+                <label>Ilhas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/lounges.png">
+                <label>Lounges</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/mansions.png">
+                <label>Mansões</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/party-halls.png">
+                <label>Salões de Festa</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/resorts.png">
+                <label>Resorts</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/sheds.png">
+                <label>Barracões</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/stadiums-and-arenas.png">
+                <label>Estádios</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/theme-parks.png">
+                <label>Parques Temáticos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/water-parks.png">
+                <label>Parques Aquáticos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/yachts-and-vessels.png">
+                <label>Embarcações</label>
+            </a>
+        </div>
+    </div>
+    <!-- End of the search bar -->
+
+    <div class="infos-container">
+        <h1>O que tem no seu local?</h1>
+        <h2 class="h2">Clique nas opções:</h2>
+
+        <div class="opcoes-container">
+            <div class="opcao" data-value="Acessibilidade">Acessibilidade</div>
+            <div class="opcao" data-value="Aquecedor">Aquecedor</div>
+            <div class="opcao" data-value="Animatrônicos">Animatrônicos</div>
+            <div class="opcao" data-value="Ar Condicionado">Ar Condicionado</div>
+            <div class="opcao" data-value="Aparelho de Som">Aparelho de Som</div>
+            <div class="opcao" data-value="Banheiro">Banheiro</div>
+            <div class="opcao" data-value="Buffet">Buffet</div>
+            <div class="opcao" data-value="Campo de Futebol">Campo de Futebol</div>
+            <div class="opcao" data-value="Campo de Golfe">Campo de Golfe</div>
+            <div class="opcao" data-value="Cama">Cama</div>
+            <div class="opcao" data-value="Câmera de Segurança">Câmera de Segurança</div>
+            <div class="opcao" data-value="Churrasqueira">Churrasqueira</div>
+            <div class="opcao" data-value="Casa na Árvore">Casa na Árvore</div>
+            <div class="opcao" data-value="Cozinha">Itens de Cozinha</div>
+            <div class="opcao" data-value="Elevador">Elevador</div>
+            <div class="opcao" data-value="Espaço Infantil">Espaço Infantil</div>
+            <div class="opcao" data-value="Espaço para Acampar">Espaço para Acampar</div>
+            <div class="opcao" data-value="Estacionamento">Estacionamento</div>
+            <div class="opcao" data-value="Freezer">Freezer</div>
+            <div class="opcao" data-value="Fliperama">Fliperama</div>
+            <div class="opcao" data-value="Heliporto">Heliporto</div>
+            <div class="opcao" data-value="Karaokê">Karaokê</div>
+            <div class="opcao" data-value="Microfones">Microfones</div>
+            <div class="opcao" data-value="Mesa de Sinuca">Mesa de Sinuca</div>
+            <div class="opcao" data-value="Piscina">Piscina</div>
+            <div class="opcao" data-value="Pista de Ski">Pista de Ski</div>
+            <div class="opcao" data-value="Playground">Playground</div>
+            <div class="opcao" data-value="Quadra de Basquete">Quadra de Basquete</div>
+            <div class="opcao" data-value="Quadra de Tênis">Quadra de Tênis</div>
+            <div class="opcao" data-value="Sauna">Sauna</div>
+            <div class="opcao" data-value="Segurança">Segurança</div>
+            <div class="opcao" data-value="Tênis de Mesa">Tênis de Mesa</div>
+            <div class="opcao" data-value="Wi-fi">Wi-fi</div>
+        </div>
+
+        <h2 class="h22">Seu lugar tem:</h2>
+        <div class="filtro-container">
+            
+        </div>
+
+        <button class="button-clear">LIMPAR</button>
+        <button class="button-next" onclick="location.href='../price-screen/index.html'">PRÓXIMO</button>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
+    <script src="../top-bar/topBarFunctions.js" defer></script>
+    <link rel="icon" type="icon/png" href="../announcement-screen/img/icon.png">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+</head>
+
+<body>
+    <!-- Start of the search bar -->
+    <div class="searchBar">
+        <img id="logo" class="logoTop" src="../top-bar/img/logoLado.png">
+        <div class="searchBar2">
+            <input type="text" placeholder="Vai pra onde?" class="searchInput">
+            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
+            <div class="searchInputWrapper">
+                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
+                <button type='submit' class="buttonSearch"></button>
+                <button type='submit' class="buttonFilters" id="toggleButton"></button>
+            </div>
+            <div class="announcementButtonAlign">
+                <button class="announcementButton">ANUNCIE!</button>
+            </div>
+        </div>
+
+        <a href="../profile-screen/index.html">
+            <div class="picAndLabels">
+                <div class="textLocatorInfo">
+                    <label class="textName">Eduardo França</label>
+                    <label class="locatorLevel">Locador Ouro</label>
+                </div>
+                <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
+            </div>
+        </a>
+    </div>
+
+    <div id="categoriesBar" class="categoriesBar">
+        <div class="categoriesAlignTopBar2">
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/auditoriums.png">
+                <label>Auditórios</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/beaches.png">
+                <label>Praias</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/bistros.png">
+                <label>Bistrôs</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/castles-and-palaces.png">
+                <label>Castelos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/chapels.png">
+                <label>Capelas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/clubs-and-associations.png">
+                <label>Clubes</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/co-working.png">
+                <label>Co-working</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/convention-centers.png">
+                <label>Convenções</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/coverages.png">
+                <label>Coberturas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/dams-and-lakes.png">
+                <label>Rios e Lagos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms and-ranches.png">
+                <label>Fazendas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms.png">
+                <label>Chácaras</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/gardens.png">
+                <label>Jardins</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/hotels-and-inns.png">
+                <label>Hotéis</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/islands.png">
+                <label>Ilhas</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/lounges.png">
+                <label>Lounges</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/mansions.png">
+                <label>Mansões</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/party-halls.png">
+                <label>Salões de Festa</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/resorts.png">
+                <label>Resorts</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/sheds.png">
+                <label>Barracões</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/stadiums-and-arenas.png">
+                <label>Estádios</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/theme-parks.png">
+                <label>Parques Temáticos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/water-parks.png">
+                <label>Parques Aquáticos</label>
+            </a>
+            <a class="categoriesAlignTopBar">
+                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/yachts-and-vessels.png">
+                <label>Embarcações</label>
+            </a>
+        </div>
+    </div>
+    <!-- End of the search bar -->
+
+    <form id="formCadastroAnuncio" action="/cadastroAnuncio" method="POST">
+        <h2>Preencha as informações sobre seu local!</h2>
+        <div class="box">
+            <input type="text" id="titulo" placeholder="Titulo" class="titulo">
+            <div class="categoriacontainer">
+                <div class="dropdown-container">
+                    <div class="selected-option" id="categoriaSelecionada">Selecione uma categoria</div>
+                    <div class="dropdown-content">
+                        <div class="option" onclick="selecionarCategoria('Castelo')">Castelo <img src="img/torre.png">
+                        </div>
+                        <div class="option" onclick="selecionarCategoria('Barracao')">Barracão <img
+                                src="img/barracao.png"></div>
+                        <div class="option" onclick="selecionarCategoria('Teatro')">Teatro <img src="img/teatro.png">
+                        </div>
+                        <div class="option" onclick="selecionarCategoria('Mansao')">Mansão <img src="img/mansao.png">
+                        </div>
+                        <div class="option" onclick="selecionarCategoria('Praia')">Praia <img src="img/praia.png"></div>
+                        <div class="option" onclick="selecionarCategoria('Chacara')">Chacará <img
+                                src="img/chacaras.png"></div>
+                        <div class="option" onclick="selecionarCategoria('Ilha')">Ilha <img src="img/ilha.png"></div>
+                        <div class="option" onclick="selecionarCategoria('Hotel')">Hotel <img src="img/hotel.png"></div>
+                        <div class="option" onclick="selecionarCategoria('Resort')">Resort <img src="img/resort.png">
+                        </div>
+                        <div class="option" onclick="selecionarCategoria('Salao')">Salao <img src="img/salao.png"></div>
+                        <div class="option" onclick="selecionarCategoria('Clube')">Clube <img src="img/clube.png"></div>
+                        <div class="option" onclick="selecionarCategoria('Embarcacao')">Embarcação <img
+                                src="img/embarcacao.png"></div>
+                        <div class="option" onclick="selecionarCategoria('Estadio')">Estadio <img src="img/estadio.png">
+                        </div>
+                        <div class="option" onclick="selecionarCategoria('Co-working')">Co-working <img
+                                src="img/coworking.png"></div>
+                        <div class="option" onclick="selecionarCategoria('Bistro')">Bistrô <img src="img/bistro.png">
+                        </div>
+                        <div class="option" onclick="selecionarCategoria('Capela')">Capela <img src="img/capela.png">
+                        </div>
+                        <div class="option" onclick="selecionarCategoria('Cobertura')">Cobertura <img
+                                src="img/Cobertura.png"></div>
+                        <div class="option" onclick="selecionarCategoria('CentroDeConvencao')">Centro de convenção <img
+                                src="img/centro.png"></div>
+                        <div class="option" onclick="selecionarCategoria('ParqueTematico')">Parque temático<img
+                                src="img/parque.png"></div>
+                        <div class="option" onclick="selecionarCategoria('ParqueAquatico')">Parque aquático <img
+                                src="img/parqueaquatico.png"></div>
+                        <div class="option" onclick="selecionarCategoria('Lago')">Lago <img src="img/lago.png"></div>
+                        <div class="option" onclick="selecionarCategoria('Fazenda')">Fazenda <img src="img/fazenda.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sideToSide2">
+                <input type="text" id="adress" placeholder="Endereço" class="endereco">
+                <input type="text" id="number" placeholder="Nº" class="number">
+            </div>
+
+            <div class="sideToSide2">
+                <input type="text" id="city" placeholder="Cidade" class="city">
+                <select class="state" id="state">
+                    <option value="" disabled selected>Estado</option>
+                    <option value="AC">Acre (AC)</option>
+                    <option value="AL">Alagoas (AL)</option>
+                    <option value="AP">Amapá (AP)</option>
+                    <option value="AM">Amazonas (AM)</option>
+                    <option value="BA">Bahia (BA)</option>
+                    <option value="CE">Ceará (CE)</option>
+                    <option value="DF">Distrito Federal (DF)</option>
+                    <option value="ES">Espírito Santo (ES)</option>
+                    <option value="GO">Goiás (GO)</option>
+                    <option value="MA">Maranhão (MA)</option>
+                    <option value="MT">Mato Grosso (MT)</option>
+                    <option value="MS">Mato Grosso do Sul (MS)</option>
+                    <option value="MG">Minas Gerais (MG)</option>
+                    <option value="PA">Pará (PA)</option>
+                    <option value="PB">Paraíba (PB)</option>
+                    <option value="PR">Paraná (PR)</option>
+                    <option value="PE">Pernambuco (PE)</option>
+                    <option value="PI">Piauí (PI)</option>
+                    <option value="RJ">Rio de Janeiro (RJ)</option>
+                    <option value="RN">Rio Grande do Norte (RN)</option>
+                    <option value="RS">Rio Grande do Sul (RS)</option>
+                    <option value="RO">Rondônia (RO)</option>
+                    <option value="RR">Roraima (RR)</option>
+                    <option value="SC">Santa Catarina (SC)</option>
+                    <option value="SP">São Paulo (SP)</option>
+                    <option value="SE">Sergipe (SE)</option>
+                    <option value="TO">Tocantins (TO)</option>
+                </select>
+                <input type="text" id="cep" placeholder="CEP" class="cep" maxlength="9">
+                <!--<button type="button"class="cepbotao" onclick+"buscarEndereço()">!</button>-->
+            </div>
+
+            <p class="fotostext">Fotos</p>
+            <div>
+                <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
+                <label for="fileInput" class="image-placeholder">
+                    <img id="previewImage" src="img/mais.png" class="mais">
+                </label>
+                <button id="prev-btn" class="btnBefore" style="display: none;">←</button>
+                <button id="next-btn" class="btnNext" style="display: none;">→</button>
+            </div>
+
+            <input type="number" id="quarto" placeholder="Nº Quartos" class="infotecnica" max="99"
+                oninput="this.value = this.value.slice(0, 2);">
+            <input type="number" id="banheiro" placeholder="Nº Banheiros" class="infotecnica" max="99"
+                oninput="this.value = this.value.slice(0, 2);">
+            <input type="number" id="garagem" placeholder="Vagas Garagem" class="infotecnica" max="99"
+                oninput="this.value = this.value.slice(0, 2);">
+            <input type="number" id="area" placeholder="Área (m²)" class="infotecnica" max="1000"
+                oninput="this.value = this.value.slice(0, 4);">
+
+            <textarea id="descricao" placeholder="Descrição" class="caixa3"></textarea>
+            <form id="formCadastroAnuncio">
+
+
+                <div class="checklabel">
+                    <input type="checkbox" id="termos" required>
+                    <label for="termos">Eu aceito os termos de uso.</label>
+                </div>
+
+            </form>
+            <div class="aoAnunciar">
+                <p>Ao anunciar, você estara concordando com nossos <a href="../terms-of-use/index.html">termos de
+                        uso</a></p>
+
+            </div>
+            <button type="submit" class="botao" id="botaoProximo">Proximo</button>
+        </div>
+
+    </form>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
