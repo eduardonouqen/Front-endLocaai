@@ -1,6 +1,5 @@
 body {
     font-family: 'Inter';
-    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
 }
@@ -24,7 +23,6 @@ body {
 }
 
 .mainPage {
-    background-color: #f0f0f0;
     width: 100%;
     height: calc(100vh - 80px);
     margin-top: 80px;
@@ -37,8 +35,8 @@ body {
     background-color: white;
     width: 500px;
     height: 400px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,6 +74,7 @@ body {
 }
 
 .firstLabel {
+    color: #ffaa00;
     font-weight: 600;
     font-size: 1.3rem;
     margin-top: 1rem;
@@ -86,24 +85,23 @@ body {
     font-size: 1rem;
     margin-top: 1rem;
     text-align: center;
+    color: #595b5f;
 }
 
 .myReservationsButton {
-    font-weight: 600;
     background-color: #44116f;
     color: white;
     padding: 15px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 2rem;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .myReservationsButton:hover {
-    font-weight: 600;
     background-color: #330c54;
     color: rgb(212, 212, 212);
-    padding: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 2rem;
 }

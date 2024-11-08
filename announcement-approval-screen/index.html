@@ -4,154 +4,41 @@
 <head>
     <title>Locaai - O Seu Site de Eventos</title>
     <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
-    <link rel="icon" type="icon/png" href="img/icon.png">
+    <link rel="icon" type="icon/png" href="../top-bar/img/icon.png">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link rel="stylesheet" href="styles/style.css">
     <script src="../top-bar/topBarFunctions.js" defer></script>
 </head>
 
 <body>
-    <!-- Start of the search bar -->
-    <div class="searchBar">
-        <img id="logo" class="logoTop" src="../top-bar/img/logoLado.png">
-        <div class="searchBar2">
-            <input type="text" placeholder="Vai pra onde?" class="searchInput">
-            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
-            <div class="searchInputWrapper">
-                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
-                <button type='submit' class="buttonSearch"></button>
-                <button type='submit' class="buttonFilters" id="toggleButton"></button>
-            </div>
-            <div class="announcementButtonAlign">
-                <button class="announcementButton">ANUNCIE!</button>
-            </div>
-        </div>
 
-        <a href="../profile-screen/index.html">
-            <div class="picAndLabels">
-                <div class="textLocatorInfo">
-                    <label class="textName">Eduardo França</label>
-                    <label class="locatorLevel">Locador Ouro</label>
+    <div class="logoHeader" onclick="window.location.href='../initial-screen/index.html'">
+        <img class="logoImg" src="img/logo.png">
+    </div>
+
+    <div class="mainPage">
+        <div class="card">
+            <div class="header">
+                <div class="image">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                        <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#000000"
+                                d="M20 7L9.00004 18L3.99994 13"></path>
+                        </g>
+                    </svg>
                 </div>
-                <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
+                <div class="content">
+                    <span class="title">Tudo certo!</span>
+                    <p class="message">Agora basta aguardar a aprovação do seu anúncio. Enquanto isso, você pode:</p>
+                </div>
+                <div class="actions">
+                    <button type="button" class="anunciarmais">Anunciar mais</button>
+                    <button type="button" class="veranuncios">Ver meus anúncios</button>
+                </div>
             </div>
-        </a>
-    </div>
-
-    <div id="categoriesBar" class="categoriesBar">
-        <div class="categoriesAlignTopBar2">
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/auditoriums.png">
-                <label>Auditórios</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/beaches.png">
-                <label>Praias</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/bistros.png">
-                <label>Bistrôs</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/castles-and-palaces.png">
-                <label>Castelos</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/chapels.png">
-                <label>Capelas</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/clubs-and-associations.png">
-                <label>Clubes</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/co-working.png">
-                <label>Co-working</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/convention-centers.png">
-                <label>Convenções</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/coverages.png">
-                <label>Coberturas</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/dams-and-lakes.png">
-                <label>Rios e Lagos</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms and-ranches.png">
-                <label>Fazendas</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms.png">
-                <label>Chácaras</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/gardens.png">
-                <label>Jardins</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/hotels-and-inns.png">
-                <label>Hotéis</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/islands.png">
-                <label>Ilhas</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/lounges.png">
-                <label>Lounges</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/mansions.png">
-                <label>Mansões</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/party-halls.png">
-                <label>Salões de Festa</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/resorts.png">
-                <label>Resorts</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/sheds.png">
-                <label>Barracões</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/stadiums-and-arenas.png">
-                <label>Estádios</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/theme-parks.png">
-                <label>Parques Temáticos</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/water-parks.png">
-                <label>Parques Aquáticos</label>
-            </a>
-            <a class="categoriesAlignTopBar">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/yachts-and-vessels.png">
-                <label>Embarcações</label>
-            </a>
         </div>
     </div>
-    <!-- End of the search bar -->
 
-    <div class="card"> 
-        <div class="header"> 
-          <div class="image">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#000000" d="M20 7L9.00004 18L3.99994 13"></path> </g></svg>
-            </div> 
-            <div class="content">
-               <span class="title">Tudo certo!</span> 
-               <p class="message">Agora basta aguardar a aprovação do seu anúncio. Enquanto isso, você pode:</p> 
-               </div> 
-               <div class="actions">
-                  <button type="button" class="anunciarmais">Anunciar mais</button> 
-                  <button type="button" class="veranuncios">Ver meus anúncios</button> 
-                  </div> 
-                  </div> 
-                  </div>
+</body>
