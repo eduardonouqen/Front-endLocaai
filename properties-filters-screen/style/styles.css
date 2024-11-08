@@ -131,20 +131,22 @@ button.aplicar:active {
 
 .newFiltersSidebar {
     position: fixed;
-    top: 20%;
-    right: -438px;
-    width: 400px;
+    bottom: -75%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 80%; 
+    max-width: 400px;
     height: 70%;
     background-color: #f8f9fa;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: right 0.3s ease;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    transition: bottom 0.3s ease;
     padding: 15px;
     border-radius: 8px;
     overflow-y: auto;
 }
 
 .newFiltersSidebar.open {
-    right: 0;
+    bottom: 5%;
 }
 
 .filterGroup {
