@@ -110,3 +110,10 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error('Erro ao decodificar o token:', error);
     }
 });
+
+
+function logout() {
+    localStorage.removeItem('email');
+    localStorage.removeItem('senha');
+    localStorage.removeItem('token');
+}
