@@ -39,37 +39,6 @@ function calcularValor() {
         }
     }
 }       
-/*/ Recupera os dados do localStorage para quando os dados não forem predefinidos no html
-window.addEventListener('DOMContentLoaded', () => {
-    const nomePropriedade = localStorage.getItem('nomePropriedade');
-    const endereco = localStorage.getItem('endereco');
-    const valorDiaria = localStorage.getItem('valorDiaria');
-    const avaliacao = localStorage.getItem('avaliacao');
-    const imagemUrl = localStorage.getItem('imagemUrl');
-
-   
-    const imagePreviewContainer = document.querySelector('.image-preview-container');
-    const adDetailsContainer = document.createElement('div');
-
-    adDetailsContainer.innerHTML = `
-        <h2>${nomePropriedade}</h2>
-        <p><strong>Endereço:</strong> ${endereco}</p>
-        <p><strong>Valor diária:</strong> ${valorDiaria}</p>
-        <p><strong>Avaliação:</strong> ${avaliacao} <i class="fas fa-star" style="color: #FFA500;"></i></p>
-    `;
-
-    if (imagemUrl) {
-        const img = document.createElement('img');
-        img.src = imagemUrl;
-        img.alt = 'Imagem da propriedade';
-        img.style.maxWidth = '100%'; 
-        imagePreviewContainer.appendChild(img);
-    }
-
-
-    imagePreviewContainer.appendChild(adDetailsContainer);
-});
-/*/
 
 document.getElementById('data-inicio').addEventListener('change', calcularValor);
 document.getElementById('data-final').addEventListener('change', calcularValor);

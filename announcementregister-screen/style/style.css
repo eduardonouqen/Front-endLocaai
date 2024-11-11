@@ -36,15 +36,14 @@ body {
 }
 
 .infotecnica {
-    width: 10%;
+    width: 9%;
     height: 30px;
-    margin-left: 10%;
+    margin-left: 12%;
     margin-top: 5%;
     margin-bottom: 4%;
     border-radius: 5px;
     border: 1px solid #D9D9D9;
     background-color: #D9D9D9;
-
 }
 
 .endereco {
