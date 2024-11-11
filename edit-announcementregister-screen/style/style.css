@@ -347,10 +347,9 @@ cepbotao:hover {
 }
 
 .aoAnunciar {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
+    margin-top: 10%;
+    margin-left: 25%;
+    margin-right: 20%;
 }
 
 .botao {
