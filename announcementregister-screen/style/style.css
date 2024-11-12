@@ -38,13 +38,9 @@ body {
 .infotecnica {
     width: 10%;
     height: 30px;
-    margin-left: 10%;
-    margin-top: 5%;
-    margin-bottom: 4%;
     border-radius: 5px;
     border: 1px solid #D9D9D9;
     background-color: #D9D9D9;
-
 }
 
 .endereco {
@@ -134,7 +130,6 @@ cepbotao:hover {
     border: 1px solid #D9D9D9;
     background-color: #D9D9D9;
     border-radius: 20px;
-    margin-left: 5%;
     box-sizing: border-box;
 }
 
@@ -142,9 +137,6 @@ cepbotao:hover {
 .categoriacontainer {
     display: inline-block;
     vertical-align: top;
-    margin-top: 4%;
-    gap: 5%;
-    margin-left: 5%;
 }
 
 
@@ -200,8 +192,10 @@ cepbotao:hover {
 }
 
 .fotostext {
-    margin-top: 5%;
-    margin-left: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5rem;
 }
 
 #image-preview-container {
@@ -247,6 +241,20 @@ button:hover {
     height: 30%;
 }
 
+.inputsAlign {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.alignFirst {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4%;
+}
 
 
 @media (max-width: 768px) {
@@ -336,12 +344,13 @@ button:hover {
 .caixa3 {
     display: inline-block;
     width: 80%;
-    padding: 20px;
+    padding: 10%;
     padding-bottom: 300px;
     border: 1px solid #D9D9D9;
     background-color: #D9D9D9;
     border-radius: 20px;
     margin-left: 10%;
+    margin-right: 10%;
     box-sizing: border-box;
     resize: none;
 }

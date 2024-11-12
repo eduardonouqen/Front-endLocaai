@@ -146,54 +146,72 @@
     <form id="formCadastroAnuncio" action="/cadastroAnuncio" method="POST">
         <h2>Preencha as informações sobre seu local!</h2>
         <div class="box">
-            <input type="text" id="titulo" placeholder="Titulo" class="titulo">
-            <div class="categoriacontainer">
-                <div class="dropdown-container">
-                    <div class="selected-option" id="categoriaSelecionada">Selecione uma categoria</div>
-                    <div class="dropdown-content">
-                        <div class="option" onclick="selecionarCategoria('Castelo')">Castelo <img src="img/torre.png">
-                        </div>
-                        <div class="option" onclick="selecionarCategoria('Barracao')">Barracão <img
-                                src="img/barracao.png"></div>
-                        <div class="option" onclick="selecionarCategoria('Teatro')">Teatro <img src="img/teatro.png">
-                        </div>
-                        <div class="option" onclick="selecionarCategoria('Mansao')">Mansão <img src="img/mansao.png">
-                        </div>
-                        <div class="option" onclick="selecionarCategoria('Praia')">Praia <img src="img/praia.png"></div>
-                        <div class="option" onclick="selecionarCategoria('Chacara')">Chacará <img
-                                src="img/chacaras.png"></div>
-                        <div class="option" onclick="selecionarCategoria('Ilha')">Ilha <img src="img/ilha.png"></div>
-                        <div class="option" onclick="selecionarCategoria('Hotel')">Hotel <img src="img/hotel.png"></div>
-                        <div class="option" onclick="selecionarCategoria('Resort')">Resort <img src="img/resort.png">
-                        </div>
-                        <div class="option" onclick="selecionarCategoria('Salao')">Salao <img src="img/salao.png"></div>
-                        <div class="option" onclick="selecionarCategoria('Clube')">Clube <img src="img/clube.png"></div>
-                        <div class="option" onclick="selecionarCategoria('Embarcacao')">Embarcação <img
-                                src="img/embarcacao.png"></div>
-                        <div class="option" onclick="selecionarCategoria('Estadio')">Estadio <img src="img/estadio.png">
-                        </div>
-                        <div class="option" onclick="selecionarCategoria('Co-working')">Co-working <img
-                                src="img/coworking.png"></div>
-                        <div class="option" onclick="selecionarCategoria('Bistro')">Bistrô <img src="img/bistro.png">
-                        </div>
-                        <div class="option" onclick="selecionarCategoria('Capela')">Capela <img src="img/capela.png">
-                        </div>
-                        <div class="option" onclick="selecionarCategoria('Cobertura')">Cobertura <img
-                                src="img/Cobertura.png"></div>
-                        <div class="option" onclick="selecionarCategoria('Convencao')">Centro de convenção <img
-                                src="img/centro.png"></div>
-                        <div class="option" onclick="selecionarCategoria('ParqueTematico')">Parque temático<img
-                                src="img/parque.png"></div>
-                        <div class="option" onclick="selecionarCategoria('ParqueAquatico')">Parque aquático <img
-                                src="img/parqueaquatico.png"></div>
-                        <div class="option" onclick="selecionarCategoria('Lago')">Lago <img src="img/lago.png"></div>
-                        <div class="option" onclick="selecionarCategoria('Fazenda')">Fazenda <img src="img/fazenda.png">
-                        </div>
-                        <div class="option" onclick="selecionarCategoria('Auditorio')">Auditorios <img
-                                src="img/auditoriums.png"></div>
-                        <div class="option" onclick="selecionarCategoria('Jardim')">Jardins <img src="img/gardens.png">
-                        </div>
-                        <div class="option" onclick="selecionarCategoria('Lounge')">Lounges <img src="img/lounges.png">
+            <div class="alignFirst">
+                <input type="text" id="titulo" placeholder="Titulo" class="titulo">
+                <div class="categoriacontainer">
+                    <div class="dropdown-container">
+                        <div class="selected-option" id="categoriaSelecionada">Selecione uma categoria</div>
+                        <div class="dropdown-content">
+                            <div class="option" onclick="selecionarCategoria('Castelo')">Castelo <img
+                                    src="img/torre.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Barracao')">Barracão <img
+                                    src="img/barracao.png"></div>
+                            <div class="option" onclick="selecionarCategoria('Teatro')">Teatro <img
+                                    src="img/teatro.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Mansao')">Mansão <img
+                                    src="img/mansao.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Praia')">Praia <img src="img/praia.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Chacara')">Chacará <img
+                                    src="img/chacaras.png"></div>
+                            <div class="option" onclick="selecionarCategoria('Ilha')">Ilha <img src="img/ilha.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Hotel')">Hotel <img src="img/hotel.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Resort')">Resort <img
+                                    src="img/resort.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Salao')">Salao <img src="img/salao.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Clube')">Clube <img src="img/clube.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Embarcacao')">Embarcação <img
+                                    src="img/embarcacao.png"></div>
+                            <div class="option" onclick="selecionarCategoria('Estadio')">Estadio <img
+                                    src="img/estadio.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Co-working')">Co-working <img
+                                    src="img/coworking.png"></div>
+                            <div class="option" onclick="selecionarCategoria('Bistro')">Bistrô <img
+                                    src="img/bistro.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Capela')">Capela <img
+                                    src="img/capela.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Cobertura')">Cobertura <img
+                                    src="img/Cobertura.png"></div>
+                            <div class="option" onclick="selecionarCategoria('Convencao')">Centro de convenção <img
+                                    src="img/centro.png"></div>
+                            <div class="option" onclick="selecionarCategoria('ParqueTematico')">Parque temático<img
+                                    src="img/parque.png"></div>
+                            <div class="option" onclick="selecionarCategoria('ParqueAquatico')">Parque aquático <img
+                                    src="img/parqueaquatico.png"></div>
+                            <div class="option" onclick="selecionarCategoria('Lago')">Lago <img src="img/lago.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Fazenda')">Fazenda <img
+                                    src="img/fazenda.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Auditorio')">Auditorios <img
+                                    src="img/auditoriums.png"></div>
+                            <div class="option" onclick="selecionarCategoria('Jardim')">Jardins <img
+                                    src="img/gardens.png">
+                            </div>
+                            <div class="option" onclick="selecionarCategoria('Lounge')">Lounges <img
+                                    src="img/lounges.png">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -250,14 +268,16 @@
                 <button id="next-btn" class="btnNext" style="display: none;">→</button>
             </div>
 
-            <input type="number" id="quarto" placeholder="Nº Quartos" class="infotecnica" max="99"
-                oninput="this.value = this.value.slice(0, 2);">
-            <input type="number" id="banheiro" placeholder="Nº Banheiros" class="infotecnica" max="99"
-                oninput="this.value = this.value.slice(0, 2);">
-            <input type="number" id="garagem" placeholder="Vagas Garagem" class="infotecnica" max="99"
-                oninput="this.value = this.value.slice(0, 2);">
-            <input type="number" id="area" placeholder="Área (m²)" class="infotecnica" max="1000"
-                oninput="this.value = this.value.slice(0, 4);">
+            <div class="inputsAlign">
+                <input type="number" id="quarto" placeholder="Nº Quartos" class="infotecnica" max="99"
+                    oninput="this.value = this.value.slice(0, 2);">
+                <input type="number" id="banheiro" placeholder="Nº Banheiros" class="infotecnica" max="99"
+                    oninput="this.value = this.value.slice(0, 2);">
+                <input type="number" id="garagem" placeholder="Vagas Garagem" class="infotecnica" max="99"
+                    oninput="this.value = this.value.slice(0, 2);">
+                <input type="number" id="area" placeholder="Área (m²)" class="infotecnica" max="1000"
+                    oninput="this.value = this.value.slice(0, 4);">
+            </div>
 
             <textarea id="descricao" placeholder="Descrição" class="caixa3"></textarea>
             <form id="formCadastroAnuncio">
