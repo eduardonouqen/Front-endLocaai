@@ -103,3 +103,37 @@ const clearButton = document.querySelector('.button-clear');
 if (clearButton) {
     clearButton.addEventListener('click', clearAllFilters);
 }
+
+
+
+
+const selectedItemsContainer = document.getElementById('selectedItems');
+// Seleciona o botão "PRÓXIMO"
+const nextButton = document.querySelector('.button-next');
+// Array para armazenar as opções selecionadas
+const selectedOptions = [];
+
+// Adiciona evento de clique a cada elemento de categoria
+document.querySelectorAll('.opcao').forEach(opcao => {
+    opcao.addEventListener('click', () => {
+        const value = opcao.dataset.value; // Obtém o valor da opção (categoria)
+        
+        // Verifica se a categoria já foi selecionada, para não adicionar duplicados
+        if (!selectedOptions.includes(value)) {
+            selectedOptions.push(value); // Adiciona a categoria ao array
+            
+            // Cria um elemento <div> para exibir a categoria selecionada
+            const selectedDiv = document.createElement('div');
+            selectedDiv.textContent = value;
+            selectedItemsContainer.appendChild(selectedDiv);
+        }
+    });
+});
+
+// Evento de clique para o botão "PRÓXIMO"
+nextButton.addEventListener('click', () => {
+    // Armazena as opções selecionadas no localStorage
+    localStorage.setItem('selectedFilters', JSON.stringify(selectedOptions));
+    // Redireciona para a próxima página
+    location.href = '../price-screen/index.html';
+});
