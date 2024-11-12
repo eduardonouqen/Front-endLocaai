@@ -22,7 +22,7 @@
 </head>
 
 <body>
-   
+
     <div class="searchBar">
         <img id="logo" class="logoTop" src="../top-bar/img/logoLado.png">
         <div class="searchBar2">
@@ -41,8 +41,8 @@
         <a href="../profile-screen/index.html">
             <div class="picAndLabels">
                 <div class="textLocatorInfo">
-                    <label class="textName">Eduardo França</label>
-                    <label class="locatorLevel">Locador Ouro</label>
+                    <label class="textName">Acessar Conta</label>
+                    <label class="locatorLevel">Logue ou Cadastre-se</label>
                 </div>
                 <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
             </div>
@@ -51,15 +51,15 @@
 
     <div id="categoriesBar" class="categoriesBar">
         <div class="categoriesAlignTopBar2">
-          
+
         </div>
     </div>
-  
+
     <div class="container">
         <main class="main-content">
             <h1>Promover anúncio</h1>
             <p class="description">
-                
+
             </p>
 
             <div class="ad-image">
@@ -116,10 +116,10 @@
         document.getElementById('data-final').addEventListener('change', calcularValor);
 
         document.addEventListener('DOMContentLoaded', () => {
-        
-            const tituloAnuncio = localStorage.getItem('cadastroAnuncio'); 
 
-          
+            const tituloAnuncio = localStorage.getItem('cadastroAnuncio');
+
+
             if (tituloAnuncio) {
                 document.querySelector('.description').textContent = tituloAnuncio;
             }
