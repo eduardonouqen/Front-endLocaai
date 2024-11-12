@@ -38,10 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!opcao.classList.contains('disabled')) {
                 const value = opcao.getAttribute('data-value');
                 const text = opcao.innerText;
-                createItem(value, text);
 
-                opcao.classList.add('disabled');
-                opcao.style.cursor = 'not-allowed';
+                if (!document.querySelector(`.item[data-value="${value}"]`)) {
+                    createItem(value, text);
+                    opcao.classList.add('disabled');
+                    opcao.style.cursor = 'not-allowed';
+                }
             }
         });
     });
@@ -54,33 +56,50 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         updateButtonClearState();
     });
-
-    updateButtonClearState();
 });
 
+function toggleSimNao(button) {
+    const filter = button.getAttribute('data-filter'); 
+    const isSim = button.getAttribute('data-value') === 'Sim';
 
 
-const selectedItemsContainer = document.getElementById('selectedItems');
+    const simButton = document.querySelector(`#sim${capitalizeFirstLetter(filter)}`);
+    const naoButton = document.querySelector(`#nao${capitalizeFirstLetter(filter)}`);
 
-const nextButton = document.querySelector('.button-next');
+    simButton.style.backgroundColor = ''; 
+    naoButton.style.backgroundColor = ''; 
+    simButton.style.color = '';
+    naoButton.style.color = '';
 
-const selectedOptions = [];
+    if (isSim) {
+        simButton.style.backgroundColor = 'green';
+        simButton.style.color = 'white';
+        naoButton.style.backgroundColor = '';
+        naoButton.style.color = '';
+    } else {
+        naoButton.style.backgroundColor = 'red';
+        naoButton.style.color = 'white';
+        simButton.style.backgroundColor = '';
+        simButton.style.color = '';
+    }
+}
 
-document.querySelectorAll('.opcao').forEach(opcao => {
-    opcao.addEventListener('click', () => {
-        const value = opcao.dataset.value;
-        
-        if (!selectedOptions.includes(value)) {
-            selectedOptions.push(value);
-            
-            const selectedDiv = document.createElement('div');
-            selectedDiv.textContent = value;
-            selectedItemsContainer.appendChild(selectedDiv);
-        }
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function clearAllFilters() {
+    const filtroElements = document.querySelectorAll('.filtro-container .item');
+    filtroElements.forEach(item => item.remove());
+
+    const simNaoButtons = document.querySelectorAll('.sim-nao-button');
+    simNaoButtons.forEach(button => {
+        button.style.backgroundColor = ''; 
+        button.style.color = '';
     });
-});
+}
 
-nextButton.addEventListener('click', () => {
-    localStorage.setItem('nameFilter', JSON.stringify(selectedOptions));
-    location.href = '../price-screen/index.html';
-});
+const clearButton = document.querySelector('.button-clear');
+if (clearButton) {
+    clearButton.addEventListener('click', clearAllFilters);
+}

@@ -36,11 +36,8 @@ body {
 }
 
 .infotecnica {
-    width: 9%;
+    width: 10%;
     height: 30px;
-    margin-left: 12%;
-    margin-top: 5%;
-    margin-bottom: 4%;
     border-radius: 5px;
     border: 1px solid #D9D9D9;
     background-color: #D9D9D9;
@@ -133,7 +130,6 @@ cepbotao:hover {
     border: 1px solid #D9D9D9;
     background-color: #D9D9D9;
     border-radius: 20px;
-    margin-left: 5%;
     box-sizing: border-box;
 }
 
@@ -141,9 +137,6 @@ cepbotao:hover {
 .categoriacontainer {
     display: inline-block;
     vertical-align: top;
-    margin-top: 4%;
-    gap: 5%;
-    margin-left: 5%;
 }
 
 
@@ -199,8 +192,10 @@ cepbotao:hover {
 }
 
 .fotostext {
-    margin-top: 5%;
-    margin-left: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5rem;
 }
 
 #image-preview-container {
@@ -208,26 +203,26 @@ cepbotao:hover {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-  }
-  
-  #current-image {
+}
+
+#current-image {
     width: 300px;
     height: auto;
     margin: 0 10px;
-  }
-  
-  button {
+}
+
+button {
     padding: 10px;
     background-color: #6c63ff;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #5753c9;
-  }
+}
 
 
 .btnNext {
@@ -235,7 +230,7 @@ cepbotao:hover {
     margin-left: 1%;
 }
 
-.btnBefore{
+.btnBefore {
     display: inline;
     margin-left: 45%;
 }
@@ -246,6 +241,20 @@ cepbotao:hover {
     height: 30%;
 }
 
+.inputsAlign {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.alignFirst {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4%;
+}
 
 
 @media (max-width: 768px) {
@@ -335,20 +344,22 @@ cepbotao:hover {
 .caixa3 {
     display: inline-block;
     width: 80%;
-    padding: 20px;
+    padding: 10%;
     padding-bottom: 300px;
     border: 1px solid #D9D9D9;
     background-color: #D9D9D9;
     border-radius: 20px;
     margin-left: 10%;
+    margin-right: 10%;
     box-sizing: border-box;
     resize: none;
 }
 
 .aoAnunciar {
-    margin-top: 10%;
-    margin-left: 25%;
-    margin-right: 20%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
 }
 
 .botao {
@@ -378,7 +389,8 @@ cepbotao:hover {
 }
 
 .botao.disabled {
-    pointer-events: none;  /* Impede que o botão seja clicado */
+    pointer-events: none;
+    /* Impede que o botão seja clicado */
 }
 
 .botao:hover {
@@ -398,48 +410,52 @@ h2 {
 .checkbox-container {
     display: flex;
     align-items: center;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .checkbox-container input[type="checkbox"] {
-    display: none; 
+    display: none;
 }
 
 
 .custom-checkbox {
-    width: 20px; 
-    height: 20px; 
-    border: 2px solid #6c63ff; 
-    border-radius: 4px; 
+    width: 20px;
+    height: 20px;
+    border: 2px solid #6c63ff;
+    border-radius: 4px;
     position: relative;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
 }
 
-.checklabel{
+.checklabel {
     position: relative;
     margin-left: 33%;
 }
-.checkbox-container input[type="checkbox"]:checked + .custom-checkbox {
-    background-color: #6c63ff;}
 
-.checkbox-container input[type="checkbox"]:checked + .custom-checkbox::after {
-    content: ''; 
+.checkbox-container input[type="checkbox"]:checked+.custom-checkbox {
+    background-color: #6c63ff;
+}
+
+.checkbox-container input[type="checkbox"]:checked+.custom-checkbox::after {
+    content: '';
     position: absolute;
-    top: 2px; 
-    left: 6px; 
-    width: 5px; 
-    height: 10px; 
+    top: 2px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
     border: solid white;
-    border-width: 0 2px 2px 0; 
-    transform: rotate(45deg); 
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 
 
-.checkbox-label {
-    margin-left: 8px; 
-    font-size: 16px; 
-    color: #333; 
-}}
-.checkbox-container input[type="checkbox"]:checked + .custom-checkbox {
-    background-color: #6c63ff; 
+    .checkbox-label {
+        margin-left: 8px;
+        font-size: 16px;
+        color: #333;
+    }
+}
+
+.checkbox-container input[type="checkbox"]:checked+.custom-checkbox {
+    background-color: #6c63ff;
     transform: scale(1.1);
 }
