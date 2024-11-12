@@ -186,6 +186,48 @@
             
         </div>
 
+        <div class="filtro-add-container">
+        <div class="filtro-adicional">
+            <label for="podeFumar">Pode fumar?</label>
+            <div class="sim-nao-container">
+                <button class="sim-nao-button" id="simFumar" data-filter="fumar" data-value="Sim" onclick="toggleSimNao(this)">Sim</button>
+                <button class="sim-nao-button" id="naoFumar" data-filter="fumar" data-value="Não" onclick="toggleSimNao(this)">Não</button>
+            </div>
+        </div>
+    
+        <div class="filtro-adicional">
+            <label for="podeLevarAnimais">Pode levar animais?</label>
+            <div class="sim-nao-container">
+                <button class="sim-nao-button" id="simAnimais" data-filter="animais" data-value="Sim" onclick="toggleSimNao(this)">Sim</button>
+                <button class="sim-nao-button" id="naoAnimais" data-filter="animais" data-value="Não" onclick="toggleSimNao(this)">Não</button>
+            </div>
+        </div>
+    
+        <div class="filtro-adicional">
+            <label for="podeDormir">Pode dormir no local?</label>
+            <div class="sim-nao-container">
+                <button class="sim-nao-button" id="simDormir" data-filter="dormir" data-value="Sim" onclick="toggleSimNao(this)">Sim</button>
+                <button class="sim-nao-button" id="naoDormir" data-filter="dormir" data-value="Não" onclick="toggleSimNao(this)">Não</button>
+            </div>
+        </div>
+    
+        <div class="filtro-adicional">
+            <label for="podePescar">Pode pescar no local?</label>
+            <div class="sim-nao-container">
+                <button class="sim-nao-button" id="simPescar" data-filter="pescar" data-value="Sim" onclick="toggleSimNao(this)">Sim</button>
+                <button class="sim-nao-button" id="naoPescar" data-filter="pescar" data-value="Não" onclick="toggleSimNao(this)">Não</button>
+            </div>
+        </div>
+    
+        <div class="filtro-adicional">
+            <label for="permitidoCriancas">É permitido crianças?</label>
+            <div class="sim-nao-container">
+                <button class="sim-nao-button" id="simCriancas" data-filter="criancas" data-value="Sim" onclick="toggleSimNao(this)">Sim</button>
+                <button class="sim-nao-button" id="naoCriancas" data-filter="criancas" data-value="Não" onclick="toggleSimNao(this)">Não</button>
+            </div>
+        </div>
+    
+    </div>
         <button class="button-clear">LIMPAR</button>
         <button class="button-next" onclick="location.href='../price-screen/index.html'">PRÓXIMO</button>
 
