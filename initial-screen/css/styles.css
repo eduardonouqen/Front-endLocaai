@@ -92,3 +92,12 @@
     margin: 0 5px 20px; /* Margem lateral de 5px e inferior de 20px */
     box-sizing: border-box; /* Para incluir padding e margin no cálculo da largura */
 }
+
+.placeContainer a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Mantém a cor original */
+}
+
+.placeContainer a img {
+    display: block; /* Remove o espaço extra em volta da imagem */
+}

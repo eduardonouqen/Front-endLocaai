@@ -244,55 +244,63 @@
         }
 
         async function displayProperties() {
-            try {
-                const properties = await fetchProperties();
-                const users = await fetchUsers();
-                const placesContainer = document.getElementById("placesContainer");
+    try {
+        const properties = await fetchProperties();
+        const users = await fetchUsers();
+        const placesContainer = document.getElementById("placesContainer");
 
+        properties.forEach(property => {
+            // Encontra o usuário correspondente usando o ownerId
+            const owner = users.find(user => user.id === String(property.userId));
 
+            const placeContainer = document.createElement("div");
+            placeContainer.className = "placeContainer";
 
-                properties.forEach(property => {
-                    // Encontre o usuário correspondente usando o ownerId
-                    const owner = users.find(user => user.id === String(property.userId)); // Converte user_id para string // Ajuste conforme a estrutura do seu objeto
+            // Cria o link com um evento de clique para salvar os dados no localStorage
+            const propertyLink = document.createElement("a");
+            propertyLink.href = "../announcement-screen/index.html";
+            propertyLink.target = "_blank";
 
-                    console.log('Propriedade:', property);
-                    console.log('Dono encontrado:', owner);
+            propertyLink.addEventListener("click", () => {
+                // Salva os dados da propriedade no localStorage
+                localStorage.setItem("selectedProperty", JSON.stringify(property));
+            });
 
-                    const placeContainer = document.createElement("div");
-                    placeContainer.className = "placeContainer";
-
-                    placeContainer.innerHTML = `
-                    <img class="placeImage" src="${property.image_url ? property.image_url : './img/eichenwaldeTest.png'}">
-                    <div class="otherAlign">
-                        <div class="placeTop">
-                            <label id="placeFont" class="placeName">${property.title}</label>
-                            <label id="placeFont" class="placeOwner">Por: ${property ? property.userId.name : 'Desconhecido'}</label>
-                            <div class="placePriceDiv">
-                                <label id="placeFont" class="placePrice">R$ ${property.value}</label>
-                                <label id="placeFont">por diária</label>
-                            </div>
-                        </div>
-                        <div class="alignRating">
-                            <img class="profilePicAd" src="${owner ? owner.profile_pic_url : './img/profilePicAd.png'}">
-                            <div class="ratingSection">
-                                <label class="placePrice">${property.rating}</label>
-                                <img class="ratingStar" src="./img/ratingStar.png">
-                            </div>
+            // Monta o conteúdo HTML dentro do link
+            propertyLink.innerHTML = `
+                <img class="placeImage" src="${property.image_url || './img/eichenwaldeTest.png'}">
+                <div class="otherAlign">
+                    <div class="placeTop">
+                        <label id="placeFont" class="placeName">${property.title}</label>
+                        <label id="placeFont" class="placeOwner">Por: ${property ? property.userId.name : 'Desconhecido'}</label>
+                        <div class="placePriceDiv">
+                            <label id="placeFont" class="placePrice">R$ ${property.value}</label>
+                            <label id="placeFont">por diária</label>
                         </div>
                     </div>
-                `;
+                    <div class="alignRating">
+                        <img class="profilePicAd" src="${owner ? owner.profile_pic_url : './img/profilePicAd.png'}">
+                        <div class="ratingSection">
+                            <label class="placePrice">${property.rating}</label>
+                            <img class="ratingStar" src="./img/ratingStar.png">
+                        </div>
+                    </div>
+                </div>
+            `;
 
-                    placesContainer.appendChild(placeContainer);
-                });
-            } catch (error) {
-                console.error('Erro ao exibir propriedades:', error);
-            }
-        }
+            // Adiciona o link ao container da propriedade
+            placeContainer.appendChild(propertyLink);
+            placesContainer.appendChild(placeContainer);
+        });
+    } catch (error) {
+        console.error('Erro ao exibir propriedades:', error);
+    }
+}
 
-        // Call the function to display properties when the page loads
-        window.onload = displayProperties;
+// Chama a função para exibir propriedades ao carregar a página
+window.onload = displayProperties;
 
-        
+
 
 
 
@@ -303,26 +311,27 @@
 
 
         async function filterProperties(category) {
-    try {
-        const properties = await fetchProperties();
-        const users = await fetchUsers();
-        const placesContainer = document.getElementById("placesContainer");
+            try {
+                const properties = await fetchProperties();
+                const users = await fetchUsers();
+                const placesContainer = document.getElementById("placesContainer");
 
-        // Limpar o container antes de adicionar as propriedades filtradas
-        placesContainer.innerHTML = '';
+                // Limpar o container antes de adicionar as propriedades filtradas
+                placesContainer.innerHTML = '';
 
-        // Filtrar as propriedades pela categoria
-        const filteredProperties = properties.filter(property => property.category === category);
+                // Filtrar as propriedades pela categoria
+                const filteredProperties = properties.filter(property => property.category === category);
 
-        // Exibir as propriedades filtradas
-        filteredProperties.forEach(property => {
-            // Encontrar o usuário correspondente usando o userId
-            const owner = users.find(user => user.id === String(property.userId)); 
+                // Exibir as propriedades filtradas
+                filteredProperties.forEach(property => {
+                    // Encontrar o usuário correspondente usando o userId
+                    const owner = users.find(user => user.id === String(property.userId));
 
-            const placeContainer = document.createElement("div");
-            placeContainer.className = "placeContainer";
+                    const placeContainer = document.createElement("div");
+                    placeContainer.className = "placeContainer";
 
-            placeContainer.innerHTML = `
+                    placeContainer.innerHTML = `
+                    <a href="../announcement-screen/index.html" target="_blank">
             <img class="placeImage" src="${property.image_url ? property.image_url : './img/eichenwaldeTest.png'}">
             <div class="otherAlign">
                 <div class="placeTop">
@@ -341,33 +350,35 @@
                     </div>
                 </div>
             </div>
+            </a>
         `;
 
-            placesContainer.appendChild(placeContainer);
-        });
-    } catch (error) {
-        console.error('Erro ao filtrar propriedades:', error);
-    }
-}
+                    placesContainer.appendChild(placeContainer);
+                });
+            } catch (error) {
+                console.error('Erro ao filtrar propriedades:', error);
+            }
+        }
 
 
 
 
-async function clearFilters() {
-    try {
-        const properties = await fetchProperties(); // Recarregar todas as propriedades
-        const users = await fetchUsers(); // Carregar os usuários novamente
-        const placesContainer = document.getElementById("placesContainer");
-        placesContainer.innerHTML = ''; // Limpar as propriedades já exibidas
+        async function clearFilters() {
+            try {
+                const properties = await fetchProperties(); // Recarregar todas as propriedades
+                const users = await fetchUsers(); // Carregar os usuários novamente
+                const placesContainer = document.getElementById("placesContainer");
+                placesContainer.innerHTML = ''; // Limpar as propriedades já exibidas
 
-        properties.forEach(property => {
-            // Encontrar o usuário correspondente
-            const owner = users.find(user => user.id === String(property.userId));
+                properties.forEach(property => {
+                    // Encontrar o usuário correspondente
+                    const owner = users.find(user => user.id === String(property.userId));
 
-            const placeContainer = document.createElement("div");
-            placeContainer.className = "placeContainer";
+                    const placeContainer = document.createElement("div");
+                    placeContainer.className = "placeContainer";
 
-            placeContainer.innerHTML = `
+                    placeContainer.innerHTML = `
+                    <a href="../announcement-screen/index.html" target="_blank">
                 <img class="placeImage" src="${property.image_url ? property.image_url : './img/eichenwaldeTest.png'}">
                 <div class="otherAlign">
                     <div class="placeTop">
@@ -388,12 +399,12 @@ async function clearFilters() {
                 </div>
             `;
 
-            placesContainer.appendChild(placeContainer);
-        });
-    } catch (error) {
-        console.error('Erro ao limpar filtros:', error);
-    }
-}
+                    placesContainer.appendChild(placeContainer);
+                });
+            } catch (error) {
+                console.error('Erro ao limpar filtros:', error);
+            }
+        }
     </script>
     <script src="js/script.js"></script>
 
