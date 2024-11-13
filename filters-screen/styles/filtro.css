@@ -201,3 +201,106 @@ h2 {
         width: 100%;
     }
 }
+
+/* Contêiner Principal */
+.localizacao-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.localizacao,
+.tipo-local-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.localizacao:hover,
+.tipo-local-container:hover {
+    transform: translateY(-8px); /* Efeito sutil de levitação */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+/* Opções */
+.localizacao-opcoes,
+.tipo-local-opcoes {
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-right: 25%;
+}
+
+.checkbox-label {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    position: relative;
+    padding-left: 30px; /* Espaço à esquerda do checkbox */
+}
+
+/* Estilos do Checkbox */
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #6c5ce7;
+    border-color: #6c5ce7;
+    box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
+}
+
+input[type="checkbox"]:checked + .custom-checkbox:before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+input[type="checkbox"]:disabled + .custom-checkbox {
+    background-color: #e0e0e0;
+    border-color: #d1d1d1;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+input[type="checkbox"]:disabled + .custom-checkbox:before {
+    background-color: #b0b0b0;
+}
+
+  

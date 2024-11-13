@@ -44,6 +44,8 @@ document.getElementById('logo').addEventListener('click', function () {
 });
 
 
+
+
 document.querySelector('.announcementButton').addEventListener('click', function () {
     const userToken = localStorage.getItem('token');
 
@@ -55,6 +57,8 @@ document.querySelector('.announcementButton').addEventListener('click', function
         window.location.href = "../login-screen/index.html";
     }
 });
+
+
 
 const categoriesBar = document.querySelector('.categoriesBar');
 
@@ -85,4 +89,16 @@ categoriesBar.addEventListener('mousemove', (e) => {
     const x = e.pageX - categoriesBar.offsetLeft;
     const walk = (x - startX) * 1;
     categoriesBar.scrollLeft = scrollLeft - walk;
+});
+
+document.getElementById('profileLink').addEventListener('click', function (event) {
+    event.preventDefault();
+
+    const userToken = localStorage.getItem('token');
+
+    if (userToken) {
+        window.location.href = "../profile-screen/index.html";
+    } else {
+        window.location.href = "../login-screen/index.html";
+    }
 });
