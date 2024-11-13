@@ -43,19 +43,10 @@ document.getElementById('logo').addEventListener('click', function () {
     window.location.href = '../initial-screen/index.html';
 });
 
+
+
+
 document.querySelector('.announcementButton').addEventListener('click', function () {
-    const userToken = localStorage.getItem('token');
-
-    if (userToken) {
-
-        window.location.href = "../announcementregister-screen/index.html";
-    } else {
-
-        window.location.href = "../login-screen/index.html";
-    }
-});
-
-document.querySelector('.profileLink').addEventListener('click', function () {
     const userToken = localStorage.getItem('token');
 
     if (userToken) {
@@ -98,4 +89,16 @@ categoriesBar.addEventListener('mousemove', (e) => {
     const x = e.pageX - categoriesBar.offsetLeft;
     const walk = (x - startX) * 1;
     categoriesBar.scrollLeft = scrollLeft - walk;
+});
+
+document.getElementById('profileLink').addEventListener('click', function (event) {
+    event.preventDefault();
+
+    const userToken = localStorage.getItem('token');
+
+    if (userToken) {
+        window.location.href = "../profile-screen/index.html";
+    } else {
+        window.location.href = "../login-screen/index.html";
+    }
 });
