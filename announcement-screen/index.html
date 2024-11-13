@@ -263,22 +263,64 @@
                 <label class="ratingLabel2">Escolha recorrente</label>
             </div>
         </div>
-        <div class="placeInformationText">
-
-            <label class="placeInformationText2">Eichenwalde, Bayern, Germany?</label>
-            <label class="placeInformationText3">O seu evento dos sonhos acontecerá aqui! Apenas tome cuidado para não
-                se perder.</label>
-        </div>
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2692.5249418593826!2d10.747225476263157!3d47.55757397118534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479cf7cac44ea35d%3A0xc8a6866bd39dbba3!2sCastelo%20de%20Neuschwanstein!5e0!3m2!1spt-BR!2sbr!4v1729551650871!5m2!1spt-BR!2sbr"
-            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+        id="mapa"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="">
+      </iframe>
+      
+      <script>
+      async function carregarMapa() {
+          const endereco = localStorage.getItem('enderecoEvento');
+      
+          if (endereco) {
 
+              const localizacao = await geocodificarEndereco(endereco);
+              
+              if (localizacao) {
+                  atualizarMapaComCoordenadas(localizacao.latitude, localizacao.longitude);
+              } else {
+                  alert("Endereço não encontrado.");
+              }
+          } else {
+              alert("Endereço não encontrado no localStorage.");
+          }
+      }
+      
+      async function geocodificarEndereco(endereco) {
+          const chaveAPI = 'SUA_CHAVE_DE_API_LOCATIONIQ';
+      
+          const resposta = await fetch(`https://us1.locationiq.com/v1/search.php?key=${chaveAPI}&q=${encodeURIComponent(endereco)}&format=json`);
+          const dados = await resposta.json();
+      
+          if (dados && dados[0]) {
+              return {
+                  latitude: dados[0].lat,
+                  longitude: dados[0].lon
+              };
+          } else {
+              return null;
+          }
+      }
+      function atualizarMapaComCoordenadas(lat, lon) {
+          const mapaIframe = document.getElementById("mapa");
+      
+          mapaIframe.src = `https://www.openstreetmap.org/export/embed.html?bbox=${lon},${lat}&layer=mapnik&marker=${lat},${lon}`;
+      }
+      
+      window.onload = carregarMapa;
+      </script>
+
+          </script>
     <div class="filtersContainer">
         <div class="filtersContainerTopText">
-            <label class="filtersContainerLabel1">Castelo de Eichenwalde</label>
-            <label class="filtersContainerLabel2">tudo o que você precisa saber sobre</label>
+            <label class="filtersContainerLabel1"></label>
+            <label class="filtersContainerLabel2">Tudo o que você precisa saber sobre</label>
         </div>
         <div class="filtersAlignLine">
             <div class="filtersAlign">
