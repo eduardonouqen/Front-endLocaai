@@ -43,7 +43,6 @@ document.getElementById('logo').addEventListener('click', function () {
     window.location.href = '../initial-screen/index.html';
 });
 
-
 document.querySelector('.announcementButton').addEventListener('click', function () {
     const userToken = localStorage.getItem('token');
 
@@ -55,6 +54,20 @@ document.querySelector('.announcementButton').addEventListener('click', function
         window.location.href = "../login-screen/index.html";
     }
 });
+
+document.querySelector('.profileLink').addEventListener('click', function () {
+    const userToken = localStorage.getItem('token');
+
+    if (userToken) {
+
+        window.location.href = "../announcementregister-screen/index.html";
+    } else {
+
+        window.location.href = "../login-screen/index.html";
+    }
+});
+
+
 
 const categoriesBar = document.querySelector('.categoriesBar');
 
