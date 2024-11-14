@@ -214,7 +214,40 @@ input[type="number"]::-webkit-outer-spin-button {
     justify-content: center;
     padding: 1.5rem;
     box-sizing: border-box;
+    cursor: pointer;
 }
+
+.categoriesAlignTopBarRemove {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    background-color: #f84f52;
+    cursor: pointer;
+}
+
+.categoriesAlignTopBarRemove:hover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    background-color: #e4484b;
+    cursor: pointer;
+}
+
+.labelCategoriesTopBar {
+    cursor: pointer;
+}
+
+.labelCategoriesTopBarRemove {
+    cursor: pointer;
+    color: #fbf5ea;
+}
+
 
 .categoriesAlignTopBar:hover {
     display: flex;
