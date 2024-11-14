@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateButtonClearState() {
         const filtroAtivo = document.querySelector('.filtro-container .item');
-        const simNaoAtivo = document.querySelector('.sim-nao-button[style*="background-color"]'); // Verifica se algum botão Sim/Não tem fundo colorido
-        const checkboxMarcado = document.querySelector('.localizacao-checkbox:checked, .tipo-local-checkbox:checked'); // Verifica se algum checkbox está marcado
+        const simNaoAtivo = document.querySelector('.sim-nao-button[style*="background-color"]');
+        const checkboxMarcado = document.querySelector('.localizacao-checkbox:checked, .tipo-local-checkbox:checked');
     
         if (filtroAtivo || simNaoAtivo || checkboxMarcado) {
             buttonClear.disabled = false;
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const opcao = document.querySelector(`.opcao[data-value="${value}"]`);
             opcao.classList.remove('disabled');
             opcao.style.cursor = 'pointer';
-            updateButtonClearState(); // Atualiza o estado ao remover um filtro
+            updateButtonClearState();
         });
 
         filtroContainer.appendChild(itemDiv);
@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     buttonClear.addEventListener('click', clearAllFilters);
 
-    // Atualiza o estado do botão "Limpar" quando um botão de Sim/Não é clicado
     const simNaoButtons = document.querySelectorAll('.sim-nao-button');
     simNaoButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -64,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Atualiza o estado do botão "Limpar" quando um checkbox de localização ou tipo é alterado
     const checkboxes = document.querySelectorAll('.localizacao-checkbox, .tipo-local-checkbox');
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', updateButtonClearState);
@@ -101,25 +99,21 @@ function capitalizeFirstLetter(string) {
 }
 
 function clearAllFilters() {
-    // Limpa todos os elementos do filtro
     const filtroElements = document.querySelectorAll('.filtro-container .item');
     filtroElements.forEach(item => item.remove());
 
-    // Reseta o estilo dos botões de "Sim" e "Não"
     const simNaoButtons = document.querySelectorAll('.sim-nao-button');
     simNaoButtons.forEach(button => {
         button.style.backgroundColor = '';
         button.style.color = '';
     });
 
-    // Desmarca e habilita todos os checkboxes de localização e tipo de local
     const checkboxes = document.querySelectorAll('.localizacao-checkbox, .tipo-local-checkbox');
     checkboxes.forEach(checkbox => {
         checkbox.checked = false;
         checkbox.disabled = false;
     });
 
-    // Atualiza o estado do botão "Limpar" diretamente para desabilitado após a limpeza
     buttonClear.disabled = true;
     buttonClear.style.backgroundColor = '#A2A2A2';
     buttonClear.style.cursor = 'not-allowed';
@@ -129,7 +123,6 @@ const selectedItemsContainer = document.getElementById('selectedItems');
 const nextButton = document.querySelector('.button-next');
 const selectedOptions = [];
 
-// Adiciona evento de clique a cada elemento de categoria
 document.querySelectorAll('.opcao').forEach(opcao => {
     opcao.addEventListener('click', () => {
         const value = opcao.dataset.value;
@@ -144,13 +137,11 @@ document.querySelectorAll('.opcao').forEach(opcao => {
     });
 });
 
-// Evento de clique para o botão "PRÓXIMO"
 nextButton.addEventListener('click', () => {
     localStorage.setItem('selectedFilters', JSON.stringify(selectedOptions));
     location.href = '../price-screen/index.html';
 });
 
-// Controle de seleção exclusiva entre "Rural" e "Urbano"
 document.getElementById("rural").addEventListener("change", function() {
     const urbanoCheckbox = document.getElementById("urbano");
     if (this.checked) {
@@ -159,7 +150,7 @@ document.getElementById("rural").addEventListener("change", function() {
     } else {
       urbanoCheckbox.disabled = false;
     }
-    updateButtonClearState(); // Atualiza o estado ao alterar o checkbox
+    updateButtonClearState();
 });
   
 document.getElementById("urbano").addEventListener("change", function() {
@@ -170,10 +161,9 @@ document.getElementById("urbano").addEventListener("change", function() {
     } else {
       ruralCheckbox.disabled = false;
     }
-    updateButtonClearState(); // Atualiza o estado ao alterar o checkbox
+    updateButtonClearState();
 });
   
-// Controle de seleção exclusiva entre "Aberto" e "Fechado"
 document.getElementById("aberto").addEventListener("change", function() {
     const fechadoCheckbox = document.getElementById("fechado");
     if (this.checked) {
@@ -182,7 +172,7 @@ document.getElementById("aberto").addEventListener("change", function() {
     } else {
       fechadoCheckbox.disabled = false;
     }
-    updateButtonClearState(); // Atualiza o estado ao alterar o checkbox
+    updateButtonClearState();
 });
   
 document.getElementById("fechado").addEventListener("change", function() {
@@ -193,5 +183,5 @@ document.getElementById("fechado").addEventListener("change", function() {
     } else {
       abertoCheckbox.disabled = false;
     }
-    updateButtonClearState(); // Atualiza o estado ao alterar o checkbox
+    updateButtonClearState();
 });
