@@ -102,3 +102,6 @@ document.getElementById('profileLink').addEventListener('click', function (event
         window.location.href = "../login-screen/index.html";
     }
 });
+
+
+
