@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
             imagem: imagem
         };
         
-        localStorage.setItem(`anuncio_${id}`, JSON.stringify(anuncio));
     }
 
     
