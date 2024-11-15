@@ -51,7 +51,6 @@
 
     <div id="categoriesBar" class="categoriesBar">
         <div class="categoriesAlignTopBar2">
-
         </div>
     </div>
 
@@ -114,24 +113,23 @@
         document.getElementById('data-final').addEventListener('change', calcularValor);
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Recupera o título do anúncio do LocalStorage
+
             const tituloAnuncio = localStorage.getItem('cadastroAnuncio');
             const enderecoAnuncio = localStorage.getItem('enderecoAnuncio');
             const imagemAnuncio = localStorage.getItem('imagemAnuncio');
 
-            // Exibe o título do anúncio, se disponível
+
             if (tituloAnuncio) {
                 document.querySelector('.description').textContent = tituloAnuncio;
             }
 
-            // Exibe o endereço, se disponível
+ 
             if (enderecoAnuncio) {
                 const enderecoElement = document.createElement('p');
                 enderecoElement.textContent = `Endereço: ${enderecoAnuncio}`;
                 document.querySelector('.main-content').appendChild(enderecoElement);
             }
 
-            // Exibe a imagem do anúncio, se disponível
             if (imagemAnuncio) {
                 const imgElement = document.createElement('img');
                 imgElement.src = imagemAnuncio;
