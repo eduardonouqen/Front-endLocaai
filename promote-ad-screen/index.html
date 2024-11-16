@@ -51,16 +51,13 @@
 
     <div id="categoriesBar" class="categoriesBar">
         <div class="categoriesAlignTopBar2">
-
         </div>
     </div>
 
     <div class="container">
         <main class="main-content">
             <h1>Promover anúncio</h1>
-            <p class="description">
-
-            </p>
+            <p class="description"></p>
 
             <div class="ad-image">
                 <div class="image-preview-container"></div>
@@ -118,10 +115,26 @@
         document.addEventListener('DOMContentLoaded', () => {
 
             const tituloAnuncio = localStorage.getItem('cadastroAnuncio');
+            const enderecoAnuncio = localStorage.getItem('enderecoAnuncio');
+            const imagemAnuncio = localStorage.getItem('imagemAnuncio');
 
 
             if (tituloAnuncio) {
                 document.querySelector('.description').textContent = tituloAnuncio;
+            }
+
+ 
+            if (enderecoAnuncio) {
+                const enderecoElement = document.createElement('p');
+                enderecoElement.textContent = `Endereço: ${enderecoAnuncio}`;
+                document.querySelector('.main-content').appendChild(enderecoElement);
+            }
+
+            if (imagemAnuncio) {
+                const imgElement = document.createElement('img');
+                imgElement.src = imagemAnuncio;
+                imgElement.alt = "Imagem do anúncio";
+                document.querySelector('.image-preview-container').appendChild(imgElement);
             }
         });
     </script>

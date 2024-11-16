@@ -112,7 +112,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         city: document.getElementById('city').value,
         state: document.getElementById('state').value,
         cep: document.getElementById('cep').value,
-        //photos: imagensBase64, 
+        photos: imagensBase64, 
         room: document.getElementById('quarto').value,
         bathroom: document.getElementById('banheiro').value,
         garage: document.getElementById('garagem').value,
@@ -142,6 +142,12 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
     
     window.location.href = '../filters-screen/index.html';
 });
+
+const token = localStorage.getItem("token");
+
+    if (token) {
+        document.getElementById("statusLabel").textContent = "Locador Bronze";
+    }
 
 
 
