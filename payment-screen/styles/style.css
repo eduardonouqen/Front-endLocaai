@@ -1,3 +1,7 @@
+body {
+    font-family: Inter;
+}
+
 .payment-container {
     display: flex;
     justify-content: space-between;
@@ -45,20 +49,22 @@
     font-size: 1.5em;
 }
 
-.totals,
 .final-totals {
+    display: flex;
+    flex-direction: column;
     margin-top: 30px;
 }
 
-.totals p,
-.final-totals p {
-    font-size: 1.2em;
+.final-totalsLabel1 {
+    font-weight: 600;
+    font-size: 2rem;
 }
 
-.final-totals h3 {
-    font-size: 1.5em;
-    margin-top: 10px;
+.final-totalsLabel2 {
+    font-size: 1.2rem;
+    color: #b1b1b1;
 }
+
 
 .pay-button,
 .validate-coupon,
@@ -111,7 +117,7 @@ button {
 }
 
 .service-summary {
-    position: relative;
+    padding-left: 50px;
 }
 
 .remove-service {

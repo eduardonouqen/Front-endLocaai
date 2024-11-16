@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Pagamento</title>
+    <title>Realize o Pagamento</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <link rel="icon" type="icon/png" href="../top-bar/img/icon.png">
     <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script src="./js/script.js"></script>
 </head>
 
 <body>
@@ -18,29 +18,8 @@
 
     <div class="payment-container">
         <div class="payment-options">
-            <h2 class="title">Tela de Pagamento</h2>
-            <div class="payment-method">
-                <input type="radio" name="payment" id="credit-card">
-                <label for="credit-card"><span class="icon">💳</span> Cartão de Crédito</label>
-            </div>
-            <div class="payment-method">
-                <input type="radio" name="payment" id="debit-card">
-                <label for="debit-card"><span class="icon">💳</span> Cartão de Débito</label>
-            </div>
-            <div class="payment-method">
-                <input type="radio" name="payment" id="mercado-pago">
-                <label for="mercado-pago"><span class="icon">🌐</span> Mercado Pago</label>
-            </div>
-            <div class="payment-method">
-                <input type="radio" name="payment" id="pix">
-                <label for="pix"><span class="icon">🔗</span> Pix</label>
-            </div>
-
-            <div class="totals">
-                <p>Subtotal: R$ 3500,00</p>
-                <p>Taxas: R$ --,--</p>
-                <h3>Total: R$ 3500,00</h3>
-            </div>
+            <h2 class="title">Realize o Pagamento</h2>
+            <div id="paymentBrick_container"></div>
 
             <div id="card-details" class="card-details" style="display: none;">
                 <h3>Insira os dados do cartão</h3>
@@ -57,43 +36,22 @@
         </div>
 
         <div class="service-summary">
-            <h2>Serviços</h2>
             <div class="service-item">
+                <h2>Serviços</h2>
                 <p><strong>Destino:</strong> Castelo de Eichenwalde</p>
                 <p><strong>Locador:</strong> Eichenwalde</p>
                 <p><strong>Localização:</strong> Alemanha</p>
                 <p><strong>Locatário:</strong> Eduardo</p>
                 <p><strong>Valor:</strong> R$ 3500,00</p>
-            </div>
 
-            <div class="discount">
-                <p>Tem um cupom?</p>
-                <input type="text" placeholder="INSIRA O CÓDIGO AQUI!" class="coupon-input">
-                <button class="validate-coupon">Validar</button>
-            </div>
-
-            <div class="final-totals">
-                <p>Subtotal: R$ 3500,00</p>
-                <h3>Total: R$ 3500,00</h3>
-                <button class="pay-button">PAGAR</button>
+                <div class="final-totals">
+                    <label class="final-totalsLabel1">Total: R$ 3500,00</label>
+                    <label class="final-totalsLabel2">*Incluindo taxas e impostos*</label>
+                </div>
             </div>
         </div>
     </div>
 
-    <script>
-        document.getElementById("credit-card").addEventListener("change", function () {
-            document.getElementById("card-details").style.display = "block";
-        });
-        document.getElementById("debit-card").addEventListener("change", function () {
-            document.getElementById("card-details").style.display = "block";
-        });
-        document.getElementById("mercado-pago").addEventListener("change", function () {
-            document.getElementById("card-details").style.display = "none";
-        });
-        document.getElementById("pix").addEventListener("change", function () {
-            document.getElementById("card-details").style.display = "none";
-        });
-    </script>
 </body>
 
 </html>
