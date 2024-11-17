@@ -66,3 +66,74 @@ const renderPaymentBrick = async (bricksBuilder) => {
     );
 };
 renderPaymentBrick(bricksBuilder);
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    function decodeToken(token) {
+        try {
+            const payload = token.split('.')[1];
+            const decoded = atob(payload);
+            return JSON.parse(decoded);
+        } catch (e) {
+            console.error("Erro ao decodificar o token:", e);
+            return null;
+        }
+    }
+
+    function updateServiceSummary() {
+        const selectedProperty = JSON.parse(localStorage.getItem("selectedProperty"));
+        const token = localStorage.getItem("token");
+        const decodedToken = token ? decodeToken(token) : null;
+
+        if (!selectedProperty || !decodedToken) {
+            console.error("Dados ausentes no localStorage ou token inválido.");
+            return;
+        }
+
+        const destinationElem = document.querySelector(".service-item p:nth-of-type(1)");
+        if (destinationElem) {
+            destinationElem.innerHTML = `<strong>Destino:</strong> ${selectedProperty.title}`;
+        }
+
+        const landlordElem = document.querySelector(".service-item p:nth-of-type(2)");
+        if (landlordElem) {
+            landlordElem.innerHTML = `<strong>Locador:</strong> ${selectedProperty.userId.name}`;
+        }
+
+        const locationElem = document.querySelector(".service-item p:nth-of-type(3)");
+        if (locationElem) {
+            locationElem.innerHTML = `<strong>Localização:</strong> ${selectedProperty.city}`;
+        }
+
+        const tenantElem = document.querySelector(".service-item p:nth-of-type(4)");
+        if (tenantElem) {
+            tenantElem.innerHTML = `<strong>Locatário:</strong> ${decodedToken.name}`;
+        }
+
+        const priceElem = document.querySelector(".service-item p:nth-of-type(5)");
+        if (priceElem) {
+            priceElem.innerHTML = `<strong>Valor:</strong> R$ ${selectedProperty.value}`;
+        }
+
+        const totalElem = document.querySelector(".final-totalsLabel1");
+        if (totalElem) {
+            totalElem.textContent = `Total: R$ ${selectedProperty.value}`;
+        }
+
+        const taxElem = document.querySelector(".final-totalsLabel2");
+        if (taxElem) {
+            taxElem.textContent = "*Incluindo taxas e impostos*";
+        }
+    }
+
+    updateServiceSummary();
+});
