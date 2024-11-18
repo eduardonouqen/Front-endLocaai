@@ -52,25 +52,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const botaoPromover = propriedadeCard.querySelector('.botaopromover');
                 botaoPromover.addEventListener('click', () => {
-                    // Recupera o objeto armazenado no localStorage
-                    const cadastroAnuncio = JSON.parse(localStorage.getItem('cadastroAnuncio'));
+                    // Salva as informações no localStorage para serem usadas na tela de promoção
+                    localStorage.setItem('tituloAnuncio', propriedade.title);
+                    localStorage.setItem('enderecoAnuncio', propriedade.address);
+                    localStorage.setItem('imagemAnuncio', propriedade.imagem);
+                    console.log('Título, endereço e imagem do anúncio salvos no LocalStorage.');
 
-                    // Extrai o valor de title e confere se existe
-                    if (cadastroAnuncio && cadastroAnuncio.title) {
-                        localStorage.setItem('enderecoAnuncio', cadastroAnuncio.title);
-                        localStorage.setItem('imagemAnuncio', propriedade.imagem);
-                        console.log('Title e imagem do anúncio salvos no LocalStorage.');
-                        window.location.href = '../promote-ad-screen/index.html';
-                    } else {
-                        console.error('Informações do cadastro de anúncio não encontradas no LocalStorage.');
-                    }
+                    // Redireciona para a tela de promoção de anúncio
+                    window.location.href = '../promote-ad-screen/index.html'; 
                 });
 
                 const botaoEditar = propriedadeCard.querySelector('.botaoeditar');
                 botaoEditar.addEventListener('click', () => {
                     localStorage.setItem('realtyId', propriedade.id);
                     console.log(`ID da propriedade ${propriedade.id} salvo no LocalStorage.`);
-                    window.location.href = '../edit-announcementregister-screen/index.html';
+                    window.location.href = '../edit-announcementregister-screen/index.html'; 
                 });
 
                 const botaoExcluir = propriedadeCard.querySelector('.botaoexcluir');

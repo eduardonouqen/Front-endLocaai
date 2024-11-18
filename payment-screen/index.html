@@ -4,226 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Pagamento</title>
+    <title>Realize o Pagamento</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="icon" type="icon/png" href="../top-bar/img/icon.png">
-    <link rel="stylesheet" type="text/css" href="../top-bar/css/topBarStyle.css">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <script src="../top-bar/topBarFunctions.js" defer></script>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script src="./js/script.js"></script>
 </head>
 
 <body>
-    <!-- Start of the search bar -->
-    <div class="searchBar">
-        <img id="logo" class="logoTop" src="../top-bar/img/logoLado.png">
-        <div class="searchBar2">
-            <input type="text" placeholder="Vai pra onde?" class="searchInput">
-            <input type="number" id="justNumberInput" placeholder="Quantos dias?" class="searchInput">
-            <div class="searchInputWrapper">
-                <input type="number" id="justNumberInput" placeholder="Com quem?" class="searchInputWithButton">
-                <button type='submit' class="buttonSearch"></button>
-                <button type='submit' class="buttonFilters" id="toggleButton"></button>
-            </div>
-            <div class="announcementButtonAlign">
-                <button class="announcementButton">ANUNCIE!</button>
-            </div>
-        </div>
-
-        <a id="profileLink" href="#">
-            <div class="picAndLabels">
-                <div class="textLocatorInfo">
-                    <label class="textName">Acessar Conta</label>
-                    <label class="locatorLevel">Logue ou Cadastre-se</label>
-                </div>
-                <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
-            </div>
-        </a>
+    <div class="logo-header">
+        <img src="img/logo.png" alt="Logo" onclick="window.location.href='../initial-screen/index.html'">
     </div>
 
-    <div id="categoriesBar" class="categoriesBar">
-        <div class="categoriesAlignTopBar2">
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Auditorio')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/auditoriums.png">
-                <label class="labelCategoriesTopBar">Auditórios</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Praia')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/beaches.png">
-                <label class="labelCategoriesTopBar">Praias</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Bistro')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/bistros.png">
-                <label class="labelCategoriesTopBar">Bistrôs</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Castelo')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/castles-and-palaces.png">
-                <label class="labelCategoriesTopBar">Castelos</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Capela')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/chapels.png">
-                <label class="labelCategoriesTopBar">Capelas</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Clube')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/clubs-and-associations.png">
-                <label class="labelCategoriesTopBar">Clubes</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Co-working')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/co-working.png">
-                <label class="labelCategoriesTopBar">Co-working</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Convencao')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/convention-centers.png">
-                <label class="labelCategoriesTopBar">Convenções</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Cobertura')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/coverages.png">
-                <label class="labelCategoriesTopBar">Coberturas</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Lago')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/dams-and-lakes.png">
-                <label class="labelCategoriesTopBar">Rios e Lagos</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Fazenda')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms and-ranches.png">
-                <label class="labelCategoriesTopBar">Fazendas</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Chacara')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/farms.png">
-                <label class="labelCategoriesTopBar">Chácaras</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Jardim')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/gardens.png">
-                <label class="labelCategoriesTopBar">Jardins</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Hotel')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/hotels-and-inns.png">
-                <label class="labelCategoriesTopBar">Hotéis</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Ilha')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/islands.png">
-                <label class="labelCategoriesTopBar">Ilhas</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Lounge')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/lounges.png">
-                <label class="labelCategoriesTopBar">Lounges</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Mansao')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/mansions.png">
-                <label class="labelCategoriesTopBar">Mansões</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Salao')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/party-halls.png">
-                <label class="labelCategoriesTopBar">Salões de Festa</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Resort')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/resorts.png">
-                <label class="labelCategoriesTopBar">Resorts</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Barracao')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/sheds.png">
-                <label class="labelCategoriesTopBar">Barracões</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Estadio')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/stadiums-and-arenas.png">
-                <label class="labelCategoriesTopBar">Estádios</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('ParqueTematico')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/theme-parks.png">
-                <label class="labelCategoriesTopBar">Parques Temáticos</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('ParqueAquatico')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/water-parks.png">
-                <label class="labelCategoriesTopBar">Parques Aquáticos</label>
-            </a>
-            <a class="categoriesAlignTopBar" onclick="filterProperties('Embarcacao')">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/yachts-and-vessels.png">
-                <label class="labelCategoriesTopBar">Embarcações</label>
-            </a>
-            <a class="categoriesAlignTopBarRemove" onclick="clearFilters()">
-                <img class="categoriesBarImage" src="../(IMGs) CATEGORIES ICONS/clear-filters.png">
-                <label class="labelCategoriesTopBarRemove">Limpar Categoria</label>
-            </a>
-        </div>
-    </div>
-    <!-- End of the search bar -->
-
-    <div class="payment-container">
-        <div class="payment-options">
-            <h2 class="title">Tela de Pagamento</h2>
-            <div class="payment-method">
-                <input type="radio" name="payment" id="credit-card">
-                <label for="credit-card"><span class="icon">💳</span> Cartão de Crédito</label>
-            </div>
-            <div class="payment-method">
-                <input type="radio" name="payment" id="debit-card">
-                <label for="debit-card"><span class="icon">💳</span> Cartão de Débito</label>
-            </div>
-            <div class="payment-method">
-                <input type="radio" name="payment" id="mercado-pago">
-                <label for="mercado-pago"><span class="icon">🌐</span> Mercado Pago</label>
-            </div>
-            <div class="payment-method">
-                <input type="radio" name="payment" id="pix">
-                <label for="pix"><span class="icon">🔗</span> Pix</label>
-            </div>
-
-            <div class="totals">
-                <p>Subtotal: R$ 3500,00</p>
-                <p>Taxas: R$ --,--</p>
-                <h3>Total: R$ 3500,00</h3>
-            </div>
-
-            <div id="card-details" class="card-details" style="display: none;">
-                <h3>Insira os dados do cartão</h3>
-                <input type="text" placeholder="Número do cartão" class="card-input">
-                <input type="text" placeholder="Nome do titular do cartão" class="card-input">
-                <input type="text" placeholder="Validade (MM/AA)" class="card-input half-width">
-                <input type="text" placeholder="CVV" class="card-input half-width">
-                <input type="text" placeholder="CPF/CNPJ do titular" class="card-input">
-                <div class="save-card-checkbox">
-                    <input type="checkbox" id="save-card">
-                    <label for="save-card">Salvar cartão para próximas compras</label>
-                </div>
-            </div>
-        </div>
-
+    <div class="fullAlign">
         <div class="service-summary">
-            <h2>Serviços</h2>
             <div class="service-item">
+                <h2>Serviços</h2>
                 <p><strong>Destino:</strong> Castelo de Eichenwalde</p>
                 <p><strong>Locador:</strong> Eichenwalde</p>
                 <p><strong>Localização:</strong> Alemanha</p>
                 <p><strong>Locatário:</strong> Eduardo</p>
                 <p><strong>Valor:</strong> R$ 3500,00</p>
-            </div>
 
-            <div class="discount">
-                <p>Tem um cupom?</p>
-                <input type="text" placeholder="INSIRA O CÓDIGO AQUI!" class="coupon-input">
-                <button class="validate-coupon">Validar</button>
-            </div>
+                <div class="final-totals">
+                    <label class="final-totalsLabel1">Total: R$ 3500,00</label>
+                    <label class="final-totalsLabel2">*Incluindo taxas e impostos*</label>
+                </div>
 
-            <div class="final-totals">
-                <p>Subtotal: R$ 3500,00</p>
-                <h3>Total: R$ 3500,00</h3>
-                <button class="pay-button">PAGAR</button>
+                <a class="payButton">
+                    <label class="payLabel">PAGAR</label>
+                </a>
             </div>
         </div>
     </div>
 
-    <script>
-        document.getElementById("credit-card").addEventListener("change", function () {
-            document.getElementById("card-details").style.display = "block";
-        });
-        document.getElementById("debit-card").addEventListener("change", function () {
-            document.getElementById("card-details").style.display = "block";
-        });
-        document.getElementById("mercado-pago").addEventListener("change", function () {
-            document.getElementById("card-details").style.display = "none";
-        });
-        document.getElementById("pix").addEventListener("change", function () {
-            document.getElementById("card-details").style.display = "none";
-        });
-    </script>
 </body>
 
 </html>

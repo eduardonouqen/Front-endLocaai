@@ -1,3 +1,7 @@
+body {
+    font-family: Inter;
+}
+
 .payment-container {
     display: flex;
     justify-content: space-between;
@@ -7,15 +11,57 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 160px;
 }
 
 .payment-options,
 .service-summary {
-    width: 45%;
+    width: 35%;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fullAlign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+}
+
+.payLabel {
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.payButton {
+    background-color: #44116f;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 100px;
+    padding-left: 100px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payButton:hover {
+    background-color: #350c57;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 100px;
+    padding-left: 100px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
@@ -44,40 +90,27 @@
     font-size: 1.5em;
 }
 
-.totals,
 .final-totals {
+    display: flex;
+    flex-direction: column;
     margin-top: 30px;
 }
 
-.totals p,
-.final-totals p {
-    font-size: 1.2em;
+.final-totalsLabel1 {
+    font-weight: 600;
+    font-size: 2rem;
 }
 
-.final-totals h3 {
-    font-size: 1.5em;
-    margin-top: 10px;
-}
-
-.pay-button,
-.validate-coupon,
-.remove-service {
-    background-color: #800080;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.pay-button:hover,
-.validate-coupon:hover,
-.remove-service:hover {
-    background-color: #5a005a;
+.final-totalsLabel2 {
+    font-size: 1.2rem;
+    color: #b1b1b1;
+    margin-bottom: 15px;
 }
 
 .service-item {
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .discount input[type="text"] {
@@ -103,14 +136,8 @@ button {
     background-color: #800080;
 }
 
-.pay-button {
-    width: 100%;
-    font-size: 1.2em;
-    background-color: #800080;
-}
-
 .service-summary {
-    position: relative;
+    padding-left: 50px;
 }
 
 .remove-service {
@@ -165,4 +192,22 @@ button {
     margin-left: 8px;
     font-size: 0.95em;
     color: #666;
+}
+
+.logo-header {
+    width: 100%;
+    height: 80px;
+    background-color: #44116f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.logo-header img {
+    width: 150px;
+    cursor: pointer;
 }
