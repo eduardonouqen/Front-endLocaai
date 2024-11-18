@@ -16,11 +16,52 @@ body {
 
 .payment-options,
 .service-summary {
-    width: 45%;
+    width: 35%;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fullAlign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+}
+
+.payLabel {
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.payButton {
+    background-color: #44116f;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 100px;
+    padding-left: 100px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payButton:hover {
+    background-color: #350c57;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 100px;
+    padding-left: 100px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
@@ -63,28 +104,13 @@ body {
 .final-totalsLabel2 {
     font-size: 1.2rem;
     color: #b1b1b1;
-}
-
-
-.pay-button,
-.validate-coupon,
-.remove-service {
-    background-color: #800080;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.pay-button:hover,
-.validate-coupon:hover,
-.remove-service:hover {
-    background-color: #5a005a;
+    margin-bottom: 15px;
 }
 
 .service-item {
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .discount input[type="text"] {
@@ -107,12 +133,6 @@ button {
 
 .validate-coupon {
     width: 100%;
-    background-color: #800080;
-}
-
-.pay-button {
-    width: 100%;
-    font-size: 1.2em;
     background-color: #800080;
 }
 
