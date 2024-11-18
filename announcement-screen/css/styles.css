@@ -571,3 +571,19 @@
     font-size: 0.9rem;
     text-align: justify;
 }
+
+.peopleSupportLabelAll {
+    margin-top: 1.5rem;
+}
+
+.peopleSupportLabel1 {
+    font-size: 1.6rem;
+    color: #8F8F8F;
+    text-decoration: underline;
+}
+
+.peopleSupportLabel2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #44116f;
+}
