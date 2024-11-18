@@ -553,3 +553,21 @@
     outline: none;
     border-color: #390853;
 }
+
+.descriptionAll {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    font-size: 1.6rem;
+    color: #8F8F8F;
+    text-decoration: underline;
+}
+
+.textAreaDescription {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    text-align: justify;
+}
