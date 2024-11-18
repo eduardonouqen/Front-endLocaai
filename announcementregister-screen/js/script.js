@@ -75,34 +75,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 let categoria;
-let imagensBase64 = []; 
-
+let imagensBase64 = [];
 
 function lerImagem(input) {
     const files = input.files;
-    imagensBase64 = []; 
+    imagensBase64 = [];  // Limpa o array antes de adicionar novas imagens
 
     Array.from(files).forEach(file => {
         const reader = new FileReader();
         reader.onload = function (e) {
-            imagensBase64.push(e.target.result); 
+            imagensBase64.push(e.target.result);  // Adiciona a imagem em Base64 ao array
         };
-        reader.readAsDataURL(file); 
+        reader.readAsDataURL(file);  // Lê o arquivo como um Data URL (Base64)
     });
 }
 
-
 document.getElementById('fileInput').addEventListener('change', function () {
-    lerImagem(this);
+    lerImagem(this);  // Chama a função para ler as imagens ao selecionar arquivos
 });
 
 function selecionarCategoria(opcao) {
-    categoria = opcao; 
-    document.getElementById('categoriaSelecionada').innerText = opcao; 
+    categoria = opcao;
+    document.getElementById('categoriaSelecionada').innerText = opcao;  // Exibe a categoria selecionada no HTML
 }
 
 document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
-    event.preventDefault();
+    event.preventDefault();  // Previne o envio padrão do formulário
 
     const dados = {
         title: document.getElementById('titulo').value,
@@ -112,7 +110,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         city: document.getElementById('city').value,
         state: document.getElementById('state').value,
         cep: document.getElementById('cep').value,
-        photos: imagensBase64, 
+        photos: imagensBase64,  // Imagens em Base64 armazenadas no array
         room: document.getElementById('quarto').value,
         bathroom: document.getElementById('banheiro').value,
         garage: document.getElementById('garagem').value,
@@ -120,34 +118,33 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         description: document.getElementById('descricao').value,
     };
 
-    
     const missingFields = [];
     for (const key in dados) {
-        if (!dados[key] && key !== 'photos' && key !== 'categoria') {
-            missingFields.push(key);
+        if (!dados[key] && key !== 'photos' && key !== 'category') {
+            missingFields.push(key);  // Verifica se algum campo obrigatório está vazio
         }
     }
 
     if (missingFields.length > 0) {
         alert('Por favor, preencha todos os campos obrigatórios: ' + missingFields.join(', '));
-        return;
+        return;  // Não prossegue com o envio se algum campo obrigatório estiver faltando
     }
 
-    
+    // Armazena os dados no localStorage
     localStorage.setItem('cadastroAnuncio', JSON.stringify(dados));
 
     console.log('Dados armazenados no localStorage:', JSON.parse(localStorage.getItem('cadastroAnuncio')));
     alert('Dados salvos com sucesso.');
 
-    
+    // Redireciona para a próxima tela
     window.location.href = '../filters-screen/index.html';
 });
 
 const token = localStorage.getItem("token");
 
-    if (token) {
-        document.getElementById("statusLabel").textContent = "Locador Bronze";
-    }
+if (token) {
+    document.getElementById("statusLabel").textContent = "Locador Bronze";  // Exibe o status do usuário se o token estiver presente
+}
 
 
 

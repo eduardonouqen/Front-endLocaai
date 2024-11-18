@@ -245,31 +245,31 @@
         }
 
         async function displayProperties() {
-            try {
-                const properties = await fetchProperties();
-                const users = await fetchUsers();
-                const placesContainer = document.getElementById("placesContainer");
+    try {
+        const properties = await fetchProperties();
+        const users = await fetchUsers();
+        const placesContainer = document.getElementById("placesContainer");
 
-                properties.forEach(property => {
-                    // Encontra o usuário correspondente usando o ownerId
-                    const owner = users.find(user => user.id === String(property.userId));
+        properties.forEach(property => {
+            // Encontrar o usuário correspondente usando o userId
+            const owner = users.find(user => user.id === String(property.userId));
 
-                    const placeContainer = document.createElement("div");
-                    placeContainer.className = "placeContainer";
+            const placeContainer = document.createElement("div");
+            placeContainer.className = "placeContainer";
 
-                    // Cria o link com um evento de clique para salvar os dados no localStorage
-                    const propertyLink = document.createElement("a");
-                    propertyLink.href = "../announcement-screen/index.html";
-                    propertyLink.target = "_blank";
+            // Cria o link com um evento de clique para salvar os dados no localStorage
+            const propertyLink = document.createElement("a");
+            propertyLink.href = "../announcement-screen/index.html";
+            propertyLink.target = "_blank";
 
-                    propertyLink.addEventListener("click", () => {
-                        // Salva os dados da propriedade no localStorage
-                        localStorage.setItem("selectedProperty", JSON.stringify(property));
-                    });
+            propertyLink.addEventListener("click", () => {
+                // Salva os dados da propriedade no localStorage
+                localStorage.setItem("selectedProperty", JSON.stringify(property));
+            });
 
-                    // Monta o conteúdo HTML dentro do link
-                    propertyLink.innerHTML = `
-                <img class="placeImage" src="${property.image_url || './img/eichenwaldeTest.png'}">
+            // Monta o conteúdo HTML dentro do link
+            propertyLink.innerHTML = `
+                <img class="placeImage" src="${property.photo || './img/eichenwaldeTest.png'}">
                 <div class="otherAlign">
                     <div class="placeTop">
                         <label id="placeFont" class="placeName">${property.title}</label>
@@ -289,14 +289,14 @@
                 </div>
             `;
 
-                    // Adiciona o link ao container da propriedade
-                    placeContainer.appendChild(propertyLink);
-                    placesContainer.appendChild(placeContainer);
-                });
-            } catch (error) {
-                console.error('Erro ao exibir propriedades:', error);
-            }
-        }
+            // Adiciona o link ao container da propriedade
+            placeContainer.appendChild(propertyLink);
+            placesContainer.appendChild(placeContainer);
+        });
+    } catch (error) {
+        console.error('Erro ao exibir propriedades:', error);
+    }
+}
 
         // Chama a função para exibir propriedades ao carregar a página
         window.onload = displayProperties;
@@ -333,7 +333,7 @@
 
                     placeContainer.innerHTML = `
                     <a href="../announcement-screen/index.html" target="_blank">
-            <img class="placeImage" src="${property.image_url ? property.image_url : './img/eichenwaldeTest.png'}">
+            <img class="placeImage" src="${property.photo  ? property.photo  : './img/eichenwaldeTest.png'}">
             <div class="otherAlign">
                 <div class="placeTop">
                     <label id="placeFont" class="placeName">${property.title}</label>
@@ -380,7 +380,7 @@
 
                     placeContainer.innerHTML = `
                     <a href="../announcement-screen/index.html" target="_blank">
-                <img class="placeImage" src="${property.image_url ? property.image_url : './img/eichenwaldeTest.png'}">
+                <img class="placeImage" src="${property.photo  ? property.photo  : './img/eichenwaldeTest.png'}">
                 <div class="otherAlign">
                     <div class="placeTop">
                         <label id="placeFont" class="placeName">${property.title}</label>
@@ -406,7 +406,11 @@
                 console.error('Erro ao limpar filtros:', error);
             }
         }
+
+        
     </script>
+
+    
     <script src="js/script.js"></script>
 
 </body>
