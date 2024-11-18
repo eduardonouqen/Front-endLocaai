@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     confirmBtn.addEventListener("click", () => {
         const dadosAnuncio = JSON.parse(localStorage.getItem('cadastroAnuncio'));
-        const filtrosSelecionados = JSON.parse(localStorage.getItem('nameFilter'));
+        const filtrosSelecionados = JSON.parse(localStorage.getItem('selectedFilters'));
 
         // Combina os filtros com os dados do anúncio
         dadosAnuncio.nameFilter = filtrosSelecionados;
