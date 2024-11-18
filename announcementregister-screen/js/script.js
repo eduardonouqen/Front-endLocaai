@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () { //Aqui só está sen
     // Ao selecionar uma opção essa função faz o container se fechar automaticamente
     options.forEach(function (option) {
         option.addEventListener('click', function (event) {
-            event.stopPropagation();
+            event.stopPropagation(); 
             selectedOption.textContent = this.textContent;
             dropdownContainer.classList.remove('show');
             dropdownContent.classList.remove('show');
@@ -113,6 +113,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         photos: imagensBase64,  // Imagens em Base64 armazenadas no array
         room: document.getElementById('quarto').value,
         bathroom: document.getElementById('banheiro').value,
+        garage: document.getElementById('garagem').value,
         area: document.getElementById('area').value,
         description: document.getElementById('descricao').value,
     };
@@ -310,9 +311,9 @@ document.getElementById('cep').addEventListener('blur', function () {
 });
 
 
-document.getElementById('infotecnica').addEventListener('input', function () {
+document.getElementById('infotecnica').addEventListener('input', function() {
     let value = this.value;
-
+    
     // Limita o valor aos últimos dois dígitos
     if (value.length > 2) {
         this.value = value.slice(-2); // Mantém os dois últimos dígitos
