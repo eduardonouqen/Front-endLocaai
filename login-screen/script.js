@@ -1,3 +1,5 @@
+import CONFIG from '../../config.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('login').addEventListener('submit', async (event) => {
         event.preventDefault();
