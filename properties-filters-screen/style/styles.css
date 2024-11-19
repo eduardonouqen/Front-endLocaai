@@ -10,7 +10,7 @@
 .placeImage {
     border-radius: 20px;
     width: 230px;
-    height: auto;
+    height: 230px;
 }
 
 .placeContainer {
@@ -131,10 +131,10 @@ button.aplicar:active {
 
 .newFiltersSidebar {
     position: fixed;
-    bottom: -75%; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    width: 80%; 
+    bottom: -75%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
     max-width: 400px;
     height: 70%;
     background-color: #f8f9fa;
