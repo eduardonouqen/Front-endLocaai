@@ -1,3 +1,5 @@
+import CONFIG from '../../config.js';
+
 document.addEventListener("DOMContentLoaded", () => {
     const priceDisplay = document.getElementById('price');
     const serviceFeeToggle = document.getElementById('service-fee-toggle');
@@ -138,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Função para enviar a imagem
         async function enviarImagem() {
-            const urlImagens = 'http://localhost:3000/imagens/';
+            const urlImagens = `${CONFIG.API_BASE_URL}/imagens/`;
             const formData = new FormData();
 
             let imageBase64 = dadosAnuncio.photos;
@@ -187,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Função para obter a URL assinada
         async function obterUrlAssinada(fileName) {
-            const urlAssinada = `http://localhost:3000/imagens/${fileName}`;
+            const urlAssinada = `${CONFIG.API_BASE_URL}/imagens/${fileName}`;
 
             try {
                 const response = await fetch(urlAssinada, {
@@ -212,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Função para enviar o anúncio
         async function enviarAnuncio() {
-            const urlRealty = 'http://localhost:3000/realty';
+            const urlRealty = `${CONFIG.API_BASE_URL}/realty`;
 
             try {
                 const response = await fetch(urlRealty, {

@@ -1,3 +1,5 @@
+import CONFIG from '../../config.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const propriedadesLista = document.getElementById('propriedades-lista');
     const token = localStorage.getItem('token');
@@ -17,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchPropriedades() {
         try {
-            const response = await fetch(`http://localhost:3000/realty/user/${userId}`, {
+            const response = await fetch(`${CONFIG.API_BASE_URL}/realty/user/${userId}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -81,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function deletePropriedade(propriedadeId, propriedadeCard) {
         try {
-            const response = await fetch(`http://localhost:3000/realty/${propriedadeId}`, {
+            const response = await fetch(`${CONFIG.API_BASE_URL}/realty/${propriedadeId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`,
