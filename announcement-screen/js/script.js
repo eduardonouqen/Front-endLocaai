@@ -69,3 +69,18 @@ if (selectedProperty) {
 } else {
     console.warn('Nenhum dado encontrado no localStorage para "selectedProperty".');
 }
+
+const cadastroAnuncio = JSON.parse(localStorage.getItem('cadastroAnuncio'));
+
+// Verifica se o dado existe antes de usá-lo
+if (cadastroAnuncio) {
+    // Substitui o texto "XXXX" pelo valor de "bathroom"
+    const peopleSupportLabel2 = document.querySelector('.peopleSupportLabel2');
+    peopleSupportLabel2.textContent = cadastroAnuncio.bathroom || 'N/A';
+
+    // Substitui o texto "Lorem ipsum" pelo valor de "description"
+    const textAreaDescription = document.querySelector('.textAreaDescription');
+    textAreaDescription.textContent = cadastroAnuncio.description || 'Descrição não disponível.';
+} else {
+    console.error('Dados de cadastroAnuncio não encontrados no localStorage.');
+}

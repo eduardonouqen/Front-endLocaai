@@ -1,3 +1,5 @@
+import CONFIG from '../../config.js';
+
 document.getElementById('formCreateAccount').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -31,7 +33,7 @@ document.getElementById('formCreateAccount').addEventListener('submit', function
     };
 
     
-    fetch('http://localhost:3000/users', {
+    fetch(`${CONFIG.API_BASE_URL}/users`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
