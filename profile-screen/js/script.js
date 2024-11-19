@@ -1,3 +1,5 @@
+import CONFIG from '../../config.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const aboutTextarea = document.getElementById('user-about-text');
     const charUsed = document.getElementById('char-used');
@@ -83,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("User ID:", userId);
         console.log("User Name:", userName);
 
-        const url = `http://localhost:3000/users/${userId}`;
+        const url = `${CONFIG.API_BASE_URL}/users/${userId}`;
 
         fetch(url, {
             method: 'GET',

@@ -1,3 +1,5 @@
+import CONFIG from '../../config.js';
+
 const selectedProperty = JSON.parse(localStorage.getItem('selectedProperty'));
 document.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('token');
@@ -73,7 +75,7 @@ async function generatePaymentLink() {
         });
 
         // Faz a requisição GET com os parâmetros na URL
-        const response = await fetch(`http://localhost:3000/mercadopago/generate-payment-link?${queryParams.toString()}`, {
+        const response = await fetch(`${CONFIG.API_BASE_URL}/mercadopago/generate-payment-link?${queryParams.toString()}`, {
             method: 'GET', // Não é necessário body para GET
         });
 
