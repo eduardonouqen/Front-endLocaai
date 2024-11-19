@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const isValidImage = (file) => file && file.type.startsWith('image/');
 
-    
+
     aboutTextarea.addEventListener('input', () => {
         updateCharCount();
         adjustTextareaHeight();
@@ -52,14 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
         filtersBar.classList.toggle('show');
         filtersButton.classList.toggle('active');
     });
-    
-  
+
+
     updateCharCount();
     adjustTextareaHeight();
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const token = localStorage.getItem("token");
 
     if (!token) {
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const decodedToken = jwt_decode(token);
         console.log("Token decodificado:", decodedToken);
 
-        const userId = decodedToken.sub; 
+        const userId = decodedToken.sub;
         const userName = decodedToken.name;
         const userCpf = decodedToken.cpf;
 
@@ -92,20 +92,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 'Content-Type': 'application/json'
             }
         })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro na requisição: ' + response.status);
-            }
-            return response.json();
-        })
-        .then(data => {
-            document.querySelector('.user-info .info-item:nth-child(1) p.fontSizeData').textContent = data.email;
-            document.querySelector('.user-info .info-item:nth-child(2) p.fontSizeData').textContent = data.phone;
-            document.querySelector('.user-info .info-item:nth-child(3) p.fontSizeData').textContent = data.cpf;
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro na requisição: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.querySelector('.user-info .info-item:nth-child(1) p.fontSizeData').textContent = data.email;
+                document.querySelector('.user-info .info-item:nth-child(2) p.fontSizeData').textContent = data.phone;
+                document.querySelector('.user-info .info-item:nth-child(3) p.fontSizeData').textContent = data.cpf;
 
-            document.getElementById('user-name').textContent = userName;
-        })
-        .catch(error => console.error('Erro ao buscar os dados do usuário:', error));
+                document.getElementById('user-name').textContent = userName;
+            })
+            .catch(error => console.error('Erro ao buscar os dados do usuário:', error));
     } catch (error) {
         console.error('Erro ao decodificar o token:', error);
     }
@@ -116,4 +116,16 @@ function logout() {
     localStorage.removeItem('email');
     localStorage.removeItem('senha');
     localStorage.removeItem('token');
+}
+
+async function fetchUsers() {
+    const response = await fetch('http://localhost:3000/users'); // Replace with your API endpoint
+    const user = await response.json();
+    return user;
+}
+
+const token = localStorage.getItem("token");
+
+if (token) {
+    document.getElementById("statusLabel").textContent = "Locador Bronze";
 }

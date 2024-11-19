@@ -48,7 +48,7 @@
             <div class="picAndLabels">
                 <div class="textLocatorInfo">
                     <label class="textName">Acessar Conta</label>
-                    <label class="locatorLevel">Logue ou Cadastre-se</label>
+                    <label class="locatorLevel" id="statusLabel">Logue ou Cadastre-se</label>
                 </div>
                 <img class="profilePicLogo" src="../top-bar/img/profilePicTest.png">
             </div>
@@ -239,6 +239,20 @@
         </button>
 
     </div>
+
+    <script>
+        async function fetchUsers() {
+            const response = await fetch('http://localhost:3000/users'); // Replace with your API endpoint
+            const user = await response.json();
+            return user;
+        }
+
+        const token = localStorage.getItem("token");
+
+        if (token) {
+            document.getElementById("statusLabel").textContent = "Locador Bronze";
+        }
+    </script>
 
 </body>
 

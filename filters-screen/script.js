@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const filtroAtivo = document.querySelector('.filtro-container .item');
         const simNaoAtivo = document.querySelector('.sim-nao-button[style*="background-color"]');
         const checkboxMarcado = document.querySelector('.localizacao-checkbox:checked, .tipo-local-checkbox:checked');
-    
+
         if (filtroAtivo || simNaoAtivo || checkboxMarcado) {
             buttonClear.disabled = false;
             buttonClear.style.backgroundColor = 'red';
@@ -70,14 +70,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function toggleSimNao(button) {
-    const filter = button.getAttribute('data-filter'); 
+    const filter = button.getAttribute('data-filter');
     const isSim = button.getAttribute('data-value') === 'Sim';
 
     const simButton = document.querySelector(`#sim${capitalizeFirstLetter(filter)}`);
     const naoButton = document.querySelector(`#nao${capitalizeFirstLetter(filter)}`);
 
-    simButton.style.backgroundColor = ''; 
-    naoButton.style.backgroundColor = ''; 
+    simButton.style.backgroundColor = '';
+    naoButton.style.backgroundColor = '';
     simButton.style.color = '';
     naoButton.style.color = '';
 
@@ -129,7 +129,7 @@ document.querySelectorAll('.opcao').forEach(opcao => {
 
         if (!selectedOptions.includes(value)) {
             selectedOptions.push(value);
-            
+
             const selectedDiv = document.createElement('div');
             selectedDiv.textContent = value;
             selectedItemsContainer.appendChild(selectedDiv);
@@ -142,46 +142,58 @@ nextButton.addEventListener('click', () => {
     location.href = '../price-screen/index.html';
 });
 
-document.getElementById("rural").addEventListener("change", function() {
+document.getElementById("rural").addEventListener("change", function () {
     const urbanoCheckbox = document.getElementById("urbano");
     if (this.checked) {
-      urbanoCheckbox.disabled = true;
-      urbanoCheckbox.checked = false;
+        urbanoCheckbox.disabled = true;
+        urbanoCheckbox.checked = false;
     } else {
-      urbanoCheckbox.disabled = false;
+        urbanoCheckbox.disabled = false;
     }
     updateButtonClearState();
 });
-  
-document.getElementById("urbano").addEventListener("change", function() {
+
+document.getElementById("urbano").addEventListener("change", function () {
     const ruralCheckbox = document.getElementById("rural");
     if (this.checked) {
-      ruralCheckbox.disabled = true;
-      ruralCheckbox.checked = false;
+        ruralCheckbox.disabled = true;
+        ruralCheckbox.checked = false;
     } else {
-      ruralCheckbox.disabled = false;
+        ruralCheckbox.disabled = false;
     }
     updateButtonClearState();
 });
-  
-document.getElementById("aberto").addEventListener("change", function() {
+
+document.getElementById("aberto").addEventListener("change", function () {
     const fechadoCheckbox = document.getElementById("fechado");
     if (this.checked) {
-      fechadoCheckbox.disabled = true;
-      fechadoCheckbox.checked = false;
+        fechadoCheckbox.disabled = true;
+        fechadoCheckbox.checked = false;
     } else {
-      fechadoCheckbox.disabled = false;
+        fechadoCheckbox.disabled = false;
     }
     updateButtonClearState();
 });
-  
-document.getElementById("fechado").addEventListener("change", function() {
+
+document.getElementById("fechado").addEventListener("change", function () {
     const abertoCheckbox = document.getElementById("aberto");
     if (this.checked) {
-      abertoCheckbox.disabled = true;
-      abertoCheckbox.checked = false;
+        abertoCheckbox.disabled = true;
+        abertoCheckbox.checked = false;
     } else {
-      abertoCheckbox.disabled = false;
+        abertoCheckbox.disabled = false;
     }
     updateButtonClearState();
 });
+
+async function fetchUsers() {
+    const response = await fetch('http://localhost:3000/users'); // Replace with your API endpoint
+    const user = await response.json();
+    return user;
+}
+
+const token = localStorage.getItem("token");
+
+if (token) {
+    document.getElementById("statusLabel").textContent = "Locador Bronze";
+}

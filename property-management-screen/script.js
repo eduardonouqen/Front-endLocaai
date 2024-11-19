@@ -59,14 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log('Título, endereço e imagem do anúncio salvos no LocalStorage.');
 
                     // Redireciona para a tela de promoção de anúncio
-                    window.location.href = '../promote-ad-screen/index.html'; 
+                    window.location.href = '../promote-ad-screen/index.html';
                 });
 
                 const botaoEditar = propriedadeCard.querySelector('.botaoeditar');
                 botaoEditar.addEventListener('click', () => {
                     localStorage.setItem('realtyId', propriedade.id);
                     console.log(`ID da propriedade ${propriedade.id} salvo no LocalStorage.`);
-                    window.location.href = '../edit-announcementregister-screen/index.html'; 
+                    window.location.href = '../edit-announcementregister-screen/index.html';
                 });
 
                 const botaoExcluir = propriedadeCard.querySelector('.botaoexcluir');
@@ -102,3 +102,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchPropriedades();
 });
+
+
+async function fetchUsers() {
+    const response = await fetch('http://localhost:3000/users'); // Replace with your API endpoint
+    const user = await response.json();
+    return user;
+}
+
+const token = localStorage.getItem("token");
+
+if (token) {
+    document.getElementById("statusLabel").textContent = "Locador Bronze";
+}
