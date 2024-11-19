@@ -10,19 +10,16 @@
 .placeImage {
     border-radius: 20px;
     width: 230px;
-    height: auto;
-    width: 100%; /* Faz a imagem preencher 100% da largura do seu contêiner */
-    height: 200px; /* Define a altura fixa */
+    height: 230px;
     object-fit: cover;
-    
 }
 
 .placeContainer {
     display: flex;
     flex-direction: column;
-    width: 300px;  /* Largura fixa para o contêiner */
+    width: 300px;
     height: 400px;
-    
+
 }
 
 .placeName {
@@ -90,21 +87,29 @@
 
 #placesContainer {
     display: flex;
-    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte */
-    justify-content: flex-start; /* Alinha os itens ao início do contêiner */
+    flex-wrap: wrap;
+    /* Permite que os itens se movam para a linha seguinte */
+    justify-content: flex-start;
+    /* Alinha os itens ao início do contêiner */
 }
 
 .placeContainer {
-    width: calc(20% - 10px); /* Ajuste a largura para 20% menos uma margem */
-    margin: 0 5px 20px; /* Margem lateral de 5px e inferior de 20px */
-    box-sizing: border-box; /* Para incluir padding e margin no cálculo da largura */
+    width: calc(20% - 10px);
+    /* Ajuste a largura para 20% menos uma margem */
+    margin: 0 5px 20px;
+    /* Margem lateral de 5px e inferior de 20px */
+    box-sizing: border-box;
+    /* Para incluir padding e margin no cálculo da largura */
 }
 
 .placeContainer a {
-    text-decoration: none; /* Remove o sublinhado */
-    color: inherit; /* Mantém a cor original */
+    text-decoration: none;
+    /* Remove o sublinhado */
+    color: inherit;
+    /* Mantém a cor original */
 }
 
 .placeContainer a img {
-    display: block; /* Remove o espaço extra em volta da imagem */
+    display: block;
+    /* Remove o espaço extra em volta da imagem */
 }

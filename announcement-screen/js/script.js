@@ -3,19 +3,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (selectedProperty) {
         document.querySelector(".placeName").textContent = selectedProperty.title || "Título não disponível";
-        
+
         document.querySelector("#locatorName").textContent = `Por: ${selectedProperty.userId.name || "Nome não disponível"}`;
 
         document.querySelector("#locatorName2").textContent = `Por: ${selectedProperty.userId.name || "Nome não disponível"}`;
-        
+
         document.querySelector(".placeAdressText").textContent = `${selectedProperty.adress || "Endereço não disponível"}, ${selectedProperty.city || "Cidade não disponível"}`;
-        
+
         document.querySelector(".mainPrice").textContent = `R$${selectedProperty.value || "0"}`;
 
         document.querySelector("#rentalPrice").textContent = `R$${selectedProperty.value || "0"}`;
 
         const profilePicElement = document.querySelector(".locatorProfilePicture");
-        profilePicElement.src = selectedProperty.userId.profile_pic_url || "img/profilePicAd.png";
+        profilePicElement.src = selectedProperty.userId.profile_pic_url || "../top-bar/img/profilePicTest.png";
 
         const enderecoCompleto = `${selectedProperty.adress}, ${selectedProperty.city}, ${selectedProperty.state}`;
         const chaveAPI = 'pk.6358622dd9e624601cc09c39bd4aa708';
