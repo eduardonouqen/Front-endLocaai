@@ -58,45 +58,31 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('pay-button').addEventListener('click', generatePaymentLink);
 
 async function generatePaymentLink() {
-    // Defina os dados que você deseja enviar
-    const paymentData = {
-        id: "12345",         // Exemplo de ID do serviço
-        title: "Aluguel Castelo de Eichenwalde", // Exemplo de título
-        value: 3500.00,      // Exemplo de valor
-    };
-
     try {
-        // Passo 1: Enviar a requisição GET para gerar a preferência de pagamento
-        const postResponse = await fetch('http://localhost:3000/mercadopago/generate-payment-link', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(paymentData), // Enviando id, title e value
+        // Recupera os dados do localStorage
+        const storedData = JSON.parse(localStorage.getItem('selectedProperty'));
+        if (!storedData) {
+            throw new Error('Dados de pagamento não encontrados no localStorage.');
+        }
+
+        // Monta a URL com os parâmetros
+        const queryParams = new URLSearchParams({
+            id: storedData.id,
+            title: storedData.title,
+            price: parseFloat(storedData.value), // Use "price" se o backend espera isso
         });
 
-        if (!postResponse.ok) {
+        // Faz a requisição GET com os parâmetros na URL
+        const response = await fetch(`http://localhost:3000/mercadopago/generate-payment-link?${queryParams.toString()}`, {
+            method: 'GET', // Não é necessário body para GET
+        });
+
+        if (!response.ok) {
             throw new Error('Erro ao gerar a preferência de pagamento');
         }
 
-        // Recuperar o ID da preferência da resposta
-        const paymentPreferenceId = await postResponse.text();
-
-        // Passo 2: Fazer a requisição GET para obter o link de pagamento
-        const getResponse = await fetch('http://localhost:3000/mercadopago/get-payment-link', {
-            method: 'GET',  // Usando GET para enviar os dados no corpo
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ preferenceId: paymentPreferenceId }),  // Passando ID da preferência gerada
-        });
-
-        if (!getResponse.ok) {
-            throw new Error('Erro ao obter o link de pagamento');
-        }
-
         // Obter a URL de pagamento gerada
-        const paymentUrl = await getResponse.text();
+        const paymentUrl = await response.text();
 
         // Exibir o link de pagamento na interface
         const paymentLinkElement = document.getElementById('payment-link');
