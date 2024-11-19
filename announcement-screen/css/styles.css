@@ -134,7 +134,7 @@
 }
 
 .locatorRanking {
-    color: #FFBF1C;
+    color: #CD7F32;
     font-weight: 600;
     font-size: 1.5rem;
 }
@@ -556,6 +556,7 @@
 
 .descriptionAll {
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
 }
