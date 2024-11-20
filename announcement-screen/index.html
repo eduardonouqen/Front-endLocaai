@@ -285,7 +285,8 @@
         </iframe>
 
         <script type="module">
-
+            import CONFIG from '../../config.js';
+            
             async function fetchUsers() {
                 const response = await fetch(`${CONFIG.API_BASE_URL}/users`); // Verifique se a URL está correta
                 if (!response.ok) {
