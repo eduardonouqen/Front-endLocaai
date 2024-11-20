@@ -98,3 +98,27 @@ const token = localStorage.getItem("token");
 if (token) {
     document.getElementById("statusLabel").textContent = "Locador Bronze";
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Obtém os dados armazenados na chave `selectedProperty` no localStorage
+    const selectedProperty = JSON.parse(localStorage.getItem("selectedProperty")) || {};
+    const storedFilters = selectedProperty.nameFilter || []; // Acessa o atributo `nameFilter`
+
+    // Seleciona todos os elementos de filtro
+    const filters = document.querySelectorAll(".filtersAlign");
+
+    filters.forEach(filter => {
+        const label = filter.querySelector(".filtersFirstLabel");
+        const secondLabel = filter.querySelector(".filtersSecondLabel");
+
+        // Verifica se o filtro atual está nos dados do nameFilter
+        const filterName = secondLabel.textContent.trim(); // Obtém o nome do filtro (e.g., "Piscina")
+
+        if (storedFilters.includes(filterName)) {
+            label.textContent = "Possui"; // Atualiza para "Possui"
+        } else {
+            label.textContent = "Não possui"; // Atualiza para "Não possui"
+        }
+    });
+});
