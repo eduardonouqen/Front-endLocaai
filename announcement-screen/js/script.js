@@ -1,3 +1,5 @@
+import CONFIG from '../../config.js';
+
 document.addEventListener("DOMContentLoaded", async () => {
     const selectedProperty = JSON.parse(localStorage.getItem("selectedProperty"));
 
