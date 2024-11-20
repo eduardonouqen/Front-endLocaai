@@ -88,7 +88,7 @@ h2 {
 }
 
 .sim-nao-button.selected[data-value="Não"] {
-    background-color: red; 
+    background-color: red;
 }
 
 .opcao {
@@ -120,7 +120,7 @@ h2 {
     overflow-y: auto;
 }
 
-.filtro-add-container{
+.filtro-add-container {
     margin-top: 5%;
     width: 100%;
 }
@@ -223,7 +223,8 @@ h2 {
 
 .localizacao:hover,
 .tipo-local-container:hover {
-    transform: translateY(-8px); /* Efeito sutil de levitação */
+    transform: translateY(-8px);
+    /* Efeito sutil de levitação */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -232,7 +233,7 @@ label {
     font-weight: bold;
     margin-bottom: 10px;
     display: block;
-    color: #333;
+    color: #fff;
 }
 
 /* Opções */
@@ -252,7 +253,8 @@ label {
     font-size: 16px;
     color: #555;
     position: relative;
-    padding-left: 30px; /* Espaço à esquerda do checkbox */
+    padding-left: 30px;
+    /* Espaço à esquerda do checkbox */
 }
 
 /* Estilos do Checkbox */
@@ -273,13 +275,13 @@ input[type="checkbox"] {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-input[type="checkbox"]:checked + .custom-checkbox {
+input[type="checkbox"]:checked+.custom-checkbox {
     background-color: #6c5ce7;
     border-color: #6c5ce7;
     box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
 }
 
-input[type="checkbox"]:checked + .custom-checkbox:before {
+input[type="checkbox"]:checked+.custom-checkbox:before {
     content: '';
     position: absolute;
     left: 5px;
@@ -292,15 +294,13 @@ input[type="checkbox"]:checked + .custom-checkbox:before {
     transition: transform 0.3s ease;
 }
 
-input[type="checkbox"]:disabled + .custom-checkbox {
+input[type="checkbox"]:disabled+.custom-checkbox {
     background-color: #e0e0e0;
     border-color: #d1d1d1;
     box-shadow: none;
     cursor: not-allowed;
 }
 
-input[type="checkbox"]:disabled + .custom-checkbox:before {
+input[type="checkbox"]:disabled+.custom-checkbox:before {
     background-color: #b0b0b0;
 }
-
-  
