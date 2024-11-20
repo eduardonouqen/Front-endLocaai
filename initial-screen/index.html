@@ -225,9 +225,11 @@
 
     </div>
 
-    <script>
+    <script type="module">
+        import CONFIG from '../../config.js';
+
         async function fetchProperties() {
-            const response = await fetch('http://localhost:3000/realty'); // Verifique se a URL está correta
+            const response = await fetch(`${CONFIG.API_BASE_URL}/realty`); // Verifique se a URL está correta
             if (!response.ok) {
                 throw new Error('Falha ao buscar propriedades');
             }
@@ -237,7 +239,7 @@
         }
 
         async function fetchUsers() {
-            const response = await fetch('http://localhost:3000/users'); // Verifique se a URL está correta
+            const response = await fetch(`${CONFIG.API_BASE_URL}/users`); // Verifique se a URL está correta
             if (!response.ok) {
                 throw new Error('Falha ao buscar usuários');
             }
@@ -311,107 +313,107 @@
 
 
 
-        async function filterProperties(category) {
-            try {
-                const properties = await fetchProperties();
-                const users = await fetchUsers();
-                const placesContainer = document.getElementById("placesContainer");
+        window.filterProperties = async function (category) {
+    try {
+        const properties = await fetchProperties();
+        const users = await fetchUsers();
+        const placesContainer = document.getElementById("placesContainer");
 
-                // Limpar o container antes de adicionar as propriedades filtradas
-                placesContainer.innerHTML = '';
+        // Limpar o container antes de adicionar as propriedades filtradas
+        placesContainer.innerHTML = '';
 
-                // Filtrar as propriedades pela categoria
-                const filteredProperties = properties.filter(property => property.category === category);
+        // Filtrar as propriedades pela categoria
+        const filteredProperties = properties.filter(property => property.category === category);
 
-                // Exibir as propriedades filtradas
-                filteredProperties.forEach(property => {
-                    // Encontrar o usuário correspondente usando o userId
-                    const owner = users.find(user => user.id === String(property.userId));
+        // Exibir as propriedades filtradas
+        filteredProperties.forEach(property => {
+            const owner = users.find(user => user.id === String(property.userId));
 
-                    const placeContainer = document.createElement("div");
-                    placeContainer.className = "placeContainer";
+            const placeContainer = document.createElement("div");
+            placeContainer.className = "placeContainer";
 
-                    placeContainer.innerHTML = `
-                    <a href="../announcement-screen/index.html" target="_blank">
-            <img class="placeImage" src="${property.photo  ? property.photo  : './img/eichenwaldeTest.png'}">
-            <div class="otherAlign">
-                <div class="placeTop">
-                    <label id="placeFont" class="placeName">${property.title}</label>
-                    <label id="placeFont" class="placeOwner">Por: ${property ? property.userId.name : 'Desconhecido'}</label>
-                    <div class="placePriceDiv">
-                        <label id="placeFont" class="placePrice">R$ ${property.value}</label>
-                        <label id="placeFont">por diária</label>
-                    </div>
-                </div>
-                <div class="alignRating">
-                    <img class="profilePicAd" src="${owner ? owner.profile_pic_url : '../top-bar/img/profilePicTest.png'}">
-                    <div class="ratingSection">
-                        <label class="placePrice">${property.rating}</label>
-                        <img class="ratingStar" src="./img/ratingStar.png">
-                    </div>
-                </div>
-            </div>
-            </a>
-        `;
-
-                    placesContainer.appendChild(placeContainer);
-                });
-            } catch (error) {
-                console.error('Erro ao filtrar propriedades:', error);
-            }
-        }
-
-
-
-
-        async function clearFilters() {
-            try {
-                const properties = await fetchProperties(); // Recarregar todas as propriedades
-                const users = await fetchUsers(); // Carregar os usuários novamente
-                const placesContainer = document.getElementById("placesContainer");
-                placesContainer.innerHTML = ''; // Limpar as propriedades já exibidas
-
-                properties.forEach(property => {
-                    // Encontrar o usuário correspondente
-                    const owner = users.find(user => user.id === String(property.userId));
-
-                    const placeContainer = document.createElement("div");
-                    placeContainer.className = "placeContainer";
-
-                    placeContainer.innerHTML = `
-                    <a href="../announcement-screen/index.html" target="_blank">
-                <img class="placeImage" src="${property.photo  ? property.photo  : './img/eichenwaldeTest.png'}">
-                <div class="otherAlign">
-                    <div class="placeTop">
-                        <label id="placeFont" class="placeName">${property.title}</label>
-                        <label id="placeFont" class="placeOwner">Por: ${property ? property.userId.name : 'Desconhecido'}</label>
-                        <div class="placePriceDiv">
-                            <label id="placeFont" class="placePrice">R$ ${property.value}</label>
-                            <label id="placeFont">por diária</label>
+            placeContainer.innerHTML = `
+                <a href="../announcement-screen/index.html" target="_blank">
+                    <img class="placeImage" src="${property.photo || './img/eichenwaldeTest.png'}">
+                    <div class="otherAlign">
+                        <div class="placeTop">
+                            <label id="placeFont" class="placeName">${property.title}</label>
+                            <label id="placeFont" class="placeOwner">Por: ${owner ? owner.name : 'Desconhecido'}</label>
+                            <div class="placePriceDiv">
+                                <label id="placeFont" class="placePrice">R$ ${property.value}</label>
+                                <label id="placeFont">por diária</label>
+                            </div>
+                        </div>
+                        <div class="alignRating">
+                            <img class="profilePicAd" src="${owner ? owner.profile_pic_url : '../top-bar/img/profilePicTest.png'}">
+                            <div class="ratingSection">
+                                <label class="placePrice">${property.rating}</label>
+                                <img class="ratingStar" src="./img/ratingStar.png">
+                            </div>
                         </div>
                     </div>
-                    <div class="alignRating">
-                        <img class="profilePicAd" src="${owner ? owner.profile_pic_url : '../top-bar/img/profilePicTest.png'}">
-                        <div class="ratingSection">
-                            <label class="placePrice">${property.rating}</label>
-                            <img class="ratingStar" src="./img/ratingStar.png">
-                        </div>
-                    </div>
-                </div>
+                </a>
             `;
 
-                    placesContainer.appendChild(placeContainer);
-                });
-            } catch (error) {
-                console.error('Erro ao limpar filtros:', error);
-            }
-        }
+            placesContainer.appendChild(placeContainer);
+        });
+    } catch (error) {
+        console.error('Erro ao filtrar propriedades:', error);
+    }
+};
+
+
+
+
+window.clearFilters = function () {
+    const placesContainer = document.getElementById("placesContainer");
+
+    // Limpar o container antes de exibir todas as propriedades novamente
+    placesContainer.innerHTML = '';
+
+    // Adicionar novamente todas as propriedades
+    fetchProperties().then(properties => {
+        fetchUsers().then(users => {
+            properties.forEach(property => {
+                const owner = users.find(user => user.id === String(property.userId));
+
+                const placeContainer = document.createElement("div");
+                placeContainer.className = "placeContainer";
+
+                placeContainer.innerHTML = `
+                    <a href="../announcement-screen/index.html" target="_blank">
+                        <img class="placeImage" src="${property.photo || './img/eichenwaldeTest.png'}">
+                        <div class="otherAlign">
+                            <div class="placeTop">
+                                <label id="placeFont" class="placeName">${property.title}</label>
+                                <label id="placeFont" class="placeOwner">Por: ${owner ? owner.name : 'Desconhecido'}</label>
+                                <div class="placePriceDiv">
+                                    <label id="placeFont" class="placePrice">R$ ${property.value}</label>
+                                    <label id="placeFont">por diária</label>
+                                </div>
+                            </div>
+                            <div class="alignRating">
+                                <img class="profilePicAd" src="${owner ? owner.profile_pic_url : '../top-bar/img/profilePicTest.png'}">
+                                <div class="ratingSection">
+                                    <label class="placePrice">${property.rating}</label>
+                                    <img class="ratingStar" src="./img/ratingStar.png">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                `;
+
+                placesContainer.appendChild(placeContainer);
+            });
+        });
+    });
+};
 
         
     </script>
 
     
-    <script src="js/script.js"></script>
+    <script type="module" src="js/script.js"></script>
 
 </body>
 

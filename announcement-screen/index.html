@@ -287,7 +287,7 @@
         <script>
 
             async function fetchUsers() {
-                const response = await fetch('http://localhost:3000/users'); // Verifique se a URL está correta
+                const response = await fetch(`${CONFIG.API_BASE_URL}/users`); // Verifique se a URL está correta
                 if (!response.ok) {
                     throw new Error('Falha ao buscar usuários');
                 }
@@ -406,5 +406,5 @@
         <label class="copyrightLabel">© LOCAAIEVENTOS - Todos os direitos reservados</label>
     </div>
 
-    <script src="./js/script.js"></script>
+    <script type="module" src="./js/script.js"></script>
 </body>

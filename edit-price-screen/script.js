@@ -1,3 +1,5 @@
+import CONFIG from '../../config.js';
+
 document.addEventListener("DOMContentLoaded", () => {
     const priceDisplay = document.getElementById('price');
     const serviceFeeToggle = document.getElementById('service-fee-toggle');
@@ -103,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const filtrosSelecionados = JSON.parse(localStorage.getItem('nameFilter'));
 
         dadosAnuncio.nameFilter = filtrosSelecionados;
-        const urlRealty = 'http://localhost:3000/realty';
+        const urlRealty = `${CONFIG.API_BASE_URL}/realty`;
         const token = localStorage.getItem('token');
 
         const current = parseFloat(priceDisplay.innerText.replace("R$", "").replace(",", "."));
