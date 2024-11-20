@@ -86,7 +86,7 @@ if (cadastroAnuncio) {
 }
 
 async function fetchUsers() {
-    const response = await fetch('http://localhost:3000/users'); // Replace with your API endpoint
+    const response = await fetch(`${CONFIG.API_BASE_URL}/users`); // Replace with your API endpoint
     const user = await response.json();
     return user;
 }
