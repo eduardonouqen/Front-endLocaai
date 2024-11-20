@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .catch(error => {
                 console.error('Erro:', error);
-                alert('Falha ao enviar dados.');
+                console.log('Falha ao enviar dados.');
             });
     });
 });

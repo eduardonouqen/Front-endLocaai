@@ -286,7 +286,7 @@
 
         <script type="module">
             import CONFIG from '../../config.js';
-            
+
             async function fetchUsers() {
                 const response = await fetch(`${CONFIG.API_BASE_URL}/users`); // Verifique se a URL está correta
                 if (!response.ok) {
@@ -340,7 +340,22 @@
                 <label class="filtersContainerLabel1"></label>
                 <label class="filtersContainerLabel2">Tudo o que você precisa saber sobre</label>
             </div>
+            <!--Line Break-->
             <div class="filtersAlignLine">
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/urban.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Localização</label>
+                        <label class="filtersSecondLabel">Urbano</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/rural.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Localização</label>
+                        <label class="filtersSecondLabel">Rural</label>
+                    </div>
+                </div>
                 <div class="filtersAlign">
                     <img class="filtersImg" src="../(IMGs) FILTERS ICONS/open-place.png">
                     <div class="filtersLabel">
@@ -349,10 +364,51 @@
                     </div>
                 </div>
                 <div class="filtersAlign">
-                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/swimming-pool.png">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/private.png">
                     <div class="filtersLabel">
-                        <label class="filtersFirstLabel">Possui</label>
-                        <label class="filtersSecondLabel">Piscina</label>
+                        <label class="filtersFirstLabel">Local</label>
+                        <label class="filtersSecondLabel">Fechado</label>
+                    </div>
+                </div>
+            </div>
+            <!--Line Break-->
+            <div class="filtersAlignLine">
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/animal.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Permite</label>
+                        <label class="filtersSecondLabel">Animais</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/sleep-in-place.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Permite</label>
+                        <label class="filtersSecondLabel">Dormir no Local</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/smoke.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Permite</label>
+                        <label class="filtersSecondLabel">Fumar</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/loud-sound.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Permite</label>
+                        <label class="filtersSecondLabel">Som Alto</label>
+                    </div>
+                </div>
+            </div>
+            <!--Line Break-->
+            <div class="filtersAlignLine">
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/childrens.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Permite</label>
+                        <label class="filtersSecondLabel">Crianças</label>
                     </div>
                 </div>
                 <div class="filtersAlign">
@@ -363,19 +419,27 @@
                     </div>
                 </div>
                 <div class="filtersAlign">
-                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/heliport.png">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/tree-house.png">
                     <div class="filtersLabel">
                         <label class="filtersFirstLabel">Possui</label>
-                        <label class="filtersSecondLabel">Heliporto</label>
+                        <label class="filtersSecondLabel">Casa na Árvore</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/wifi.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Wi-FI</label>
                     </div>
                 </div>
             </div>
+            <!--Line Break-->
             <div class="filtersAlignLine">
                 <div class="filtersAlign">
-                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/heater.png">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/kitchen-items.png">
                     <div class="filtersLabel">
                         <label class="filtersFirstLabel">Possui</label>
-                        <label class="filtersSecondLabel">Aquecedor</label>
+                        <label class="filtersSecondLabel">Itens de Cozinha</label>
                     </div>
                 </div>
                 <div class="filtersAlign">
@@ -386,12 +450,53 @@
                     </div>
                 </div>
                 <div class="filtersAlign">
-                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/ski-slope.png">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/lake-or-river.png">
                     <div class="filtersLabel">
                         <label class="filtersFirstLabel">Possui</label>
-                        <label class="filtersSecondLabel">Pista de Esqui</label>
+                        <label class="filtersSecondLabel">Lago ou Rio</label>
                     </div>
                 </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/childrens-place.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Espaço Infantil</label>
+                    </div>
+                </div>
+            </div>
+            <!--Line Break-->
+            <div class="filtersAlignLine">
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/elevator.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Elevador</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/accessibility.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Acessibilidade</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/space-for-camping.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Espaço para Acampar</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/security-cam.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Câmera de Segurança</label>
+                    </div>
+                </div>
+            </div>
+            <!--Line Break-->
+            <div class="filtersAlignLine">
                 <div class="filtersAlign">
                     <img class="filtersImg" src="../(IMGs) FILTERS ICONS/bed.png">
                     <div class="filtersLabel">
@@ -399,7 +504,184 @@
                         <label class="filtersSecondLabel">Cama</label>
                     </div>
                 </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/sauna.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Sauna</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/air-conditioning.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Ar-Condicionado</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/swimming-pool.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Piscina</label>
+                    </div>
+                </div>
             </div>
+            <!--Line Break-->
+            <div class="filtersAlignLine">
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/security-guard.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Guarda de Segurança</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/football-field.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Campo de Futebol</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/basketball-court.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Quadra de Basquete</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/tennis-court.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Quadra de Tênis</label>
+                    </div>
+                </div>
+            </div>
+            <!--Line Break-->
+            <div class="filtersAlignLine">
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/golf-field.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Campo de Golf</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/parking.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Estacionamento</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/heliport.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Heliporto</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/pool-table.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Mesa de Sinuca</label>
+                    </div>
+                </div>
+            </div>
+            <!--Line Break-->
+            <div class="filtersAlignLine">
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/table-tennis.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Tênis de Mesa</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/heater.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Aquecedor</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/sound-box.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Aparelho de Som</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/bathroom.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Banheiro</label>
+                    </div>
+                </div>
+            </div>
+            <!--Line Break-->
+            <div class="filtersAlignLine">
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/karaoke.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Karaokê</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/ski-slope.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Pista de Ski</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/microphone.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Microfones</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/animatronic.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Animatrônicos</label>
+                    </div>
+                </div>
+            </div>
+            <!--Line Break-->
+            <div class="filtersAlignLine">
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/arcade.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Fliperama</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/buffet.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Buffet</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/dismissal.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Dispensa</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/party-lights.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Possui</label>
+                        <label class="filtersSecondLabel">Luzes de Festa</label>
+                    </div>
+                </div>
+            </div>
+            <!--Line Break-->
         </div>
     </div>
 
