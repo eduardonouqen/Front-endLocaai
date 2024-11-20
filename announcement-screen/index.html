@@ -286,7 +286,7 @@
 
         <script type="module">
             import CONFIG from '../../config.js';
-            
+
             async function fetchUsers() {
                 const response = await fetch(`${CONFIG.API_BASE_URL}/users`); // Verifique se a URL está correta
                 if (!response.ok) {
@@ -342,6 +342,20 @@
             </div>
             <div class="filtersAlignLine">
                 <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/urban.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Localização</label>
+                        <label class="filtersSecondLabel">Urbano</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/rural.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Localização</label>
+                        <label class="filtersSecondLabel">Rural</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
                     <img class="filtersImg" src="../(IMGs) FILTERS ICONS/open-place.png">
                     <div class="filtersLabel">
                         <label class="filtersFirstLabel">Local</label>
@@ -349,54 +363,70 @@
                     </div>
                 </div>
                 <div class="filtersAlign">
-                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/swimming-pool.png">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/private.png">
                     <div class="filtersLabel">
-                        <label class="filtersFirstLabel">Possui</label>
-                        <label class="filtersSecondLabel">Piscina</label>
-                    </div>
-                </div>
-                <div class="filtersAlign">
-                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/grill.png">
-                    <div class="filtersLabel">
-                        <label class="filtersFirstLabel">Possui</label>
-                        <label class="filtersSecondLabel">Churrasqueira</label>
-                    </div>
-                </div>
-                <div class="filtersAlign">
-                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/heliport.png">
-                    <div class="filtersLabel">
-                        <label class="filtersFirstLabel">Possui</label>
-                        <label class="filtersSecondLabel">Heliporto</label>
+                        <label class="filtersFirstLabel">Local</label>
+                        <label class="filtersSecondLabel">Fechado</label>
                     </div>
                 </div>
             </div>
             <div class="filtersAlignLine">
                 <div class="filtersAlign">
-                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/heater.png">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/animal.png">
                     <div class="filtersLabel">
-                        <label class="filtersFirstLabel">Possui</label>
-                        <label class="filtersSecondLabel">Aquecedor</label>
+                        <label class="filtersFirstLabel">Permite</label>
+                        <label class="filtersSecondLabel">Animais</label>
                     </div>
                 </div>
                 <div class="filtersAlign">
-                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/freezer.png">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/sleep-in-place.png">
                     <div class="filtersLabel">
-                        <label class="filtersFirstLabel">Possui</label>
-                        <label class="filtersSecondLabel">Freezer</label>
+                        <label class="filtersFirstLabel">Permite</label>
+                        <label class="filtersSecondLabel">Dormir no Local</label>
                     </div>
                 </div>
                 <div class="filtersAlign">
-                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/ski-slope.png">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/smoke.png">
                     <div class="filtersLabel">
-                        <label class="filtersFirstLabel">Possui</label>
-                        <label class="filtersSecondLabel">Pista de Esqui</label>
+                        <label class="filtersFirstLabel">Permite</label>
+                        <label class="filtersSecondLabel">Fumar</label>
                     </div>
                 </div>
                 <div class="filtersAlign">
-                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/bed.png">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/loud-sound.png">
                     <div class="filtersLabel">
-                        <label class="filtersFirstLabel">Possui</label>
-                        <label class="filtersSecondLabel">Cama</label>
+                        <label class="filtersFirstLabel">Permite</label>
+                        <label class="filtersSecondLabel">Sol Alto</label>
+                    </div>
+                </div>
+            </div>
+            <div class="filtersAlignLine">
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/childrens.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Permite</label>
+                        <label class="filtersSecondLabel">Crianças</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Permite</label>
+                        <label class="filtersSecondLabel">Dormir no Local</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/smoke.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Permite</label>
+                        <label class="filtersSecondLabel">Fumar</label>
+                    </div>
+                </div>
+                <div class="filtersAlign">
+                    <img class="filtersImg" src="../(IMGs) FILTERS ICONS/loud-sound.png">
+                    <div class="filtersLabel">
+                        <label class="filtersFirstLabel">Permite</label>
+                        <label class="filtersSecondLabel">Sol Alto</label>
                     </div>
                 </div>
             </div>
