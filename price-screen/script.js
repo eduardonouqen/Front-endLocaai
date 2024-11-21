@@ -9,55 +9,49 @@ document.addEventListener("DOMContentLoaded", () => {
     const additionalValueSpan = document.getElementById('additional-value');
     const totalPriceSpan = document.getElementById('total-price');
     const totalNoFeeSpan = document.getElementById('total-no-fee');
-    const confirmBtn = document.getElementById('confirm-btn');
+    const confirmBtn = document.getElementById('confirmbtn');
 
     let basePrice = 0;
-    let serviceFee = 0;
-    let additionalValue = 0;
-    let totalPrice = 0;
-    let totalNoFee = 0;
 
     function updatePrices() {
-        serviceFee = (basePrice * 0.10).toFixed(2);
-        additionalValue = (basePrice * 0.05).toFixed(2);
-        totalPrice = (parseFloat(basePrice) + parseFloat(serviceFee) + parseFloat(additionalValue)).toFixed(2);
-        totalNoFee = basePrice.toFixed(2);
+        const serviceFee = (basePrice * 0.10).toFixed(2);
+        const additionalValue = (basePrice * 0.05).toFixed(2);
+        const totalPrice = (parseFloat(basePrice) + parseFloat(serviceFee) + parseFloat(additionalValue)).toFixed(2);
+        const totalNoFee = basePrice.toFixed(2);
 
-        basePriceSpan.textContent = `R$${parseFloat(basePrice).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
-        serviceFeeSpan.textContent = `R$${parseFloat(serviceFee).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
-        additionalValueSpan.textContent = `R$${parseFloat(additionalValue).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
-        totalPriceSpan.textContent = `R$${parseFloat(totalPrice).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
-        totalNoFeeSpan.textContent = `R$${parseFloat(totalNoFee).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
-        serviceFeeToggle.textContent = `Veja as taxas R$${parseFloat(totalNoFee).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+        // Atualiza os elementos do DOM com os valores calculados
+        basePriceSpan.textContent = formatCurrency(basePrice);
+        serviceFeeSpan.textContent = formatCurrency(serviceFee);
+        additionalValueSpan.textContent = formatCurrency(additionalValue);
+        totalPriceSpan.textContent = formatCurrency(totalPrice);
+        totalNoFeeSpan.textContent = formatCurrency(totalNoFee);
+        serviceFeeToggle.textContent = `Veja as taxas ${formatCurrency(totalNoFee)}`;
     }
 
-    function formatPriceInput(value) {
-        const cleanValue = value.replace(/\D/g, '');
+    function formatCurrency(value) {
+        return `R$${parseFloat(value).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+    }
 
-        if (cleanValue.length > 10) {
-            return cleanValue.slice(0, 10);
-        }
-
-        const numericValue = parseFloat(cleanValue) / 100;
-        return numericValue.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    function parseCurrency(value) {
+        // Remove "R$", "." e converte vírgula para ponto
+        return parseFloat(value.replace('R$', '').replace(/\./g, '').replace(',', '.')) || 0;
     }
 
     priceDisplay.addEventListener('input', (e) => {
-        let formattedPrice = formatPriceInput(e.target.textContent);
-        priceDisplay.textContent = formattedPrice;
+        // Formata o texto digitado como moeda
+        const rawValue = e.target.textContent.replace(/\D/g, ''); // Apenas números
+        const numericValue = parseFloat(rawValue) / 100; // Transforma em número decimal
 
-        basePrice = parseFloat(formattedPrice.replace('R$', '').replace(/\./g, '').replace(',', '.')) || 0;
+        basePrice = numericValue || 0;
+        priceDisplay.textContent = formatCurrency(basePrice); // Atualiza o campo com o formato correto
 
         updatePrices();
 
-        if (basePrice > 0) {
-            serviceFeeToggle.disabled = false;
-            confirmBtn.disabled = false;
-        } else {
-            serviceFeeToggle.disabled = true;
-            confirmBtn.disabled = true;
-        }
+        // Controle de habilitação de botões
+        serviceFeeToggle.disabled = basePrice <= 0;
+        confirmBtn.disabled = basePrice <= 0;
 
+        // Mantém o cursor no final do campo
         const range = document.createRange();
         const sel = window.getSelection();
         range.setStart(priceDisplay.childNodes[0], priceDisplay.textContent.length);
@@ -67,59 +61,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     priceDisplay.addEventListener('keypress', (e) => {
+        // Permite apenas números
         if (!/[0-9]/.test(e.key)) {
-            e.preventDefault();
-        }
-
-        if (priceDisplay.textContent.replace(/\D/g, '').length >= 10) {
             e.preventDefault();
         }
     });
 
     serviceFeeToggle.addEventListener('click', () => {
         feeInfo.classList.toggle('hidden');
-        if (!feeInfo.classList.contains('hidden')) {
-            serviceFeeToggle.textContent = 'Esconda as taxas';
-        } else {
-            serviceFeeToggle.textContent = 'Veja as taxas';
-        }
+        serviceFeeToggle.textContent = feeInfo.classList.contains('hidden') ? 'Veja as taxas' : 'Esconda as taxas';
     });
-});
-
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const confirmBtn = document.getElementById("confirmbtn");
-    const priceDisplay = document.getElementById("price");
-    const basePriceSpan = document.getElementById("base-price");
-    const serviceFeeSpan = document.getElementById("service-fee");
-    const additionalValueSpan = document.getElementById("additional-value");
-    const totalPriceSpan = document.getElementById("total-price");
 
     confirmBtn.addEventListener("click", () => {
-        const dadosAnuncio = JSON.parse(localStorage.getItem('cadastroAnuncio'));
-        const filtrosSelecionados = JSON.parse(localStorage.getItem('selectedFilters'));
+        const dadosAnuncio = JSON.parse(localStorage.getItem('cadastroAnuncio')) || {};
+        const filtrosSelecionados = JSON.parse(localStorage.getItem('selectedFilters')) || [];
 
-        // Combina os filtros com os dados do anúncio
         dadosAnuncio.nameFilter = filtrosSelecionados;
 
-        // Captura o token do localStorage
         const token = localStorage.getItem('token');
 
-        // Calcula o preço total
-        const current = parseFloat(priceDisplay.innerText.replace("R$", "").replace(",", "."));
-        const serviceFeeValue = parseFloat(serviceFeeSpan.innerText.replace("R$", "").replace(",", "."));
-        const additionalValueValue = parseFloat(additionalValueSpan.innerText.replace("R$", "").replace(",", "."));
-        const price = current + serviceFeeValue + additionalValueValue;
+        const serviceFeeValue = parseCurrency(serviceFeeSpan.textContent);
+        const additionalValueValue = parseCurrency(additionalValueSpan.textContent);
+        const totalPrice = basePrice + serviceFeeValue + additionalValueValue;
 
-        // Atualiza o valor total de `price` no `dadosAnuncio`
-        dadosAnuncio.value = price;
+        dadosAnuncio.value = totalPrice;
 
-        // Função para converter Base64 para Buffer
+        // Exemplo de envio para o backend
+        console.log('Dados enviados:', dadosAnuncio);
+
         function base64ToBuffer(base64) {
             try {
                 const base64String = base64.replace(/^data:image\/(png|jpeg|jpg);base64,/, '');
@@ -138,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        // Função para enviar a imagem
         async function enviarImagem() {
             const urlImagens = `${CONFIG.API_BASE_URL}/imagens/`;
             const formData = new FormData();
@@ -171,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const data = await response.json();
                 console.log("Resposta do servidor:", data);
 
-                // Verifique se a chave 'path' está presente
                 const fileName = data.data ? data.data.path : null;
 
                 if (!fileName) {
@@ -187,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        // Função para obter a URL assinada
+
         async function obterUrlAssinada(fileName) {
             const urlAssinada = `${CONFIG.API_BASE_URL}/imagens/${fileName}`;
 
@@ -212,7 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        // Função para enviar o anúncio
         async function enviarAnuncio() {
             const urlRealty = `${CONFIG.API_BASE_URL}/realty`;
 

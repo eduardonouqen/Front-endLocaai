@@ -72,7 +72,7 @@ if (selectedProperty) {
     console.warn('Nenhum dado encontrado no localStorage para "selectedProperty".');
 }
 
-const cadastroAnuncio = JSON.parse(localStorage.getItem('cadastroAnuncio'));
+const cadastroAnuncio = JSON.parse(localStorage.getItem('selectedProperty'));
 
 // Verifica se o dado existe antes de usá-lo
 if (cadastroAnuncio) {
