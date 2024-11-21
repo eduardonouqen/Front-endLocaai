@@ -54,13 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const botaoPromover = propriedadeCard.querySelector('.botaopromover');
                 botaoPromover.addEventListener('click', () => {
-                    // Salva as informações no localStorage para serem usadas na tela de promoção
                     localStorage.setItem('tituloAnuncio', propriedade.title);
                     localStorage.setItem('enderecoAnuncio', propriedade.address);
                     localStorage.setItem('imagemAnuncio', propriedade.imagem);
                     console.log('Título, endereço e imagem do anúncio salvos no LocalStorage.');
 
-                    // Redireciona para a tela de promoção de anúncio
                     window.location.href = '../promote-ad-screen/index.html';
                 });
 

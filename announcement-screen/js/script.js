@@ -53,14 +53,12 @@ const selectedProperty = localStorage.getItem('selectedProperty');
 
 if (selectedProperty) {
     try {
-        // Converte os dados do localStorage para um objeto
+        
         const propertyData = JSON.parse(selectedProperty);
 
-        // Valida se photo é uma array e contém ao menos uma imagem
         if (propertyData && Array.isArray(propertyData.photo) && propertyData.photo.length > 0) {
             const mainAnnouncementDiv = document.querySelector('.mainAnnouncement');
 
-            // Atualiza o background-image da div com a primeira URL da array
             mainAnnouncementDiv.style.backgroundImage = `url('${propertyData.photo[0]}')`;
         } else {
             console.warn('A propriedade "photo" está ausente ou não contém imagens.');
@@ -74,13 +72,10 @@ if (selectedProperty) {
 
 const cadastroAnuncio = JSON.parse(localStorage.getItem('selectedProperty'));
 
-// Verifica se o dado existe antes de usá-lo
 if (cadastroAnuncio) {
-    // Substitui o texto "XXXX" pelo valor de "bathroom"
     const peopleSupportLabel2 = document.querySelector('.peopleSupportLabel2');
     peopleSupportLabel2.textContent = cadastroAnuncio.bathroom || 'N/A';
 
-    // Substitui o texto "Lorem ipsum" pelo valor de "description"
     const textAreaDescription = document.querySelector('.textAreaDescription');
     textAreaDescription.textContent = cadastroAnuncio.description || 'Descrição não disponível.';
 } else {
@@ -97,24 +92,21 @@ if (token) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Obtém os dados armazenados na chave `selectedProperty` no localStorage
     const selectedProperty = JSON.parse(localStorage.getItem("selectedProperty")) || {};
-    const storedFilters = selectedProperty.nameFilter || []; // Acessa o atributo `nameFilter`
+    const storedFilters = selectedProperty.nameFilter || [];
 
-    // Seleciona todos os elementos de filtro
     const filters = document.querySelectorAll(".filtersAlign");
 
     filters.forEach(filter => {
         const label = filter.querySelector(".filtersFirstLabel");
         const secondLabel = filter.querySelector(".filtersSecondLabel");
 
-        // Verifica se o filtro atual está nos dados do nameFilter
-        const filterName = secondLabel.textContent.trim(); // Obtém o nome do filtro (e.g., "Piscina")
+        const filterName = secondLabel.textContent.trim();
 
         if (storedFilters.includes(filterName)) {
-            label.textContent = "Possui"; // Atualiza para "Possui"
+            label.textContent = "Possui";
         } else {
-            label.textContent = "Não possui"; // Atualiza para "Não possui"
+            label.textContent = "Não possui"; 
         }
     });
 });

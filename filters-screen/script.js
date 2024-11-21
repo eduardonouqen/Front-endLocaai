@@ -4,12 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const buttonClear = document.querySelector('.button-clear');
     const nextButton = document.querySelector('.button-next');
 
-    // Variáveis de controle para ativar o botão "próximo"
     const simNaoButtons = document.querySelectorAll('.sim-nao-button');
     const checkboxes = document.querySelectorAll('.localizacao-checkbox, .tipo-local-checkbox');
     const opcoesSelecionadas = new Set();
 
-    // Função para verificar as condições do botão "próximo"
     function updateNextButtonState() {
         const filtroAtivo = document.querySelector('.filtro-container .item');
         const simNaoAtivo = document.querySelector('.sim-nao-button[style*="background-color"]');
@@ -27,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    // Atualiza o estado do botão "limpar"
     function updateButtonClearState() {
         const filtroAtivo = document.querySelector('.filtro-container .item');
         const simNaoAtivo = document.querySelector('.sim-nao-button[style*="background-color"]');
@@ -54,17 +51,16 @@ document.addEventListener('DOMContentLoaded', function () {
             itemDiv.remove();
             const opcao = document.querySelector(`.opcao[data-value="${value}"]`);
             opcao.classList.remove('disabled');
-            opcao.style.cursor = 'pointer'; // Reverte o cursor para pointer
+            opcao.style.cursor = 'pointer';
             updateButtonClearState();
-            updateNextButtonState(); // Atualiza o estado do botão "próximo"
+            updateNextButtonState(); 
         });
     
         filtroContainer.appendChild(itemDiv);
         updateButtonClearState();
-        updateNextButtonState(); // Atualiza o estado do botão "próximo"
+        updateNextButtonState();
     }
     
-    // Adiciona filtro ao selecionar uma opção
     opcoes.forEach(opcao => {
         opcao.addEventListener('click', () => {
             if (!opcao.classList.contains('disabled')) {
@@ -74,35 +70,32 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!document.querySelector(`.item[data-value="${value}"]`)) {
                     createItem(value, text);
                     opcao.classList.add('disabled');
-                    opcao.style.cursor = 'not-allowed'; // Desabilita o cursor de pointer
-                    opcoesSelecionadas.add(value); // Adiciona à lista de opções selecionadas
-                    updateNextButtonState(); // Atualiza o estado do botão "próximo"
+                    opcao.style.cursor = 'not-allowed';
+                    opcoesSelecionadas.add(value); 
+                    updateNextButtonState();
                 }
             }
         });
     });
 
-    // Limpar todos os filtros
     buttonClear.addEventListener('click', clearAllFilters);
 
-    // Alterar o estado dos botões Sim/Não
     simNaoButtons.forEach(button => {
         button.addEventListener('click', () => {
             toggleSimNao(button);
             updateButtonClearState();
-            updateNextButtonState(); // Atualiza o estado do botão "próximo"
+            updateNextButtonState();
         });
     });
 
-    // Alterar estado dos checkboxes
+
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
             updateButtonClearState();
-            updateNextButtonState(); // Atualiza o estado do botão "próximo"
+            updateNextButtonState();
         });
     });
 
-    // Lógica dos checkboxes de "rural/urbano" e "aberto/fechado"
     document.getElementById("rural").addEventListener("change", function () {
         const urbanoCheckbox = document.getElementById("urbano");
         if (this.checked) {
@@ -112,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
             urbanoCheckbox.disabled = false;
         }
         updateButtonClearState();
-        updateNextButtonState(); // Atualiza o estado do botão "próximo"
+        updateNextButtonState();
     });
 
     document.getElementById("urbano").addEventListener("change", function () {
@@ -124,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ruralCheckbox.disabled = false;
         }
         updateButtonClearState();
-        updateNextButtonState(); // Atualiza o estado do botão "próximo"
+        updateNextButtonState(); 
     });
 
     document.getElementById("aberto").addEventListener("change", function () {
@@ -136,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
             fechadoCheckbox.disabled = false;
         }
         updateButtonClearState();
-        updateNextButtonState(); // Atualiza o estado do botão "próximo"
+        updateNextButtonState();
     });
 
     document.getElementById("fechado").addEventListener("change", function () {
@@ -148,10 +141,9 @@ document.addEventListener('DOMContentLoaded', function () {
             abertoCheckbox.disabled = false;
         }
         updateButtonClearState();
-        updateNextButtonState(); // Atualiza o estado do botão "próximo"
+        updateNextButtonState();
     });
 
-    // Função de toggle dos botões Sim/Não
     function toggleSimNao(button) {
         const filter = button.getAttribute('data-filter');
         const isSim = button.getAttribute('data-value') === 'Sim';
@@ -177,20 +169,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Função para capitalizar a primeira letra
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-    // Função para limpar os filtros
     function clearAllFilters() {
         const filtroElements = document.querySelectorAll('.filtro-container .item');
         filtroElements.forEach(item => item.remove());
 
         const opcoes = document.querySelectorAll('.opcao');
         opcoes.forEach(opcao => {
-        opcao.classList.remove('disabled'); // Remove a classe 'disabled'
-        opcao.style.cursor = 'pointer'; // Restaura o cursor para 'pointer'
+        opcao.classList.remove('disabled');
+        opcao.style.cursor = 'pointer';
     });
 
         const simNaoButtons = document.querySelectorAll('.sim-nao-button');
@@ -208,10 +198,9 @@ document.addEventListener('DOMContentLoaded', function () {
         buttonClear.disabled = true;
         buttonClear.style.backgroundColor = '#A2A2A2';
         buttonClear.style.cursor = 'not-allowed';
-        updateNextButtonState(); // Atualiza o estado do botão "próximo"
+        updateNextButtonState(); 
     }
 
-    // Ação ao clicar no botão "próximo"
     nextButton.addEventListener('click', () => {
         localStorage.setItem('selectedFilters', JSON.stringify([...opcoesSelecionadas]));
         location.href = '../price-screen/index.html';
@@ -220,12 +209,10 @@ document.addEventListener('DOMContentLoaded', function () {
     nextButton.title = 'Por favor, complete todos os filtros antes de continuar!';
 
 
-    // Verifica se o token está presente
     const token = localStorage.getItem("token");
     if (token) {
         document.getElementById("statusLabel").textContent = "Locador Bronze";
     }
 
-    // Ao carregar a página, garantir que o botão "próximo" comece desabilitado
-    updateNextButtonState(); // Chama para verificar o estado inicial do botão
+    updateNextButtonState();
 });

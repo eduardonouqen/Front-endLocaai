@@ -147,7 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
         
                 console.log('Resposta recebida com sucesso.');
         
-                // Verifica se a resposta tem corpo
                 if (response.status === 204) {
                     console.log('Resposta com código 204 (No Content). Atualização bem-sucedida.');
                     return { message: 'Anúncio atualizado com sucesso (sem conteúdo retornado)' };
@@ -155,14 +154,13 @@ document.addEventListener("DOMContentLoaded", () => {
         
                 return response.text().then(text => {
                     console.log('Corpo da resposta (em texto):', text);
-                    // Verifica se a resposta está vazia
                     if (!text) {
                         console.log('Resposta vazia. Continuando...');
                         return { message: 'Anúncio atualizado, sem conteúdo adicional' };
                     }
         
                     try {
-                        return JSON.parse(text);  // Tenta converter a resposta em JSON
+                        return JSON.parse(text);
                     } catch (e) {
                         throw new Error(`Falha ao parsear a resposta JSON: ${e.message}`);
                     }
@@ -171,12 +169,11 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 console.log('Resposta JSON do backend:', data);
         
-                // Verifica se o id foi retornado
                 if (data.id) {
                     return data.id;
                 } else {
                     console.log('ID não retornado, mas a atualização foi bem-sucedida.');
-                    return; // Retorna sem fazer nada, ou exibe uma mensagem de sucesso
+                    return; 
                 }
             });
         }

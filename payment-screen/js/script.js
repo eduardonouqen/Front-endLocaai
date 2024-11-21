@@ -6,10 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const decodedToken = parseJwt(token);
     const selectedProperty = JSON.parse(localStorage.getItem('selectedProperty'));
 
-    // Atualizar os valores no HTML
     if (selectedProperty) {
         const paragraphs = document.querySelectorAll('p');
-        if (paragraphs.length >= 5) { // Verifica se os parágrafos necessários existem
+        if (paragraphs.length >= 5) { 
             paragraphs[0].innerHTML = `<strong>Destino:</strong> ${selectedProperty.title}`;
             paragraphs[1].innerHTML = `<strong>Locador:</strong> ${selectedProperty.userId.name}`;
             paragraphs[2].innerHTML = `<strong>Localização:</strong> ${selectedProperty.city}`;
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Função para decodificar o token JWT
+
     function parseJwt(token) {
         try {
             const base64Url = token.split('.')[1];
@@ -61,41 +60,34 @@ document.getElementById('pay-button').addEventListener('click', generatePaymentL
 
 async function generatePaymentLink() {
     try {
-        // Recupera os dados do localStorage
         const storedData = JSON.parse(localStorage.getItem('selectedProperty'));
         if (!storedData) {
             throw new Error('Dados de pagamento não encontrados no localStorage.');
         }
 
-        // Monta a URL com os parâmetros
         const queryParams = new URLSearchParams({
             id: storedData.id,
             title: storedData.title,
-            price: parseFloat(storedData.value), // Use "price" se o backend espera isso
+            price: parseFloat(storedData.value), 
         });
 
-        // Faz a requisição GET com os parâmetros na URL
         const response = await fetch(`${CONFIG.API_BASE_URL}/mercadopago/generate-payment-link?${queryParams.toString()}`, {
-            method: 'GET', // Não é necessário body para GET
+            method: 'GET', 
         });
 
         if (!response.ok) {
             throw new Error('Erro ao gerar a preferência de pagamento');
         }
 
-        // Obter a URL de pagamento gerada
         const paymentUrl = await response.text();
 
-        // Exibir o link de pagamento na interface
         const paymentLinkElement = document.getElementById('payment-link');
         const linkElement = document.getElementById('link');
         linkElement.href = paymentUrl;
         linkElement.textContent = paymentUrl;
 
-        // Mostrar o link de pagamento
         paymentLinkElement.style.display = 'block';
 
-        // Redirecionar automaticamente o usuário para o Mercado Pago
         window.location.href = paymentUrl;
 
     } catch (error) {

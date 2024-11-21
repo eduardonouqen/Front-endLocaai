@@ -229,17 +229,17 @@
         import CONFIG from '../../config.js';
 
         async function fetchProperties() {
-            const response = await fetch(`${CONFIG.API_BASE_URL}/realty`); // Verifique se a URL está correta
+            const response = await fetch(`${CONFIG.API_BASE_URL}/realty`);
             if (!response.ok) {
                 throw new Error('Falha ao buscar propriedades');
             }
             const data = await response.json();
-            console.log('Dados das propriedades:', data); // Log da resposta da API
+            console.log('Dados das propriedades:', data);
             return data;
         }
 
         async function fetchUsers() {
-            const response = await fetch(`${CONFIG.API_BASE_URL}/users`); // Verifique se a URL está correta
+            const response = await fetch(`${CONFIG.API_BASE_URL}/users`);
             if (!response.ok) {
                 throw new Error('Falha ao buscar usuários');
             }
@@ -253,23 +253,19 @@
                 const placesContainer = document.getElementById("placesContainer");
 
                 properties.forEach(property => {
-                    // Encontrar o usuário correspondente usando o userId
                     const owner = users.find(user => user.id === String(property.userId));
 
                     const placeContainer = document.createElement("div");
                     placeContainer.className = "placeContainer";
 
-                    // Cria o link com um evento de clique para salvar os dados no localStorage
                     const propertyLink = document.createElement("a");
                     propertyLink.href = "../announcement-screen/index.html";
                     propertyLink.target = "_blank";
 
                     propertyLink.addEventListener("click", () => {
-                        // Salva os dados da propriedade no localStorage
                         localStorage.setItem("selectedProperty", JSON.stringify(property));
                     });
 
-                    // Monta o conteúdo HTML dentro do link
                     propertyLink.innerHTML = `
                 <img class="placeImage" src="${property.photo || './img/eichenwaldeTest.png'}">
                 <div class="otherAlign">
@@ -291,7 +287,6 @@
                 </div>
             `;
 
-                    // Adiciona o link ao container da propriedade
                     placeContainer.appendChild(propertyLink);
                     placesContainer.appendChild(placeContainer);
                 });
@@ -300,7 +295,6 @@
             }
         }
 
-        // Chama a função para exibir propriedades ao carregar a página
         window.onload = displayProperties;
 
 
@@ -319,13 +313,10 @@
                 const users = await fetchUsers();
                 const placesContainer = document.getElementById("placesContainer");
 
-                // Limpar o container antes de adicionar as propriedades filtradas
                 placesContainer.innerHTML = '';
 
-                // Filtrar as propriedades pela categoria
                 const filteredProperties = properties.filter(property => property.category === category);
 
-                // Exibir as propriedades filtradas
                 filteredProperties.forEach(property => {
                     const owner = users.find(user => user.id === String(property.userId));
 
@@ -368,10 +359,8 @@
         window.clearFilters = function () {
             const placesContainer = document.getElementById("placesContainer");
 
-            // Limpar o container antes de exibir todas as propriedades novamente
             placesContainer.innerHTML = '';
 
-            // Adicionar novamente todas as propriedades
             fetchProperties().then(properties => {
                 fetchUsers().then(users => {
                     properties.forEach(property => {

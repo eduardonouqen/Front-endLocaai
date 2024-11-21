@@ -1,11 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () { //Aqui só está sendo definidas as variáveis pro controle daquele container
+document.addEventListener('DOMContentLoaded', function () { 
 
     const dropdownContainer = document.querySelector('.dropdown-container');
     const dropdownContent = document.querySelector('.dropdown-content');
     const selectedOption = document.querySelector('.selected-option');
     const options = document.querySelectorAll('.option');
 
-    // Essa função determina que se clicar no container ele abre o content, e se clicar de novo ele fecha tbm
     if (dropdownContainer) {
         dropdownContainer.addEventListener('click', function (event) {
             event.stopPropagation();
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () { //Aqui só está sen
         });
     }
 
-    // Ao selecionar uma opção essa função faz o container se fechar automaticamente
     options.forEach(function (option) {
         option.addEventListener('click', function (event) {
             event.stopPropagation();
@@ -24,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function () { //Aqui só está sen
         });
     });
 
-    // Aqui quando clica em qualquer lugar da tela o container se fecha
     document.addEventListener('click', function () {
         dropdownContainer.classList.remove('show')
         dropdownContent.classList.remove('show');
@@ -35,21 +32,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const termosCheckbox = document.getElementById('termos');
     const botaoProximo = document.getElementById('botaoProximo');
 
-    // Função que verifica o estado do checkbox
     function verificarCheckbox() {
         if (termosCheckbox.checked) {
-            botaoProximo.disabled = false;  // Habilita o botão se o checkbox estiver marcado
-            botaoProximo.classList.remove('disabled');  // Remove a classe de desabilitado
+            botaoProximo.disabled = false; 
+            botaoProximo.classList.remove('disabled'); 
         } else {
-            botaoProximo.disabled = true;   // Desabilita o botão se o checkbox estiver desmarcado
-            botaoProximo.classList.add('disabled');  // Adiciona a classe de desabilitado
+            botaoProximo.disabled = true; 
+            botaoProximo.classList.add('disabled'); 
         }
     }
 
-    // Executa a função quando o estado do checkbox mudar
     termosCheckbox.addEventListener('change', verificarCheckbox);
 
-    // Inicializa o botão como desabilitado ao carregar a página
     verificarCheckbox();
 });
 
@@ -79,28 +73,28 @@ let imagensBase64 = [];
 
 function lerImagem(input) {
     const files = input.files;
-    imagensBase64 = [];  // Limpa o array antes de adicionar novas imagens
+    imagensBase64 = []; 
 
     Array.from(files).forEach(file => {
         const reader = new FileReader();
         reader.onload = function (e) {
-            imagensBase64.push(e.target.result);  // Adiciona a imagem em Base64 ao array
+            imagensBase64.push(e.target.result);
         };
-        reader.readAsDataURL(file);  // Lê o arquivo como um Data URL (Base64)
+        reader.readAsDataURL(file);
     });
 }
 
 document.getElementById('fileInput').addEventListener('change', function () {
-    lerImagem(this);  // Chama a função para ler as imagens ao selecionar arquivos
+    lerImagem(this);  
 });
 
 function selecionarCategoria(opcao) {
     categoria = opcao;
-    document.getElementById('categoriaSelecionada').innerText = opcao;  // Exibe a categoria selecionada no HTML
+    document.getElementById('categoriaSelecionada').innerText = opcao; 
 }
 
 document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
-    event.preventDefault();  // Previne o envio padrão do formulário
+    event.preventDefault();
 
     const dados = {
         title: document.getElementById('titulo').value,
@@ -110,7 +104,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         city: document.getElementById('city').value,
         state: document.getElementById('state').value,
         cep: document.getElementById('cep').value,
-        photos: imagensBase64,  // Imagens em Base64 armazenadas no array
+        photos: imagensBase64,
         room: document.getElementById('quarto').value,
         bathroom: document.getElementById('banheiro').value,
         garage: document.getElementById('garagem').value,
@@ -121,28 +115,27 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
     const missingFields = [];
     for (const key in dados) {
         if (!dados[key] && key !== 'photos' && key !== 'category') {
-            missingFields.push(key);  // Verifica se algum campo obrigatório está vazio
+            missingFields.push(key);  
         }
     }
 
     if (missingFields.length > 0) {
         alert('Por favor, preencha todos os campos obrigatórios: ' + missingFields.join(', '));
-        return;  // Não prossegue com o envio se algum campo obrigatório estiver faltando
+        return;  
     }
 
-    // Armazena os dados no localStorage
+
     localStorage.setItem('cadastroAnuncio', JSON.stringify(dados));
 
     console.log('Dados armazenados no localStorage:', JSON.parse(localStorage.getItem('cadastroAnuncio')));
 
-    // Redireciona para a próxima tela
     window.location.href = '../filters-screen/index.html';
 });
 
 const token = localStorage.getItem("token");
 
 if (token) {
-    document.getElementById("statusLabel").textContent = "Locador Bronze";  // Exibe o status do usuário se o token estiver presente
+    document.getElementById("statusLabel").textContent = "Locador Bronze"; 
 }
 
 

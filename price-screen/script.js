@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalPrice = (parseFloat(basePrice) + parseFloat(serviceFee) + parseFloat(additionalValue)).toFixed(2);
         const totalNoFee = basePrice.toFixed(2);
 
-        // Atualiza os elementos do DOM com os valores calculados
         basePriceSpan.textContent = formatCurrency(basePrice);
         serviceFeeSpan.textContent = formatCurrency(serviceFee);
         additionalValueSpan.textContent = formatCurrency(additionalValue);
@@ -33,25 +32,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function parseCurrency(value) {
-        // Remove "R$", "." e converte vírgula para ponto
         return parseFloat(value.replace('R$', '').replace(/\./g, '').replace(',', '.')) || 0;
     }
 
     priceDisplay.addEventListener('input', (e) => {
-        // Formata o texto digitado como moeda
-        const rawValue = e.target.textContent.replace(/\D/g, ''); // Apenas números
-        const numericValue = parseFloat(rawValue) / 100; // Transforma em número decimal
+        const rawValue = e.target.textContent.replace(/\D/g, ''); 
+        const numericValue = parseFloat(rawValue) / 100;
 
         basePrice = numericValue || 0;
-        priceDisplay.textContent = formatCurrency(basePrice); // Atualiza o campo com o formato correto
+        priceDisplay.textContent = formatCurrency(basePrice);
 
         updatePrices();
 
-        // Controle de habilitação de botões
         serviceFeeToggle.disabled = basePrice <= 0;
         confirmBtn.disabled = basePrice <= 0;
 
-        // Mantém o cursor no final do campo
         const range = document.createRange();
         const sel = window.getSelection();
         range.setStart(priceDisplay.childNodes[0], priceDisplay.textContent.length);
@@ -61,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     priceDisplay.addEventListener('keypress', (e) => {
-        // Permite apenas números
         if (!/[0-9]/.test(e.key)) {
             e.preventDefault();
         }
@@ -84,9 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const additionalValueValue = parseCurrency(additionalValueSpan.textContent);
         const totalPrice = basePrice + serviceFeeValue + additionalValueValue;
 
-        dadosAnuncio.value = totalPrice;
+        dadosAnuncio.value = parseFloat(totalPrice.toFixed(2));
 
-        // Exemplo de envio para o backend
+
         console.log('Dados enviados:', dadosAnuncio);
 
         function base64ToBuffer(base64) {
@@ -205,7 +199,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        // Sequência de execução
         enviarImagem()
             .then(fileName => obterUrlAssinada(fileName))
             .then(signedUrl => {

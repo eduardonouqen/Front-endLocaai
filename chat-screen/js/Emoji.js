@@ -36,7 +36,6 @@ const EmojiPicker = function (options) {
         return {
 
             el: () => {
-                // Check if is node
                 if (!el) {
                     return undefined;
                 } else if (el.nodeName) {
