@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () { //Aqui só está sen
     // Ao selecionar uma opção essa função faz o container se fechar automaticamente
     options.forEach(function (option) {
         option.addEventListener('click', function (event) {
-            event.stopPropagation(); 
+            event.stopPropagation();
             selectedOption.textContent = this.textContent;
             dropdownContainer.classList.remove('show');
             dropdownContent.classList.remove('show');
@@ -134,7 +134,6 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
     localStorage.setItem('cadastroAnuncio', JSON.stringify(dados));
 
     console.log('Dados armazenados no localStorage:', JSON.parse(localStorage.getItem('cadastroAnuncio')));
-    alert('Dados salvos com sucesso.');
 
     // Redireciona para a próxima tela
     window.location.href = '../filters-screen/index.html';
@@ -311,9 +310,9 @@ document.getElementById('cep').addEventListener('blur', function () {
 });
 
 
-document.getElementById('infotecnica').addEventListener('input', function() {
+document.getElementById('infotecnica').addEventListener('input', function () {
     let value = this.value;
-    
+
     // Limita o valor aos últimos dois dígitos
     if (value.length > 2) {
         this.value = value.slice(-2); // Mantém os dois últimos dígitos
