@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () { //Aqui só está sen
     // Ao selecionar uma opção essa função faz o container se fechar automaticamente
     options.forEach(function (option) {
         option.addEventListener('click', function (event) {
-            event.stopPropagation(); 
+            event.stopPropagation();
             selectedOption.textContent = this.textContent;
             dropdownContainer.classList.remove('show');
             dropdownContent.classList.remove('show');
@@ -75,19 +75,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 let categoria;
-let imagensBase64 = []; 
+let imagensBase64 = [];
 
 
 function lerImagem(input) {
     const files = input.files;
-    imagensBase64 = []; 
+    imagensBase64 = [];
 
     Array.from(files).forEach(file => {
         const reader = new FileReader();
         reader.onload = function (e) {
-            imagensBase64.push(e.target.result); 
+            imagensBase64.push(e.target.result);
         };
-        reader.readAsDataURL(file); 
+        reader.readAsDataURL(file);
     });
 }
 
@@ -97,8 +97,8 @@ document.getElementById('fileInput').addEventListener('change', function () {
 });
 
 function selecionarCategoria(opcao) {
-    categoria = opcao; 
-    document.getElementById('categoriaSelecionada').innerText = opcao; 
+    categoria = opcao;
+    document.getElementById('categoriaSelecionada').innerText = opcao;
 }
 
 document.getElementById('formCadastroAnuncio').addEventListener('submit', function (event) {
@@ -120,7 +120,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         description: document.getElementById('descricao').value,
     };
 
-    
+
     const missingFields = [];
     for (const key in dados) {
         if (!dados[key] && key !== 'photos' && key !== 'categoria') {
@@ -133,13 +133,13 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         return;
     }
 
-    
+
     localStorage.setItem('cadastroAnuncio', JSON.stringify(dados));
 
     console.log('Dados armazenados no localStorage:', JSON.parse(localStorage.getItem('cadastroAnuncio')));
     alert('Dados salvos com sucesso.');
 
-    
+
     window.location.href = '../edit-filters-screen/index.html';
 });
 
@@ -198,12 +198,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
     }
 
     // Envio dos dados para o backend
-    fetch('http://localhost:3000/realty', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dados)
+    
     })
     .then(response => {
         if (!response.ok) {
@@ -308,9 +303,9 @@ document.getElementById('cep').addEventListener('blur', function () {
 });
 
 
-document.getElementById('infotecnica').addEventListener('input', function() {
+document.getElementById('infotecnica').addEventListener('input', function () {
     let value = this.value;
-    
+
     // Limita o valor aos últimos dois dígitos
     if (value.length > 2) {
         this.value = value.slice(-2); // Mantém os dois últimos dígitos

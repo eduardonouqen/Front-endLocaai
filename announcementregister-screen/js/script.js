@@ -199,13 +199,7 @@ if (token) {
         return; // Impede o envio se houver campos obrigatórios não preenchidos
     }
 
-    // Envio dos dados para o backend
-    fetch('http://localhost:3000/realty', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dados)
+    
     })
     .then(response => {
         if (!response.ok) {
