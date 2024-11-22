@@ -192,15 +192,15 @@
                 <div class="whiteLine"></div>
                 <div class="labelDetailedPricesDiv">
                     <label class="labelDetailedPrices1">Locação</label>
-                    <label class="labelDetailedPrices2" id="rentalPrice">R$1300</label>
+                    <label class="labelDetailedPrices2" id="rentalPrice">R$0</label>
                 </div>
                 <div class="labelDetailedPricesDiv">
                     <label class="labelDetailedPrices1">Taxas</label>
-                    <label class="labelDetailedPrices2">R$0</label>
+                    <label class="labelDetailedPrices2" id="taxesPrice">R$0</label>
                 </div>
                 <div class="labelDetailedPricesDiv">
                     <label class="labelDetailedPrices1">Impostos</label>
-                    <label class="labelDetailedPrices2">R$0</label>
+                    <label class="labelDetailedPrices2" id="taxesValue">R$0</label>
                 </div>
                 <div class="whiteLine"></div>
                 <div class="bookButton" onclick="window.location.href='../payment-screen/index.html'">
@@ -286,6 +286,40 @@
 
         <script type="module">
             import CONFIG from '../../config.js';
+
+
+            
+           
+            const selectedProperty = JSON.parse(localStorage.getItem('selectedProperty'));
+            console.log('selectedProperty:', selectedProperty); // Verifique o conteúdo do localStorage
+
+    if (selectedProperty && selectedProperty.value) {
+        // Converte o valor para número
+        const initialRentalPrice = parseFloat(selectedProperty.value);
+        console.log('Initial Rental Price:', initialRentalPrice); // Verifique este valor
+
+        if (!isNaN(initialRentalPrice)) {
+            // Calcula as taxas (5% do valor inicial)
+            const taxes = initialRentalPrice * 0.05;
+            // Calcula os impostos (10% do valor inicial)
+            const taxesValue = initialRentalPrice * 0.10;
+            // Calcula o valor da locação (valor inicial - taxas - impostos)
+            const finalRentalPrice = initialRentalPrice - taxes - taxesValue;
+
+            console.log('Taxes:', taxes); // Verifique o valor da taxa
+            console.log('Taxes Value:', taxesValue); // Verifique o valor do imposto
+            console.log('Final Rental Price:', finalRentalPrice); // Verifique o valor final
+
+            // Atualiza os elementos no DOM
+            document.getElementById('taxesPrice').textContent = `R$${taxes.toFixed(2)}`;
+            document.getElementById('taxesValue').textContent = `R$${taxesValue.toFixed(2)}`;
+            document.getElementById('rentalPrice').textContent = `R$${finalRentalPrice.toFixed(2)}`;
+        } else {
+            console.error('O valor armazenado no localStorage não é um número válido.');
+        }
+    } else {
+        console.error('Propriedade selecionada não encontrada ou valor inválido no localStorage.');
+    }
 
             async function fetchUsers() {
                 const response = await fetch(`${CONFIG.API_BASE_URL}/users`);

@@ -117,8 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             try {
                 const buffer = base64ToBuffer(imageBase64);
-                const blob = new Blob([buffer], { type: 'image/jpeg' });
-                const file = new File([blob], "image.jpg", { type: 'image/jpeg' });
+                const blob = new Blob([buffer], { type: 'image/jpg' });
+                const file = new File([blob], "image.jpg", { type: 'image/jpg' });
 
                 formData.append("file", file);
 

@@ -207,22 +207,22 @@
             <div class="user-info">
                 <div class="info-item">
                     <label for="email"><i class="icon-email"></i> Email</label>
-                    <p class="fontSizeData">userEmail</p>
+                    <p class="fontSizeData">Email</p>
                 </div>
                 <div class="info-item">
                     <label for="phone"><i class="icon-phone"></i> Celular</label>
-                    <p class="fontSizeData">userPhone</p>
+                    <p class="fontSizeData">Phone</p>
                 </div>
                 <div class="info-item">
                     <label for="identity"><i class="icon-identity"></i> Cpf</label>
-                    <p class="fontSizeData">userCpf</p>
+                    <p class="fontSizeData">Cpf</p>
                 </div>
             </div>
         </div>
 
         <div class="user-about-actions">
             <div class="user-about">
-                <label class="about-label">Sobre <span id="user-name">Eduardo</span></label>
+                <label class="about-label">Sobre <span id="user-name">Você</span></label>
                 <textarea id="user-about-text" maxlength="350" placeholder="Sobre o usuário"></textarea>
                 <div class="align-count-button">
                     <div id="char-count" style="width: 100%;">
@@ -246,7 +246,7 @@
                 <a href="../property-management-screen/index.html">
                     <button>Gerenciar Propriedades</button>
                 </a>
-                <a href="../login-screen/index.html" onclick="logout()">
+                <a href="../login-screen/index.html" onclick="logout(event)">
                     <button>Sair da Conta</button>
                 </a>
                 <div class="actions">
@@ -260,6 +260,8 @@
 
     <script type="module" src="js/script.js" defer></script>
     <script type="module">
+        import CONFIG from '../../config.js';
+
         document.getElementById('documents-button').addEventListener('click', function () {
             document.getElementById('file-upload').click();
         });
@@ -306,12 +308,13 @@
             }
         }
 
-        function logout() {
+        function logout(event) {
+    event.preventDefault();
     localStorage.removeItem('email');
     localStorage.removeItem('senha');
     localStorage.removeItem('token');
+    window.location.href = "../login-screen/index.html";
 }
-
 
     </script>
 </body>

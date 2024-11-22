@@ -114,12 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function logout() {
-    localStorage.removeItem('email');
-    localStorage.removeItem('senha');
-    localStorage.removeItem('token');
-}
-
 
 
 const token = localStorage.getItem("token");
