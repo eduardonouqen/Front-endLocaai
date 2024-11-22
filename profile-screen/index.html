@@ -259,7 +259,7 @@
     </div>
 
     <script type="module" src="js/script.js" defer></script>
-    <script>
+    <script type="module">
         document.getElementById('documents-button').addEventListener('click', function () {
             document.getElementById('file-upload').click();
         });
@@ -305,6 +305,12 @@
                 window.location.href = "../initial-screen/index.html";
             }
         }
+
+        function logout() {
+    localStorage.removeItem('email');
+    localStorage.removeItem('senha');
+    localStorage.removeItem('token');
+}
 
 
     </script>
