@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function verificarCheckbox() {
         if (termosCheckbox.checked) {
-            botaoProximo.disabled = false;  
-            botaoProximo.classList.remove('disabled');  
+            botaoProximo.disabled = false;
+            botaoProximo.classList.remove('disabled');
         } else {
-            botaoProximo.disabled = true;   
-            botaoProximo.classList.add('disabled'); 
+            botaoProximo.disabled = true;
+            botaoProximo.classList.add('disabled');
         }
     }
 
@@ -107,7 +107,7 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         city: document.getElementById('city').value,
         state: document.getElementById('state').value,
         cep: document.getElementById('cep').value,
-        //photos: imagensBase64, 
+        photos: imagensBase64,
         room: document.getElementById('quarto').value,
         bathroom: document.getElementById('banheiro').value,
         garage: document.getElementById('garagem').value,
@@ -115,10 +115,9 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
         description: document.getElementById('descricao').value,
     };
 
-
     const missingFields = [];
     for (const key in dados) {
-        if (!dados[key] && key !== 'photos' && key !== 'categoria') {
+        if (!dados[key] && key !== 'photos' && key !== 'category') {
             missingFields.push(key);
         }
     }
@@ -132,11 +131,15 @@ document.getElementById('formCadastroAnuncio').addEventListener('submit', functi
     localStorage.setItem('cadastroAnuncio', JSON.stringify(dados));
 
     console.log('Dados armazenados no localStorage:', JSON.parse(localStorage.getItem('cadastroAnuncio')));
-    alert('Dados salvos com sucesso.');
 
-
-    window.location.href = '../edit-filters-screen/index.html';
+    window.location.href = '../filters-screen/index.html';
 });
+
+const token = localStorage.getItem("token");
+
+if (token) {
+    document.getElementById("statusLabel").textContent = "Locador Bronze";
+}
 
 
 
