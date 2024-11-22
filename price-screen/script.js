@@ -104,24 +104,27 @@ document.addEventListener("DOMContentLoaded", () => {
         async function enviarImagem() {
             const urlImagens = `${CONFIG.API_BASE_URL}/imagens/`;
             const formData = new FormData();
-
+        
             let imageBase64 = dadosAnuncio.photos;
             if (Array.isArray(imageBase64) && imageBase64.length > 0) {
                 imageBase64 = imageBase64[0];
             }
-
+        
             if (typeof imageBase64 !== 'string' || !imageBase64.startsWith("data:image/")) {
                 console.error("Imagem não está em Base64 ou não tem o prefixo correto.");
                 throw new Error("Imagem não está em Base64 ou não tem o prefixo correto.");
             }
-
+        
             try {
                 const buffer = base64ToBuffer(imageBase64);
-                const blob = new Blob([buffer], { type: 'image/jpg' });
-                const file = new File([blob], "image.jpg", { type: 'image/jpg' });
-
+                const blob = new Blob([buffer], { type: 'image/jpeg' });
+        
+                const uniqueFileName = `image_${Date.now()}.jpg`;
+        
+                const file = new File([blob], uniqueFileName, { type: 'image/jpeg' });
+        
                 formData.append("file", file);
-
+        
                 const response = await fetch(urlImagens, {
                     method: 'POST',
                     headers: {
@@ -129,17 +132,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     },
                     body: formData
                 });
-
+        
                 const data = await response.json();
                 console.log("Resposta do servidor:", data);
-
+        
                 const fileName = data.data ? data.data.path : null;
-
+        
                 if (!fileName) {
                     console.error("Falha ao obter 'fileName'.");
                     throw new Error("Falha ao enviar imagem.");
                 }
-
+        
                 console.log("Upload bem-sucedido, fileName:", fileName);
                 return fileName;
             } catch (error) {
