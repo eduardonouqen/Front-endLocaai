@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return enviarAnuncio();
             })
             .then(() => {
-                window.location.href = '../initial-screen/index.html';
+                window.location.href = '../announcement-approval-screen/index.html';
             })
             .catch(error => {
                 console.error('Erro:', error);
