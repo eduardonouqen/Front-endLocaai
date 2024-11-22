@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${propriedade.photo}" alt="Imagem da propriedade" class="propriedade-imagem">
                     <div class="propriedade-info">
                         <p><strong>Nome da Propriedade:</strong> ${propriedade.title}</p>
-                        <p><strong>Endereço:</strong> ${propriedade.address}</p>
+                        <p><strong>Endereço:</strong> ${propriedade.adress}</p>
                         <p><strong>Valor diária:</strong> R$ ${propriedade.value},00 (taxa inclusa)</p>
-                        <p><strong>Avaliações:</strong> ${propriedade.avaliacao} <i class="fas fa-star" style="color: #FFA500;"></i></p>
+                        <p><strong>Avaliações:</strong> 5.0 <i class="fas fa-star" style="color: #FFA500;"></i></p>
                     </div>
                     <div class="botoes">
                         <button class="botaopromover">Promover</button>

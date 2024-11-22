@@ -246,8 +246,8 @@
                 <a href="../property-management-screen/index.html">
                     <button>Gerenciar Propriedades</button>
                 </a>
-                <a href="../login-screen/index.html" onclick="logout(event)">
-                    <button>Sair da Conta</button>
+                <a>
+                    <button onclick="logouti(event)">Sair da Conta</button>
                 </a>
                 <div class="actions">
                     <button class="delete-account" onclick="confirmDelete()">Apagar Conta</button>
@@ -258,9 +258,14 @@
         </div>
     </div>
 
-    <script type="module" src="js/script.js" defer></script>
-    <script type="module">
+    <script type="module" src="js/script.js"></script>
+    <script type="module" defer>
         import CONFIG from '../../config.js';
+        import { logouti } from './js/script.js';
+
+    // Aqui você pode manter o código de eventos do botão se necessário
+    document.querySelector("button[onclick='logouti(event)']").addEventListener("click", logouti);
+        
 
         document.getElementById('documents-button').addEventListener('click', function () {
             document.getElementById('file-upload').click();
@@ -308,13 +313,7 @@
             }
         }
 
-        function logout(event) {
-    event.preventDefault();
-    localStorage.removeItem('email');
-    localStorage.removeItem('senha');
-    localStorage.removeItem('token');
-    window.location.href = "../login-screen/index.html";
-}
+
 
     </script>
 </body>

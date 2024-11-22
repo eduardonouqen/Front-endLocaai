@@ -114,6 +114,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+export function logouti(event) {
+    event.preventDefault(); // Previne o comportamento padrão do clique
+
+    // Remove os dados do localStorage
+    localStorage.removeItem('email');
+    localStorage.removeItem('senha');
+    localStorage.removeItem('token');
+
+    // Redireciona para a página de login
+    window.location.href = "../login-screen/index.html";
+}
+
 
 
 const token = localStorage.getItem("token");
